@@ -484,10 +484,13 @@
       height: 100%;
       background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
     }
-    .featured-card .service-icon { background: rgba(255,255,255,0.2); }
+    .featured-card .service-icon { background: var(--gray-100); }
     .featured-card .service-title { color: var(--white); }
     .featured-card .service-department { color: rgba(255,255,255,0.8); }
     .featured-card .service-description { color: rgba(255,255,255,0.9); }
+    .featured-card .service-tag { background: var(--white); color: var(--gray-700); }
+    .featured-card .service-tag.category { background: var(--white); color: var(--co-blue); }
+    .featured-card .service-tag.task { background: var(--white); color: var(--success); }
     .featured-card .service-link { background: var(--white); color: var(--co-blue); }
     .featured-card .service-link:hover { background: var(--co-gold-light); }
 
@@ -584,7 +587,7 @@
   <section class="hero">
     <div class="hero-inner">
       <h1>Find the services you need</h1>
-      <p>Colorado celebrates 150 years of statehood in 2026. As a birthday present to all Coloradans, this navigator helps residents discover 200+ digital government services, including how to renew a license, apply for benefits, and more.</p>
+      <p>Colorado celebrates 150 years of statehood in 2026. Discover 200+ digital services to renew your license, apply for benefits, and more.</p>
       <div class="search-container">
         <div class="search-wrapper">
           <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
