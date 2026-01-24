@@ -1,0 +1,5669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorado Digital Services | State Government Navigator</title>
+  <meta name="description" content="Find and access 160+ Colorado state government services quickly and easily.">
+
+  <style>
+    :root {
+      --co-blue: #003366;
+      --co-blue-light: #004080;
+      --co-blue-dark: #002244;
+      --co-gold: #CFB87C;
+      --co-gold-light: #E5D4A1;
+      --co-red: #C8102E;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --success: #059669;
+      --info: #0891b2;
+      --warning: #d97706;
+      --focus-ring: 0 0 0 3px rgba(0, 51, 102, 0.25);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+      --radius-sm: 4px;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --transition: 150ms ease-in-out;
+      --max-width: 1280px;
+      --header-height: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--gray-900);
+      background: var(--gray-50);
+      min-height: 100vh;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--co-blue);
+      color: var(--white);
+      padding: 8px 16px;
+      z-index: 1000;
+      transition: top var(--transition);
+    }
+    .skip-link:focus { top: 0; }
+
+    .site-header {
+      background: var(--co-blue);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-height);
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--co-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--co-blue);
+      font-size: 1.25rem;
+    }
+
+    .site-title { font-size: 1.25rem; font-weight: 600; margin: 0; }
+    .site-subtitle { font-size: 0.75rem; opacity: 0.9; margin: 0; }
+
+    .hero {
+      background: linear-gradient(135deg, var(--co-blue) 0%, var(--co-blue-light) 100%);
+      color: var(--white);
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .hero-inner { max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); margin: 0 0 0.75rem; font-weight: 700; }
+    .hero p { font-size: 1.125rem; opacity: 0.95; margin: 0 0 2rem; }
+
+    .search-container { max-width: 640px; margin: 0 auto; }
+    
+    .search-wrapper {
+      position: relative;
+      display: flex;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-400);
+      pointer-events: none;
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      padding: 1rem 1rem 1rem 3rem;
+      font-size: 1.125rem;
+      outline: none;
+      background: transparent;
+    }
+    .search-input::placeholder { color: var(--gray-400); }
+    .search-input:focus { box-shadow: inset var(--focus-ring); }
+
+    .search-clear {
+      background: none;
+      border: none;
+      padding: 0 1rem;
+      cursor: pointer;
+      color: var(--gray-400);
+      font-size: 1.25rem;
+      display: none;
+    }
+    .search-clear.visible { display: block; }
+    .search-clear:hover { color: var(--gray-600); }
+
+    .nav-tabs {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: var(--header-height);
+      z-index: 50;
+    }
+
+    .nav-tabs-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .nav-tabs-inner::-webkit-scrollbar { display: none; }
+
+    .nav-tab {
+      padding: 1rem 1.25rem;
+      background: none;
+      border: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all var(--transition);
+    }
+    .nav-tab:hover { color: var(--co-blue); background: var(--gray-50); }
+    .nav-tab.active { color: var(--co-blue); border-bottom-color: var(--co-blue); }
+
+    .quick-actions {
+      padding: 1.5rem 1rem;
+      background: var(--gray-100);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .quick-actions-inner { max-width: var(--max-width); margin: 0 auto; }
+
+    .quick-actions h2 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      margin: 0 0 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .action-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .action-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: 2rem;
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .action-pill:hover { background: var(--co-blue); color: var(--white); border-color: var(--co-blue); }
+    .action-pill.active { background: var(--co-blue); color: var(--white); border-color: var(--co-blue); }
+    .action-pill .icon { font-size: 1.125rem; }
+
+    .main-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) { .main-content { grid-template-columns: 260px 1fr; } }
+
+    .filters-sidebar {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      height: fit-content;
+      position: sticky;
+      top: calc(var(--header-height) + 60px);
+    }
+
+    .filters-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .filters-header h2 { font-size: 1rem; margin: 0; }
+
+    .clear-filters {
+      background: none;
+      border: none;
+      color: var(--co-blue);
+      cursor: pointer;
+      font-size: 0.75rem;
+      text-decoration: underline;
+    }
+
+    .filter-group { margin-bottom: 1.5rem; }
+    .filter-group:last-child { margin-bottom: 0; }
+    
+    .filter-group h3 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      margin: 0 0 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .filter-option { display: flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0; cursor: pointer; }
+    .filter-option input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--co-blue); }
+    .filter-option label { font-size: 0.8125rem; color: var(--gray-700); cursor: pointer; flex: 1; }
+    .filter-count { font-size: 0.6875rem; color: var(--gray-400); background: var(--gray-100); padding: 2px 6px; border-radius: 1rem; }
+
+    .services-section { min-width: 0; }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .results-info { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .results-count { font-size: 0.875rem; color: var(--gray-600); }
+    .results-count strong { color: var(--gray-900); }
+
+    .active-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .active-filter {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      background: var(--co-blue);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+    }
+
+    .active-filter button {
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1;
+      opacity: 0.8;
+    }
+    .active-filter button:hover { opacity: 1; }
+
+    .view-controls { display: flex; gap: 0.5rem; align-items: center; }
+
+    .sort-select {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-sm);
+      font-size: 0.8125rem;
+      background: var(--white);
+      cursor: pointer;
+    }
+
+    .view-toggle {
+      display: flex;
+      gap: 0.25rem;
+      background: var(--gray-200);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+    }
+
+    .view-toggle button {
+      background: none;
+      border: none;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      color: var(--gray-600);
+      transition: all var(--transition);
+    }
+    .view-toggle button.active { background: var(--white); color: var(--gray-900); box-shadow: var(--shadow-sm); }
+
+    .services-grid { display: grid; gap: 1rem; }
+    .services-grid.grid-view { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+    .services-grid.list-view { grid-template-columns: 1fr; }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover { box-shadow: var(--shadow); border-color: var(--co-blue); transform: translateY(-2px); }
+
+    .service-card-header { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.375rem;
+      flex-shrink: 0;
+    }
+
+    .service-title-wrapper { flex: 1; min-width: 0; }
+    .service-title { font-size: 0.9375rem; font-weight: 600; color: var(--co-blue); margin: 0 0 0.25rem; line-height: 1.3; }
+    .service-department { font-size: 0.75rem; color: var(--gray-500); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .service-description {
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+      margin: 0 0 1rem;
+      flex: 1;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .service-meta { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-bottom: 1rem; }
+    .service-tag { font-size: 0.6875rem; padding: 0.25rem 0.5rem; background: var(--gray-100); color: var(--gray-600); border-radius: 1rem; }
+    .service-tag.category { background: rgba(0, 51, 102, 0.08); color: var(--co-blue); }
+    .service-tag.task { background: rgba(5, 150, 105, 0.08); color: var(--success); }
+
+    .service-actions { display: flex; gap: 0.5rem; margin-top: auto; }
+
+    .service-link {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1rem;
+      background: var(--co-blue);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      transition: background var(--transition);
+    }
+    .service-link:hover { background: var(--co-blue-light); }
+
+    .featured-section { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gray-200); }
+    .featured-section h2 { font-size: 1.125rem; margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+
+    .featured-card {
+      background: linear-gradient(135deg, var(--co-blue) 0%, var(--co-blue-light) 100%);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    }
+    .featured-card .service-icon { background: rgba(255,255,255,0.2); }
+    .featured-card .service-title { color: var(--white); }
+    .featured-card .service-department { color: rgba(255,255,255,0.8); }
+    .featured-card .service-description { color: rgba(255,255,255,0.9); }
+    .featured-card .service-link { background: var(--white); color: var(--co-blue); }
+    .featured-card .service-link:hover { background: var(--co-gold-light); }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+    }
+    .no-results-icon { font-size: 4rem; margin-bottom: 1rem; opacity: 0.5; }
+    .no-results h3 { margin: 0 0 0.5rem; color: var(--gray-900); }
+    .no-results p { color: var(--gray-500); margin: 0 0 1.5rem; }
+
+    .site-footer {
+      background: var(--gray-800);
+      color: var(--white);
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; text-align: center; }
+    .footer-inner p { margin: 0 0 0.5rem; font-size: 0.875rem; opacity: 0.8; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--co-gold); text-decoration: none; font-size: 0.875rem; }
+    .footer-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 899px) {
+      .filters-sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        z-index: 200;
+        border-radius: 0;
+        overflow-y: auto;
+      }
+      .filters-sidebar.open { display: block; }
+
+      .filters-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 199; }
+      .filters-overlay.open { display: block; }
+
+      .mobile-filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 1rem;
+        background: var(--white);
+        border: 1px solid var(--gray-300);
+        border-radius: var(--radius);
+        cursor: pointer;
+        font-size: 0.875rem;
+      }
+
+      .close-filters-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.875rem;
+        color: var(--gray-600);
+        margin-bottom: 1rem;
+        padding: 0;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .mobile-filter-btn, .close-filters-btn, .filters-overlay { display: none !important; }
+    }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    mark { background: var(--co-gold-light); padding: 0 2px; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="site-logo" onclick="clearAll(); return false;">
+        <div class="logo-mark">CO</div>
+        <div>
+          <p class="site-title">Colorado Digital Services</p>
+          <p class="site-subtitle">State Government Navigator</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Find the services you need</h1>
+      <p>Access 160+ Colorado state government services, from renewing your license to applying for benefits.</p>
+      <div class="search-container">
+        <div class="search-wrapper">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input type="search" class="search-input" id="searchInput" 
+                 placeholder="Search services, topics, or keywords..." 
+                 aria-label="Search for services">
+          <button class="search-clear" id="searchClear" aria-label="Clear search">&times;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="nav-tabs" aria-label="Browse by navigation type">
+    <div class="nav-tabs-inner">
+      <button class="nav-tab active" data-nav="all">All Services</button>
+      <button class="nav-tab" data-nav="task">By Task</button>
+      <button class="nav-tab" data-nav="life-event">By Life Event</button>
+      <button class="nav-tab" data-nav="audience">By Audience</button>
+      <button class="nav-tab" data-nav="category">By Category</button>
+    </div>
+  </nav>
+
+  <section class="quick-actions" id="quickActions">
+    <div class="quick-actions-inner">
+      <h2 id="quickActionsTitle">I need to...</h2>
+      <div class="action-pills" id="actionPills"></div>
+    </div>
+  </section>
+
+  <main class="main-content" id="main-content">
+    <div class="filters-overlay" id="filtersOverlay"></div>
+
+    <aside class="filters-sidebar" id="filtersSidebar" aria-label="Filter services">
+      <button class="close-filters-btn" id="closeFilters">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+        Close filters
+      </button>
+      <div class="filters-header">
+        <h2>Refine results</h2>
+        <button class="clear-filters" id="clearFilters">Clear all</button>
+      </div>
+      <div id="filterGroups"></div>
+    </aside>
+
+    <section class="services-section">
+      <button class="mobile-filter-btn" id="mobileFilterBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+        </svg>
+        Filter
+      </button>
+
+      <div class="featured-section" id="featuredSection">
+        <h2>⭐ Popular services</h2>
+        <div class="featured-grid" id="featuredGrid"></div>
+      </div>
+
+      <div class="services-header">
+        <div class="results-info">
+          <p class="results-count" id="resultsCount">Showing <strong>0</strong> services</p>
+          <div class="active-filters" id="activeFilters"></div>
+        </div>
+        <div class="view-controls">
+          <select class="sort-select" id="sortSelect">
+            <option value="relevance">Most relevant</option>
+            <option value="az">A to Z</option>
+            <option value="za">Z to A</option>
+          </select>
+          <div class="view-toggle">
+            <button id="gridViewBtn" class="active" aria-label="Grid view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </button>
+            <button id="listViewBtn" aria-label="List view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="4" width="18" height="4" rx="1"/>
+                <rect x="3" y="10" width="18" height="4" rx="1"/>
+                <rect x="3" y="16" width="18" height="4" rx="1"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-grid grid-view" id="servicesGrid" role="list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Colorado Service Navigator v4.0</p>
+      <p>A demonstration of modern government service navigation paradigms.</p>
+      <p style="margin-top: 1rem; font-style: italic;">Not affiliated with Colorado.gov</p>
+    </div>
+  </footer>
+
+  <script>
+    const serviceCatalog = [
+  {
+    "id": 1,
+    "name": "Access College in Colorado planning resources",
+    "description": "Access comprehensive resources and tools to help plan for college education in Colorado, including information about financial aid, college selection, and career planning.",
+    "url": "https://highered.colorado.gov/students",
+    "department": "Department of Higher Education",
+    "departmentUrl": "https://cdhe.colorado.gov/",
+    "category": "Education and Learning",
+    "subcategory": "Higher Education and Financial Aid",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Higher Education",
+    "taskType": "Learn",
+    "taskDetail": "About a Topic",
+    "audience": "Education and Students",
+    "audienceDetail": "College Students",
+    "tags": [
+      "higher",
+      "topic",
+      "students",
+      "learning",
+      "college",
+      "learn",
+      "career",
+      "education"
+    ],
+    "icon": "\ud83d\udcda",
+    "featured": false
+  },
+  {
+    "id": 2,
+    "name": "Access the Driver's License and ID Card Center",
+    "description": "Access online services for driver's licenses and identification cards, including renewals, replacements, and updates to personal information.",
+    "url": "https://dmv.colorado.gov/drivers-license-and-id-card-services",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Renew",
+    "taskDetail": "a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "renew",
+      "license",
+      "driver",
+      "new",
+      "moving",
+      "vehicles",
+      "relocation",
+      "city",
+      "adults",
+      "transportation",
+      "housing"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Add emergency contacts to your driver's license or state ID record",
+    "description": "Add or update emergency contact information to your Colorado driver's license or state identification card record for use in emergency situations.",
+    "url": "https://dmv.colorado.gov/emergency-contact-information",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Emergency Services and Disaster Preparedness",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Start",
+    "taskDetail": "a Project",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "project",
+      "license",
+      "safety",
+      "justice",
+      "healthcare",
+      "driver",
+      "physical",
+      "start",
+      "public",
+      "wellness",
+      "adults",
+      "health"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Apply for an educator license",
+    "description": "Submit an application for a Colorado educator license, including teaching, administrative, and special service provider licenses.",
+    "url": "https://www.cde.state.co.us/cdeprof",
+    "department": "Department of Education",
+    "departmentUrl": "https://www.cde.state.co.us/",
+    "category": "Education and Learning",
+    "subcategory": "Professional Development and Certifications",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Education and Students",
+    "audienceDetail": "Teachers and Faculty",
+    "tags": [
+      "faculty",
+      "license",
+      "advancement",
+      "teachers",
+      "learning",
+      "career",
+      "education",
+      "apply"
+    ],
+    "icon": "\ud83d\udcdc",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "name": "Apply for Health First Colorado and Child Health Plan Plus",
+    "description": "Apply for Colorado's Medicaid program (Health First Colorado) and Child Health Plan Plus (CHP+) to access health coverage for eligible individuals and families.",
+    "url": "https://www.healthfirstcolorado.com/apply-now/",
+    "department": "Department of Health Care Policy & Financing",
+    "departmentUrl": "https://hcpf.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Insurance and Benefits",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "tags": [
+      "wellbeing",
+      "benefits",
+      "insurance",
+      "healthcare",
+      "low-income",
+      "households",
+      "apply",
+      "wellness",
+      "health"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Apply for the College Opportunity Fund",
+    "description": "Apply for the College Opportunity Fund (COF) stipend, which provides state financial support to eligible undergraduate students attending participating Colorado colleges.",
+    "url": "https://cof.college-assist.org/",
+    "department": "Department of Higher Education",
+    "departmentUrl": "https://cdhe.colorado.gov/",
+    "category": "Education and Learning",
+    "subcategory": "Higher Education and Financial Aid",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Higher Education",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Education and Students",
+    "audienceDetail": "College Students",
+    "tags": [
+      "higher",
+      "benefits",
+      "students",
+      "learning",
+      "college",
+      "career",
+      "education",
+      "apply"
+    ],
+    "icon": "\ud83d\udcda",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Apply online for a Work Opportunity Tax Credit",
+    "description": "Submit an online application for the Work Opportunity Tax Credit, a federal tax credit available to employers who hire individuals from specific target groups.",
+    "url": "https://cdle.colorado.gov/wotc",
+    "department": "Department of Labor & Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "benefits",
+      "filing",
+      "businesses",
+      "business",
+      "tax",
+      "apply",
+      "economy",
+      "financial",
+      "small"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Apply to be a methamphetamine labs cleanup instructor or training provider",
+    "description": "Submit an application to become certified as an instructor or training provider for methamphetamine laboratory cleanup procedures and safety protocols.",
+    "url": "https://cdphe.colorado.gov/methamphetamine-laboratory-cleanup",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Law Enforcement and Public Safety",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Professional Development",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "development",
+      "industry-specific",
+      "license",
+      "organizations",
+      "safety",
+      "public",
+      "professional",
+      "career",
+      "education",
+      "apply",
+      "justice"
+    ],
+    "icon": "\ud83d\udc6e",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "name": "Begin health facility licensing process",
+    "description": "Start the process of obtaining a license to operate a healthcare facility in Colorado, including hospitals, nursing homes, and other medical facilities.",
+    "url": "https://cdphe.colorado.gov/health-facilities-licensure",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Start",
+    "taskDetail": "a Business",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "wellbeing",
+      "taxes",
+      "industry-specific",
+      "organizations",
+      "starting",
+      "start",
+      "financial",
+      "health",
+      "business"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "Bid on work with the state",
+    "description": "Access and bid on state government contract opportunities through Colorado's procurement system.",
+    "url": "https://colorado.gov/pacific/osc/bid-colorado",
+    "department": "Department of Personnel & Administration",
+    "departmentUrl": "https://dpa.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "businesses",
+      "small",
+      "find",
+      "starting",
+      "economy",
+      "financial",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "Birth, death and other vital records",
+    "description": "Request and obtain official vital records including birth certificates, death certificates, marriage licenses, and other important documents.",
+    "url": "https://cdphe.colorado.gov/vitalrecords",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Elections and Government",
+    "subcategory": "Government Records and Transparency",
+    "lifeEvent": "Starting a Family",
+    "lifeEventDetail": "Having a Baby",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "having",
+      "baby",
+      "elections",
+      "government",
+      "starting",
+      "family",
+      "adults",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udfdb\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 12,
+    "name": "Calculate, file & pay worker's compensation surcharge",
+    "description": "Calculate and submit required worker's compensation surcharge payments for Colorado businesses with employees.",
+    "url": "https://cdle.colorado.gov/wc-surcharge",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Pay",
+    "taskDetail": "Taxes",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "pay",
+      "filing",
+      "businesses",
+      "business",
+      "economy",
+      "financial",
+      "small"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "name": "Center for Health and Environmental Data",
+    "description": "Access comprehensive health and environmental data resources, including statistics, reports, and analysis tools for Colorado public health information.",
+    "url": "https://cdphe.colorado.gov/center-for-health-and-environmental-data",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Public Health Initiatives",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "Government Agencies",
+    "tags": [
+      "wellbeing",
+      "healthcare",
+      "government",
+      "physical",
+      "agencies",
+      "wellness",
+      "health",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udf0d",
+    "featured": false
+  },
+  {
+    "id": 14,
+    "name": "Change your address/name notification on record with Gaming officials",
+    "description": "Update your personal information with the Colorado Division of Gaming, ensuring compliance with gaming regulations and maintaining accurate licensee records.",
+    "url": "https://sbg.colorado.gov/",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Report",
+    "taskDetail": "an Issue",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "industry-specific",
+      "issue",
+      "organizations",
+      "new",
+      "moving",
+      "relocation",
+      "city",
+      "economy",
+      "housing",
+      "business",
+      "report"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "name": "Check the status of a tax refund",
+    "description": "Track the status of your Colorado state tax refund and estimated delivery date online.",
+    "url": "https://tax.colorado.gov/refund-status",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Individual Tax Filing and Payments",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "financial",
+      "filing",
+      "finance",
+      "tax",
+      "adults",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": false
+  },
+  {
+    "id": 16,
+    "name": "Colorado Child Support Services Application",
+    "description": "Apply for child support services, including assistance with establishing paternity, locating non-custodial parents, and enforcing support orders.",
+    "url": "https://childsupport.state.co.us",
+    "department": "Department of Human Services",
+    "departmentUrl": "https://cdhs.colorado.gov/",
+    "category": "Family and Social Services",
+    "subcategory": "Children and Youth Programs",
+    "lifeEvent": "Raising a Family",
+    "lifeEventDetail": "Financial Assistance",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Children and Youth",
+    "tags": [
+      "services",
+      "raising",
+      "benefits",
+      "children",
+      "social",
+      "family",
+      "youth",
+      "apply",
+      "assistance",
+      "financial"
+    ],
+    "icon": "\ud83d\udc76",
+    "featured": false
+  },
+  {
+    "id": 17,
+    "name": "Colorado Cold Case Database",
+    "description": "Access information about unsolved criminal cases in Colorado, including homicides, missing persons, and unidentified remains.",
+    "url": "https://www.colorado.gov/coldcase",
+    "department": "Colorado Bureau of Investigation",
+    "departmentUrl": "https://cbi.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Law Enforcement and Public Safety",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Law Enforcement",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "justice",
+      "safety",
+      "public",
+      "law",
+      "adults",
+      "enforcement",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udc6e",
+    "featured": false
+  },
+  {
+    "id": 18,
+    "name": "Search for convicted sex offenders in the state of Colorado",
+    "description": "Access the Colorado sex offender registry to search for registered sex offenders by name or location.",
+    "url": "https://www.colorado.gov/apps/cdps/sor/",
+    "department": "Department of Public Safety",
+    "departmentUrl": "https://publicsafety.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Law Enforcement and Public Safety",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Find",
+    "taskDetail": "a Person",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "person",
+      "safety",
+      "justice",
+      "new",
+      "moving",
+      "relocation",
+      "public",
+      "city",
+      "adults",
+      "housing",
+      "find"
+    ],
+    "icon": "\ud83d\udc6e",
+    "featured": false
+  },
+  {
+    "id": 19,
+    "name": "Colorado Division of Professions and Occupations Online Services Portal",
+    "description": "Access licensing and registration services for various professions and occupations regulated by the state of Colorado.",
+    "url": "https://dpo.colorado.gov/",
+    "department": "Department of Education",
+    "departmentUrl": "https://www.cde.state.co.us/",
+    "category": "Jobs and Employment",
+    "subcategory": "Professional Licensing and Certification",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "industry-specific",
+      "license",
+      "organizations",
+      "advancement",
+      "career",
+      "jobs",
+      "education",
+      "apply",
+      "employment"
+    ],
+    "icon": "\ud83d\udcbc",
+    "featured": false
+  },
+  {
+    "id": 20,
+    "name": "Colorado Courts",
+    "description": "Access Colorado judicial branch services, including court records, forms, and case information.",
+    "url": "https://www.courts.state.co.us",
+    "department": "Colorado Judicial Branch",
+    "departmentUrl": "https://www.courts.state.co.us/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Courts and Legal Services",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Court Proceedings",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "information",
+      "court",
+      "legal",
+      "justice",
+      "safety",
+      "public",
+      "adults",
+      "find",
+      "proceedings"
+    ],
+    "icon": "\u2696\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 21,
+    "name": "Colorado Law Help",
+    "description": "Access free legal information and resources for Colorado residents, including forms, guides, and referrals to legal services.",
+    "url": "https://www.coloradolegalservices.org",
+    "department": "Colorado Judicial Branch",
+    "departmentUrl": "https://www.courts.state.co.us/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Courts and Legal Services",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Legal Issues",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "tags": [
+      "legal",
+      "safety",
+      "get assistance",
+      "issues",
+      "low-income",
+      "households",
+      "public",
+      "justice"
+    ],
+    "icon": "\u2696\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 22,
+    "name": "Report telemarketing fraud & register for Colorado's No-Call List",
+    "description": "Register your phone number on Colorado's No-Call List and report unwanted telemarketing calls or suspected fraud.",
+    "url": "https://www.coloradonocall.com/",
+    "department": "Department of Regulatory Agencies",
+    "departmentUrl": "https://dora.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Consumer Protection and Advocacy",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Report",
+    "taskDetail": "Fraud",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "fraud",
+      "safety",
+      "adults",
+      "issues",
+      "public",
+      "justice",
+      "report"
+    ],
+    "icon": "\ud83d\udee1\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 23,
+    "name": "Colorado Nutrition Portal",
+    "description": "Access nutrition resources, education materials, and food assistance program information for Colorado residents.",
+    "url": "https://www.colorado.gov/nutrition",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Nutrition and Food Assistance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "tags": [
+      "wellbeing",
+      "healthcare",
+      "low-income",
+      "physical",
+      "households",
+      "wellness",
+      "health",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udf4e",
+    "featured": false
+  },
+  {
+    "id": 24,
+    "name": "Colorado PEAK",
+    "description": "Apply for and manage public assistance benefits including food, cash, and medical assistance through this online portal.",
+    "url": "https://coloradopeak.secure.force.com",
+    "department": "Colorado Department of Health Care Policy & Financing",
+    "departmentUrl": "https://hcpf.colorado.gov/",
+    "category": "Family and Social Services",
+    "subcategory": "Family and Financial Assistance",
+    "lifeEvent": "Living with Financial Hardship",
+    "lifeEventDetail": "Financial Assistance",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "tags": [
+      "hardship",
+      "services",
+      "benefits",
+      "social",
+      "low-income",
+      "living",
+      "households",
+      "family",
+      "apply",
+      "assistance",
+      "financial"
+    ],
+    "icon": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67",
+    "featured": true
+  },
+  {
+    "id": 25,
+    "name": "Colorado QuitLine",
+    "description": "Access free support services and resources to help Colorado residents quit tobacco use, including coaching, nicotine replacement therapy, and online tools.",
+    "url": "https://www.coquitline.org",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Public Health Initiatives",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Healthcare",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "get assistance",
+      "healthcare",
+      "physical",
+      "wellness",
+      "adults",
+      "health"
+    ],
+    "icon": "\ud83c\udfe5",
+    "featured": false
+  },
+  {
+    "id": 26,
+    "name": "Colorado Shines",
+    "description": "Find and compare licensed child care providers, access early learning resources, and get information about child care quality ratings.",
+    "url": "https://www.coloradoshines.com",
+    "department": "Department of Human Services",
+    "departmentUrl": "https://cdhs.colorado.gov/",
+    "category": "Family and Social Services",
+    "subcategory": "Children and Youth Programs",
+    "lifeEvent": "Raising a Family",
+    "lifeEventDetail": "Childcare and Education",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Children and Youth",
+    "tags": [
+      "raising",
+      "place",
+      "childcare",
+      "children",
+      "social",
+      "family",
+      "youth",
+      "education",
+      "services",
+      "find"
+    ],
+    "icon": "\ud83d\udc76",
+    "featured": false
+  },
+  {
+    "id": 27,
+    "name": "Colorado Volunteer Mobilizer",
+    "description": "Connect with volunteer opportunities in public health and emergency response throughout Colorado.",
+    "url": "https://www.coloradovolunteers.org",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Emergency Services and Disaster Preparedness",
+    "lifeEvent": "Civic and Community",
+    "lifeEventDetail": "Volunteering",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "volunteering",
+      "place",
+      "community",
+      "safety",
+      "justice",
+      "public",
+      "adults",
+      "find",
+      "civic"
+    ],
+    "icon": "\ud83d\udea8",
+    "featured": false
+  },
+  {
+    "id": 28,
+    "name": "Connect for Health Colorado",
+    "description": "Shop for and enroll in health insurance plans through Colorado's official health insurance marketplace.",
+    "url": "https://connectforhealthco.com",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Insurance and Benefits",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "benefits",
+      "insurance",
+      "healthcare",
+      "apply",
+      "wellness",
+      "adults",
+      "health"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": false
+  },
+  {
+    "id": 29,
+    "name": "Connecting Colorado",
+    "description": "Search for jobs, create resumes, and connect with employers through Colorado's official job search website.",
+    "url": "https://www.connectingcolorado.com",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Find a Job",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Job Searching",
+    "taskType": "Find",
+    "taskDetail": "a Job",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "searching",
+      "job",
+      "career",
+      "jobs",
+      "education",
+      "adults",
+      "employment",
+      "find"
+    ],
+    "icon": "\ud83d\udc54",
+    "featured": false
+  },
+  {
+    "id": 30,
+    "name": "Control noxious weeds",
+    "description": "Access information and resources for identifying and controlling noxious weeds in Colorado, including regulations and management plans.",
+    "url": "https://ag.colorado.gov/conservation/noxious-weeds",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Learn",
+    "taskDetail": "About a Topic",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "topic",
+      "organizations",
+      "natural",
+      "starting",
+      "resources",
+      "learn",
+      "financial",
+      "environment",
+      "business"
+    ],
+    "icon": "\ud83c\udf3e",
+    "featured": false
+  },
+  {
+    "id": 31,
+    "name": "Correctional Populations Data",
+    "description": "Access statistics and reports about Colorado's correctional populations, including inmate demographics, facility populations, and recidivism rates.",
+    "url": "https://cdoc.colorado.gov/about/data-and-reports",
+    "department": "Department of Public Safety",
+    "departmentUrl": "https://publicsafety.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Corrections and Rehabilitation",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Corrections and Rehabilitation",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "Government Agencies",
+    "tags": [
+      "legal",
+      "corrections",
+      "safety",
+      "government",
+      "agencies",
+      "public",
+      "rehabilitation",
+      "justice",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udee1\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 32,
+    "name": "Crime Statistics",
+    "description": "View and analyze crime statistics for Colorado, including reported crimes, arrests, and law enforcement data.",
+    "url": "https://coloradocrimestats.state.co.us/",
+    "department": "Department of Public Safety",
+    "departmentUrl": "https://publicsafety.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Law Enforcement and Public Safety",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Law Enforcement",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "Government Agencies",
+    "tags": [
+      "legal",
+      "safety",
+      "government",
+      "agencies",
+      "public",
+      "law",
+      "justice",
+      "enforcement",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udc6e",
+    "featured": false
+  },
+  {
+    "id": 33,
+    "name": "Division of Local Government",
+    "description": "Access resources and support for local governments, including technical assistance, financial programs, and community development services.",
+    "url": "https://cdola.colorado.gov/local-government",
+    "department": "Colorado Department of Local Affairs",
+    "departmentUrl": "https://cdola.colorado.gov/",
+    "category": "Elections and Government",
+    "subcategory": "Local Government Resources",
+    "lifeEvent": "Civic and Community",
+    "lifeEventDetail": "Government and Public Services",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "Local Government Employees",
+    "tags": [
+      "elections",
+      "information",
+      "community",
+      "public",
+      "local",
+      "employees",
+      "government",
+      "services",
+      "find",
+      "civic"
+    ],
+    "icon": "\ud83c\udfdb\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 34,
+    "name": "Driver License and ID Card Renewal",
+    "description": "Renew your Colorado driver license or identification card online, including options for replacing lost or damaged cards.",
+    "url": "https://mydmv.colorado.gov",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Renew",
+    "taskDetail": "a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "renew",
+      "license",
+      "driver",
+      "new",
+      "moving",
+      "vehicles",
+      "relocation",
+      "city",
+      "adults",
+      "transportation",
+      "housing"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": true
+  },
+  {
+    "id": 35,
+    "name": "EMS Provider Certification",
+    "description": "Apply for or renew Emergency Medical Services provider certifications, including EMTs and paramedics.",
+    "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+    "department": "Department of Regulatory Agencies",
+    "departmentUrl": "https://dora.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Professional Licensing and Certification",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "license",
+      "advancement",
+      "career",
+      "jobs",
+      "education",
+      "apply",
+      "adults",
+      "employment"
+    ],
+    "icon": "\ud83d\udcbc",
+    "featured": false
+  },
+  {
+    "id": 36,
+    "name": "Explore and file business forms",
+    "description": "Access and submit required business forms and filings with the Colorado Secretary of State's office.",
+    "url": "https://www.sos.state.co.us/biz/BusinessForms.do",
+    "department": "Department of State",
+    "departmentUrl": "https://www.sos.state.co.us/",
+    "category": "Business and Economy",
+    "subcategory": "Starting and Running a Business",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "File",
+    "taskDetail": "Other Files",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "businesses",
+      "small",
+      "files",
+      "starting",
+      "other",
+      "economy",
+      "financial",
+      "file",
+      "business"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 37,
+    "name": "Explore solid waste forms and applications",
+    "description": "Access forms and applications related to solid waste management, including permits for facilities and operations.",
+    "url": "https://cdphe.colorado.gov/solid-waste-forms",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Environmental Protection and Monitoring",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "organizations",
+      "natural",
+      "find",
+      "starting",
+      "resources",
+      "financial",
+      "environment",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83c\udf0d",
+    "featured": false
+  },
+  {
+    "id": 38,
+    "name": "Explore the Colorado Fishing Atlas",
+    "description": "Access an interactive map showing fishing locations, species information, and regulations across Colorado.",
+    "url": "https://cpw.state.co.us/learn/Pages/FishingAtlas.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Hunting and Fishing",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "fishing",
+      "place",
+      "outdoors",
+      "outdoor",
+      "enthusiasts",
+      "travel",
+      "recreation",
+      "activities",
+      "find"
+    ],
+    "icon": "\ud83c\udfa3",
+    "featured": false
+  },
+  {
+    "id": 39,
+    "name": "Explore the Colorado Hunting Atlas",
+    "description": "Access an interactive map showing hunting areas, species information, and regulations across Colorado.",
+    "url": "https://cpw.state.co.us/learn/Pages/HuntingAtlas.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Hunting and Fishing",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "hunting",
+      "place",
+      "outdoors",
+      "outdoor",
+      "enthusiasts",
+      "travel",
+      "recreation",
+      "activities",
+      "find"
+    ],
+    "icon": "\ud83c\udfa3",
+    "featured": false
+  },
+  {
+    "id": 40,
+    "name": "Explore veterans employment resources",
+    "description": "Access employment resources and services specifically designed for veterans, including job search assistance and training programs.",
+    "url": "https://cdle.colorado.gov/veterans-services",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Find a Job",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Job Searching",
+    "taskType": "Find",
+    "taskDetail": "a Job",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Veterans",
+    "tags": [
+      "searching",
+      "job",
+      "veterans",
+      "career",
+      "jobs",
+      "education",
+      "employment",
+      "find"
+    ],
+    "icon": "\ud83c\udf96\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 41,
+    "name": "File a fraud report form",
+    "description": "Submit a report about suspected fraud, including consumer fraud, identity theft, and other types of financial fraud.",
+    "url": "https://coag.gov/file-complaint/",
+    "department": "Department of Law",
+    "departmentUrl": "https://coag.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Consumer Protection and Advocacy",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Report",
+    "taskDetail": "Fraud",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "fraud",
+      "safety",
+      "adults",
+      "issues",
+      "public",
+      "justice",
+      "report"
+    ],
+    "icon": "\ud83d\udee1\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 42,
+    "name": "File an online crash report",
+    "description": "Submit a traffic accident report online for non-injury crashes that meet specific criteria.",
+    "url": "https://crash.state.co.us/",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "File",
+    "taskDetail": "Other Files",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "justice",
+      "files",
+      "issues",
+      "vehicles",
+      "other",
+      "adults",
+      "transportation",
+      "file"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 43,
+    "name": "File your state income taxes online",
+    "description": "Submit your Colorado state income tax return electronically, including options for direct deposit of refunds.",
+    "url": "https://tax.colorado.gov/file-online",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Individual Tax Filing and Payments",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "File",
+    "taskDetail": "Tax Returns",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "financial",
+      "filing",
+      "finance",
+      "returns",
+      "tax",
+      "adults",
+      "file"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": false
+  },
+  {
+    "id": 44,
+    "name": "Find a child car seat fitting station by county",
+    "description": "Locate certified child car seat inspection stations to ensure proper installation and safety of your child's car seat.",
+    "url": "https://www.codot.gov/safety/carseats",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Law Enforcement and Public Safety",
+    "lifeEvent": "Raising a Family",
+    "lifeEventDetail": "Childcare and Education",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Children and Youth",
+    "tags": [
+      "raising",
+      "place",
+      "safety",
+      "childcare",
+      "children",
+      "family",
+      "youth",
+      "education",
+      "public",
+      "justice",
+      "find"
+    ],
+    "icon": "\ud83d\udc6e",
+    "featured": false
+  },
+  {
+    "id": 45,
+    "name": "Find a DMV location",
+    "description": "Search for Colorado Department of Motor Vehicles offices by location and view available services at each office.",
+    "url": "https://dmv.colorado.gov/locations",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "place",
+      "new",
+      "moving",
+      "vehicles",
+      "relocation",
+      "city",
+      "adults",
+      "transportation",
+      "housing",
+      "find"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 46,
+    "name": "Find a driving class",
+    "description": "Search for approved driver education programs and defensive driving courses in Colorado.",
+    "url": "https://www.colorado.gov/pacific/dmv/driving-classes",
+    "department": "Department of Public Safety",
+    "departmentUrl": "https://publicsafety.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Professional Development",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Young Adult",
+    "tags": [
+      "development",
+      "place",
+      "vehicles",
+      "adult",
+      "professional",
+      "career",
+      "young",
+      "education",
+      "transportation",
+      "find"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 47,
+    "name": "Find a WIC Clinic",
+    "description": "Locate Women, Infants, and Children (WIC) clinics providing nutrition education and support services throughout Colorado.",
+    "url": "https://www.coloradowic.gov/find-wic-clinic",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Nutrition and Food Assistance",
+    "lifeEvent": "Starting a Family",
+    "lifeEventDetail": "Having a Baby",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "tags": [
+      "having",
+      "baby",
+      "wellbeing",
+      "place",
+      "starting",
+      "low-income",
+      "households",
+      "family",
+      "health",
+      "find"
+    ],
+    "icon": "\ud83c\udf4e",
+    "featured": false
+  },
+  {
+    "id": 48,
+    "name": "Find a Women's Wellness Center",
+    "description": "Locate centers providing women's health services, including preventive care, screenings, and wellness programs.",
+    "url": "https://cdphe.colorado.gov/womens-wellness-connection",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "healthcare",
+      "find",
+      "physical",
+      "wellness",
+      "adults",
+      "health",
+      "place"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": false
+  },
+  {
+    "id": 49,
+    "name": "Find a workforce center",
+    "description": "Locate Colorado workforce centers offering employment services, job training, and career resources.",
+    "url": "https://cdle.colorado.gov/wfc",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Find a Job",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Job Searching",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "place",
+      "searching",
+      "job",
+      "career",
+      "jobs",
+      "education",
+      "adults",
+      "employment",
+      "find"
+    ],
+    "icon": "\ud83d\udc54",
+    "featured": false
+  },
+  {
+    "id": 50,
+    "name": "Find active water rights calls",
+    "description": "Access information about current water rights calls and administration in Colorado's water districts.",
+    "url": "https://dwr.colorado.gov/tools/water-rights-calls",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Water Resources and Safety",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "organizations",
+      "natural",
+      "find",
+      "starting",
+      "resources",
+      "financial",
+      "environment",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83d\udca7",
+    "featured": false
+  },
+  {
+    "id": 51,
+    "name": "Find an Inmate",
+    "description": "Search for individuals currently incarcerated in Colorado's correctional facilities and access basic inmate information.",
+    "url": "https://www.doc.state.co.us/oss/",
+    "department": "Department of Corrections",
+    "departmentUrl": "https://cdoc.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Corrections and Rehabilitation",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Corrections and Rehabilitation",
+    "taskType": "Find",
+    "taskDetail": "a Person",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "person",
+      "corrections",
+      "justice",
+      "safety",
+      "public",
+      "rehabilitation",
+      "adults",
+      "find"
+    ],
+    "icon": "\ud83d\udee1\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 52,
+    "name": "Find and Compare Health Facilities",
+    "description": "Search and compare licensed healthcare facilities in Colorado, including quality ratings and inspection reports.",
+    "url": "https://cdphe.colorado.gov/health-facilities",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "healthcare",
+      "find",
+      "physical",
+      "wellness",
+      "adults",
+      "health",
+      "place"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": false
+  },
+  {
+    "id": 53,
+    "name": "Find health facilities by type and by city or county",
+    "description": "Search for specific types of healthcare facilities in your area, including hospitals, clinics, and long-term care facilities.",
+    "url": "https://cdphe.colorado.gov/find-and-compare-facilities",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "healthcare",
+      "find",
+      "physical",
+      "wellness",
+      "adults",
+      "health",
+      "place"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": false
+  },
+  {
+    "id": 54,
+    "name": "Find job fairs / events",
+    "description": "Find upcoming job fairs and career events throughout Colorado, including virtual and in-person opportunities.",
+    "url": "https://cdle.colorado.gov/jobs-training/job-fairs-and-hiring-events",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Find a Job",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Job Searching",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "searching",
+      "job",
+      "career",
+      "jobs",
+      "education",
+      "adults",
+      "employment",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udc54",
+    "featured": false
+  },
+  {
+    "id": 55,
+    "name": "Find out if a site is contaminated",
+    "description": "Search for information about contaminated sites in Colorado, including cleanup status and environmental assessments.",
+    "url": "https://cdphe.colorado.gov/contaminated-sites",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Environmental Protection and Monitoring",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Buying a Home",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "home",
+      "buying",
+      "environment",
+      "natural",
+      "resources",
+      "relocation",
+      "adults",
+      "housing",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udf0d",
+    "featured": false
+  },
+  {
+    "id": 56,
+    "name": "Get copies of occupational school student transcripts",
+    "description": "Request copies of transcripts from closed occupational schools in Colorado.",
+    "url": "https://highered.colorado.gov/transcripts",
+    "department": "Department of Higher Education",
+    "departmentUrl": "https://cdhe.colorado.gov/",
+    "category": "Education and Learning",
+    "subcategory": "Career and Technical Education",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Education and Students",
+    "audienceDetail": "College Students",
+    "tags": [
+      "students",
+      "advancement",
+      "learning",
+      "college",
+      "career",
+      "education",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcda",
+    "featured": false
+  },
+  {
+    "id": 57,
+    "name": "Get Vaccinated",
+    "description": "Access information about vaccinations, including locations, schedules, and requirements for Colorado residents.",
+    "url": "https://covid19.colorado.gov/vaccine",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Public Health Initiatives",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Healthcare",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "get assistance",
+      "healthcare",
+      "physical",
+      "wellness",
+      "adults",
+      "health"
+    ],
+    "icon": "\ud83c\udfe5",
+    "featured": false
+  },
+  {
+    "id": 58,
+    "name": "Governor's Dashboard",
+    "description": "View key performance metrics and data about Colorado state government operations and initiatives.",
+    "url": "https://dashboard.colorado.gov",
+    "department": "Office of the Governor",
+    "departmentUrl": "https://www.colorado.gov/governor/",
+    "category": "Elections and Government",
+    "subcategory": "Government Records and Transparency",
+    "lifeEvent": "Civic and Community",
+    "lifeEventDetail": "Government and Public Services",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "State Employees",
+    "tags": [
+      "elections",
+      "information",
+      "state",
+      "community",
+      "public",
+      "employees",
+      "government",
+      "services",
+      "find",
+      "civic"
+    ],
+    "icon": "\ud83c\udfdb\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 59,
+    "name": "Health First Colorado Add-A-Baby Emergent Request Form",
+    "description": "Submit an emergency request to add a newborn to existing Health First Colorado (Medicaid) coverage.",
+    "url": "https://hcpf.colorado.gov/add-a-baby",
+    "department": "Department of Health Care Policy & Financing",
+    "departmentUrl": "https://hcpf.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Starting a Family",
+    "lifeEventDetail": "Having a Baby",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Children and Youth",
+    "tags": [
+      "having",
+      "baby",
+      "wellbeing",
+      "benefits",
+      "children",
+      "starting",
+      "family",
+      "youth",
+      "apply",
+      "health"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": true
+  },
+  {
+    "id": 60,
+    "name": "HIV Linkage to Care",
+    "description": "Connect with HIV care services, including medical treatment, support services, and insurance assistance.",
+    "url": "https://cdphe.colorado.gov/hiv-care",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Healthcare",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "get assistance",
+      "healthcare",
+      "physical",
+      "wellness",
+      "adults",
+      "health"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": false
+  },
+  {
+    "id": 61,
+    "name": "Learn about animal importing",
+    "description": "Access requirements and regulations for importing animals into Colorado, including permits, health certificates, and testing requirements.",
+    "url": "https://ag.colorado.gov/animals/import-requirements",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Learn",
+    "taskDetail": "About a Topic",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "topic",
+      "organizations",
+      "natural",
+      "starting",
+      "resources",
+      "learn",
+      "financial",
+      "environment",
+      "business"
+    ],
+    "icon": "\ud83c\udf3e",
+    "featured": false
+  },
+  {
+    "id": 62,
+    "name": "Learn about industrial hemp (not marijuana)",
+    "description": "Access information about Colorado's industrial hemp program, including regulations, licensing, and cultivation requirements.",
+    "url": "https://ag.colorado.gov/hemp",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Learn",
+    "taskDetail": "About a Topic",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "topic",
+      "organizations",
+      "natural",
+      "starting",
+      "resources",
+      "learn",
+      "financial",
+      "environment",
+      "business"
+    ],
+    "icon": "\ud83c\udf3e",
+    "featured": false
+  },
+  {
+    "id": 63,
+    "name": "Learn about pet-animal care facility operation and oversight",
+    "description": "Access information about operating and maintaining compliance for pet-animal care facilities in Colorado.",
+    "url": "https://ag.colorado.gov/pacfa",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Learn",
+    "taskDetail": "About a Topic",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "topic",
+      "businesses",
+      "small",
+      "starting",
+      "learn",
+      "economy",
+      "financial",
+      "business"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 64,
+    "name": "Learn About WIC",
+    "description": "Learn about the Women, Infants, and Children (WIC) program, including eligibility requirements and available benefits.",
+    "url": "https://www.coloradowic.gov/",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Nutrition and Food Assistance",
+    "lifeEvent": "Starting a Family",
+    "lifeEventDetail": "Having a Baby",
+    "taskType": "Learn",
+    "taskDetail": "About a Topic",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "tags": [
+      "having",
+      "baby",
+      "wellbeing",
+      "topic",
+      "starting",
+      "low-income",
+      "households",
+      "family",
+      "learn",
+      "health"
+    ],
+    "icon": "\ud83c\udf4e",
+    "featured": false
+  },
+  {
+    "id": 65,
+    "name": "License a measurement standards device",
+    "description": "Apply for licenses and certifications for commercial measurement devices used in trade or commerce.",
+    "url": "https://ag.colorado.gov/measurementstandards",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "license",
+      "businesses",
+      "small",
+      "starting",
+      "apply",
+      "economy",
+      "financial",
+      "business"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 66,
+    "name": "Locate Medicaid and Child Health Plan Plus providers",
+    "description": "Find healthcare providers who accept Medicaid and Child Health Plan Plus (CHP+) insurance in your area.",
+    "url": "https://www.healthfirstcolorado.com/find-doctors/",
+    "department": "Department of Health Care Policy & Financing",
+    "departmentUrl": "https://hcpf.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Healthcare and Insurance",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Insurance and Benefits",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "tags": [
+      "wellbeing",
+      "place",
+      "benefits",
+      "insurance",
+      "healthcare",
+      "low-income",
+      "households",
+      "wellness",
+      "health",
+      "find"
+    ],
+    "icon": "\ud83e\ude7a",
+    "featured": true
+  },
+  {
+    "id": 67,
+    "name": "Make a camping reservation",
+    "description": "Reserve campsites at Colorado state parks and recreation areas, including options for RV, tent, and cabin camping.",
+    "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Camping and Trails",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Start",
+    "taskDetail": "a Project",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "project",
+      "outdoors",
+      "enthusiasts",
+      "travel",
+      "recreation",
+      "start",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\u26fa",
+    "featured": false
+  },
+  {
+    "id": 68,
+    "name": "Make a Department of Corrections request for records",
+    "description": "Submit requests for records related to current or former inmates in Colorado's correctional system.",
+    "url": "https://cdoc.colorado.gov/about/contact-us/request-records",
+    "department": "Department of Corrections",
+    "departmentUrl": "https://cdoc.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Corrections and Rehabilitation",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Corrections and Rehabilitation",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "corrections",
+      "justice",
+      "safety",
+      "public",
+      "rehabilitation",
+      "adults",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udee1\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 69,
+    "name": "Make a hazardous materials public records request",
+    "description": "Request public records related to hazardous materials incidents, storage, and transportation in Colorado.",
+    "url": "https://cdphe.colorado.gov/records-requests",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Environmental Protection and Monitoring",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "industry-specific",
+      "legal",
+      "organizations",
+      "natural",
+      "issues",
+      "resources",
+      "justice",
+      "environment",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udf0d",
+    "featured": false
+  },
+  {
+    "id": 70,
+    "name": "Manage livestock brands",
+    "description": "Register, renew, or transfer livestock brands used to identify cattle and other livestock in Colorado.",
+    "url": "https://brands.agritech.colorado.gov/",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Manage",
+    "taskDetail": "a License",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "environment",
+      "industry-specific",
+      "license",
+      "organizations",
+      "natural",
+      "starting",
+      "resources",
+      "financial",
+      "manage",
+      "business"
+    ],
+    "icon": "\ud83c\udf3e",
+    "featured": false
+  },
+  {
+    "id": 71,
+    "name": "Manage my tax account",
+    "description": "Access and manage your Colorado tax accounts, including filing returns, making payments, and viewing account history.",
+    "url": "https://tax.colorado.gov/manage-my-account",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Individual Tax Filing and Payments",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Manage",
+    "taskDetail": "an Account",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "filing",
+      "adults",
+      "finance",
+      "tax",
+      "financial",
+      "manage",
+      "account"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": false
+  },
+  {
+    "id": 72,
+    "name": "Manage or renew your real estate license",
+    "description": "Maintain your Colorado real estate license, including renewals, updates to personal information, and continuing education requirements.",
+    "url": "https://dora.colorado.gov/dre",
+    "department": "Department of Regulatory Agencies",
+    "departmentUrl": "https://dora.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Professional Licensing and Certification",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Renew",
+    "taskDetail": "a License",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "renew",
+      "industry-specific",
+      "license",
+      "organizations",
+      "advancement",
+      "career",
+      "jobs",
+      "education",
+      "employment"
+    ],
+    "icon": "\ud83d\udcdc",
+    "featured": false
+  },
+  {
+    "id": 73,
+    "name": "Manage your insurance producer license",
+    "description": "Maintain your Colorado insurance producer license, including renewals, continuing education requirements, and updates to personal information.",
+    "url": "https://dora.colorado.gov/insurance-producer",
+    "department": "Department of Regulatory Agencies",
+    "departmentUrl": "https://dora.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Professional Licensing and Certification",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Renew",
+    "taskDetail": "a License",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "renew",
+      "industry-specific",
+      "license",
+      "organizations",
+      "insurance",
+      "advancement",
+      "career",
+      "jobs",
+      "education",
+      "employment"
+    ],
+    "icon": "\ud83d\udccb",
+    "featured": false
+  },
+  {
+    "id": 74,
+    "name": "MyBizColorado",
+    "description": "Access a one-stop portal for starting and managing a business in Colorado, including registrations, licenses, and permits.",
+    "url": "https://mybiz.colorado.gov/",
+    "department": "Department of State",
+    "departmentUrl": "https://www.sos.state.co.us/",
+    "category": "Business and Economy",
+    "subcategory": "Starting and Running a Business",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Start",
+    "taskDetail": "a Business",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "businesses",
+      "small",
+      "starting",
+      "start",
+      "economy",
+      "financial",
+      "business"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 75,
+    "name": "MyUI Employer",
+    "description": "Access unemployment insurance services for employers, including filing reports, making payments, and managing accounts.",
+    "url": "https://myui.coworkforce.com/employer",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Manage",
+    "taskDetail": "an Account",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "businesses",
+      "small",
+      "starting",
+      "economy",
+      "financial",
+      "manage",
+      "business",
+      "account"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 76,
+    "name": "MyUI+",
+    "description": "Access unemployment insurance services for claimants, including filing claims, requesting payments, and managing benefits.",
+    "url": "https://myui.coworkforce.com/",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Unemployment Benefits",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Personal Finance",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "benefits",
+      "financial",
+      "personal",
+      "finance",
+      "jobs",
+      "apply",
+      "adults",
+      "employment"
+    ],
+    "icon": "\ud83d\udcca",
+    "featured": false
+  },
+  {
+    "id": 77,
+    "name": "Notify gaming officials of an arrest",
+    "description": "Report arrests or criminal charges to the Colorado Division of Gaming as required for licensed gaming employees.",
+    "url": "https://sbg.colorado.gov/arrest-notification",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Report",
+    "taskDetail": "an Issue",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "legal",
+      "industry-specific",
+      "issue",
+      "organizations",
+      "issues",
+      "economy",
+      "justice",
+      "business",
+      "report"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 78,
+    "name": "Pay a City of Denver parking ticket",
+    "description": "Pay or dispute parking tickets issued within the City and County of Denver.",
+    "url": "https://www.denvergov.org/parkingtickets",
+    "department": "City and County of Denver",
+    "departmentUrl": null,
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Pay",
+    "taskDetail": "Fines",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "park",
+      "legal",
+      "pay",
+      "justice",
+      "issues",
+      "vehicles",
+      "fines",
+      "adults",
+      "transportation"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 79,
+    "name": "Pay a debt owed to the State of Colorado",
+    "description": "Make payments on debts owed to Colorado state agencies, including fines, fees, and other obligations.",
+    "url": "https://www.colorado.gov/payment",
+    "department": "Department of Personnel & Administration",
+    "departmentUrl": "https://dpa.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Public Financial Services",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Personal Finance",
+    "taskType": "Pay",
+    "taskDetail": "Bills",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "financial",
+      "pay",
+      "personal",
+      "finance",
+      "bills",
+      "adults"
+    ],
+    "icon": "\ud83d\udcb0",
+    "featured": false
+  },
+  {
+    "id": 80,
+    "name": "Pay taxes online",
+    "description": "Submit payments for various Colorado state taxes, including income tax, sales tax, and business taxes.",
+    "url": "https://tax.colorado.gov/pay-online",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Individual Tax Filing and Payments",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Pay",
+    "taskDetail": "Taxes",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "financial",
+      "pay",
+      "filing",
+      "finance",
+      "tax",
+      "adults"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": true
+  },
+  {
+    "id": 81,
+    "name": "Pay your boiler inspection invoice online",
+    "description": "Pay fees associated with boiler inspections conducted by the Division of Oil and Public Safety.",
+    "url": "https://ops.colorado.gov/payment",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Pay",
+    "taskDetail": "Fees",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "pay",
+      "organizations",
+      "fees",
+      "starting",
+      "economy",
+      "financial",
+      "business"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 82,
+    "name": "Pay your petroleum tank invoice online",
+    "description": "Pay fees related to petroleum storage tank permits and inspections in Colorado.",
+    "url": "https://ops.colorado.gov/payment",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Pay",
+    "taskDetail": "Fees",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "pay",
+      "organizations",
+      "fees",
+      "starting",
+      "economy",
+      "financial",
+      "business"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 83,
+    "name": "Purchase a Colorado non-resident off-highway vehicle permit online",
+    "description": "Buy permits for non-residents to operate off-highway vehicles on designated trails and areas in Colorado.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/OHV.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "State Parks and Nature Preserves",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "outdoors",
+      "license",
+      "enthusiasts",
+      "travel",
+      "recreation",
+      "vehicle",
+      "apply",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfde\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 84,
+    "name": "Purchase a fishing license online",
+    "description": "Buy Colorado fishing licenses, including annual, short-term, and combination licenses for residents and non-residents.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/Fishing.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Hunting and Fishing",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "fishing",
+      "outdoors",
+      "license",
+      "travel",
+      "enthusiasts",
+      "recreation",
+      "apply",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfa3",
+    "featured": true
+  },
+  {
+    "id": 85,
+    "name": "Purchase a hunting license online",
+    "description": "Buy Colorado hunting licenses, including big game, small game, and combination licenses for residents and non-residents.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/Hunting.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Hunting and Fishing",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "hunting",
+      "outdoors",
+      "license",
+      "travel",
+      "enthusiasts",
+      "recreation",
+      "apply",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfa3",
+    "featured": true
+  },
+  {
+    "id": 86,
+    "name": "Purchase Colorado State Parks gift certificates",
+    "description": "Buy gift certificates that can be used for park passes, camping reservations, and other state park amenities.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/GiftCertificates.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "State Parks and Nature Preserves",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Make",
+    "taskDetail": "a Purchase",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "park",
+      "outdoors",
+      "make",
+      "recreation",
+      "travel",
+      "purchase",
+      "adults",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfde\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 87,
+    "name": "Purchase your annual parks pass online",
+    "description": "Buy an annual pass for entry to Colorado state parks, including options for multiple vehicles and aspen leaf passes for seniors.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/ParksPass.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "State Parks and Nature Preserves",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "park",
+      "outdoors",
+      "license",
+      "travel",
+      "recreation",
+      "apply",
+      "adults",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfde\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 88,
+    "name": "Register for electronic funds transfer",
+    "description": "Set up electronic funds transfer for tax payments and other financial transactions with Colorado state agencies.",
+    "url": "https://tax.colorado.gov/eft",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Public Financial Services",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Start",
+    "taskDetail": "a Project",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "project",
+      "taxes",
+      "filing",
+      "businesses",
+      "finance",
+      "start",
+      "financial",
+      "small"
+    ],
+    "icon": "\ud83d\udcb0",
+    "featured": false
+  },
+  {
+    "id": 89,
+    "name": "Register for hazardous waste workshops and training",
+    "description": "Sign up for training sessions on hazardous waste management, regulations, and compliance requirements.",
+    "url": "https://cdphe.colorado.gov/hazardous-waste-training",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Environmental Protection and Monitoring",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Professional Development",
+    "taskType": "Learn",
+    "taskDetail": "a Skill",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "development",
+      "industry-specific",
+      "organizations",
+      "natural",
+      "resources",
+      "professional",
+      "career",
+      "learn",
+      "education",
+      "skill",
+      "environment"
+    ],
+    "icon": "\ud83c\udf0d",
+    "featured": false
+  },
+  {
+    "id": 90,
+    "name": "Register for real time alerts from CDOT",
+    "description": "Sign up for notifications about road conditions, closures, and construction from the Colorado Department of Transportation.",
+    "url": "https://www.codot.gov/travel/real-time-alerts",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Travel Planning and Booking",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "booking",
+      "planning",
+      "travel",
+      "recreation",
+      "vehicles",
+      "adults",
+      "transportation",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 91,
+    "name": "Register to vote",
+    "description": "Register to vote in Colorado elections, update your voter registration information, or check your registration status.",
+    "url": "https://www.sos.state.co.us/voter/pages/pub/home.xhtml",
+    "department": "Department of State",
+    "departmentUrl": "https://www.sos.state.co.us/",
+    "category": "Elections and Government",
+    "subcategory": "Voting and Voter Registration",
+    "lifeEvent": "Civic and Community",
+    "lifeEventDetail": "Voting and Elections",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "elections",
+      "voting",
+      "vote",
+      "benefits",
+      "community",
+      "government",
+      "apply",
+      "adults",
+      "civic"
+    ],
+    "icon": "\ud83d\uddf3\ufe0f",
+    "featured": true
+  },
+  {
+    "id": 92,
+    "name": "Renew an ag-related license with AgLicense",
+    "description": "Renew various agricultural licenses and permits through Colorado's online agricultural licensing system.",
+    "url": "https://ag.colorado.gov/aglicense",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Renew",
+    "taskDetail": "a License",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "renew",
+      "taxes",
+      "industry-specific",
+      "license",
+      "organizations",
+      "natural",
+      "starting",
+      "resources",
+      "financial",
+      "environment",
+      "business"
+    ],
+    "icon": "\ud83d\udcdc",
+    "featured": false
+  },
+  {
+    "id": 93,
+    "name": "Renew your boat registration online",
+    "description": "Complete annual boat registration renewals for vessels registered in Colorado.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/BoatingRegistration.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Boating and Water Activities",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Renew",
+    "taskDetail": "a Registration",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "renew",
+      "outdoors",
+      "registration",
+      "travel",
+      "recreation",
+      "adults",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\u26f5",
+    "featured": false
+  },
+  {
+    "id": 94,
+    "name": "Renew your driver license, permit, or ID online",
+    "description": "Complete renewals for Colorado driver licenses, learner permits, and identification cards through the online system.",
+    "url": "https://dmv.colorado.gov/renew-your-drivers-license-online",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Renew",
+    "taskDetail": "a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "renew",
+      "license",
+      "driver",
+      "new",
+      "moving",
+      "vehicles",
+      "relocation",
+      "city",
+      "adults",
+      "transportation",
+      "housing"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": true
+  },
+  {
+    "id": 95,
+    "name": "Renew your OHV registration online",
+    "description": "Complete registration renewals for off-highway vehicles (OHVs) registered in Colorado.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/OHV.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "State Parks and Nature Preserves",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Renew",
+    "taskDetail": "a Registration",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "renew",
+      "outdoors",
+      "registration",
+      "travel",
+      "recreation",
+      "adults",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfde\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 96,
+    "name": "Renew your snowmobile registration online",
+    "description": "Complete registration renewals for snowmobiles registered in Colorado.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/SnowmobileRegistration.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "State Parks and Nature Preserves",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Renew",
+    "taskDetail": "a Registration",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "renew",
+      "outdoors",
+      "registration",
+      "travel",
+      "recreation",
+      "adults",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfde\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 97,
+    "name": "Search agriculture & livestock statistics",
+    "description": "Access comprehensive data and reports about Colorado's agricultural production, livestock numbers, and market trends through searchable statistical databases.",
+    "url": "https://ag.colorado.gov/ics/statistics",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": null,
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "organizations",
+      "natural",
+      "resources",
+      "financial",
+      "environment",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udf3e",
+    "featured": false
+  },
+  {
+    "id": 98,
+    "name": "Search for an oil and gas facility",
+    "description": "Search and locate information about oil and gas facilities throughout Colorado, including well locations, operator details, and compliance records.",
+    "url": "https://cogcc.state.co.us/maps.html#/gisonline",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Environmental Protection and Monitoring",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "place",
+      "industry-specific",
+      "legal",
+      "organizations",
+      "natural",
+      "issues",
+      "resources",
+      "justice",
+      "environment",
+      "find"
+    ],
+    "icon": "\ud83c\udf0d",
+    "featured": false
+  },
+  {
+    "id": 99,
+    "name": "Search for business records",
+    "description": "Search and access official business registration records, including articles of incorporation, trade names, and other business filings in Colorado.",
+    "url": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do",
+    "department": "Department of State",
+    "departmentUrl": "https://www.sos.state.co.us/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "businesses",
+      "small",
+      "find",
+      "starting",
+      "economy",
+      "financial",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 100,
+    "name": "Search for oil and gas drilling permits",
+    "description": "Access information about oil and gas drilling permits in Colorado, including applications, approvals, and permit status updates.",
+    "url": "https://cogcc.state.co.us/permits.html#/permits",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Environmental Protection and Monitoring",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "organizations",
+      "natural",
+      "find",
+      "starting",
+      "resources",
+      "financial",
+      "environment",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83c\udf0d",
+    "featured": false
+  },
+  {
+    "id": 101,
+    "name": "Search for Veterans Service Officers by county",
+    "description": "Locate county Veterans Service Officers who provide free assistance to veterans, their dependents, and survivors in obtaining veterans benefits.",
+    "url": "https://vets.colorado.gov/service-officers",
+    "department": "Department of Military and Veterans Affairs",
+    "departmentUrl": "https://vets.colorado.gov/",
+    "category": "Family and Social Services",
+    "subcategory": "Veterans Services",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Find",
+    "taskDetail": "a Person",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Veterans",
+    "tags": [
+      "legal",
+      "person",
+      "veterans",
+      "issues",
+      "social",
+      "family",
+      "services",
+      "justice",
+      "find"
+    ],
+    "icon": "\ud83c\udf96\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 102,
+    "name": "Search the Colorado State Publications Library catalog",
+    "description": "Search and access official state government publications, documents, and reports through the digital repository and library catalog system.",
+    "url": "https://www.colorado.gov/pacific/archives",
+    "department": "Department of Education",
+    "departmentUrl": "https://www.cde.state.co.us/",
+    "category": "Elections and Government",
+    "subcategory": "Government Records and Transparency",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Research and Study",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "Government Agencies",
+    "tags": [
+      "elections",
+      "research",
+      "study",
+      "government",
+      "career",
+      "agencies",
+      "education",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udfdb\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 103,
+    "name": "Search water diversions data",
+    "description": "Access and analyze data about water diversions in Colorado, including water rights, usage statistics, and diversion records.",
+    "url": "https://dwr.colorado.gov/tools/water-diversions-data",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Water Resources and Safety",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "organizations",
+      "natural",
+      "find",
+      "starting",
+      "resources",
+      "financial",
+      "environment",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83d\udca7",
+    "featured": false
+  },
+  {
+    "id": 104,
+    "name": "Search water rights data",
+    "description": "Search and retrieve information about water rights in Colorado, including ownership records, priority dates, and water court decrees.",
+    "url": "https://dwr.colorado.gov/services/water-administration/water-rights",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Water Resources and Safety",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Land Owner",
+    "tags": [
+      "legal",
+      "owner",
+      "natural",
+      "issues",
+      "resources",
+      "land",
+      "justice",
+      "environment",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udca7",
+    "featured": false
+  },
+  {
+    "id": 105,
+    "name": "Second Chance",
+    "description": "Access resources and support services for individuals seeking to reenter society after incarceration, including employment assistance and rehabilitation programs.",
+    "url": "https://cdphe.colorado.gov/second-chance",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Corrections and Rehabilitation",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Corrections and Rehabilitation",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Legal Issues",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Post-incarcerated Resident",
+    "tags": [
+      "legal",
+      "corrections",
+      "post-incarcerated",
+      "safety",
+      "get assistance",
+      "resident",
+      "issues",
+      "public",
+      "rehabilitation",
+      "justice"
+    ],
+    "icon": "\ud83d\udee1\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 106,
+    "name": "Sign up for The Scoop e-newsletter",
+    "description": "Subscribe to receive regular updates about Colorado education news, policy changes, and resources for educators and administrators.",
+    "url": "https://www.cde.state.co.us/communications/thescoop",
+    "department": "Department of Education",
+    "departmentUrl": "https://www.cde.state.co.us/",
+    "category": "Education and Learning",
+    "subcategory": "Educational Resources",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Professional Development",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Education and Students",
+    "audienceDetail": "Teachers and Faculty",
+    "tags": [
+      "development",
+      "faculty",
+      "teachers",
+      "learning",
+      "professional",
+      "career",
+      "education",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcda",
+    "featured": false
+  },
+  {
+    "id": 107,
+    "name": "Sign up to receive School Safety Newsletter e-mails",
+    "description": "Subscribe to receive regular updates about school safety initiatives, resources, and best practices for creating secure educational environments in Colorado.",
+    "url": "https://www.colorado.gov/pacific/cssrc/newsletter",
+    "department": "Department of Public Safety",
+    "departmentUrl": "https://publicsafety.colorado.gov/",
+    "category": "Education and Learning",
+    "subcategory": "School Safety and Security",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Professional Development",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Education and Students",
+    "audienceDetail": "Teachers and Faculty",
+    "tags": [
+      "development",
+      "faculty",
+      "teachers",
+      "learning",
+      "professional",
+      "career",
+      "education",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udf93",
+    "featured": false
+  },
+  {
+    "id": 108,
+    "name": "State Demography Office Dashboard",
+    "description": "Access interactive tools and data visualizations showing Colorado population trends, demographics, and economic indicators for planning and analysis.",
+    "url": "https://demography.dola.colorado.gov/",
+    "department": "Department of Human Services",
+    "departmentUrl": "https://cdhs.colorado.gov/",
+    "category": "Elections and Government",
+    "subcategory": "Government Records and Transparency",
+    "lifeEvent": "Civic and Community",
+    "lifeEventDetail": "Government and Public Services",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "Government Agencies",
+    "tags": [
+      "elections",
+      "information",
+      "community",
+      "public",
+      "government",
+      "agencies",
+      "services",
+      "find",
+      "civic"
+    ],
+    "icon": "\ud83c\udfdb\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 109,
+    "name": "State of Colorado Job Opportunities",
+    "description": "Search and apply for employment opportunities with Colorado state government agencies, including full-time, part-time, and temporary positions.",
+    "url": "https://www.governmentjobs.com/careers/colorado",
+    "department": "Department of Personnel & Administration",
+    "departmentUrl": "https://dpa.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Find a Job",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Job Searching",
+    "taskType": "Find",
+    "taskDetail": "a Job",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "searching",
+      "job",
+      "career",
+      "jobs",
+      "education",
+      "adults",
+      "employment",
+      "find"
+    ],
+    "icon": "\ud83d\udc54",
+    "featured": false
+  },
+  {
+    "id": 110,
+    "name": "Subscribe to receive tax news",
+    "description": "Sign up for email updates about Colorado tax law changes, filing deadlines, and other important tax-related information for individuals and businesses.",
+    "url": "https://tax.colorado.gov/subscribe",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Individual Tax Filing and Payments",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "financial",
+      "filing",
+      "finance",
+      "tax",
+      "adults",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": false
+  },
+  {
+    "id": 111,
+    "name": "Subscribe to Safe2Tell",
+    "description": "Join the anonymous reporting system that allows students, parents, and community members to report safety concerns in Colorado schools.",
+    "url": "https://safe2tell.org/",
+    "department": "Department of Law",
+    "departmentUrl": "https://coag.gov/",
+    "category": "Education and Learning",
+    "subcategory": "School Safety and Security",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "K-12 Education",
+    "taskType": "Report",
+    "taskDetail": "an Issue",
+    "audience": "Education and Students",
+    "audienceDetail": "Students",
+    "tags": [
+      "issue",
+      "students",
+      "k-12",
+      "learning",
+      "career",
+      "education",
+      "report"
+    ],
+    "icon": "\ud83c\udf93",
+    "featured": false
+  },
+  {
+    "id": 112,
+    "name": "Access TobaccoFreeCO resources",
+    "description": "Access resources, tools, and support for tobacco prevention and cessation, including educational materials and quit smoking assistance programs.",
+    "url": "https://www.tobaccofreeco.org/",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Health and Wellbeing",
+    "subcategory": "Public Health Initiatives",
+    "lifeEvent": "Healthcare and Wellness",
+    "lifeEventDetail": "Physical Health",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Healthcare",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "wellbeing",
+      "get assistance",
+      "healthcare",
+      "physical",
+      "wellness",
+      "adults",
+      "health"
+    ],
+    "icon": "\ud83c\udfe5",
+    "featured": false
+  },
+  {
+    "id": 113,
+    "name": "Transparency Online Project",
+    "description": "Access detailed information about state government spending, contracts, and financial transactions through an interactive transparency portal.",
+    "url": "https://www.colorado.gov/apps/oit/transparency/",
+    "department": "Department of Personnel & Administration",
+    "departmentUrl": "https://dpa.colorado.gov/",
+    "category": "Elections and Government",
+    "subcategory": "Government Records and Transparency",
+    "lifeEvent": "Civic and Community",
+    "lifeEventDetail": "Government and Public Services",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "elections",
+      "information",
+      "community",
+      "public",
+      "government",
+      "services",
+      "adults",
+      "find",
+      "civic"
+    ],
+    "icon": "\ud83c\udfdb\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 114,
+    "name": "Vehicle Registration Renewal",
+    "description": "Complete annual vehicle registration renewals online, including payment of fees and taxes for cars, trucks, and other vehicles registered in Colorado.",
+    "url": "https://mydmv.colorado.gov/_/",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Vehicle Registration and Titles",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Renew",
+    "taskDetail": "a Registration",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "renew",
+      "new",
+      "registration",
+      "moving",
+      "vehicles",
+      "vehicle",
+      "relocation",
+      "city",
+      "adults",
+      "transportation",
+      "housing"
+    ],
+    "icon": "\ud83d\udccb",
+    "featured": false
+  },
+  {
+    "id": 115,
+    "name": "Verify a Colorado Professional or Business License",
+    "description": "Check the status and validity of professional licenses and business registrations issued by Colorado state agencies.",
+    "url": "https://apps.colorado.gov/dora/licensing/",
+    "department": "Department of Regulatory Agencies",
+    "departmentUrl": "https://dora.colorado.gov/",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "license",
+      "businesses",
+      "small",
+      "find",
+      "starting",
+      "economy",
+      "financial",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83c\udfe2",
+    "featured": false
+  },
+  {
+    "id": 116,
+    "name": "Verify an EMS provider's certification",
+    "description": "Verify the certification status of Emergency Medical Services providers in Colorado, including EMTs and paramedics.",
+    "url": "https://www.colorado.gov/pacific/cdphe/ems-certification-verification",
+    "department": "Department of Public Health & Environment",
+    "departmentUrl": "https://cdphe.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Professional Licensing and Certification",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "industry-specific",
+      "organizations",
+      "advancement",
+      "career",
+      "jobs",
+      "education",
+      "employment",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcbc",
+    "featured": false
+  },
+  {
+    "id": 117,
+    "name": "View information for truckers",
+    "description": "Access essential information for commercial truck drivers operating in Colorado, including regulations, routes, and restrictions.",
+    "url": "https://www.codot.gov/business/trucking",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Commercial and Freight Transportation",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Truck Driver",
+    "tags": [
+      "taxes",
+      "driver",
+      "find",
+      "starting",
+      "vehicles",
+      "truck",
+      "financial",
+      "transportation",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 118,
+    "name": "View parks by activities, facilities, accessibility and conditions",
+    "description": "Search and explore Colorado state parks based on available activities, amenities, accessibility features, and current conditions.",
+    "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "State Parks and Nature Preserves",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "park",
+      "place",
+      "outdoors",
+      "outdoor",
+      "recreation",
+      "enthusiasts",
+      "travel",
+      "activities",
+      "find"
+    ],
+    "icon": "\ud83c\udfde\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 119,
+    "name": "View road conditions throughout the state",
+    "description": "Access real-time information about road conditions across Colorado, including weather impacts, construction, and travel alerts.",
+    "url": "https://www.cotrip.org/",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Travel Planning and Booking",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "booking",
+      "planning",
+      "travel",
+      "recreation",
+      "vehicles",
+      "adults",
+      "transportation",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 120,
+    "name": "View road work throughout the state",
+    "description": "Find information about current and planned road construction projects throughout Colorado, including timelines and traffic impacts.",
+    "url": "https://www.codot.gov/projects",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Travel Planning and Booking",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "booking",
+      "planning",
+      "travel",
+      "recreation",
+      "vehicles",
+      "adults",
+      "transportation",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 121,
+    "name": "View speeds throughout the state",
+    "description": "Access real-time traffic speed information for major highways and roads across Colorado.",
+    "url": "https://www.cotrip.org/speed.html",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Travel Planning and Booking",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "booking",
+      "planning",
+      "travel",
+      "recreation",
+      "vehicles",
+      "adults",
+      "transportation",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 122,
+    "name": "View state wildlife areas by county, hunting, fishing, recreation, and GMU",
+    "description": "Explore Colorado's state wildlife areas searchable by location, available activities, and Game Management Unit designations.",
+    "url": "https://cpw.state.co.us/placestogo/parks/Pages/WildlifeAreas.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Hunting and Fishing",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Find",
+    "taskDetail": "a Place",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "fishing",
+      "hunting",
+      "place",
+      "outdoors",
+      "find",
+      "enthusiasts",
+      "travel",
+      "recreation",
+      "activities",
+      "outdoor"
+    ],
+    "icon": "\ud83c\udfa3",
+    "featured": false
+  },
+  {
+    "id": 123,
+    "name": "View travel alerts throughout the state",
+    "description": "Access current travel alerts and advisories affecting Colorado highways and transportation systems.",
+    "url": "https://www.cotrip.org/alerts.html",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Travel Planning and Booking",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "booking",
+      "planning",
+      "travel",
+      "recreation",
+      "vehicles",
+      "adults",
+      "transportation",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 124,
+    "name": "View where your tax dollars go with Colorado Tax Tracks",
+    "description": "Explore interactive visualizations showing how Colorado tax revenue is collected and spent across different government programs and services.",
+    "url": "https://tax.colorado.gov/tax-tracks",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Public Financial Services",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "financial",
+      "filing",
+      "finance",
+      "tax",
+      "adults",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": false
+  },
+  {
+    "id": 125,
+    "name": "Workers' Compensation Benefits Calculator",
+    "description": "Calculate potential workers' compensation benefits based on wages and injury information for Colorado workers.",
+    "url": "https://cdle.colorado.gov/benefits-calculator",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Worker Rights and Safety",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Calculate",
+    "taskDetail": "Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Injured Worker",
+    "tags": [
+      "benefit",
+      "legal",
+      "benefits",
+      "injured",
+      "worker",
+      "issues",
+      "employment",
+      "jobs",
+      "justice",
+      "calculate"
+    ],
+    "icon": "\ud83d\udcbc",
+    "featured": false
+  },
+  {
+    "id": 126,
+    "name": "Your CDOT Calculator",
+    "description": "Calculate transportation costs and impacts using tools provided by the Colorado Department of Transportation.",
+    "url": "https://www.codot.gov/business/tools",
+    "department": "Department of Transportation",
+    "departmentUrl": "https://www.codot.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Roads, Highways, and Infrastructure",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Calculate",
+    "taskDetail": "Costs",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "tags": [
+      "taxes",
+      "costs",
+      "businesses",
+      "small",
+      "starting",
+      "vehicles",
+      "financial",
+      "calculate",
+      "business",
+      "transportation"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 127,
+    "name": "Report suspicious activity",
+    "description": "Submit reports about suspicious activities or potential threats to public safety through Colorado's online reporting system.",
+    "url": "https://www.colorado.gov/report-suspicious-activity",
+    "department": "Department of Public Safety",
+    "departmentUrl": "https://publicsafety.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Law Enforcement and Public Safety",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Law Enforcement",
+    "taskType": "Report",
+    "taskDetail": "an Issue",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "issue",
+      "safety",
+      "adults",
+      "public",
+      "law",
+      "justice",
+      "enforcement",
+      "report"
+    ],
+    "icon": "\ud83d\udc6e",
+    "featured": false
+  },
+  {
+    "id": 128,
+    "name": "Request motor vehicle/powersports records",
+    "description": "Access and request official records related to motor vehicles and powersports vehicles registered in Colorado.",
+    "url": "https://dmv.colorado.gov/vehicle-records",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Vehicle Registration and Titles",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Records and Documents",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "records",
+      "legal",
+      "justice",
+      "vehicles",
+      "vehicle",
+      "documents",
+      "adults",
+      "transportation",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udccb",
+    "featured": false
+  },
+  {
+    "id": 129,
+    "name": "Request public records through the Colorado Open Records Act",
+    "description": "Submit requests for public records from Colorado state agencies under the Colorado Open Records Act (CORA).",
+    "url": "https://www.colorado.gov/pacific/dpa/colorado-open-records-act-cora",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Elections and Government",
+    "subcategory": "Government Records and Transparency",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Records and Documents",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "elections",
+      "records",
+      "legal",
+      "justice",
+      "government",
+      "documents",
+      "adults",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udfdb\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 130,
+    "name": "Revenue Online",
+    "description": "Access Colorado's online tax services portal to file returns, make payments, and manage tax accounts for individuals and businesses.",
+    "url": "https://www.colorado.gov/revenueonline",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Taxes and Finance",
+    "subcategory": "Individual Tax Filing and Payments",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Taxes and Filing",
+    "taskType": "Pay",
+    "taskDetail": "Taxes",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "taxes",
+      "financial",
+      "pay",
+      "filing",
+      "finance",
+      "adults"
+    ],
+    "icon": "\ud83d\udcb5",
+    "featured": false
+  },
+  {
+    "id": 131,
+    "name": "SchoolView",
+    "description": "Access comprehensive data and reports about Colorado schools, including performance metrics, enrollment statistics, and educational programs.",
+    "url": "https://www.cde.state.co.us/schoolview",
+    "department": "Department of Education",
+    "departmentUrl": "https://www.cde.state.co.us/",
+    "category": "Education and Learning",
+    "subcategory": "K-12 Education",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "K-12 Education",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Education and Students",
+    "audienceDetail": "Parents",
+    "tags": [
+      "k-12",
+      "learning",
+      "parents",
+      "career",
+      "education",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcda",
+    "featured": false
+  },
+  {
+    "id": 132,
+    "name": "Request a military retirement letter from the Governor",
+    "description": "Request an official letter from the Governor of Colorado recognizing military retirement service.",
+    "url": "https://www.colorado.gov/governor/military-retirement-letter",
+    "department": "Office of the Governor",
+    "departmentUrl": "https://www.colorado.gov/governor/",
+    "category": "Family and Social Services",
+    "subcategory": "Veterans Services",
+    "lifeEvent": "Military Service",
+    "lifeEventDetail": "Military Retirement",
+    "taskType": "Request",
+    "taskDetail": "Documents",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Veterans",
+    "tags": [
+      "veterans",
+      "social",
+      "service",
+      "documents",
+      "retirement",
+      "family",
+      "services",
+      "military",
+      "request"
+    ],
+    "icon": "\ud83c\udf96\ufe0f",
+    "featured": false
+  },
+  {
+    "id": 133,
+    "name": "Safe2Tell",
+    "description": "Submit anonymous tips about safety concerns in Colorado schools through the Safe2Tell reporting system.",
+    "url": "https://safe2tell.org",
+    "department": "Department of Law",
+    "departmentUrl": "https://coag.gov/",
+    "category": "Education and Learning",
+    "subcategory": "School Safety and Security",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "K-12 Education",
+    "taskType": "Report",
+    "taskDetail": "an Issue",
+    "audience": "Education and Students",
+    "audienceDetail": "Students",
+    "tags": [
+      "issue",
+      "students",
+      "k-12",
+      "learning",
+      "career",
+      "education",
+      "report"
+    ],
+    "icon": "\ud83c\udf93",
+    "featured": false
+  },
+  {
+    "id": 134,
+    "name": "Request a biocontrol bug",
+    "description": "Apply to receive biological control insects for managing noxious weeds and invasive plants in Colorado.",
+    "url": "https://ag.colorado.gov/conservation/biocontrol",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Request",
+    "taskDetail": "Services",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Land Owner",
+    "tags": [
+      "taxes",
+      "environment",
+      "owner",
+      "natural",
+      "starting",
+      "land",
+      "resources",
+      "services",
+      "financial",
+      "request",
+      "business"
+    ],
+    "icon": "\ud83c\udf3e",
+    "featured": false
+  },
+  {
+    "id": 135,
+    "name": "Report employer fraud",
+    "description": "Submit reports about suspected employer fraud, including unemployment insurance fraud, worker misclassification, and labor law violations.",
+    "url": "https://cdle.colorado.gov/report-fraud",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": "https://cdle.colorado.gov/",
+    "category": "Jobs and Employment",
+    "subcategory": "Worker Rights and Safety",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Legal Issues",
+    "taskType": "Report",
+    "taskDetail": "Fraud",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "legal",
+      "fraud",
+      "adults",
+      "issues",
+      "jobs",
+      "justice",
+      "employment",
+      "report"
+    ],
+    "icon": "\ud83d\udcbc",
+    "featured": false
+  },
+  {
+    "id": 136,
+    "name": "Request information about K-12 education in Colorado",
+    "description": "Access comprehensive information about Colorado's K-12 education system, including academic standards, school choice options, and student support services.",
+    "url": "https://www.cde.state.co.us/",
+    "department": "Office of the Governor",
+    "departmentUrl": "https://www.colorado.gov/governor/",
+    "category": "Education and Learning",
+    "subcategory": "K-12 Education",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "K-12 Education",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Education and Students",
+    "audienceDetail": "Parents",
+    "tags": [
+      "k-12",
+      "learning",
+      "parents",
+      "career",
+      "education",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83d\udcda",
+    "featured": false
+  },
+  {
+    "id": 137,
+    "name": "Review Colorado Department of Public Safety rules in development",
+    "description": "Access and review proposed rules and regulations being developed by the Department of Public Safety, including opportunities for public comment.",
+    "url": "https://cdps.colorado.gov/rules",
+    "department": "Department of Public Safety",
+    "departmentUrl": "https://publicsafety.colorado.gov/",
+    "category": "Public Safety and Justice",
+    "subcategory": "Law Enforcement and Public Safety",
+    "lifeEvent": "Civic and Community",
+    "lifeEventDetail": "Government and Public Services",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Government and Employees",
+    "audienceDetail": "Government Agencies",
+    "tags": [
+      "information",
+      "community",
+      "safety",
+      "public",
+      "government",
+      "agencies",
+      "services",
+      "justice",
+      "find",
+      "civic"
+    ],
+    "icon": "\ud83d\udc6e",
+    "featured": false
+  },
+  {
+    "id": 138,
+    "name": "Review limited license draw results and preference point status",
+    "description": "Check results from limited license draws for hunting and accumulate preference points for future license applications.",
+    "url": "https://cpw.state.co.us/buyapply/Pages/DrawResults.aspx",
+    "department": "Department of Natural Resources",
+    "departmentUrl": "https://dnr.colorado.gov/",
+    "category": "Recreation and Outdoors",
+    "subcategory": "Hunting and Fishing",
+    "lifeEvent": "Travel and Recreation",
+    "lifeEventDetail": "Outdoor Activities",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Visitors and Tourists",
+    "audienceDetail": "Outdoor Enthusiasts",
+    "tags": [
+      "outdoors",
+      "license",
+      "outdoor",
+      "enthusiasts",
+      "travel",
+      "recreation",
+      "activities",
+      "find",
+      "information"
+    ],
+    "icon": "\ud83c\udfa3",
+    "featured": false
+  },
+  {
+    "id": 139,
+    "name": "Review resources for commercial pesticide applicators",
+    "description": "Access resources and guidelines for commercial pesticide application, including licensing requirements, safety protocols, and best practices.",
+    "url": "https://ag.colorado.gov/pesticides",
+    "department": "Department of Agriculture",
+    "departmentUrl": "https://ag.colorado.gov/",
+    "category": "Environment and Natural Resources",
+    "subcategory": "Agriculture and Food Production",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Starting a Business",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Industry-Specific Organizations",
+    "tags": [
+      "taxes",
+      "industry-specific",
+      "organizations",
+      "natural",
+      "find",
+      "starting",
+      "resources",
+      "financial",
+      "environment",
+      "business",
+      "information"
+    ],
+    "icon": "\ud83c\udf3e",
+    "featured": false
+  },
+  {
+    "id": 140,
+    "name": "Schedule a DMV appointment",
+    "description": "Book appointments online for various DMV services, including driver license, identification cards, and vehicle registration transactions.",
+    "url": "https://dmv.colorado.gov/appointments",
+    "department": "Department of Revenue",
+    "departmentUrl": "https://cdor.colorado.gov/",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Schedule",
+    "taskDetail": "an Appointment",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "tags": [
+      "new",
+      "moving",
+      "schedule",
+      "vehicles",
+      "relocation",
+      "appointment",
+      "city",
+      "adults",
+      "transportation",
+      "housing"
+    ],
+    "icon": "\ud83d\ude97",
+    "featured": false
+  },
+  {
+    "id": 141,
+    "name": "Colorado Energy Savings Navigator",
+    "description": "This service provides information or access to Colorado Energy Savings Navigator.",
+    "url": "https://puc.colorado.gov/energy-savings",
+    "department": "Department of Regulatory Agencies",
+    "departmentUrl": null,
+    "category": "Other",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "colorado",
+      "savings",
+      "use",
+      "navigator",
+      "energy",
+      "other"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 142,
+    "name": "Explore veterans employment resources (DMVA)",
+    "description": "This service provides information or access to Explore veterans employment resources (DMVA).",
+    "url": "https://vets.colorado.gov/employment-0",
+    "department": "Department of Military and Veterans Affairs",
+    "departmentUrl": null,
+    "category": "Other",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "explore",
+      "veterans",
+      "use",
+      "resources",
+      "other",
+      "dmva",
+      "employment"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 143,
+    "name": "Explore veterans employment resources (CDLE)",
+    "description": "This service provides information or access to Explore veterans employment resources (CDLE).",
+    "url": "https://cdle.colorado.gov/jobs-training/veterans",
+    "department": "Department of Labor and Employment",
+    "departmentUrl": null,
+    "category": "Other",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "explore",
+      "veterans",
+      "cdle",
+      "use",
+      "resources",
+      "other",
+      "employment"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 144,
+    "name": "Get free help for mental health or substance use right now",
+    "description": "This service provides information or access to Get free help for mental health or substance use right now.",
+    "url": "https://www.988colorado.com/en",
+    "department": "Behavioral Health Administration",
+    "departmentUrl": null,
+    "category": "Health and Wellbeing",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "get",
+      "mental",
+      "substance",
+      "free",
+      "use",
+      "right",
+      "now",
+      "other",
+      "help",
+      "health"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 145,
+    "name": "Get free youth therapy",
+    "description": "This service provides information or access to Get free youth therapy.",
+    "url": "https://imattercolorado.org/",
+    "department": "Behavioral Health Administration",
+    "departmentUrl": null,
+    "category": "Other",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "get",
+      "free",
+      "use",
+      "therapy",
+      "youth",
+      "other"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 146,
+    "name": "Get help for mental health, drug, or alcohol use in Colorado",
+    "description": "This service provides information or access to Get help for mental health, drug, or alcohol use in Colorado.",
+    "url": "https://ownpath.co/",
+    "department": "Behavioral Health Administration",
+    "departmentUrl": null,
+    "category": "Health and Wellbeing",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "get",
+      "mental",
+      "colorado",
+      "use",
+      "drug",
+      "alcohol",
+      "other",
+      "help",
+      "health"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 147,
+    "name": "Get help for substance use for pregnant and parenting moms",
+    "description": "This service provides information or access to Get help for substance use for pregnant and parenting moms.",
+    "url": "https://toughasamother.org/",
+    "department": "Department of Human Services",
+    "departmentUrl": null,
+    "category": "Other",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "moms",
+      "get",
+      "substance",
+      "parenting",
+      "use",
+      "other",
+      "help",
+      "pregnant"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 148,
+    "name": "Governor\u2019s Dashboard",
+    "description": "This service provides information or access to Governor\u2019s Dashboard.",
+    "url": "https://dashboard.colorado.gov/",
+    "department": "Office of the Governor",
+    "departmentUrl": null,
+    "category": "Other",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "use",
+      "other",
+      "governor",
+      "dashboard"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 149,
+    "name": "Learn about behavioral healthcare access, funding, and workforce",
+    "description": "This service provides information or access to Learn about behavioral healthcare access, funding, and workforce.",
+    "url": "https://bha.colorado.gov/data-and-reports/performance-hub",
+    "department": "Behavioral Health Administration",
+    "departmentUrl": null,
+    "category": "Health and Wellbeing",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "workforce",
+      "healthcare",
+      "use",
+      "funding",
+      "behavioral",
+      "learn",
+      "other",
+      "access"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": false
+  },
+  {
+    "id": 150,
+    "name": "The myColorado App",
+    "description": "This service provides information or access to The myColorado App.",
+    "url": "https://mycolorado.gov",
+    "department": "Department of Personnel & Administration",
+    "departmentUrl": null,
+    "category": "Other",
+    "subcategory": "General Services",
+    "lifeEvent": "Other",
+    "lifeEventDetail": "General",
+    "taskType": "Use",
+    "taskDetail": "Service",
+    "audience": "Individuals and Families",
+    "audienceDetail": "General Public",
+    "tags": [
+      "mycolorado",
+      "use",
+      "other",
+      "app"
+    ],
+    "icon": "\ud83c\udf10",
+    "featured": true
+  },
+  {
+    "name": "myColorado Digital ID",
+    "description": "Get a digital version of your Colorado driver license or state ID on your phone. Use it for age verification, traffic stops, and at TSA checkpoints.",
+    "url": "https://mycolorado.state.co.us/",
+    "department": "Governor's Office of Information Technology",
+    "category": "Elections and Government",
+    "subcategory": "Digital Government Services",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Digital Services",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "icon": "\ud83d\udcf1",
+    "featured": true,
+    "id": 151,
+    "tags": [
+      "mycolorado",
+      "get assistance",
+      "digital"
+    ]
+  },
+  {
+    "name": "DMV Anywhere Online Services",
+    "description": "Complete DMV transactions online including driver license renewal, address changes, and instruction permit tests from anywhere with internet access.",
+    "url": "https://dmv.colorado.gov/anywhere",
+    "department": "Department of Revenue",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Renew",
+    "taskDetail": "a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "icon": "\ud83d\ude97",
+    "featured": true,
+    "id": 152,
+    "tags": [
+      "renew",
+      "dmv",
+      "online",
+      "anywhere",
+      "services"
+    ]
+  },
+  {
+    "name": "MV Express Kiosk Vehicle Registration",
+    "description": "Renew your vehicle registration in under 2 minutes at self-service kiosks located at grocery stores and other locations throughout Colorado.",
+    "url": "https://dmv.colorado.gov/mv-express-kiosk",
+    "department": "Department of Revenue",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Vehicle Registration and Titles",
+    "lifeEvent": "Financial and Taxes",
+    "lifeEventDetail": "Personal Finance",
+    "taskType": "Renew",
+    "taskDetail": "a Registration",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "icon": "\ud83c\udfea",
+    "featured": false,
+    "id": 153,
+    "tags": [
+      "express",
+      "renew",
+      "kiosk",
+      "registration",
+      "vehicle"
+    ]
+  },
+  {
+    "name": "MyCOBenefits Mobile App",
+    "description": "Apply for and manage SNAP, Medicaid, and other public assistance benefits from your smartphone using the official Colorado benefits app.",
+    "url": "https://cdhs.colorado.gov/mycobenefits",
+    "department": "Department of Human Services",
+    "category": "Family and Social Services",
+    "subcategory": "Family and Financial Assistance",
+    "lifeEvent": "Living with Financial Hardship",
+    "lifeEventDetail": "Financial Assistance",
+    "taskType": "Apply",
+    "taskDetail": "for Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "icon": "\ud83d\udcf2",
+    "featured": false,
+    "id": 154,
+    "tags": [
+      "apply",
+      "app",
+      "mycobenefits",
+      "mobile"
+    ]
+  },
+  {
+    "name": "Online Instruction Permit Test",
+    "description": "Take your Colorado instruction permit test online from home with a webcam. Available 24/7 for ages 15 and older.",
+    "url": "https://dmv.colorado.gov/online-permit-testing",
+    "department": "Department of Revenue",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "K-12 Education",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Young Adult",
+    "icon": "\ud83d\udcdd",
+    "featured": false,
+    "id": 155,
+    "tags": [
+      "test",
+      "apply",
+      "online",
+      "instruction",
+      "permit"
+    ]
+  },
+  {
+    "name": "DORA Professional License Lookup",
+    "description": "Verify the license status of doctors, nurses, real estate agents, contractors, and other licensed professionals in Colorado.",
+    "url": "https://apps.colorado.gov/dora/licensing/Lookup/LicenseLookup.aspx",
+    "department": "Department of Regulatory Agencies",
+    "category": "Business and Economy",
+    "subcategory": "Business Compliance and Regulation",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Records and Documents",
+    "taskType": "Find",
+    "taskDetail": "Information",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "icon": "\ud83d\udd0d",
+    "featured": false,
+    "id": 156,
+    "tags": [
+      "dora",
+      "license",
+      "professional",
+      "lookup",
+      "find"
+    ]
+  },
+  {
+    "name": "DPO Online Licensing System",
+    "description": "Apply for, renew, or manage professional licenses including pharmacy, nursing, real estate, and many other regulated professions.",
+    "url": "https://dpo.colorado.gov/",
+    "department": "Department of Regulatory Agencies",
+    "category": "Jobs and Employment",
+    "subcategory": "Professional Licensing and Certification",
+    "lifeEvent": "Education and Career",
+    "lifeEventDetail": "Career Advancement",
+    "taskType": "Apply",
+    "taskDetail": "for a License",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "icon": "\ud83d\udcdc",
+    "featured": false,
+    "id": 157,
+    "tags": [
+      "licensing",
+      "online",
+      "system",
+      "apply",
+      "dpo"
+    ]
+  },
+  {
+    "name": "New to Colorado Checklist",
+    "description": "Complete checklist and resources for new Colorado residents including driver license transfer, vehicle registration, and voter registration requirements.",
+    "url": "https://dmv.colorado.gov/new-to-colorado",
+    "department": "Department of Revenue",
+    "category": "Transportation and Vehicles",
+    "subcategory": "Driver Licensing and Records",
+    "lifeEvent": "Housing and Relocation",
+    "lifeEventDetail": "Moving to a New City",
+    "taskType": "Learn",
+    "taskDetail": "About a Topic",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Adults",
+    "icon": "\ud83d\udccb",
+    "featured": false,
+    "id": 158,
+    "tags": [
+      "colorado",
+      "new",
+      "checklist",
+      "learn"
+    ]
+  },
+  {
+    "name": "Hunger Free Colorado Hotline",
+    "description": "Get free help applying for SNAP food assistance benefits. Call 855-855-4626 for phone or in-person application assistance.",
+    "url": "https://hungerfreecolorado.org/",
+    "department": "Department of Human Services",
+    "category": "Family and Social Services",
+    "subcategory": "Nutrition and Food Assistance",
+    "lifeEvent": "Living with Financial Hardship",
+    "lifeEventDetail": "Financial Assistance",
+    "taskType": "Get Assistance",
+    "taskDetail": "with Benefits",
+    "audience": "Individuals and Families",
+    "audienceDetail": "Low-Income Households",
+    "icon": "\ud83c\udf4e",
+    "featured": false,
+    "id": 159,
+    "tags": [
+      "colorado",
+      "free",
+      "get assistance",
+      "hotline",
+      "hunger"
+    ]
+  },
+  {
+    "name": "Colorado Digital ID Verifier",
+    "description": "Verify the authenticity of Colorado Digital IDs using the myColorado app. Scan QR codes to confirm identity without sharing sensitive data.",
+    "url": "https://mycolorado.state.co.us/",
+    "department": "Governor's Office of Information Technology",
+    "category": "Elections and Government",
+    "subcategory": "Digital Government Services",
+    "lifeEvent": "Legal and Justice",
+    "lifeEventDetail": "Records and Documents",
+    "taskType": "Use",
+    "taskDetail": "a Digital Service",
+    "audience": "Businesses and Organizations",
+    "audienceDetail": "Small Businesses",
+    "icon": "\u2705",
+    "featured": false,
+    "id": 160,
+    "tags": [
+      "colorado",
+      "use",
+      "verifier",
+      "digital"
+    ]
+  }
+];
+
+    const navConfig = {
+      task: {
+        title: 'I need to...',
+        items: [
+          { label: 'Apply', icon: '📝', filter: 'Apply' },
+          { label: 'Renew', icon: '🔄', filter: 'Renew' },
+          { label: 'Pay', icon: '💳', filter: 'Pay' },
+          { label: 'Find', icon: '🔍', filter: 'Find' },
+          { label: 'Report', icon: '📢', filter: 'Report' },
+          { label: 'File', icon: '📁', filter: 'File' },
+          { label: 'Learn', icon: '📚', filter: 'Learn' },
+          { label: 'Manage', icon: '⚙️', filter: 'Manage' },
+        ]
+      },
+      'life-event': {
+        title: 'Life event...',
+        items: [
+          { label: 'Starting a job', icon: '💼', filter: 'Job' },
+          { label: 'Getting healthcare', icon: '🏥', filter: 'Healthcare' },
+          { label: 'Going to college', icon: '🎓', filter: 'Higher Education' },
+          { label: 'Starting a business', icon: '🏢', filter: 'Starting a Business' },
+          { label: 'Having a baby', icon: '👶', filter: 'Having a Baby' },
+          { label: 'Moving to Colorado', icon: '🏠', filter: 'Moving' },
+          { label: 'Voting', icon: '🗳️', filter: 'Voting' },
+          { label: 'Outdoor recreation', icon: '🏕️', filter: 'Recreation' },
+        ]
+      },
+      audience: {
+        title: 'I am a...',
+        items: [
+          { label: 'Resident', icon: '🏠', filter: 'Adults' },
+          { label: 'Business owner', icon: '🏢', filter: 'Business' },
+          { label: 'Student', icon: '📚', filter: 'Students' },
+          { label: 'Parent', icon: '👨‍👩‍👧', filter: 'Parents' },
+          { label: 'Veteran', icon: '🎖️', filter: 'Veterans' },
+          { label: 'Teacher', icon: '👩‍🏫', filter: 'Teachers' },
+          { label: 'Job seeker', icon: '👔', filter: 'Employment' },
+          { label: 'New to Colorado', icon: '✨', filter: 'New' },
+        ]
+      },
+      category: {
+        title: 'Category...',
+        items: [
+          { label: 'Health', icon: '🏥', filter: 'Health' },
+          { label: 'Transportation', icon: '🚗', filter: 'Transportation' },
+          { label: 'Jobs', icon: '💼', filter: 'Jobs' },
+          { label: 'Education', icon: '🎓', filter: 'Education' },
+          { label: 'Business', icon: '🏢', filter: 'Business' },
+          { label: 'Taxes', icon: '💰', filter: 'Taxes' },
+          { label: 'Public Safety', icon: '🛡️', filter: 'Safety' },
+          { label: 'Recreation', icon: '🏕️', filter: 'Recreation' },
+        ]
+      }
+    };
+
+    let state = {
+      searchQuery: '',
+      navMode: 'all',
+      quickFilter: null,
+      selectedCategories: new Set(),
+      selectedDepartments: new Set(),
+      sortBy: 'relevance',
+      viewMode: 'grid'
+    };
+
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    const servicesGrid = document.getElementById('servicesGrid');
+    const featuredGrid = document.getElementById('featuredGrid');
+    const featuredSection = document.getElementById('featuredSection');
+    const resultsCount = document.getElementById('resultsCount');
+    const activeFiltersEl = document.getElementById('activeFilters');
+    const filterGroups = document.getElementById('filterGroups');
+    const quickActionsTitle = document.getElementById('quickActionsTitle');
+    const actionPills = document.getElementById('actionPills');
+    const sortSelect = document.getElementById('sortSelect');
+
+    function init() {
+      renderQuickActions('all');
+      renderFilters();
+      renderFeatured();
+      renderServices();
+      setupEventListeners();
+    }
+
+    function getFilterOptions(field) {
+      const counts = {};
+      serviceCatalog.forEach(s => {
+        const value = s[field];
+        if (value) counts[value] = (counts[value] || 0) + 1;
+      });
+      return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 12);
+    }
+
+    function renderFilters() {
+      const categories = getFilterOptions('category');
+      const departments = getFilterOptions('department');
+
+      filterGroups.innerHTML = `
+        <div class="filter-group">
+          <h3>Category</h3>
+          ${categories.map(([cat, count]) => `
+            <div class="filter-option">
+              <input type="checkbox" id="cat-${slugify(cat)}" value="${cat}" data-filter="category">
+              <label for="cat-${slugify(cat)}">${cat}</label>
+              <span class="filter-count">${count}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="filter-group">
+          <h3>Department</h3>
+          ${departments.map(([dept, count]) => `
+            <div class="filter-option">
+              <input type="checkbox" id="dept-${slugify(dept)}" value="${dept}" data-filter="department">
+              <label for="dept-${slugify(dept)}">${dept}</label>
+              <span class="filter-count">${count}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderQuickActions(mode) {
+      const config = navConfig[mode];
+      if (!config) {
+        quickActionsTitle.textContent = 'Popular searches';
+        actionPills.innerHTML = `
+          <button class="action-pill" data-quick="license"><span class="icon">🚗</span> Driver's license</button>
+          <button class="action-pill" data-quick="unemployment"><span class="icon">💼</span> Unemployment</button>
+          <button class="action-pill" data-quick="benefits"><span class="icon">🏥</span> Benefits</button>
+          <button class="action-pill" data-quick="tax"><span class="icon">💰</span> Taxes</button>
+          <button class="action-pill" data-quick="vote"><span class="icon">🗳️</span> Voting</button>
+          <button class="action-pill" data-quick="business"><span class="icon">🏢</span> Business</button>
+          <button class="action-pill" data-quick="hunting"><span class="icon">🎣</span> Hunting/Fishing</button>
+          <button class="action-pill" data-quick="digital"><span class="icon">📱</span> Digital ID</button>
+        `;
+      } else {
+        quickActionsTitle.textContent = config.title;
+        actionPills.innerHTML = config.items.map(item => `
+          <button class="action-pill${state.quickFilter === item.filter ? ' active' : ''}" 
+                  data-quick="${item.filter}">
+            <span class="icon">${item.icon}</span> ${item.label}
+          </button>
+        `).join('');
+      }
+    }
+
+    function renderFeatured() {
+      const featured = serviceCatalog.filter(s => s.featured).slice(0, 6);
+      featuredGrid.innerHTML = featured.map(s => renderServiceCard(s, true)).join('');
+    }
+
+    function renderServiceCard(service, isFeatured = false) {
+      const cardClass = isFeatured ? 'service-card featured-card' : 'service-card';
+      return `
+        <article class="${cardClass}" role="listitem">
+          <div class="service-card-header">
+            <div class="service-icon">${service.icon || '📌'}</div>
+            <div class="service-title-wrapper">
+              <h3 class="service-title">${highlight(service.name)}</h3>
+              <p class="service-department">${service.department}</p>
+            </div>
+          </div>
+          <p class="service-description">${highlight(service.description)}</p>
+          <div class="service-meta">
+            <span class="service-tag category">${service.category}</span>
+            ${service.taskType ? `<span class="service-tag task">${service.taskType}</span>` : ''}
+          </div>
+          <div class="service-actions">
+            <a href="${service.url}" class="service-link" target="_blank" rel="noopener noreferrer">
+              Access service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderServices() {
+      let filtered = [...serviceCatalog];
+
+      if (state.searchQuery) {
+        const q = state.searchQuery.toLowerCase();
+        filtered = filtered.filter(s =>
+          s.name.toLowerCase().includes(q) ||
+          s.description.toLowerCase().includes(q) ||
+          s.category.toLowerCase().includes(q) ||
+          s.department.toLowerCase().includes(q) ||
+          (s.tags && s.tags.some(t => t.includes(q)))
+        );
+      }
+
+      if (state.quickFilter) {
+        const qf = state.quickFilter.toLowerCase();
+        filtered = filtered.filter(s =>
+          (s.taskType && s.taskType.toLowerCase().includes(qf)) ||
+          (s.lifeEvent && s.lifeEvent.toLowerCase().includes(qf)) ||
+          (s.lifeEventDetail && s.lifeEventDetail.toLowerCase().includes(qf)) ||
+          (s.audienceDetail && s.audienceDetail.toLowerCase().includes(qf)) ||
+          s.category.toLowerCase().includes(qf) ||
+          s.name.toLowerCase().includes(qf) ||
+          s.description.toLowerCase().includes(qf) ||
+          (s.tags && s.tags.some(t => t.includes(qf)))
+        );
+      }
+
+      if (state.selectedCategories.size > 0) {
+        filtered = filtered.filter(s => state.selectedCategories.has(s.category));
+      }
+
+      if (state.selectedDepartments.size > 0) {
+        filtered = filtered.filter(s => state.selectedDepartments.has(s.department));
+      }
+
+      const showFeatured = !state.searchQuery && !state.quickFilter && 
+                           state.selectedCategories.size === 0 && 
+                           state.selectedDepartments.size === 0;
+      
+      featuredSection.style.display = showFeatured ? 'block' : 'none';
+      
+      if (showFeatured) {
+        filtered = filtered.filter(s => !s.featured);
+      }
+
+      if (state.sortBy === 'az') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (state.sortBy === 'za') {
+        filtered.sort((a, b) => b.name.localeCompare(a.name));
+      }
+
+      const total = filtered.length + (showFeatured ? serviceCatalog.filter(s => s.featured).length : 0);
+      resultsCount.innerHTML = `Showing <strong>${total}</strong> service${total !== 1 ? 's' : ''}`;
+
+      renderActiveFilters();
+
+      if (filtered.length === 0 && !showFeatured) {
+        servicesGrid.innerHTML = `
+          <div class="no-results">
+            <div class="no-results-icon">🔍</div>
+            <h3>No services found</h3>
+            <p>Try adjusting your search or filters.</p>
+            <button class="action-pill" onclick="clearAll()">Clear all filters</button>
+          </div>
+        `;
+      } else {
+        servicesGrid.innerHTML = filtered.map(s => renderServiceCard(s)).join('');
+      }
+
+      servicesGrid.className = `services-grid ${state.viewMode}-view`;
+    }
+
+    function renderActiveFilters() {
+      const filters = [];
+      if (state.quickFilter) filters.push({ type: 'quick', value: state.quickFilter });
+      state.selectedCategories.forEach(c => filters.push({ type: 'category', value: c }));
+      state.selectedDepartments.forEach(d => filters.push({ type: 'department', value: d }));
+
+      activeFiltersEl.innerHTML = filters.map(f => `
+        <span class="active-filter">
+          ${f.value.length > 25 ? f.value.substring(0, 25) + '...' : f.value}
+          <button onclick="removeFilter('${f.type}', '${f.value.replace(/'/g, "\'")}')">&times;</button>
+        </span>
+      `).join('');
+    }
+
+    function removeFilter(type, value) {
+      if (type === 'quick') {
+        state.quickFilter = null;
+        document.querySelectorAll('.action-pill').forEach(p => p.classList.remove('active'));
+      } else if (type === 'category') {
+        state.selectedCategories.delete(value);
+        const cb = document.querySelector(`input[data-filter="category"][value="${value}"]`);
+        if (cb) cb.checked = false;
+      } else if (type === 'department') {
+        state.selectedDepartments.delete(value);
+        const cb = document.querySelector(`input[data-filter="department"][value="${value}"]`);
+        if (cb) cb.checked = false;
+      }
+      renderServices();
+    }
+
+    function clearAll() {
+      state.searchQuery = '';
+      state.quickFilter = null;
+      state.selectedCategories.clear();
+      state.selectedDepartments.clear();
+      state.navMode = 'all';
+      
+      searchInput.value = '';
+      searchClear.classList.remove('visible');
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.querySelector('.nav-tab[data-nav="all"]').classList.add('active');
+      document.querySelectorAll('.filter-option input').forEach(cb => cb.checked = false);
+      document.querySelectorAll('.action-pill').forEach(p => p.classList.remove('active'));
+      
+      renderQuickActions('all');
+      renderServices();
+    }
+
+    function highlight(text) {
+      if (!state.searchQuery) return text;
+      const regex = new RegExp(`(${escapeRegex(state.searchQuery)})`, 'gi');
+      return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    function escapeRegex(str) { return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    function slugify(text) { return text.toLowerCase().replace(/[^a-z0-9]+/g, '-'); }
+
+    function setupEventListeners() {
+      searchInput.addEventListener('input', e => {
+        state.searchQuery = e.target.value;
+        searchClear.classList.toggle('visible', e.target.value.length > 0);
+        renderServices();
+      });
+
+      searchClear.addEventListener('click', () => {
+        state.searchQuery = '';
+        searchInput.value = '';
+        searchClear.classList.remove('visible');
+        renderServices();
+      });
+
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          state.navMode = tab.dataset.nav;
+          state.quickFilter = null;
+          renderQuickActions(state.navMode);
+          renderServices();
+        });
+      });
+
+      actionPills.addEventListener('click', e => {
+        const pill = e.target.closest('.action-pill');
+        if (pill) {
+          const filter = pill.dataset.quick;
+          document.querySelectorAll('.action-pill').forEach(p => p.classList.remove('active'));
+          
+          if (state.quickFilter === filter) {
+            state.quickFilter = null;
+          } else {
+            state.quickFilter = filter;
+            pill.classList.add('active');
+          }
+          renderServices();
+        }
+      });
+
+      filterGroups.addEventListener('change', e => {
+        if (e.target.type === 'checkbox') {
+          const filterType = e.target.dataset.filter;
+          const value = e.target.value;
+          const set = filterType === 'category' ? state.selectedCategories : state.selectedDepartments;
+          
+          if (e.target.checked) set.add(value);
+          else set.delete(value);
+          renderServices();
+        }
+      });
+
+      document.getElementById('clearFilters').addEventListener('click', clearAll);
+
+      sortSelect.addEventListener('change', e => {
+        state.sortBy = e.target.value;
+        renderServices();
+      });
+
+      document.getElementById('gridViewBtn').addEventListener('click', () => {
+        state.viewMode = 'grid';
+        document.getElementById('gridViewBtn').classList.add('active');
+        document.getElementById('listViewBtn').classList.remove('active');
+        renderServices();
+      });
+
+      document.getElementById('listViewBtn').addEventListener('click', () => {
+        state.viewMode = 'list';
+        document.getElementById('listViewBtn').classList.add('active');
+        document.getElementById('gridViewBtn').classList.remove('active');
+        renderServices();
+      });
+
+      document.getElementById('mobileFilterBtn').addEventListener('click', () => {
+        document.getElementById('filtersSidebar').classList.add('open');
+        document.getElementById('filtersOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const closeFilters = () => {
+        document.getElementById('filtersSidebar').classList.remove('open');
+        document.getElementById('filtersOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      document.getElementById('closeFilters').addEventListener('click', closeFilters);
+      document.getElementById('filtersOverlay').addEventListener('click', closeFilters);
+
+      searchInput.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          state.searchQuery = '';
+          searchInput.value = '';
+          searchClear.classList.remove('visible');
+          renderServices();
+        }
+      });
+    }
+
+    window.clearAll = clearAll;
+    window.removeFilter = removeFilter;
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
