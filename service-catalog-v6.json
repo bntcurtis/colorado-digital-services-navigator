@@ -31,7 +31,7 @@
         "career",
         "education"
       ],
-      "icon": "\ud83d\udcda",
+      "icon": "📚",
       "featured": false
     },
     {
@@ -62,7 +62,7 @@
         "transportation",
         "housing"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": true
     },
     {
@@ -94,7 +94,7 @@
         "adults",
         "health"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": true
     },
     {
@@ -122,7 +122,7 @@
         "education",
         "apply"
       ],
-      "icon": "\ud83d\udcdc",
+      "icon": "📜",
       "featured": false
     },
     {
@@ -151,7 +151,7 @@
         "wellness",
         "health"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": true
     },
     {
@@ -179,7 +179,7 @@
         "education",
         "apply"
       ],
-      "icon": "\ud83d\udcda",
+      "icon": "📚",
       "featured": false
     },
     {
@@ -209,7 +209,7 @@
         "financial",
         "small"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": false
     },
     {
@@ -240,7 +240,7 @@
         "apply",
         "justice"
       ],
-      "icon": "\ud83d\udc6e",
+      "icon": "👮",
       "featured": false
     },
     {
@@ -269,7 +269,7 @@
         "health",
         "business"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": false
     },
     {
@@ -298,7 +298,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -327,7 +327,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udfdb\ufe0f",
+      "icon": "🏛️",
       "featured": false
     },
     {
@@ -355,7 +355,7 @@
         "financial",
         "small"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -384,7 +384,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udf0d",
+      "icon": "🌍",
       "featured": false
     },
     {
@@ -415,7 +415,7 @@
         "business",
         "report"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -443,7 +443,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": false
     },
     {
@@ -473,7 +473,7 @@
         "assistance",
         "financial"
       ],
-      "icon": "\ud83d\udc76",
+      "icon": "👶",
       "featured": false
     },
     {
@@ -502,7 +502,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udc6e",
+      "icon": "👮",
       "featured": false
     },
     {
@@ -533,7 +533,7 @@
         "housing",
         "find"
       ],
-      "icon": "\ud83d\udc6e",
+      "icon": "👮",
       "featured": false
     },
     {
@@ -562,7 +562,7 @@
         "apply",
         "employment"
       ],
-      "icon": "\ud83d\udcbc",
+      "icon": "💼",
       "featured": false
     },
     {
@@ -591,7 +591,7 @@
         "find",
         "proceedings"
       ],
-      "icon": "\u2696\ufe0f",
+      "icon": "⚖️",
       "featured": false
     },
     {
@@ -619,7 +619,7 @@
         "public",
         "justice"
       ],
-      "icon": "\u2696\ufe0f",
+      "icon": "⚖️",
       "featured": false
     },
     {
@@ -647,7 +647,7 @@
         "justice",
         "report"
       ],
-      "icon": "\ud83d\udee1\ufe0f",
+      "icon": "🛡️",
       "featured": false
     },
     {
@@ -676,7 +676,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udf4e",
+      "icon": "🍎",
       "featured": false
     },
     {
@@ -707,7 +707,7 @@
         "assistance",
         "financial"
       ],
-      "icon": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67",
+      "icon": "👨‍👩‍👧",
       "featured": true
     },
     {
@@ -734,7 +734,7 @@
         "adults",
         "health"
       ],
-      "icon": "\ud83c\udfe5",
+      "icon": "🏥",
       "featured": false
     },
     {
@@ -764,7 +764,7 @@
         "services",
         "find"
       ],
-      "icon": "\ud83d\udc76",
+      "icon": "👶",
       "featured": false
     },
     {
@@ -793,7 +793,7 @@
         "find",
         "civic"
       ],
-      "icon": "\ud83d\udea8",
+      "icon": "🚨",
       "featured": false
     },
     {
@@ -821,7 +821,7 @@
         "adults",
         "health"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": false
     },
     {
@@ -849,7 +849,7 @@
         "employment",
         "find"
       ],
-      "icon": "\ud83d\udc54",
+      "icon": "👔",
       "featured": false
     },
     {
@@ -880,7 +880,7 @@
         "environment",
         "business"
       ],
-      "icon": "\ud83c\udf3e",
+      "icon": "🌾",
       "featured": false
     },
     {
@@ -910,7 +910,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udee1\ufe0f",
+      "icon": "🛡️",
       "featured": false
     },
     {
@@ -940,7 +940,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udc6e",
+      "icon": "👮",
       "featured": false
     },
     {
@@ -970,7 +970,7 @@
         "find",
         "civic"
       ],
-      "icon": "\ud83c\udfdb\ufe0f",
+      "icon": "🏛️",
       "featured": false
     },
     {
@@ -1001,7 +1001,7 @@
         "transportation",
         "housing"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": true
     },
     {
@@ -1029,7 +1029,7 @@
         "adults",
         "employment"
       ],
-      "icon": "\ud83d\udcbc",
+      "icon": "💼",
       "featured": false
     },
     {
@@ -1059,7 +1059,7 @@
         "file",
         "business"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -1090,7 +1090,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83c\udf0d",
+      "icon": "🌍",
       "featured": false
     },
     {
@@ -1119,7 +1119,7 @@
         "activities",
         "find"
       ],
-      "icon": "\ud83c\udfa3",
+      "icon": "🎣",
       "featured": false
     },
     {
@@ -1148,7 +1148,7 @@
         "activities",
         "find"
       ],
-      "icon": "\ud83c\udfa3",
+      "icon": "🎣",
       "featured": false
     },
     {
@@ -1176,7 +1176,7 @@
         "employment",
         "find"
       ],
-      "icon": "\ud83c\udf96\ufe0f",
+      "icon": "🎖️",
       "featured": false
     },
     {
@@ -1204,7 +1204,7 @@
         "justice",
         "report"
       ],
-      "icon": "\ud83d\udee1\ufe0f",
+      "icon": "🛡️",
       "featured": false
     },
     {
@@ -1233,7 +1233,7 @@
         "transportation",
         "file"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -1261,7 +1261,7 @@
         "adults",
         "file"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": false
     },
     {
@@ -1292,7 +1292,7 @@
         "justice",
         "find"
       ],
-      "icon": "\ud83d\udc6e",
+      "icon": "👮",
       "featured": false
     },
     {
@@ -1322,7 +1322,7 @@
         "housing",
         "find"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -1352,7 +1352,7 @@
         "transportation",
         "find"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -1382,7 +1382,7 @@
         "health",
         "find"
       ],
-      "icon": "\ud83c\udf4e",
+      "icon": "🍎",
       "featured": false
     },
     {
@@ -1410,7 +1410,7 @@
         "health",
         "place"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": false
     },
     {
@@ -1439,7 +1439,7 @@
         "employment",
         "find"
       ],
-      "icon": "\ud83d\udc54",
+      "icon": "👔",
       "featured": false
     },
     {
@@ -1470,7 +1470,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83d\udca7",
+      "icon": "💧",
       "featured": false
     },
     {
@@ -1499,7 +1499,7 @@
         "adults",
         "find"
       ],
-      "icon": "\ud83d\udee1\ufe0f",
+      "icon": "🛡️",
       "featured": false
     },
     {
@@ -1527,7 +1527,7 @@
         "health",
         "place"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": false
     },
     {
@@ -1555,7 +1555,7 @@
         "health",
         "place"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": false
     },
     {
@@ -1584,7 +1584,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udc54",
+      "icon": "👔",
       "featured": false
     },
     {
@@ -1614,7 +1614,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udf0d",
+      "icon": "🌍",
       "featured": false
     },
     {
@@ -1642,7 +1642,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcda",
+      "icon": "📚",
       "featured": false
     },
     {
@@ -1669,7 +1669,7 @@
         "adults",
         "health"
       ],
-      "icon": "\ud83c\udfe5",
+      "icon": "🏥",
       "featured": false
     },
     {
@@ -1699,7 +1699,7 @@
         "find",
         "civic"
       ],
-      "icon": "\ud83c\udfdb\ufe0f",
+      "icon": "🏛️",
       "featured": false
     },
     {
@@ -1729,7 +1729,7 @@
         "apply",
         "health"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": true
     },
     {
@@ -1756,7 +1756,7 @@
         "adults",
         "health"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": false
     },
     {
@@ -1787,7 +1787,7 @@
         "environment",
         "business"
       ],
-      "icon": "\ud83c\udf3e",
+      "icon": "🌾",
       "featured": false
     },
     {
@@ -1818,7 +1818,7 @@
         "environment",
         "business"
       ],
-      "icon": "\ud83c\udf3e",
+      "icon": "🌾",
       "featured": false
     },
     {
@@ -1847,7 +1847,7 @@
         "financial",
         "business"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -1877,7 +1877,7 @@
         "learn",
         "health"
       ],
-      "icon": "\ud83c\udf4e",
+      "icon": "🍎",
       "featured": false
     },
     {
@@ -1906,7 +1906,7 @@
         "financial",
         "business"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -1936,7 +1936,7 @@
         "health",
         "find"
       ],
-      "icon": "\ud83e\ude7a",
+      "icon": "🩺",
       "featured": true
     },
     {
@@ -1964,7 +1964,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\u26fa",
+      "icon": "⛺",
       "featured": false
     },
     {
@@ -1993,7 +1993,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udee1\ufe0f",
+      "icon": "🛡️",
       "featured": false
     },
     {
@@ -2023,7 +2023,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udf0d",
+      "icon": "🌍",
       "featured": false
     },
     {
@@ -2054,7 +2054,7 @@
         "manage",
         "business"
       ],
-      "icon": "\ud83c\udf3e",
+      "icon": "🌾",
       "featured": false
     },
     {
@@ -2082,7 +2082,7 @@
         "manage",
         "account"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": false
     },
     {
@@ -2111,7 +2111,7 @@
         "education",
         "employment"
       ],
-      "icon": "\ud83d\udcdc",
+      "icon": "📜",
       "featured": false
     },
     {
@@ -2141,7 +2141,7 @@
         "education",
         "employment"
       ],
-      "icon": "\ud83d\udccb",
+      "icon": "📋",
       "featured": false
     },
     {
@@ -2169,7 +2169,7 @@
         "financial",
         "business"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -2198,7 +2198,7 @@
         "business",
         "account"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -2227,7 +2227,7 @@
         "adults",
         "employment"
       ],
-      "icon": "\ud83d\udcca",
+      "icon": "📊",
       "featured": false
     },
     {
@@ -2256,7 +2256,7 @@
         "business",
         "report"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -2285,7 +2285,7 @@
         "adults",
         "transportation"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -2312,7 +2312,7 @@
         "bills",
         "adults"
       ],
-      "icon": "\ud83d\udcb0",
+      "icon": "💰",
       "featured": false
     },
     {
@@ -2339,7 +2339,7 @@
         "tax",
         "adults"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": true
     },
     {
@@ -2368,7 +2368,7 @@
         "financial",
         "business"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -2397,7 +2397,7 @@
         "financial",
         "business"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -2426,7 +2426,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfde\ufe0f",
+      "icon": "🏞️",
       "featured": false
     },
     {
@@ -2455,7 +2455,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfa3",
+      "icon": "🎣",
       "featured": true
     },
     {
@@ -2484,7 +2484,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfa3",
+      "icon": "🎣",
       "featured": true
     },
     {
@@ -2513,7 +2513,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfde\ufe0f",
+      "icon": "🏞️",
       "featured": false
     },
     {
@@ -2542,7 +2542,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfde\ufe0f",
+      "icon": "🏞️",
       "featured": false
     },
     {
@@ -2570,7 +2570,7 @@
         "financial",
         "small"
       ],
-      "icon": "\ud83d\udcb0",
+      "icon": "💰",
       "featured": false
     },
     {
@@ -2601,7 +2601,7 @@
         "skill",
         "environment"
       ],
-      "icon": "\ud83c\udf0d",
+      "icon": "🌍",
       "featured": false
     },
     {
@@ -2630,7 +2630,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -2659,7 +2659,7 @@
         "adults",
         "civic"
       ],
-      "icon": "\ud83d\uddf3\ufe0f",
+      "icon": "🗳️",
       "featured": true
     },
     {
@@ -2690,7 +2690,7 @@
         "environment",
         "business"
       ],
-      "icon": "\ud83d\udcdc",
+      "icon": "📜",
       "featured": false
     },
     {
@@ -2718,7 +2718,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\u26f5",
+      "icon": "⛵",
       "featured": false
     },
     {
@@ -2749,7 +2749,7 @@
         "transportation",
         "housing"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": true
     },
     {
@@ -2777,7 +2777,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfde\ufe0f",
+      "icon": "🏞️",
       "featured": false
     },
     {
@@ -2805,7 +2805,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfde\ufe0f",
+      "icon": "🏞️",
       "featured": false
     },
     {
@@ -2834,7 +2834,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udf3e",
+      "icon": "🌾",
       "featured": false
     },
     {
@@ -2864,7 +2864,7 @@
         "environment",
         "find"
       ],
-      "icon": "\ud83c\udf0d",
+      "icon": "🌍",
       "featured": false
     },
     {
@@ -2893,7 +2893,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -2924,7 +2924,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83c\udf0d",
+      "icon": "🌍",
       "featured": false
     },
     {
@@ -2953,7 +2953,7 @@
         "justice",
         "find"
       ],
-      "icon": "\ud83c\udf96\ufe0f",
+      "icon": "🎖️",
       "featured": false
     },
     {
@@ -2982,7 +2982,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udfdb\ufe0f",
+      "icon": "🏛️",
       "featured": false
     },
     {
@@ -3013,7 +3013,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83d\udca7",
+      "icon": "💧",
       "featured": false
     },
     {
@@ -3043,7 +3043,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udca7",
+      "icon": "💧",
       "featured": false
     },
     {
@@ -3073,7 +3073,7 @@
         "rehabilitation",
         "justice"
       ],
-      "icon": "\ud83d\udee1\ufe0f",
+      "icon": "🛡️",
       "featured": false
     },
     {
@@ -3102,7 +3102,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcda",
+      "icon": "📚",
       "featured": false
     },
     {
@@ -3131,7 +3131,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udf93",
+      "icon": "🎓",
       "featured": false
     },
     {
@@ -3160,7 +3160,7 @@
         "find",
         "civic"
       ],
-      "icon": "\ud83c\udfdb\ufe0f",
+      "icon": "🏛️",
       "featured": false
     },
     {
@@ -3188,7 +3188,7 @@
         "employment",
         "find"
       ],
-      "icon": "\ud83d\udc54",
+      "icon": "👔",
       "featured": false
     },
     {
@@ -3216,7 +3216,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": false
     },
     {
@@ -3243,7 +3243,7 @@
         "education",
         "report"
       ],
-      "icon": "\ud83c\udf93",
+      "icon": "🎓",
       "featured": false
     },
     {
@@ -3270,7 +3270,7 @@
         "adults",
         "health"
       ],
-      "icon": "\ud83c\udfe5",
+      "icon": "🏥",
       "featured": false
     },
     {
@@ -3299,7 +3299,7 @@
         "find",
         "civic"
       ],
-      "icon": "\ud83c\udfdb\ufe0f",
+      "icon": "🏛️",
       "featured": false
     },
     {
@@ -3330,7 +3330,7 @@
         "transportation",
         "housing"
       ],
-      "icon": "\ud83d\udccb",
+      "icon": "📋",
       "featured": false
     },
     {
@@ -3360,7 +3360,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83c\udfe2",
+      "icon": "🏢",
       "featured": false
     },
     {
@@ -3389,7 +3389,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcbc",
+      "icon": "💼",
       "featured": false
     },
     {
@@ -3419,7 +3419,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -3448,7 +3448,7 @@
         "activities",
         "find"
       ],
-      "icon": "\ud83c\udfde\ufe0f",
+      "icon": "🏞️",
       "featured": false
     },
     {
@@ -3477,7 +3477,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -3506,7 +3506,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -3535,7 +3535,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -3565,7 +3565,7 @@
         "activities",
         "outdoor"
       ],
-      "icon": "\ud83c\udfa3",
+      "icon": "🎣",
       "featured": false
     },
     {
@@ -3594,7 +3594,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -3622,7 +3622,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": false
     },
     {
@@ -3652,7 +3652,7 @@
         "justice",
         "calculate"
       ],
-      "icon": "\ud83d\udcbc",
+      "icon": "💼",
       "featured": false
     },
     {
@@ -3682,7 +3682,7 @@
         "business",
         "transportation"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -3711,7 +3711,7 @@
         "enforcement",
         "report"
       ],
-      "icon": "\ud83d\udc6e",
+      "icon": "👮",
       "featured": false
     },
     {
@@ -3741,7 +3741,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udccb",
+      "icon": "📋",
       "featured": false
     },
     {
@@ -3770,7 +3770,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udfdb\ufe0f",
+      "icon": "🏛️",
       "featured": false
     },
     {
@@ -3796,7 +3796,7 @@
         "finance",
         "adults"
       ],
-      "icon": "\ud83d\udcb5",
+      "icon": "💵",
       "featured": false
     },
     {
@@ -3823,7 +3823,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcda",
+      "icon": "📚",
       "featured": false
     },
     {
@@ -3852,7 +3852,7 @@
         "military",
         "request"
       ],
-      "icon": "\ud83c\udf96\ufe0f",
+      "icon": "🎖️",
       "featured": false
     },
     {
@@ -3879,7 +3879,7 @@
         "education",
         "report"
       ],
-      "icon": "\ud83c\udf93",
+      "icon": "🎓",
       "featured": false
     },
     {
@@ -3910,7 +3910,7 @@
         "request",
         "business"
       ],
-      "icon": "\ud83c\udf3e",
+      "icon": "🌾",
       "featured": false
     },
     {
@@ -3938,7 +3938,7 @@
         "employment",
         "report"
       ],
-      "icon": "\ud83d\udcbc",
+      "icon": "💼",
       "featured": false
     },
     {
@@ -3965,7 +3965,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83d\udcda",
+      "icon": "📚",
       "featured": false
     },
     {
@@ -3995,7 +3995,7 @@
         "find",
         "civic"
       ],
-      "icon": "\ud83d\udc6e",
+      "icon": "👮",
       "featured": false
     },
     {
@@ -4024,7 +4024,7 @@
         "find",
         "information"
       ],
-      "icon": "\ud83c\udfa3",
+      "icon": "🎣",
       "featured": false
     },
     {
@@ -4055,7 +4055,7 @@
         "business",
         "information"
       ],
-      "icon": "\ud83c\udf3e",
+      "icon": "🌾",
       "featured": false
     },
     {
@@ -4085,7 +4085,7 @@
         "transportation",
         "housing"
       ],
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": false
     },
     {
@@ -4111,7 +4111,7 @@
         "energy",
         "other"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4138,7 +4138,7 @@
         "dmva",
         "employment"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4165,7 +4165,7 @@
         "other",
         "employment"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4195,7 +4195,7 @@
         "help",
         "health"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4221,7 +4221,7 @@
         "youth",
         "other"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4250,7 +4250,7 @@
         "help",
         "health"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4278,13 +4278,13 @@
         "help",
         "pregnant"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
       "id": 148,
-      "name": "Governor\u2019s Dashboard",
-      "description": "This service provides information or access to Governor\u2019s Dashboard.",
+      "name": "Governor’s Dashboard",
+      "description": "This service provides information or access to Governor’s Dashboard.",
       "url": "https://dashboard.colorado.gov/",
       "department": "Office of the Governor",
       "departmentUrl": null,
@@ -4302,7 +4302,7 @@
         "governor",
         "dashboard"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4330,7 +4330,7 @@
         "other",
         "access"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": false
     },
     {
@@ -4354,7 +4354,7 @@
         "other",
         "app"
       ],
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "featured": true
     },
     {
@@ -4370,7 +4370,7 @@
       "taskDetail": "with Digital Services",
       "audience": "Individuals and Families",
       "audienceDetail": "Adults",
-      "icon": "\ud83d\udcf1",
+      "icon": "📱",
       "featured": true,
       "id": 151,
       "tags": [
@@ -4392,7 +4392,7 @@
       "taskDetail": "a License",
       "audience": "Individuals and Families",
       "audienceDetail": "Adults",
-      "icon": "\ud83d\ude97",
+      "icon": "🚗",
       "featured": true,
       "id": 152,
       "tags": [
@@ -4416,7 +4416,7 @@
       "taskDetail": "a Registration",
       "audience": "Individuals and Families",
       "audienceDetail": "Adults",
-      "icon": "\ud83c\udfea",
+      "icon": "🏪",
       "featured": false,
       "id": 153,
       "tags": [
@@ -4440,7 +4440,7 @@
       "taskDetail": "for Benefits",
       "audience": "Individuals and Families",
       "audienceDetail": "Low-Income Households",
-      "icon": "\ud83d\udcf2",
+      "icon": "📲",
       "featured": false,
       "id": 154,
       "tags": [
@@ -4463,7 +4463,7 @@
       "taskDetail": "for a License",
       "audience": "Individuals and Families",
       "audienceDetail": "Young Adult",
-      "icon": "\ud83d\udcdd",
+      "icon": "📝",
       "featured": false,
       "id": 155,
       "tags": [
@@ -4487,7 +4487,7 @@
       "taskDetail": "Information",
       "audience": "Individuals and Families",
       "audienceDetail": "Adults",
-      "icon": "\ud83d\udd0d",
+      "icon": "🔍",
       "featured": false,
       "id": 156,
       "tags": [
@@ -4511,7 +4511,7 @@
       "taskDetail": "for a License",
       "audience": "Individuals and Families",
       "audienceDetail": "Adults",
-      "icon": "\ud83d\udcdc",
+      "icon": "📜",
       "featured": false,
       "id": 157,
       "tags": [
@@ -4535,7 +4535,7 @@
       "taskDetail": "About a Topic",
       "audience": "Individuals and Families",
       "audienceDetail": "Adults",
-      "icon": "\ud83d\udccb",
+      "icon": "📋",
       "featured": false,
       "id": 158,
       "tags": [
@@ -4558,7 +4558,7 @@
       "taskDetail": "with Benefits",
       "audience": "Individuals and Families",
       "audienceDetail": "Low-Income Households",
-      "icon": "\ud83c\udf4e",
+      "icon": "🍎",
       "featured": false,
       "id": 159,
       "tags": [
@@ -4582,7 +4582,7 @@
       "taskDetail": "a Digital Service",
       "audience": "Businesses and Organizations",
       "audienceDetail": "Small Businesses",
-      "icon": "\u2705",
+      "icon": "✅",
       "featured": false,
       "id": 160,
       "tags": [
@@ -4683,7 +4683,7 @@
     {
       "id": 165,
       "name": "Report telemarketing fraud & register for No-Call List",
-      "description": "Report telemarketing fraud and register your number on Colorado\u2019s No\u2011Call List to block unsolicited calls.",
+      "description": "Report telemarketing fraud and register your number on Colorado’s No‑Call List to block unsolicited calls.",
       "url": "https://www.coloradonocall.com/Default.aspx",
       "department": "Colorado Attorney General",
       "departmentUrl": "https://coag.gov",
@@ -4728,7 +4728,7 @@
     {
       "id": 167,
       "name": "Purchase a Colorado non-resident OHV permit",
-      "description": "Purchase a permit for non\u2011residents to operate off\u2011highway vehicles (OHVs) on Colorado public lands.",
+      "description": "Purchase a permit for non‑residents to operate off‑highway vehicles (OHVs) on Colorado public lands.",
       "url": "https://cpw.state.co.us/buyapply/Pages/RegistrationsOHV.aspx",
       "department": "Colorado Parks and Wildlife",
       "departmentUrl": "https://cpw.state.co.us",
@@ -4905,7 +4905,7 @@
     {
       "id": 175,
       "name": "Colorado Cannabis Business Office",
-      "description": "Access resources from the Cannabis Business Office, including funding programs, for entrepreneurs in Colorado\u2019s cannabis industry.",
+      "description": "Access resources from the Cannabis Business Office, including funding programs, for entrepreneurs in Colorado’s cannabis industry.",
       "url": "https://oedit.colorado.gov/programs-and-funding/colorado-cannabis-business-office",
       "department": "Colorado Office of Economic Development and International Trade",
       "departmentUrl": "https://oedit.colorado.gov",
@@ -4949,7 +4949,7 @@
     {
       "id": 177,
       "name": "Driver Monitoring",
-      "description": "Enroll in a monitoring service to receive notifications of changes to a driver\u2019s license status or driving record.",
+      "description": "Enroll in a monitoring service to receive notifications of changes to a driver’s license status or driving record.",
       "url": "https://dmv.colorado.gov/driver-monitoring",
       "department": "Colorado Department of Revenue",
       "departmentUrl": "https://dmv.colorado.gov",
@@ -5015,7 +5015,7 @@
     {
       "id": 180,
       "name": "Colorado Works (TANF)",
-      "description": "Apply for Colorado Works, the state\u2019s Temporary Assistance for Needy Families (TANF) program that provides monthly cash assistance and employment support to families with children.",
+      "description": "Apply for Colorado Works, the state’s Temporary Assistance for Needy Families (TANF) program that provides monthly cash assistance and employment support to families with children.",
       "url": "https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5038,7 +5038,7 @@
     {
       "id": 181,
       "name": "Low-income Energy Assistance Program (LEAP)",
-      "description": "Apply for the Low\u2011income Energy Assistance Program, which helps eligible households pay winter home heating costs.",
+      "description": "Apply for the Low‑income Energy Assistance Program, which helps eligible households pay winter home heating costs.",
       "url": "https://cdhs.colorado.gov/leap",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5060,7 +5060,7 @@
     {
       "id": 182,
       "name": "Colorado Employment First",
-      "description": "Participate in Employment First, Colorado\u2019s SNAP Employment and Training program, which helps SNAP recipients gain skills, training and work experience.",
+      "description": "Participate in Employment First, Colorado’s SNAP Employment and Training program, which helps SNAP recipients gain skills, training and work experience.",
       "url": "https://cdhs.colorado.gov/employment-assistance/colorado-employment-first",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5104,7 +5104,7 @@
     {
       "id": 184,
       "name": "Senior Community Service Employment Program (SCSEP)",
-      "description": "Apply for the SCSEP, which provides paid community service training positions for low\u2011income adults aged 55 or older seeking employment.",
+      "description": "Apply for the SCSEP, which provides paid community service training positions for low‑income adults aged 55 or older seeking employment.",
       "url": "https://cdhs.colorado.gov/employment-assistance/senior-community-service-employment-program",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5148,7 +5148,7 @@
     {
       "id": 186,
       "name": "CW STEP (Colorado Works Subsidized Training & Employment Program)",
-      "description": "Participate in CW STEP, which provides subsidized employment, apprenticeships and on\u2011the\u2011job training to help Colorado Works participants achieve permanent employment.",
+      "description": "Participate in CW STEP, which provides subsidized employment, apprenticeships and on‑the‑job training to help Colorado Works participants achieve permanent employment.",
       "url": "https://cdhs.colorado.gov/employment-assistance/cw-step",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5214,7 +5214,7 @@
     {
       "id": 189,
       "name": "SNAP-Ed (Nutrition Education & Obesity Prevention)",
-      "description": "Access SNAP\u2011Ed resources that teach families how to buy and prepare healthy foods on a budget, increase physical activity, and create healthier school environments.",
+      "description": "Access SNAP‑Ed resources that teach families how to buy and prepare healthy foods on a budget, increase physical activity, and create healthier school environments.",
       "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/snap/snap-ed",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5259,7 +5259,7 @@
     {
       "id": 191,
       "name": "ABAWD Work Requirement",
-      "description": "Understand the Able\u2011Bodied Adults Without Dependents (ABAWD) work requirement for SNAP recipients, including eligibility and exemptions.",
+      "description": "Understand the Able‑Bodied Adults Without Dependents (ABAWD) work requirement for SNAP recipients, including eligibility and exemptions.",
       "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/snap/abawd",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5328,7 +5328,7 @@
     {
       "id": 194,
       "name": "The Emergency Food Assistance Program (TEFAP)",
-      "description": "Get emergency food assistance through TEFAP, a federally funded program that distributes USDA foods to low\u2011income households in Colorado.",
+      "description": "Get emergency food assistance through TEFAP, a federally funded program that distributes USDA foods to low‑income households in Colorado.",
       "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/the-emergency-food-assistance-program-tefap",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5420,7 +5420,7 @@
     {
       "id": 198,
       "name": "Energy EBT Program",
-      "description": "Understand Energy EBT, a program that provides a one\u2011time $21 cash assistance payment to SNAP households with an elderly or disabled member to help pay energy costs.",
+      "description": "Understand Energy EBT, a program that provides a one‑time $21 cash assistance payment to SNAP households with an elderly or disabled member to help pay energy costs.",
       "url": "https://cdhs.colorado.gov/energy-ebt",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
@@ -5466,7 +5466,7 @@
     {
       "id": 200,
       "name": "Aging and Disability Resources for Colorado (ADRC)",
-      "description": "Connect with the ADRC for information and counseling on long\u2011term services and supports for older adults and people with disabilities.",
+      "description": "Connect with the ADRC for information and counseling on long‑term services and supports for older adults and people with disabilities.",
       "url": "https://cdhs.colorado.gov/our-services/older-adult-services/state-unit-on-aging/aging-and-disability-resources-for-colorado",
       "department": "Colorado Department of Human Services",
       "departmentUrl": "https://cdhs.colorado.gov",
