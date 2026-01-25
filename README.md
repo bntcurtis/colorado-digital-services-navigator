@@ -2,7 +2,7 @@
 
 A modern, accessible web application that helps Coloradans discover and access 213 state government digital services. Built to demonstrate what effective government service navigation could look like.
 
-**[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://bntcurtis.github.io/colorado-service-navigator-v6.html)**
+**[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://bntcurtis.github.io/colorado-digital-services-navigator/)**
 
 ---
 
