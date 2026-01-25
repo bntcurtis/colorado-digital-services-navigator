@@ -2,7 +2,7 @@
 
 A modern, accessible web application that helps Coloradans discover and access 213 state government digital services. Built to demonstrate what effective government service navigation could look like.
 
-**[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://github.com/bntcurtis/colorado-digital-services-navigator)**
+**[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://github.com/bntcurtis/colorado-digital-services-navigator/colorado-service-navigator-v6.html)**
 
 ---
 
@@ -28,7 +28,7 @@ Accessing government services shouldn't be hard. Unfortunately, many state gover
 - **Mobile-friendly** — Responsive design that works on any device
 - **Accessible** — Keyboard navigation, screen reader support, and WCAG-aligned design
 - **No backend required** — Self-contained HTML file that works anywhere, including Google Sites
-- **Colorado spirit** — True explorers know that clicking the state's initials three times quickly reveals a hidden path through the Rockies
+- **Colorado spirit** — True explorers know that clicking the state's two-letter abbreviation three times quickly reveals a hidden path through the Rockies
 
 ---
 
