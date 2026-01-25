@@ -1,6 +1,6 @@
 # Colorado Digital Services Navigator
 
-A modern, accessible web application that helps Coloradans discover and access 200+ state government digital services. Built to demonstrate what effective government service navigation could look like.
+A modern, accessible web application that helps Coloradans discover and access 213 state government digital services. Built to demonstrate what effective government service navigation could look like.
 
 **[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://github.com/bntcurtis/colorado-digital-services-navigator)**
 
@@ -8,7 +8,7 @@ A modern, accessible web application that helps Coloradans discover and access 2
 
 ## About this project
 
-Colorado celebrates its 150th birthday as a state in 2026. To mark the occasion, this project catalogs 150+ digital government services and presents them through a modern, user-friendly interface.
+Colorado celebrates its 150th birthday as a state in 2026. To mark the occasion, this project catalogs 213 digital government services and presents them through a modern, user-friendly interface.
 
 This is an independent demonstration project. It is **not affiliated with Colorado.gov** or any official state government entity.
 
@@ -28,6 +28,7 @@ Accessing government services shouldn't be hard. Unfortunately, many state gover
 - **Mobile-friendly** — Responsive design that works on any device
 - **Accessible** — Keyboard navigation, screen reader support, and WCAG-aligned design
 - **No backend required** — Self-contained HTML file that works anywhere, including Google Sites
+- **Colorado spirit** — True explorers know that clicking the state's initials three times quickly reveals a hidden path through the Rockies
 
 ---
 
@@ -97,7 +98,8 @@ Services are organized across multiple dimensions:
 
 | File | Description |
 |------|-------------|
-| `colorado-service-navigator-v5.html` | The main application (200 services, 211 KB) |
+| `index.html` | The main application (213 services) |
+| `colorado-service-navigator-v6.html` | Versioned copy of the main application |
 | `service-catalog-v6.json` | Service catalog data in JSON format |
 | `service-schema-v2.json` | JSON Schema for validating the catalog |
 | `README.md` | This file |
@@ -119,7 +121,7 @@ Service information was compiled from:
 - **URLs may change** — Government websites frequently reorganize. Some links may become outdated.
 - **Completeness** — This catalog focuses on digital services (online applications, portals, databases). In-person-only services are generally not included.
 - **Accuracy** — While care was taken to describe services correctly, always verify details on official government websites before taking action.
-- **Currency** — The catalog reflects services available as of January 2026.
+- **Currency** — The catalog reflects services available as of January 2026. URLs were validated and updated on January 25, 2026.
 
 ### Updates
 
@@ -131,7 +133,7 @@ This is a point-in-time demonstration. The service catalog is not automatically 
 
 No build process required. Simply:
 
-1. Download `colorado-service-navigator-v5.html`
+1. Download `index.html` (or `colorado-service-navigator-v6.html`)
 2. Open it in a web browser
 
 Or clone the repository:
@@ -139,7 +141,7 @@ Or clone the repository:
 ```bash
 git clone https://github.com/bntcurtis/colorado-digital-services.git
 cd colorado-digital-services
-open colorado-service-navigator-v5.html
+open index.html
 ```
 
 ---
