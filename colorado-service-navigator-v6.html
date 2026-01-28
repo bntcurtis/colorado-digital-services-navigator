@@ -31,7 +31,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colorado Digital Services | State Government Navigator</title>
-  <meta name="description" content="Access 200+ state government digital services, from renewing your license to applying for benefits.">
+  <meta name="description" content="Access 213 state government digital services, from renewing your license to applying for benefits.">
 
   <style>
     :root {
@@ -675,6 +675,224 @@
     }
     .game-btn:hover { transform: scale(1.05); }
     .game-btn:active { transform: scale(0.95); }
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       CHATBOT STYLES
+       ═══════════════════════════════════════════════════════════════════════ */
+    .chat-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--co-blue);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .chat-fab:hover { background: var(--co-blue-light); transform: scale(1.05); }
+    .chat-fab:active { transform: scale(0.95); }
+    .chat-fab svg { width: 28px; height: 28px; }
+    .chat-fab.hidden { display: none; }
+
+    .chat-window {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 400px;
+      max-width: calc(100vw - 48px);
+      height: 550px;
+      max-height: calc(100vh - 48px);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      z-index: 1001;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .chat-window.open { display: flex; }
+
+    .chat-header {
+      background: var(--co-blue);
+      color: var(--white);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .chat-header-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+    .chat-header-title svg { width: 24px; height: 24px; }
+    .chat-close {
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chat-close:hover { background: rgba(255,255,255,0.1); }
+    .chat-close svg { width: 20px; height: 20px; }
+
+    .chat-messages {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--gray-50);
+      min-height: 0;
+    }
+
+    .chat-message {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: var(--radius-lg);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      flex-shrink: 0;
+    }
+    .chat-message.user {
+      background: var(--co-blue);
+      color: var(--white);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .chat-message.assistant {
+      background: var(--white);
+      color: var(--gray-800);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      border: 1px solid var(--gray-200);
+    }
+    .chat-message.assistant a {
+      color: var(--co-blue);
+      text-decoration: underline;
+    }
+    .chat-message.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .chat-message.typing {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      color: var(--gray-500);
+      font-style: italic;
+    }
+    .chat-message.typing::after {
+      content: '';
+      animation: dots 1.5s infinite;
+    }
+    @keyframes dots {
+      0%, 20% { content: ''; }
+      40% { content: '.'; }
+      60% { content: '..'; }
+      80%, 100% { content: '...'; }
+    }
+
+    .chat-input-area {
+      padding: 12px 16px;
+      border-top: 1px solid var(--gray-200);
+      background: var(--white);
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .chat-input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-family: inherit;
+      resize: none;
+      min-height: 42px;
+      max-height: 100px;
+    }
+    .chat-input:focus {
+      outline: none;
+      border-color: var(--co-blue);
+      box-shadow: var(--focus-ring);
+    }
+    .chat-send {
+      background: var(--co-blue);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      padding: 0 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .chat-send:hover { background: var(--co-blue-light); }
+    .chat-send:disabled { background: var(--gray-300); cursor: not-allowed; }
+    .chat-send svg { width: 20px; height: 20px; }
+
+    .chat-suggestions {
+      padding: 8px 16px 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      flex-shrink: 0;
+    }
+    .chat-suggestion {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: 16px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .chat-suggestion:hover {
+      background: var(--co-blue);
+      color: var(--white);
+      border-color: var(--co-blue);
+    }
+
+    @media (max-width: 480px) {
+      .chat-window {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+      }
+      .chat-fab {
+        bottom: 16px;
+        right: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -695,7 +913,7 @@
   <section class="hero">
     <div class="hero-inner">
       <h1>Find the services you need</h1>
-      <p>Colorado celebrates 150 years of statehood in 2026. As a birthday present to all Coloradans, this navigator helps residents discover over 200 digital government services, including how to renew a license, apply for benefits, and more.</p>
+      <p>Colorado celebrates 150 years of statehood in 2026. As a birthday present to all Coloradans, this navigator helps residents discover 213 digital government services, including how to renew a license, apply for benefits, and more.</p>
       <div class="search-container">
         <div class="search-wrapper">
           <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -808,9 +1026,50 @@
     </div>
   </div>
 
+  <!-- Chatbot -->
+  <button class="chat-fab" id="chatFab" aria-label="Open chat assistant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat assistant">
+    <div class="chat-header">
+      <div class="chat-header-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        Service Assistant
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-message assistant">
+        Hi! I can help you find Colorado government services. What are you looking for today?
+      </div>
+    </div>
+    <div class="chat-suggestions" id="chatSuggestions">
+      <button class="chat-suggestion">Renew my license</button>
+      <button class="chat-suggestion">Apply for benefits</button>
+      <button class="chat-suggestion">Find a state park</button>
+    </div>
+    <div class="chat-input-area">
+      <textarea class="chat-input" id="chatInput" placeholder="Ask about Colorado services..." rows="1"></textarea>
+      <button class="chat-send" id="chatSend" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>Colorado Digital Services Navigator v5.0</p>
+      <p>Colorado Digital Services Navigator v6.0</p>
       <p>A demonstration of modern government service navigation.</p>
       <p style="margin-top: 0.75rem;">
         <a href="https://github.com/bntcurtis/colorado-digital-services-navigator" target="_blank" rel="noopener noreferrer" style="color: var(--co-gold);">Open source</a> under the MIT License
@@ -7419,6 +7678,185 @@
 
       // Expose for debugging
       window.peakNavigator = { openGame };
+    })();
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // CHATBOT - Colorado Services Assistant
+    // Powered by Google Gemini via Cloudflare Worker proxy
+    // ═══════════════════════════════════════════════════════════════════════
+    (function() {
+      const CHAT_API_URL = 'https://navigator-chat-proxy.bntcurtis.workers.dev';
+
+      const chatFab = document.getElementById('chatFab');
+      const chatWindow = document.getElementById('chatWindow');
+      const chatClose = document.getElementById('chatClose');
+      const chatMessages = document.getElementById('chatMessages');
+      const chatInput = document.getElementById('chatInput');
+      const chatSend = document.getElementById('chatSend');
+      const chatSuggestions = document.getElementById('chatSuggestions');
+
+      let isLoading = false;
+
+      // Build a condensed catalog for the API (only essential fields)
+      function buildCatalogContext() {
+        return serviceCatalog.map(s => ({
+          name: s.name,
+          description: s.description,
+          url: s.url,
+          department: s.department,
+          category: s.category,
+          taskType: s.taskType
+        }));
+      }
+
+      // Open/close chat window
+      function openChat() {
+        chatWindow.classList.add('open');
+        chatFab.classList.add('hidden');
+        chatInput.focus();
+      }
+
+      function closeChat() {
+        chatWindow.classList.remove('open');
+        chatFab.classList.remove('hidden');
+      }
+
+      // Add message to chat
+      function addMessage(text, type = 'assistant') {
+        const msg = document.createElement('div');
+        msg.className = `chat-message ${type}`;
+
+        // Convert URLs to clickable links and handle markdown-style links
+        if (type === 'assistant') {
+          // First, clean up any raw HTML attributes that leaked through from malformed responses
+          text = text
+            .replace(/" target="_blank" rel="noopener">/g, '')
+            .replace(/target="_blank" rel="noopener">/g, '')
+            .replace(/<\/a>/g, '');
+
+          // Now convert markdown links [text](url) to HTML
+          text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+          // Convert bare URLs to links (only if not already inside an anchor tag)
+          text = text.replace(/(^|[^"'>])(https?:\/\/[^\s<"']+)/g, (match, prefix, url) => {
+            return prefix + `<a href="${url}" target="_blank" rel="noopener">${url}</a>`;
+          });
+
+          // Convert **bold** to <strong>
+          text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+          // Convert newlines to <br>
+          text = text.replace(/\n/g, '<br>');
+
+          msg.innerHTML = text;
+        } else {
+          msg.textContent = text;
+        }
+
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return msg;
+      }
+
+      // Show typing indicator
+      function showTyping() {
+        const typing = document.createElement('div');
+        typing.className = 'chat-message assistant typing';
+        typing.id = 'typingIndicator';
+        typing.textContent = 'Finding services';
+        chatMessages.appendChild(typing);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function hideTyping() {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+      }
+
+      // Send message to API
+      async function sendMessage(userMessage) {
+        if (isLoading || !userMessage.trim()) return;
+
+        isLoading = true;
+        chatSend.disabled = true;
+        chatSuggestions.style.display = 'none';
+
+        // Add user message
+        addMessage(userMessage, 'user');
+        chatInput.value = '';
+        chatInput.style.height = 'auto';
+
+        // Show typing indicator
+        showTyping();
+
+        try {
+          const response = await fetch(CHAT_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: userMessage,
+              catalog: JSON.stringify(buildCatalogContext())
+            })
+          });
+
+          const data = await response.json();
+          hideTyping();
+
+          if (data.error) {
+            addMessage('Sorry, I encountered an error. Please try again or use the search bar above.', 'error');
+          } else {
+            addMessage(data.reply, 'assistant');
+          }
+        } catch (error) {
+          hideTyping();
+          addMessage('Sorry, I couldn\'t connect to the assistant. Please try using the search bar above.', 'error');
+        }
+
+        isLoading = false;
+        chatSend.disabled = false;
+      }
+
+      // Event listeners
+      chatFab.addEventListener('click', openChat);
+      chatClose.addEventListener('click', closeChat);
+
+      chatSend.addEventListener('click', () => {
+        sendMessage(chatInput.value);
+      });
+
+      chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage(chatInput.value);
+        }
+      });
+
+      // Auto-resize textarea
+      chatInput.addEventListener('input', () => {
+        chatInput.style.height = 'auto';
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px';
+      });
+
+      // Suggestion buttons
+      chatSuggestions.addEventListener('click', (e) => {
+        if (e.target.classList.contains('chat-suggestion')) {
+          sendMessage(e.target.textContent);
+        }
+      });
+
+      // Close on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && chatWindow.classList.contains('open')) {
+          closeChat();
+        }
+      });
+
+      // Close if clicking outside (on mobile)
+      chatWindow.addEventListener('click', (e) => {
+        if (e.target === chatWindow) {
+          closeChat();
+        }
+      });
     })();
   </script>
 </body>
