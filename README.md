@@ -25,6 +25,7 @@ Accessing government services shouldn't be hard. Unfortunately, many state gover
 
 - **Multi-dimensional navigation** — Browse services by task ("I need to renew..."), life event ("I'm having a baby..."), audience ("For veterans..."), or category
 - **Fast search** — Full-text search across service names, descriptions, and tags
+- **Chatbot** — GenAI-powered chat experience that can answer questions about Colorado government services
 - **Mobile-friendly** — Responsive design that works on any device
 - **Accessible** — Keyboard navigation, screen reader support, and WCAG-aligned design
 - **No backend required** — Self-contained HTML file that works anywhere, including Google Sites
