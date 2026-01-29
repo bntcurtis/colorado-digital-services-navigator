@@ -2,7 +2,7 @@
 
 A modern, accessible web application that helps Coloradans discover and access 213 state government digital services. Built to demonstrate what effective government service navigation could look like.
 
-**[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://bntcurtis.github.io/colorado-digital-services-navigator/)**
+**[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://github.com/bntcurtis/colorado-digital-services-navigator)**
 
 ---
 
@@ -23,13 +23,14 @@ Accessing government services shouldn't be hard. Unfortunately, many state gover
 
 ### Key features
 
+- **Bilingual support** — Full English and Spanish translations for all 213 services, with easy language switching
+- **AI-powered chatbot** — Natural language service finder that helps users describe what they need in their own words
 - **Multi-dimensional navigation** — Browse services by task ("I need to renew..."), life event ("I'm having a baby..."), audience ("For veterans..."), or category
 - **Fast search** — Full-text search across service names, descriptions, and tags
-- **Chatbot** — GenAI-powered chat experience that can answer questions about Colorado government services
 - **Mobile-friendly** — Responsive design that works on any device
 - **Accessible** — Keyboard navigation, screen reader support, and WCAG-aligned design
 - **No backend required** — Self-contained HTML file that works anywhere, including Google Sites
-- **Colorado spirit** — True explorers know that clicking the state's two-letter abbreviation three times quickly reveals a hidden path through the Rockies
+- **Colorado spirit** — True explorers know that clicking the state's initials three times quickly reveals a hidden path through the Rockies
 
 ---
 
@@ -46,25 +47,34 @@ The entire application is a single HTML file with embedded CSS and JavaScript. T
 
 ### Service catalog structure
 
-Each service in the catalog includes:
+The catalog uses a bilingual format with English and Spanish translations for key fields:
 
 ```json
 {
   "id": 1,
-  "name": "Service name",
-  "description": "What this service does",
+  "name": {
+    "en": "Apply for Health First Colorado (Medicaid)",
+    "es": "Solicitar Health First Colorado (Medicaid)"
+  },
+  "description": {
+    "en": "Apply for the state's Medicaid program...",
+    "es": "Solicite el programa de Medicaid del estado..."
+  },
   "url": "https://...",
-  "department": "Department name",
+  "department": {
+    "en": "Department of Health Care Policy and Financing",
+    "es": "Departamento de Políticas de Salud y Finanzas"
+  },
   "departmentUrl": "https://...",
-  "category": "Health and Wellbeing",
+  "category": {
+    "en": "Health and Wellbeing",
+    "es": "Salud y Bienestar"
+  },
   "subcategory": "Healthcare and Insurance",
   "lifeEvent": "Healthcare and Wellness",
-  "lifeEventDetail": "Insurance and Benefits",
   "taskType": "Apply",
-  "taskDetail": "for Benefits",
   "audience": "Individuals and Families",
-  "audienceDetail": "Low-Income Households",
-  "tags": ["benefits", "insurance", "healthcare"],
+  "tags": ["medicaid", "health insurance", "healthcare"],
   "icon": "🏥",
   "featured": true
 }
@@ -99,10 +109,10 @@ Services are organized across multiple dimensions:
 
 | File | Description |
 |------|-------------|
-| `index.html` | The main application (213 services) |
-| `colorado-service-navigator-v6.html` | Versioned copy of the main application |
-| `service-catalog-v6.json` | Service catalog data in JSON format |
-| `service-schema-v2.json` | JSON Schema for validating the catalog |
+| `index.html` | The main application (213 bilingual services) |
+| `colorado-service-navigator-v7.html` | Versioned copy of the main application |
+| `service-catalog-v8.json` | Bilingual service catalog data (English + Spanish) |
+| `service-schema-v3.json` | JSON Schema for validating the bilingual catalog |
 | `README.md` | This file |
 
 ---
@@ -122,7 +132,7 @@ Service information was compiled from:
 - **URLs may change** — Government websites frequently reorganize. Some links may become outdated.
 - **Completeness** — This catalog focuses on digital services (online applications, portals, databases). In-person-only services are generally not included.
 - **Accuracy** — While care was taken to describe services correctly, always verify details on official government websites before taking action.
-- **Currency** — The catalog reflects services available as of January 2026. URLs were validated and updated on January 25, 2026.
+- **Currency** — The catalog reflects services available as of January 2026. URLs were validated and updated on January 28, 2026.
 
 ### Updates
 
@@ -134,7 +144,7 @@ This is a point-in-time demonstration. The service catalog is not automatically 
 
 No build process required. Simply:
 
-1. Download `index.html` (or `colorado-service-navigator-v6.html`)
+1. Download `index.html` (or `colorado-service-navigator-v7.html`)
 2. Open it in a web browser
 
 Or clone the repository:

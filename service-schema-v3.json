@@ -1,0 +1,240 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Colorado Service Catalog Schema v3.0 - Bilingual",
+  "description": "Bilingual schema for Colorado state government digital services supporting English and Spanish",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the catalog"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last catalog update"
+    },
+    "serviceCount": {
+      "type": "integer",
+      "description": "Total number of services in catalog"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["en", "es"]
+      },
+      "description": "Supported language codes (ISO 639-1)"
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Service"
+      }
+    }
+  },
+  "required": ["version", "lastUpdated", "serviceCount", "languages", "services"],
+  "definitions": {
+    "LocalizedString": {
+      "type": "object",
+      "description": "A string with translations in multiple languages",
+      "properties": {
+        "en": {
+          "type": "string",
+          "description": "English text"
+        },
+        "es": {
+          "type": "string",
+          "description": "Spanish text"
+        }
+      },
+      "required": ["en", "es"],
+      "additionalProperties": false
+    },
+    "Category": {
+      "type": "object",
+      "description": "Localized category names",
+      "properties": {
+        "en": {
+          "type": "string",
+          "enum": [
+            "Business and Economy",
+            "Education and Learning",
+            "Elections and Government",
+            "Environment and Natural Resources",
+            "Family and Social Services",
+            "Health and Wellbeing",
+            "Jobs and Employment",
+            "Other",
+            "Public Safety and Justice",
+            "Recreation and Outdoors",
+            "Taxes and Finance",
+            "Transportation and Vehicles"
+          ]
+        },
+        "es": {
+          "type": "string",
+          "enum": [
+            "Negocios y Economía",
+            "Educación y Aprendizaje",
+            "Elecciones y Gobierno",
+            "Medio Ambiente y Recursos Naturales",
+            "Servicios Familiares y Sociales",
+            "Salud y Bienestar",
+            "Empleos y Trabajo",
+            "Otro",
+            "Seguridad Pública y Justicia",
+            "Recreación y Aire Libre",
+            "Impuestos y Finanzas",
+            "Transporte y Vehículos"
+          ]
+        }
+      },
+      "required": ["en", "es"]
+    },
+    "Department": {
+      "type": "object",
+      "description": "Localized department names",
+      "properties": {
+        "en": {
+          "type": "string",
+          "description": "Department name in English"
+        },
+        "es": {
+          "type": "string",
+          "description": "Department name in Spanish"
+        }
+      },
+      "required": ["en", "es"]
+    },
+    "Service": {
+      "type": "object",
+      "required": ["id", "name", "description", "url", "department", "category"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the service",
+          "minimum": 1
+        },
+        "name": {
+          "$ref": "#/definitions/LocalizedString",
+          "description": "Service name in supported languages"
+        },
+        "description": {
+          "$ref": "#/definitions/LocalizedString",
+          "description": "Brief description of the service in supported languages"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct URL to access the service (same for all languages)"
+        },
+        "department": {
+          "$ref": "#/definitions/Department",
+          "description": "Responsible state agency name in supported languages"
+        },
+        "departmentUrl": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "URL to the agency's website"
+        },
+        "category": {
+          "$ref": "#/definitions/Category",
+          "description": "Primary service category in supported languages"
+        },
+        "subcategory": {
+          "type": ["string", "null"],
+          "description": "Service subcategory within the main category"
+        },
+        "lifeEvent": {
+          "type": ["string", "null"],
+          "description": "Related life event category",
+          "enum": [
+            "Business and Economy",
+            "Civic and Community",
+            "Education and Career",
+            "Financial and Taxes",
+            "Healthcare and Wellness",
+            "Housing and Relocation",
+            "Legal and Justice",
+            "Living with Financial Hardship",
+            "Military Service",
+            "Other",
+            "Raising a Family",
+            "Starting a Family",
+            "Starting/Raising a Family",
+            "Travel and Recreation",
+            null
+          ]
+        },
+        "lifeEventDetail": {
+          "type": ["string", "null"],
+          "description": "Specific life event within category"
+        },
+        "taskType": {
+          "type": ["string", "null"],
+          "description": "Primary task type for navigation",
+          "enum": [
+            "Apply",
+            "Calculate",
+            "File",
+            "Find",
+            "Get Assistance",
+            "Learn",
+            "Make",
+            "Manage",
+            "Pay",
+            "Purchase",
+            "Register",
+            "Renew",
+            "Report",
+            "Request",
+            "Schedule",
+            "Start",
+            "Use",
+            null
+          ]
+        },
+        "taskDetail": {
+          "type": ["string", "null"],
+          "description": "Specific task detail"
+        },
+        "audience": {
+          "type": ["string", "null"],
+          "description": "Target audience category",
+          "enum": [
+            "Businesses and Organizations",
+            "Education and Students",
+            "Government and Employees",
+            "Individuals and Families",
+            "Outdoor Enthusiasts",
+            "Professionals and Licensees",
+            "Veterans",
+            "Visitors and Tourists",
+            null
+          ]
+        },
+        "audienceDetail": {
+          "type": ["string", "null"],
+          "description": "Specific audience segment"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Keywords for search (English, used for both languages)"
+        },
+        "icon": {
+          "type": ["string", "null"],
+          "description": "Emoji icon for the service"
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether this is a featured/popular service"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
