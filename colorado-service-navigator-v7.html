@@ -33,6 +33,15 @@
   <title>Colorado Digital Services | State Government Navigator</title>
   <meta name="description" content="Access 200+ state government digital services, from renewing your license to applying for benefits.">
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFQ7PPNRHV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YFQ7PPNRHV');
+  </script>
+
   <style>
     :root {
       --co-blue: #003366;
@@ -1390,6 +1399,16 @@
     // Helper function to get translation
     function t(key) {
       return TRANSLATIONS[currentLang][key] || TRANSLATIONS.en[key] || key;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // ANALYTICS - Event tracking helper
+    // ═══════════════════════════════════════════════════════════════════════
+
+    function trackEvent(eventName, params = {}) {
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, params);
+      }
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -8817,6 +8836,116 @@
     document.addEventListener('DOMContentLoaded', init);
 
     // ═══════════════════════════════════════════════════════════════════════
+    // ANALYTICS EVENT TRACKING
+    // ═══════════════════════════════════════════════════════════════════════
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track service link clicks (outbound to state services)
+      document.getElementById('servicesGrid').addEventListener('click', e => {
+        const link = e.target.closest('.service-link');
+        if (link) {
+          const card = link.closest('.service-card');
+          const serviceName = card?.querySelector('.service-title')?.textContent || 'Unknown';
+          const category = card?.querySelector('.service-tag.category')?.textContent || 'Unknown';
+          const department = card?.querySelector('.service-department')?.textContent || 'Unknown';
+          trackEvent('service_click', {
+            service_name: serviceName,
+            category: category,
+            department: department,
+            url: link.href,
+            navigation_mode: state.navMode,
+            has_search_query: !!state.searchQuery,
+            has_quick_filter: !!state.quickFilter
+          });
+        }
+      });
+
+      // Track featured service clicks
+      document.getElementById('featuredServices').addEventListener('click', e => {
+        const link = e.target.closest('a[href]');
+        if (link && link.href.startsWith('http')) {
+          const title = link.querySelector('.featured-title')?.textContent || 'Unknown';
+          trackEvent('featured_click', {
+            service_name: title,
+            url: link.href
+          });
+        }
+      });
+
+      // Track search usage
+      let searchTimeout;
+      document.getElementById('searchInput').addEventListener('input', e => {
+        clearTimeout(searchTimeout);
+        if (e.target.value.length >= 3) {
+          searchTimeout = setTimeout(() => {
+            trackEvent('search', {
+              search_term: e.target.value,
+              results_count: document.querySelectorAll('.service-card').length
+            });
+          }, 1000); // Debounce to avoid tracking every keystroke
+        }
+      });
+
+      // Track navigation mode changes
+      document.querySelectorAll('.nav-tabs .tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          trackEvent('navigation_mode', {
+            mode: tab.dataset.mode
+          });
+        });
+      });
+
+      // Track quick action clicks (task/life-event pills)
+      document.getElementById('actionPills').addEventListener('click', e => {
+        const pill = e.target.closest('.action-pill');
+        if (pill) {
+          trackEvent('quick_action', {
+            action_label: pill.textContent.trim(),
+            navigation_mode: state.navMode
+          });
+        }
+      });
+
+      // Track filter usage
+      document.getElementById('filtersContainer').addEventListener('change', e => {
+        const checkbox = e.target.closest('input[type="checkbox"]');
+        if (checkbox) {
+          const filterType = checkbox.closest('.filter-group')?.querySelector('.filter-group-title')?.textContent || 'Unknown';
+          trackEvent('filter_apply', {
+            filter_type: filterType,
+            filter_value: checkbox.nextElementSibling?.textContent?.trim() || checkbox.value,
+            checked: checkbox.checked
+          });
+        }
+      });
+
+      // Track language switches
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.dataset.lang !== currentLang) {
+            trackEvent('language_switch', {
+              from_language: currentLang,
+              to_language: btn.dataset.lang
+            });
+          }
+        });
+      });
+
+      // Track chat opens
+      document.getElementById('chatFab').addEventListener('click', () => {
+        trackEvent('chat_open');
+      });
+
+      // Track view mode changes
+      document.getElementById('gridViewBtn').addEventListener('click', () => {
+        trackEvent('view_mode', { mode: 'grid' });
+      });
+      document.getElementById('listViewBtn').addEventListener('click', () => {
+        trackEvent('view_mode', { mode: 'list' });
+      });
+    });
+
+    // ═══════════════════════════════════════════════════════════════════════
     // PEAK NAVIGATOR - An Atari 2600-style Easter Egg Game
     // Triple-click the "CO" logo to play!
     // ═══════════════════════════════════════════════════════════════════════
@@ -9160,7 +9289,7 @@
           if (game.score >= game.hiScore) {
             ctx.fillText('NEW HIGH SCORE!', W/2, H/2 + 25);
           }
-          ctx.fillText('Press SPACE to play again', W/2, H/2 + 60);
+          ctx.fillText('Tap or press SPACE to play again', W/2, H/2 + 60);
         }
 
         // Start screen
@@ -9178,7 +9307,7 @@
           ctx.fillText('Avoid the boulders!', W/2, H/2 + 15);
           ctx.fillStyle = COLORS.text;
           ctx.font = '14px "Courier New"';
-          ctx.fillText('Press SPACE to start', W/2, H/2 + 50);
+          ctx.fillText('Tap or press SPACE to start', W/2, H/2 + 50);
         }
       }
 
@@ -9249,6 +9378,26 @@
       document.getElementById('gameClose').addEventListener('click', closeGame);
       modal.addEventListener('click', e => {
         if (e.target === modal) closeGame();
+      });
+
+      // Touch/tap support for mobile
+      canvas.addEventListener('touchstart', e => {
+        e.preventDefault();
+        if (!game.running) {
+          startGame();
+        } else {
+          // Trigger jump
+          game.keys.Space = true;
+        }
+      });
+      canvas.addEventListener('touchend', e => {
+        game.keys.Space = false;
+      });
+      canvas.addEventListener('click', e => {
+        // Also handle mouse clicks on canvas for consistency
+        if (!game.running) {
+          startGame();
+        }
       });
 
       // Easter egg trigger: triple-click on CO logo
@@ -9370,6 +9519,12 @@
       // Send message to API
       async function sendMessage(userMessage) {
         if (isLoading || !userMessage.trim()) return;
+
+        // Track chat message sent
+        trackEvent('chat_message', {
+          message_length: userMessage.trim().length,
+          language: currentLang
+        });
 
         isLoading = true;
         chatSend.disabled = true;
