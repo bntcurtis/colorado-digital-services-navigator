@@ -1,6 +1,6 @@
 # Colorado Digital Services Navigator
 
-A modern, accessible web application that helps Coloradans discover and access 213 state government digital services. Built to demonstrate what effective government service navigation could look like.
+A modern, accessible web application that helps Coloradans discover and access over 200 state government digital services. Built to demonstrate what effective government service navigation could look like.
 
 **[Live Demo](https://colorado-gov.org)** | **[View on GitHub](https://github.com/bntcurtis/colorado-digital-services-navigator)**
 
@@ -8,7 +8,7 @@ A modern, accessible web application that helps Coloradans discover and access 2
 
 ## About this project
 
-Colorado celebrates its 150th birthday as a state in 2026. To mark the occasion, this project catalogs 213 digital government services and presents them through a modern, user-friendly interface.
+Colorado celebrates its 150th birthday as a state in 2026. To mark the occasion, this project catalogs 200+ digital government services and presents them through a modern, user-friendly interface.
 
 This is an independent demonstration project. It is **not affiliated with Colorado.gov** or any official state government entity.
 
