@@ -113,7 +113,16 @@ Services are organized across multiple dimensions:
 | `colorado-service-navigator-v7.html` | Versioned copy of the main application |
 | `service-catalog-v8.json` | Bilingual service catalog data (English + Spanish) |
 | `service-schema-v3.json` | JSON Schema for validating the bilingual catalog |
+| `scripts/check-links.js` | Automated link health checker |
+| `scripts/discover-services.js` | Sitemap crawler for discovering new services |
 | `README.md` | This file |
+
+### GitHub Actions
+
+| Workflow | Schedule | Description |
+|----------|----------|-------------|
+| `link-audit.yml` | Weekly (Mondays) | Checks all service URLs for broken links, soft 404s, and suspicious redirects. Creates/updates a GitHub Issue with findings. |
+| `discover-services.yml` | Monthly (1st) | Crawls Colorado government sitemaps to find potential new services not yet in the catalog. |
 
 ---
 
@@ -134,9 +143,13 @@ Service information was compiled from:
 - **Accuracy** — While care was taken to describe services correctly, always verify details on official government websites before taking action.
 - **Currency** — The catalog reflects services available as of January 2026. URLs were validated and updated on January 28, 2026.
 
-### Updates
+### Catalog maintenance
 
-This is a point-in-time demonstration. The service catalog is not automatically updated. If you find outdated information, please open an issue or submit a pull request.
+The service catalog is maintained through a combination of automated checks and community feedback:
+
+- **Automated link auditing** — A GitHub Action runs weekly to detect broken links, soft 404s (pages that return 200 but say "not found"), and suspicious redirects. Issues are automatically created for review.
+- **Service discovery** — A monthly sitemap crawler searches Colorado government websites for potential new services not yet in the catalog.
+- **Community feedback** — Users can [report broken links or suggest new services](https://github.com/bntcurtis/colorado-digital-services-navigator/issues/new?template=feedback.yml) directly from the app footer.
 
 ---
 
@@ -161,10 +174,10 @@ open index.html
 
 Contributions are welcome! Here are some ways to help:
 
-- **Report broken links** — Open an issue if you find a service URL that no longer works
-- **Suggest new services** — Know of a Colorado digital service that's missing? Let us know
+- **[Report broken links or suggest new services](https://github.com/bntcurtis/colorado-digital-services-navigator/issues/new?template=feedback.yml)** — Use the feedback form to let us know about problems or missing services
 - **Improve descriptions** — Help make service descriptions clearer and more helpful
 - **Accessibility feedback** — Report any accessibility issues you encounter
+- **Code contributions** — Improve the link checker, discovery scripts, or main application
 
 ---
 
