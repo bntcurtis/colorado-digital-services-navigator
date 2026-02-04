@@ -1,0 +1,93 @@
+name: Monthly Service Discovery
+
+on:
+  schedule:
+    # Run on the 1st of each month at 10am UTC
+    - cron: '0 10 1 * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Service Discovery
+        run: |
+          node scripts/discover-services.js --json --limit 100 > discovery-report.json 2>&1 || true
+          node scripts/discover-services.js --limit 100 > discovery-report.md 2>&1 || true
+
+      - name: Create Discovery Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            let report, jsonReport;
+            try {
+              report = fs.readFileSync('discovery-report.md', 'utf8');
+              jsonReport = JSON.parse(fs.readFileSync('discovery-report.json', 'utf8'));
+            } catch (e) {
+              console.log('No report generated or error reading files');
+              return;
+            }
+
+            if (jsonReport.candidatesWithInfo === 0) {
+              console.log('No new services found, skipping issue creation');
+              return;
+            }
+
+            const issueTitle = `🔍 Service Discovery: ${jsonReport.candidatesWithInfo} potential new services found`;
+
+            const issueBody = `## Monthly Service Discovery Report
+
+            This automated scan found **${jsonReport.candidatesWithInfo}** potential new services that aren't in the current catalog.
+
+            ### Summary
+            - Existing services in catalog: ${jsonReport.existingCount}
+            - Total URLs found in sitemaps: ${jsonReport.sitemapUrlsFound}
+            - URLs matching service patterns: ${jsonReport.potentialServicesFound}
+            - Candidates with valid page info: ${jsonReport.candidatesWithInfo}
+
+            ### Review Process
+            1. Review the candidates below
+            2. For legitimate services, add them to \`service-catalog-v8.json\`
+            3. Close this issue when review is complete
+
+            <details>
+            <summary>📋 Candidate Services (click to expand)</summary>
+
+            ${report}
+
+            </details>
+
+            ---
+            *This issue is generated monthly. Review and close when done.*
+            `;
+
+            // Always create a new issue for discovery (don't update existing)
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issueTitle,
+              body: issueBody,
+              labels: ['service-discovery', 'enhancement']
+            });
+
+      - name: Upload Report Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-reports
+          path: |
+            discovery-report.json
+            discovery-report.md
+          retention-days: 60
