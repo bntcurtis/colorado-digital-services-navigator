@@ -1,0 +1,58 @@
+name: Service Feedback
+description: Report a broken link or suggest a new service for the Colorado Service Navigator
+title: "[Feedback]: "
+labels: ["user-feedback", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the Colorado Service Navigator! Your feedback helps keep the catalog accurate and useful.
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: What kind of feedback is this?
+      options:
+        - Broken link (page not found, error, or outdated)
+        - Suggest a new service to add
+        - Incorrect information (wrong description, category, etc.)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: service-name
+    attributes:
+      label: Service name
+      description: If reporting an issue with an existing service, what's its name?
+      placeholder: e.g., "Apply for Health First Colorado (Medicaid)"
+    validations:
+      required: false
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: The broken URL, or the URL of a service you'd like us to add
+      placeholder: https://...
+    validations:
+      required: false
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Any additional context that would help us understand the issue
+      placeholder: |
+        For broken links: What error did you see? Did it redirect somewhere unexpected?
+        For new services: What does this service help people do? Which department runs it?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I checked that this service isn't already in the Navigator
+          required: false
