@@ -1,7 +1,7 @@
 {
-  "version": "8.0",
-  "lastUpdated": "2026-01-28",
-  "serviceCount": 213,
+  "version": "8.1",
+  "lastUpdated": "2026-02-04",
+  "serviceCount": 230,
   "languages": ["en", "es"],
   "services": [
     {
@@ -14,12 +14,12 @@
         "en": "Research colleges, explore programs, understand costs, and create a plan for pursuing higher education in Colorado using these state planning resources.",
         "es": "Investigue universidades, explore programas, comprenda los costos y cree un plan para cursar estudios superiores en Colorado usando estos recursos estatales de planificación."
       },
-      "url": "https://highered.colorado.gov/students",
+      "url": "https://cdhe.colorado.gov/students",
       "department": {
         "en": "Department of Higher Education",
         "es": "Departamento de Educación Superior"
       },
-      "departmentUrl": "https://highered.colorado.gov/",
+      "departmentUrl": "https://cdhe.colorado.gov/",
       "category": {
         "en": "Education and Learning",
         "es": "Educación y Aprendizaje"
@@ -70,7 +70,7 @@
         "en": "Add or update emergency contact information that can be accessed by first responders in case of an emergency while driving in Colorado.",
         "es": "Agregue o actualice información de contacto de emergencia que los socorristas pueden acceder en caso de una emergencia mientras conduce en Colorado."
       },
-      "url": "https://dmv.colorado.gov/emergency-contact-database",
+      "url": "https://dmv.colorado.gov/mydmv",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -98,7 +98,7 @@
         "en": "Apply for, renew, or manage Colorado educator licenses and authorizations for teachers, administrators, and other school personnel.",
         "es": "Solicite, renueve o administre licencias y autorizaciones de educadores de Colorado para maestros, administradores y otro personal escolar."
       },
-      "url": "https://www.cde.state.co.us/cdeprof",
+      "url": "https://ed.cde.state.co.us/cdeprof",
       "department": {
         "en": "Department of Education",
         "es": "Departamento de Educación"
@@ -266,7 +266,7 @@
         "en": "Access the state's procurement portal to find and bid on contracts with Colorado state government agencies and view current solicitations.",
         "es": "Acceda al portal de adquisiciones del estado para encontrar y ofertar en contratos con agencias del gobierno estatal de Colorado y ver las solicitudes actuales."
       },
-      "url": "https://bidcolorado.colorado.gov/",
+      "url": "https://osc.colorado.gov/spco/solicitations",
       "department": {
         "en": "Department of Personnel & Administration",
         "es": "Departamento de Personal y Administración"
@@ -546,12 +546,12 @@
         "en": "Access legal forms, information, and resources for representing yourself in Colorado courts, including family law, small claims, and civil matters.",
         "es": "Acceda a formularios legales, información y recursos para representarse a sí mismo en los tribunales de Colorado, incluyendo derecho familiar, demandas menores y asuntos civiles."
       },
-      "url": "https://www.courts.state.co.us",
+      "url": "https://www.coloradojudicial.gov/self-help-resources",
       "department": {
         "en": "Colorado Judicial Branch",
         "es": "Rama Judicial de Colorado"
       },
-      "departmentUrl": "https://www.courts.state.co.us/",
+      "departmentUrl": "https://www.coloradojudicial.gov/",
       "category": {
         "en": "Public Safety and Justice",
         "es": "Seguridad Pública y Justicia"
@@ -630,7 +630,7 @@
         "en": "Find information about food assistance and nutrition programs available in Colorado, including SNAP, WIC, and school meal programs.",
         "es": "Encuentre información sobre programas de asistencia alimentaria y nutrición disponibles en Colorado, incluyendo SNAP, WIC y programas de comidas escolares."
       },
-      "url": "https://www.colorado.gov/pacific/sites/default/files/atoms/files/Colorado%20Nutrition%20Resources.pdf",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance",
       "department": {
         "en": "Department of Human Services",
         "es": "Departamento de Servicios Humanos"
@@ -658,7 +658,7 @@
         "en": "Apply for and manage public assistance benefits including food, cash, and medical assistance through this online portal.",
         "es": "Solicite y administre beneficios de asistencia pública incluyendo alimentos, efectivo y asistencia médica a través de este portal en línea."
       },
-      "url": "https://peak.my.site.com/peak/s/peak-landing-page",
+      "url": "https://coloradopeak.secure.force.com",
       "department": {
         "en": "Department of Human Services",
         "es": "Departamento de Servicios Humanos"
@@ -686,7 +686,7 @@
         "en": "Access free support, coaching, and resources to help you quit smoking or using other tobacco products through the Colorado QuitLine.",
         "es": "Acceda a apoyo gratuito, entrenamiento y recursos para ayudarle a dejar de fumar o usar otros productos de tabaco a través de la Línea de Ayuda de Colorado."
       },
-      "url": "https://www.coquitline.org",
+      "url": "https://www.coquitline.org/en-us/",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -742,7 +742,7 @@
         "en": "Find volunteer opportunities across Colorado, including AmeriCorps programs, community service projects, and nonprofit organizations.",
         "es": "Encuentre oportunidades de voluntariado en todo Colorado, incluyendo programas de AmeriCorps, proyectos de servicio comunitario y organizaciones sin fines de lucro."
       },
-      "url": "https://www.coloradovolunteers.org",
+      "url": "https://servecolorado.colorado.gov",
       "department": {
         "en": "Lieutenant Governor's Office",
         "es": "Oficina del Vicegobernador"
@@ -798,7 +798,7 @@
         "en": "Search for job opportunities, post resumes, and access employment services through Colorado's official job matching system.",
         "es": "Busque oportunidades de empleo, publique currículums y acceda a servicios de empleo a través del sistema oficial de búsqueda de empleo de Colorado."
       },
-      "url": "https://www.connectingcolorado.com",
+      "url": "https://cdle.colorado.gov/jobs-training/connecting-colorado",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -938,7 +938,7 @@
         "en": "Access Colorado DMV services online including driver license renewal, vehicle registration, and address changes.",
         "es": "Acceda a los servicios del DMV de Colorado en línea incluyendo renovación de licencia de conducir, registro de vehículos y cambios de dirección."
       },
-      "url": "https://mydmv.colorado.gov",
+      "url": "https://dmv.colorado.gov/mydmv",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -1050,7 +1050,7 @@
         "en": "Find fishing locations throughout Colorado with detailed information about fish species, access points, and regulations.",
         "es": "Encuentre lugares de pesca en todo Colorado con información detallada sobre especies de peces, puntos de acceso y regulaciones."
       },
-      "url": "https://ndismaps.nrel.colostate.edu/index.html?app=FishingAtlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -1078,7 +1078,7 @@
         "en": "Find hunting areas throughout Colorado with detailed information about game species, access points, and regulations.",
         "es": "Encuentre áreas de caza en todo Colorado con información detallada sobre especies de caza, puntos de acceso y regulaciones."
       },
-      "url": "https://ndismaps.nrel.colostate.edu/index.html?app=HuntingAtlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -1162,7 +1162,7 @@
         "en": "Search and order official crash reports from vehicle accidents in Colorado for insurance claims or legal purposes.",
         "es": "Busque y solicite informes oficiales de accidentes de vehículos en Colorado para reclamaciones de seguros o propósitos legales."
       },
-      "url": "https://crash.state.co.us/",
+      "url": "https://dmv.colorado.gov/crash-records",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -1274,7 +1274,7 @@
         "en": "Find approved driver education courses for new drivers in Colorado, including classroom and behind-the-wheel training.",
         "es": "Encuentre cursos aprobados de educación vial para nuevos conductores en Colorado, incluyendo capacitación en aula y práctica de manejo."
       },
-      "url": "https://dmv.colorado.gov/driver-improvement-school",
+      "url": "https://dmv.colorado.gov/drivereducation",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -1386,7 +1386,7 @@
         "en": "Access information about water rights calls in Colorado, which regulate the use of water based on priority and available supply.",
         "es": "Acceda a información sobre llamadas de derechos de agua en Colorado, que regulan el uso del agua basado en prioridad y suministro disponible."
       },
-      "url": "https://dwr.colorado.gov/tools/water-rights-calls",
+      "url": "https://dwr.state.co.us/Tools/AdministrativeCalls/Active/Search",
       "department": {
         "en": "Department of Natural Resources",
         "es": "Departamento de Recursos Naturales"
@@ -1554,12 +1554,12 @@
         "en": "Request copies of transcripts from closed occupational schools in Colorado.",
         "es": "Solicite copias de expedientes académicos de escuelas ocupacionales cerradas en Colorado."
       },
-      "url": "https://highered.colorado.gov/transcripts",
+      "url": "https://cdhe.colorado.gov/students/preparing-for-college",
       "department": {
         "en": "Department of Higher Education",
         "es": "Departamento de Educación Superior"
       },
-      "departmentUrl": "https://highered.colorado.gov/",
+      "departmentUrl": "https://cdhe.colorado.gov/",
       "category": {
         "en": "Education and Learning",
         "es": "Educación y Aprendizaje"
@@ -1946,7 +1946,7 @@
         "en": "Register, renew, or transfer livestock brands used to identify cattle and other livestock in Colorado.",
         "es": "Registre, renueve o transfiera marcas de ganado utilizadas para identificar ganado y otros animales en Colorado."
       },
-      "url": "https://brands.agritech.colorado.gov/",
+      "url": "https://ag.colorado.gov/brands/livestock-brands",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -2086,7 +2086,7 @@
         "en": "Access unemployment insurance services for employers, including filing reports, making payments, and managing accounts.",
         "es": "Acceda a servicios de seguro de desempleo para empleadores, incluyendo presentación de informes, realización de pagos y administración de cuentas."
       },
-      "url": "https://myui.coworkforce.com/employer",
+      "url": "https://cdle.colorado.gov/employers/myui-employer-plus",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -2114,7 +2114,7 @@
         "en": "Access unemployment insurance services for claimants, including filing claims, requesting payments, and managing benefits.",
         "es": "Acceda a servicios de seguro de desempleo para solicitantes, incluyendo presentación de reclamos, solicitud de pagos y administración de beneficios."
       },
-      "url": "https://myui.coworkforce.com/",
+      "url": "https://cdle.colorado.gov/myui-plus",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -2730,7 +2730,7 @@
         "en": "Search and locate information about oil and gas facilities throughout Colorado, including well locations, operator details, and compliance records.",
         "es": "Busque y localice información sobre instalaciones de petróleo y gas en todo Colorado, incluyendo ubicaciones de pozos, detalles del operador y registros de cumplimiento."
       },
-      "url": "https://cogcc.state.co.us/maps.html#/gisonline",
+      "url": "https://ecmc.state.co.us/maps.html",
       "department": {
         "en": "Department of Natural Resources",
         "es": "Departamento de Recursos Naturales"
@@ -2786,7 +2786,7 @@
         "en": "Access information about oil and gas drilling permits in Colorado, including applications, approvals, and permit status updates.",
         "es": "Acceda a información sobre permisos de perforación de petróleo y gas en Colorado, incluyendo solicitudes, aprobaciones y actualizaciones del estado del permiso."
       },
-      "url": "https://cogcc.state.co.us/permits.html#/permits",
+      "url": "https://ecmc.state.co.us/permits/",
       "department": {
         "en": "Department of Natural Resources",
         "es": "Departamento de Recursos Naturales"
@@ -3094,7 +3094,7 @@
         "en": "Join the anonymous reporting system that allows students, parents, and community members to report safety concerns in Colorado schools.",
         "es": "Únase al sistema de reportes anónimos que permite a estudiantes, padres y miembros de la comunidad reportar preocupaciones de seguridad en las escuelas de Colorado."
       },
-      "url": "https://safe2tell.org/",
+      "url": "https://safe2tell.org",
       "department": {
         "en": "Department of Law",
         "es": "Departamento de Justicia"
@@ -3178,7 +3178,7 @@
         "en": "Complete annual vehicle registration renewals online, including payment of fees and taxes for cars, trucks, and other vehicles registered in Colorado.",
         "es": "Complete renovaciones anuales de registro de vehículos en línea, incluyendo pago de tarifas e impuestos para autos, camiones y otros vehículos registrados en Colorado."
       },
-      "url": "https://mydmv.colorado.gov/_/",
+      "url": "https://dmv.colorado.gov/registration",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -3626,7 +3626,7 @@
         "en": "Access Colorado's online tax services portal to file returns, make payments, and manage tax accounts for individuals and businesses.",
         "es": "Acceda al portal de servicios fiscales en línea de Colorado para presentar declaraciones, hacer pagos y administrar cuentas de impuestos para individuos y empresas."
       },
-      "url": "https://www.colorado.gov/revenueonline",
+      "url": "https://www.colorado.gov/revenueonline/_/",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -3822,7 +3822,7 @@
         "en": "Access and review proposed rules and regulations being developed by the Department of Public Safety, including opportunities for public comment.",
         "es": "Acceda y revise las reglas y regulaciones propuestas que están siendo desarrolladas por el Departamento de Seguridad Pública, incluyendo oportunidades para comentarios públicos."
       },
-      "url": "https://cdps.colorado.gov/rules",
+      "url": "https://publicsafety.colorado.gov/cdps-rules-colorado-code-of-regulations",
       "department": {
         "en": "Department of Public Safety",
         "es": "Departamento de Seguridad Pública"
@@ -4018,7 +4018,7 @@
         "en": "This service provides information or access to Get free help for mental health or substance use right now.",
         "es": "Este servicio proporciona información o acceso para obtener ayuda gratuita para salud mental o uso de sustancias ahora mismo."
       },
-      "url": "https://www.988colorado.com/en",
+      "url": "https://coloradocrisisservices.org/",
       "department": {
         "en": "Behavioral Health Administration",
         "es": "Administración de Salud del Comportamiento"
@@ -4186,7 +4186,7 @@
         "en": "This service provides information or access to The myColorado App.",
         "es": "Este servicio proporciona información o acceso a la aplicación myColorado."
       },
-      "url": "https://mycolorado.gov",
+      "url": "https://mycolorado.gov/",
       "department": {
         "en": "Department of Personnel & Administration",
         "es": "Departamento de Personal y Administración"
@@ -4214,7 +4214,7 @@
         "en": "Get a digital version of your Colorado driver license or state ID on your phone. Use it for age verification, traffic stops, and at TSA checkpoints.",
         "es": "Obtenga una versión digital de su licencia de conducir o identificación estatal de Colorado en su teléfono. Úsela para verificación de edad, paradas de tráfico y en puntos de control de la TSA."
       },
-      "url": "https://mycolorado.state.co.us/",
+      "url": "https://mycolorado.gov/colorado-digital-id",
       "department": {
         "en": "Governor's Office of Information Technology",
         "es": "Oficina de Tecnología de la Información del Gobernador"
@@ -4354,7 +4354,7 @@
         "en": "Verify the license status of doctors, nurses, real estate agents, contractors, and other licensed professionals in Colorado.",
         "es": "Verifique el estado de licencia de médicos, enfermeras, agentes de bienes raíces, contratistas y otros profesionales con licencia en Colorado."
       },
-      "url": "https://apps.colorado.gov/dora/licensing/Lookup/LicenseLookup.aspx",
+      "url": "https://dora.colorado.gov/check-a-license",
       "department": {
         "en": "Department of Regulatory Agencies",
         "es": "Departamento de Agencias Reguladoras"
@@ -4466,7 +4466,7 @@
         "en": "Verify the authenticity of Colorado Digital IDs using the myColorado app. Scan QR codes to confirm identity without sharing sensitive data.",
         "es": "Verifique la autenticidad de las identificaciones digitales de Colorado usando la aplicación myColorado. Escanee códigos QR para confirmar identidad sin compartir datos sensibles."
       },
-      "url": "https://mycolorado.state.co.us/",
+      "url": "https://mycolorado.gov/colorado-digital-id/verify",
       "department": {
         "en": "Governor's Office of Information Technology",
         "es": "Oficina de Tecnología de la Información del Gobernador"
@@ -4718,7 +4718,7 @@
         "en": "Search the Colorado State Publications Library catalog for state agency publications and documents.",
         "es": "Busque en el catálogo de la Biblioteca de Publicaciones del Estado de Colorado publicaciones y documentos de agencias estatales."
       },
-      "url": "https://athena.cde.state.co.us/",
+      "url": "https://hermes.cde.state.co.us/",
       "department": {
         "en": "Colorado State Library",
         "es": "Biblioteca Estatal de Colorado"
@@ -4774,7 +4774,7 @@
         "en": "Review and comment on Colorado Department of Public Safety rules that are currently in development.",
         "es": "Revise y comente sobre las reglas del Departamento de Seguridad Pública de Colorado que están actualmente en desarrollo."
       },
-      "url": "https://cdps.colorado.gov/inspector-general-unit/rules-in-development",
+      "url": "https://publicsafety.colorado.gov/cdps-rules-and-regulations-0",
       "department": {
         "en": "Department of Public Safety",
         "es": "Departamento de Seguridad Pública"
@@ -4886,7 +4886,7 @@
         "en": "Access resources from the Cannabis Business Office, including funding programs, for entrepreneurs in Colorado's cannabis industry.",
         "es": "Acceda a recursos de la Oficina de Negocios de Cannabis, incluyendo programas de financiamiento, para emprendedores en la industria del cannabis de Colorado."
       },
-      "url": "https://oedit.colorado.gov/programs-and-funding/colorado-cannabis-business-office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
       "department": {
         "en": "Office of Economic Development and International Trade",
         "es": "Oficina de Desarrollo Económico y Comercio Internacional"
@@ -4914,7 +4914,7 @@
         "en": "Access your driving history record online, including information about moving violations and points.",
         "es": "Acceda a su historial de conducción en línea, incluyendo información sobre infracciones de tránsito y puntos."
       },
-      "url": "https://drivingrecords.colorado.gov",
+      "url": "https://dmv.colorado.gov/motor-vehicle-record",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -5726,7 +5726,7 @@
         "en": "Access 24/7 mental health crisis support by calling or texting 988. Free, confidential help for anyone in emotional distress.",
         "es": "Acceda a apoyo de crisis de salud mental 24/7 llamando o enviando un mensaje de texto al 988. Ayuda gratuita y confidencial para cualquier persona en angustia emocional."
       },
-      "url": "https://www.988colorado.com/",
+      "url": "https://coloradocrisisservices.org/",
       "department": {
         "en": "Behavioral Health Administration",
         "es": "Administración de Salud del Comportamiento"
@@ -5866,7 +5866,7 @@
         "en": "Access resources and information for starting and operating a cannabis business in Colorado, including licensing requirements.",
         "es": "Acceda a recursos e información para iniciar y operar un negocio de cannabis en Colorado, incluyendo requisitos de licencia."
       },
-      "url": "https://oedit.colorado.gov/programs-and-funding/colorado-cannabis-business-office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
       "department": {
         "en": "Office of Economic Development",
         "es": "Oficina de Desarrollo Económico"
@@ -5966,6 +5966,482 @@
       "audience": "Individuals and Families",
       "tags": ["digital", "online services", "government", "portal", "SIPA"],
       "icon": "🌐",
+      "featured": false
+    },
+    {
+      "id": 214,
+      "name": {
+        "en": "File an animal mistreatment or neglect complaint",
+        "es": "Presentar una queja por maltrato o negligencia animal"
+      },
+      "description": {
+        "en": "Report suspected animal cruelty, neglect, or mistreatment to the Colorado Bureau of Animal Protection for investigation.",
+        "es": "Reporte sospechas de crueldad, negligencia o maltrato animal a la Oficina de Protección Animal de Colorado para investigación."
+      },
+      "url": "https://ag.colorado.gov/animal-welfare/bureau-of-animal-protection/file-an-animal-mistreatment-or-neglect-complaint",
+      "department": {
+        "en": "Department of Agriculture",
+        "es": "Departamento de Agricultura"
+      },
+      "departmentUrl": "https://ag.colorado.gov/",
+      "category": {
+        "en": "Public Safety and Justice",
+        "es": "Seguridad Pública y Justicia"
+      },
+      "subcategory": "Consumer Protection",
+      "lifeEvent": "Civic and Community",
+      "taskType": "Report",
+      "audience": "Individuals and Families",
+      "tags": ["animal", "cruelty", "neglect", "complaint", "pets"],
+      "icon": "🐾",
+      "featured": false
+    },
+    {
+      "id": 215,
+      "name": {
+        "en": "File a workers' compensation claim",
+        "es": "Presentar un reclamo de compensación laboral"
+      },
+      "description": {
+        "en": "File a workers' compensation claim if you've been injured on the job in Colorado. Learn about your rights and the claims process.",
+        "es": "Presente un reclamo de compensación laboral si ha sido lesionado en el trabajo en Colorado. Conozca sus derechos y el proceso de reclamos."
+      },
+      "url": "https://cdle.colorado.gov/dwc/injured-workers/file-a-workers-compensation-claim",
+      "department": {
+        "en": "Department of Labor and Employment",
+        "es": "Departamento de Trabajo y Empleo"
+      },
+      "departmentUrl": "https://cdle.colorado.gov/",
+      "category": {
+        "en": "Jobs and Employment",
+        "es": "Empleos y Trabajo"
+      },
+      "subcategory": "Workplace Rights",
+      "lifeEvent": "Legal and Justice",
+      "taskType": "File",
+      "audience": "Individuals and Families",
+      "tags": ["workers compensation", "injury", "workplace", "claim"],
+      "icon": "⚕️",
+      "featured": false
+    },
+    {
+      "id": 216,
+      "name": {
+        "en": "Apply for a Colorado medical marijuana card",
+        "es": "Solicitar una tarjeta de marihuana medicinal de Colorado"
+      },
+      "description": {
+        "en": "Apply for a Colorado Medical Marijuana Registry card to legally purchase and use medical marijuana for qualifying conditions.",
+        "es": "Solicite una tarjeta del Registro de Marihuana Medicinal de Colorado para comprar y usar legalmente marihuana medicinal para condiciones calificadas."
+      },
+      "url": "https://cdphe.colorado.gov/apply-colorado-medical-marijuana-card",
+      "department": {
+        "en": "Department of Public Health & Environment",
+        "es": "Departamento de Salud Pública y Medio Ambiente"
+      },
+      "departmentUrl": "https://cdphe.colorado.gov/",
+      "category": {
+        "en": "Health and Wellbeing",
+        "es": "Salud y Bienestar"
+      },
+      "subcategory": "Healthcare and Insurance",
+      "lifeEvent": "Healthcare and Wellness",
+      "taskType": "Apply",
+      "audience": "Individuals and Families",
+      "tags": ["medical marijuana", "cannabis", "MMJ", "registry"],
+      "icon": "🏥",
+      "featured": false
+    },
+    {
+      "id": 217,
+      "name": {
+        "en": "Find a vaccine clinic",
+        "es": "Encontrar una clínica de vacunación"
+      },
+      "description": {
+        "en": "Locate vaccine clinics near you in Colorado for COVID-19, flu, and other immunizations. Find walk-in and appointment-based options.",
+        "es": "Encuentre clínicas de vacunación cerca de usted en Colorado para COVID-19, gripe y otras inmunizaciones. Encuentre opciones con cita previa o sin cita."
+      },
+      "url": "https://cdphe.colorado.gov/find-a-vaccine-clinic",
+      "department": {
+        "en": "Department of Public Health & Environment",
+        "es": "Departamento de Salud Pública y Medio Ambiente"
+      },
+      "departmentUrl": "https://cdphe.colorado.gov/",
+      "category": {
+        "en": "Health and Wellbeing",
+        "es": "Salud y Bienestar"
+      },
+      "subcategory": "Public Health Programs",
+      "lifeEvent": "Healthcare and Wellness",
+      "taskType": "Find",
+      "audience": "Individuals and Families",
+      "tags": ["vaccine", "immunization", "COVID", "flu", "clinic"],
+      "icon": "💉",
+      "featured": false
+    },
+    {
+      "id": 218,
+      "name": {
+        "en": "Find your local public health agency",
+        "es": "Encontrar su agencia de salud pública local"
+      },
+      "description": {
+        "en": "Locate your county or district public health agency for local health services, disease prevention programs, and community resources.",
+        "es": "Encuentre su agencia de salud pública del condado o distrito para servicios de salud locales, programas de prevención de enfermedades y recursos comunitarios."
+      },
+      "url": "https://cdphe.colorado.gov/public-information/find-your-local-public-health-agency",
+      "department": {
+        "en": "Department of Public Health & Environment",
+        "es": "Departamento de Salud Pública y Medio Ambiente"
+      },
+      "departmentUrl": "https://cdphe.colorado.gov/",
+      "category": {
+        "en": "Health and Wellbeing",
+        "es": "Salud y Bienestar"
+      },
+      "subcategory": "Public Health Programs",
+      "lifeEvent": "Healthcare and Wellness",
+      "taskType": "Find",
+      "audience": "Individuals and Families",
+      "tags": ["public health", "county", "local", "health department"],
+      "icon": "🏛️",
+      "featured": false
+    },
+    {
+      "id": 219,
+      "name": {
+        "en": "File a complaint with DORA",
+        "es": "Presentar una queja ante DORA"
+      },
+      "description": {
+        "en": "File a complaint against a licensed professional or business regulated by the Department of Regulatory Agencies, including healthcare providers, real estate agents, and contractors.",
+        "es": "Presente una queja contra un profesional con licencia o negocio regulado por el Departamento de Agencias Reguladoras, incluyendo proveedores de salud, agentes de bienes raíces y contratistas."
+      },
+      "url": "https://dora.colorado.gov/file-complaint",
+      "department": {
+        "en": "Department of Regulatory Agencies",
+        "es": "Departamento de Agencias Reguladoras"
+      },
+      "departmentUrl": "https://dora.colorado.gov/",
+      "category": {
+        "en": "Business and Economy",
+        "es": "Negocios y Economía"
+      },
+      "subcategory": "Consumer Protection",
+      "lifeEvent": "Legal and Justice",
+      "taskType": "File",
+      "audience": "Individuals and Families",
+      "tags": ["complaint", "consumer protection", "professional", "license"],
+      "icon": "📝",
+      "featured": false
+    },
+    {
+      "id": 220,
+      "name": {
+        "en": "Apply for benefits assistance",
+        "es": "Solicitar asistencia de beneficios"
+      },
+      "description": {
+        "en": "Apply for public assistance programs in Colorado including food assistance, cash assistance, and medical programs through the Colorado Department of Human Services.",
+        "es": "Solicite programas de asistencia pública en Colorado incluyendo asistencia alimentaria, asistencia en efectivo y programas médicos a través del Departamento de Servicios Humanos de Colorado."
+      },
+      "url": "https://cdhs.colorado.gov/benefits-assistance",
+      "department": {
+        "en": "Department of Human Services",
+        "es": "Departamento de Servicios Humanos"
+      },
+      "departmentUrl": "https://cdhs.colorado.gov/",
+      "category": {
+        "en": "Family and Social Services",
+        "es": "Servicios Familiares y Sociales"
+      },
+      "subcategory": "Family and Financial Assistance",
+      "lifeEvent": "Living with Financial Hardship",
+      "taskType": "Apply",
+      "audience": "Individuals and Families",
+      "tags": ["benefits", "assistance", "SNAP", "TANF", "Medicaid"],
+      "icon": "🤝",
+      "featured": true
+    },
+    {
+      "id": 221,
+      "name": {
+        "en": "Employment assistance programs",
+        "es": "Programas de asistencia de empleo"
+      },
+      "description": {
+        "en": "Access employment assistance programs to help you find work, build job skills, and overcome barriers to employment in Colorado.",
+        "es": "Acceda a programas de asistencia de empleo para ayudarle a encontrar trabajo, desarrollar habilidades laborales y superar barreras para el empleo en Colorado."
+      },
+      "url": "https://cdhs.colorado.gov/benefits-assistance/employment-assistance",
+      "department": {
+        "en": "Department of Human Services",
+        "es": "Departamento de Servicios Humanos"
+      },
+      "departmentUrl": "https://cdhs.colorado.gov/",
+      "category": {
+        "en": "Jobs and Employment",
+        "es": "Empleos y Trabajo"
+      },
+      "subcategory": "Job Training and Career Development",
+      "lifeEvent": "Education and Career",
+      "taskType": "Get Assistance",
+      "audience": "Individuals and Families",
+      "tags": ["employment", "job training", "workforce", "career"],
+      "icon": "💼",
+      "featured": false
+    },
+    {
+      "id": 222,
+      "name": {
+        "en": "Senior Community Service Employment Program",
+        "es": "Programa de Empleo de Servicio Comunitario para Personas Mayores"
+      },
+      "description": {
+        "en": "Find part-time employment and job training opportunities for low-income seniors age 55 and older through the SCSEP program.",
+        "es": "Encuentre oportunidades de empleo a tiempo parcial y capacitación laboral para personas mayores de 55 años con bajos ingresos a través del programa SCSEP."
+      },
+      "url": "https://cdhs.colorado.gov/benefits-assistance/employment-assistance/senior-community-service-employment-program",
+      "department": {
+        "en": "Department of Human Services",
+        "es": "Departamento de Servicios Humanos"
+      },
+      "departmentUrl": "https://cdhs.colorado.gov/",
+      "category": {
+        "en": "Jobs and Employment",
+        "es": "Empleos y Trabajo"
+      },
+      "subcategory": "Job Training and Career Development",
+      "lifeEvent": "Education and Career",
+      "taskType": "Apply",
+      "audience": "Individuals and Families",
+      "tags": ["senior", "employment", "SCSEP", "job training", "older adults"],
+      "icon": "👴",
+      "featured": false
+    },
+    {
+      "id": 223,
+      "name": {
+        "en": "Food Distribution Household Programs",
+        "es": "Programas de Distribución de Alimentos para Hogares"
+      },
+      "description": {
+        "en": "Find food distribution programs for households including TEFAP, CSFP, and other programs that provide free food to eligible Colorado residents.",
+        "es": "Encuentre programas de distribución de alimentos para hogares incluyendo TEFAP, CSFP y otros programas que proporcionan alimentos gratuitos a residentes elegibles de Colorado."
+      },
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/food-distribution-household-programs",
+      "department": {
+        "en": "Department of Human Services",
+        "es": "Departamento de Servicios Humanos"
+      },
+      "departmentUrl": "https://cdhs.colorado.gov/",
+      "category": {
+        "en": "Family and Social Services",
+        "es": "Servicios Familiares y Sociales"
+      },
+      "subcategory": "Nutrition and Food Assistance",
+      "lifeEvent": "Living with Financial Hardship",
+      "taskType": "Find",
+      "audience": "Individuals and Families",
+      "tags": ["food", "distribution", "TEFAP", "CSFP", "hunger"],
+      "icon": "🍎",
+      "featured": false
+    },
+    {
+      "id": 224,
+      "name": {
+        "en": "File an unemployment insurance claim",
+        "es": "Presentar un reclamo de seguro de desempleo"
+      },
+      "description": {
+        "en": "File a new unemployment insurance claim if you've lost your job through no fault of your own. Learn about eligibility and how to apply for benefits.",
+        "es": "Presente un nuevo reclamo de seguro de desempleo si ha perdido su trabajo sin culpa propia. Conozca los requisitos de elegibilidad y cómo solicitar beneficios."
+      },
+      "url": "https://cdle.colorado.gov/unemployment/file-a-claim",
+      "department": {
+        "en": "Department of Labor and Employment",
+        "es": "Departamento de Trabajo y Empleo"
+      },
+      "departmentUrl": "https://cdle.colorado.gov/",
+      "category": {
+        "en": "Jobs and Employment",
+        "es": "Empleos y Trabajo"
+      },
+      "subcategory": "Unemployment Benefits",
+      "lifeEvent": "Financial and Taxes",
+      "taskType": "File",
+      "audience": "Individuals and Families",
+      "tags": ["unemployment", "insurance", "benefits", "claim", "jobless"],
+      "icon": "📋",
+      "featured": true
+    },
+    {
+      "id": 225,
+      "name": {
+        "en": "Find and compare health facilities",
+        "es": "Encontrar y comparar instalaciones de salud"
+      },
+      "description": {
+        "en": "Search and compare licensed health facilities in Colorado including nursing homes, hospitals, and assisted living facilities based on quality and compliance.",
+        "es": "Busque y compare instalaciones de salud con licencia en Colorado incluyendo hogares de ancianos, hospitales e instalaciones de vida asistida según calidad y cumplimiento."
+      },
+      "url": "https://cdphe.colorado.gov/health-facilities/find-and-compare-facilities",
+      "department": {
+        "en": "Department of Public Health & Environment",
+        "es": "Departamento de Salud Pública y Medio Ambiente"
+      },
+      "departmentUrl": "https://cdphe.colorado.gov/",
+      "category": {
+        "en": "Health and Wellbeing",
+        "es": "Salud y Bienestar"
+      },
+      "subcategory": "Healthcare and Insurance",
+      "lifeEvent": "Healthcare and Wellness",
+      "taskType": "Find",
+      "audience": "Individuals and Families",
+      "tags": ["health facility", "nursing home", "hospital", "compare", "quality"],
+      "icon": "🏥",
+      "featured": false
+    },
+    {
+      "id": 226,
+      "name": {
+        "en": "Request a new unemployment hearing",
+        "es": "Solicitar una nueva audiencia de desempleo"
+      },
+      "description": {
+        "en": "Request a new hearing if you disagree with an unemployment insurance decision. Learn about the appeals process and your rights.",
+        "es": "Solicite una nueva audiencia si no está de acuerdo con una decisión de seguro de desempleo. Conozca el proceso de apelación y sus derechos."
+      },
+      "url": "https://cdle.colorado.gov/unemployment/appeals/request-a-new-hearing",
+      "department": {
+        "en": "Department of Labor and Employment",
+        "es": "Departamento de Trabajo y Empleo"
+      },
+      "departmentUrl": "https://cdle.colorado.gov/",
+      "category": {
+        "en": "Jobs and Employment",
+        "es": "Empleos y Trabajo"
+      },
+      "subcategory": "Unemployment Benefits",
+      "lifeEvent": "Legal and Justice",
+      "taskType": "Request",
+      "audience": "Individuals and Families",
+      "tags": ["unemployment", "appeal", "hearing", "decision"],
+      "icon": "⚖️",
+      "featured": false
+    },
+    {
+      "id": 227,
+      "name": {
+        "en": "Verify your identity for unemployment with ID.me",
+        "es": "Verificar su identidad para desempleo con ID.me"
+      },
+      "description": {
+        "en": "Complete identity verification for your unemployment insurance claim using the ID.me service. Required to receive benefits.",
+        "es": "Complete la verificación de identidad para su reclamo de seguro de desempleo usando el servicio ID.me. Requerido para recibir beneficios."
+      },
+      "url": "https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme",
+      "department": {
+        "en": "Department of Labor and Employment",
+        "es": "Departamento de Trabajo y Empleo"
+      },
+      "departmentUrl": "https://cdle.colorado.gov/",
+      "category": {
+        "en": "Jobs and Employment",
+        "es": "Empleos y Trabajo"
+      },
+      "subcategory": "Unemployment Benefits",
+      "lifeEvent": "Financial and Taxes",
+      "taskType": "Manage",
+      "audience": "Individuals and Families",
+      "tags": ["unemployment", "identity", "ID.me", "verification"],
+      "icon": "🔐",
+      "featured": false
+    },
+    {
+      "id": 228,
+      "name": {
+        "en": "Register a new unemployment insurance employer account",
+        "es": "Registrar una nueva cuenta de empleador de seguro de desempleo"
+      },
+      "description": {
+        "en": "Register your business as an employer for unemployment insurance purposes with the Colorado Department of Labor and Employment.",
+        "es": "Registre su negocio como empleador para propósitos de seguro de desempleo con el Departamento de Trabajo y Empleo de Colorado."
+      },
+      "url": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/registering-a-new-ui-employer-account",
+      "department": {
+        "en": "Department of Labor and Employment",
+        "es": "Departamento de Trabajo y Empleo"
+      },
+      "departmentUrl": "https://cdle.colorado.gov/",
+      "category": {
+        "en": "Business and Economy",
+        "es": "Negocios y Economía"
+      },
+      "subcategory": "Business Compliance and Regulation",
+      "lifeEvent": "Business and Economy",
+      "taskType": "Register",
+      "audience": "Businesses and Organizations",
+      "tags": ["employer", "unemployment", "registration", "business"],
+      "icon": "🏢",
+      "featured": false
+    },
+    {
+      "id": 229,
+      "name": {
+        "en": "Apply for the Work-Share Program",
+        "es": "Solicitar el Programa de Trabajo Compartido"
+      },
+      "description": {
+        "en": "Apply for the Work-Share program as an alternative to layoffs. Allows employers to reduce employee hours while workers receive partial unemployment benefits.",
+        "es": "Solicite el programa de Trabajo Compartido como alternativa a los despidos. Permite a los empleadores reducir las horas de los empleados mientras los trabajadores reciben beneficios parciales de desempleo."
+      },
+      "url": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/applying-for-the-work-share-program",
+      "department": {
+        "en": "Department of Labor and Employment",
+        "es": "Departamento de Trabajo y Empleo"
+      },
+      "departmentUrl": "https://cdle.colorado.gov/",
+      "category": {
+        "en": "Business and Economy",
+        "es": "Negocios y Economía"
+      },
+      "subcategory": "Business Compliance and Regulation",
+      "lifeEvent": "Business and Economy",
+      "taskType": "Apply",
+      "audience": "Businesses and Organizations",
+      "tags": ["work-share", "layoff", "alternative", "employer"],
+      "icon": "🤝",
+      "featured": false
+    },
+    {
+      "id": 230,
+      "name": {
+        "en": "File a health facilities complaint",
+        "es": "Presentar una queja sobre instalaciones de salud"
+      },
+      "description": {
+        "en": "File a complaint about a licensed health facility such as a nursing home, hospital, or assisted living facility in Colorado.",
+        "es": "Presente una queja sobre una instalación de salud con licencia como un hogar de ancianos, hospital o instalación de vida asistida en Colorado."
+      },
+      "url": "https://cdphe.colorado.gov/health-facilities/file-a-complaint/health-facilities-complaint-contacts",
+      "department": {
+        "en": "Department of Public Health & Environment",
+        "es": "Departamento de Salud Pública y Medio Ambiente"
+      },
+      "departmentUrl": "https://cdphe.colorado.gov/",
+      "category": {
+        "en": "Health and Wellbeing",
+        "es": "Salud y Bienestar"
+      },
+      "subcategory": "Healthcare and Insurance",
+      "lifeEvent": "Legal and Justice",
+      "taskType": "File",
+      "audience": "Individuals and Families",
+      "tags": ["complaint", "health facility", "nursing home", "hospital"],
+      "icon": "📞",
       "featured": false
     }
   ]
