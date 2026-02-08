@@ -1,8 +1,11 @@
 {
-  "version": "8.1",
-  "lastUpdated": "2026-02-04",
+  "version": "8.1.1",
+  "lastUpdated": "2026-02-08",
   "serviceCount": 230,
-  "languages": ["en", "es"],
+  "languages": [
+    "en",
+    "es"
+  ],
   "services": [
     {
       "id": 1,
@@ -28,7 +31,12 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Education and Students",
-      "tags": ["college", "university", "planning", "higher education"],
+      "tags": [
+        "college",
+        "university",
+        "planning",
+        "higher education"
+      ],
       "icon": "🎓",
       "featured": false
     },
@@ -56,7 +64,12 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["driver license", "ID card", "identification", "new resident"],
+      "tags": [
+        "driver license",
+        "ID card",
+        "identification",
+        "new resident"
+      ],
       "icon": "🚗",
       "featured": true
     },
@@ -84,7 +97,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["emergency contact", "driver record", "safety"],
+      "tags": [
+        "emergency contact",
+        "driver record",
+        "safety"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -112,7 +129,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Education and Students",
-      "tags": ["teacher license", "educator", "certification"],
+      "tags": [
+        "teacher license",
+        "educator",
+        "certification"
+      ],
       "icon": "📚",
       "featured": false
     },
@@ -140,7 +161,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["medicaid", "health insurance", "healthcare", "low income"],
+      "tags": [
+        "medicaid",
+        "health insurance",
+        "healthcare",
+        "low income"
+      ],
       "icon": "🏥",
       "featured": true
     },
@@ -168,7 +194,12 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Education and Students",
-      "tags": ["college", "financial aid", "tuition", "COF"],
+      "tags": [
+        "college",
+        "financial aid",
+        "tuition",
+        "COF"
+      ],
       "icon": "🎓",
       "featured": false
     },
@@ -182,7 +213,7 @@
         "en": "Apply for the Work Opportunity Tax Credit (WOTC), a federal tax credit for employers who hire individuals from certain target groups facing barriers to employment.",
         "es": "Solicite el Crédito Fiscal por Oportunidad de Trabajo (WOTC), un crédito fiscal federal para empleadores que contratan personas de ciertos grupos objetivo que enfrentan barreras para el empleo."
       },
-      "url": "https://cdle.colorado.gov/wotc",
+      "url": "https://cdle.colorado.gov/work-opportunity-tax-credit",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -196,7 +227,12 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Apply",
       "audience": "Businesses and Organizations",
-      "tags": ["tax credit", "employer", "WOTC", "hiring"],
+      "tags": [
+        "tax credit",
+        "employer",
+        "WOTC",
+        "hiring"
+      ],
       "icon": "💼",
       "featured": false
     },
@@ -210,7 +246,7 @@
         "en": "Apply for certification to perform methamphetamine laboratory cleanup in Colorado, including contractor and consultant certification programs.",
         "es": "Solicite la certificación para realizar limpieza de laboratorios de metanfetaminas en Colorado, incluyendo programas de certificación para contratistas y consultores."
       },
-      "url": "https://cdphe.colorado.gov/methamphetamine-laboratory-cleanup",
+      "url": "https://cdphe.colorado.gov/hm/methlabcleanup",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -224,7 +260,12 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Businesses and Organizations",
-      "tags": ["meth lab", "cleanup", "certification", "environmental"],
+      "tags": [
+        "meth lab",
+        "cleanup",
+        "certification",
+        "environmental"
+      ],
       "icon": "🧪",
       "featured": false
     },
@@ -238,7 +279,7 @@
         "en": "Apply for initial licensure or renewal of licenses for hospitals, nursing homes, assisted living facilities, and other healthcare facilities in Colorado.",
         "es": "Solicite la licencia inicial o renovación de licencias para hospitales, hogares de ancianos, instalaciones de vida asistida y otras instalaciones de atención médica en Colorado."
       },
-      "url": "https://cdphe.colorado.gov/health-facilities-licensure",
+      "url": "https://cdphe.colorado.gov/health-facilities/health-facilities-licensing-fees-certification-and-registration",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -252,7 +293,12 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Apply",
       "audience": "Businesses and Organizations",
-      "tags": ["health facility", "hospital", "nursing home", "license"],
+      "tags": [
+        "health facility",
+        "hospital",
+        "nursing home",
+        "license"
+      ],
       "icon": "🏥",
       "featured": false
     },
@@ -280,7 +326,12 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["procurement", "contracts", "bidding", "vendors"],
+      "tags": [
+        "procurement",
+        "contracts",
+        "bidding",
+        "vendors"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -308,7 +359,12 @@
       "lifeEvent": "Starting a Family",
       "taskType": "Request",
       "audience": "Individuals and Families",
-      "tags": ["birth certificate", "death certificate", "marriage", "vital records"],
+      "tags": [
+        "birth certificate",
+        "death certificate",
+        "marriage",
+        "vital records"
+      ],
       "icon": "📜",
       "featured": true
     },
@@ -322,7 +378,7 @@
         "en": "Calculate and pay the workers' compensation surcharge required for Colorado employers to fund the Division of Workers' Compensation.",
         "es": "Calcule y pague el recargo de compensación laboral requerido para que los empleadores de Colorado financien la División de Compensación Laboral."
       },
-      "url": "https://cdle.colorado.gov/wc-surcharge",
+      "url": "https://apps.colorado.gov/apps/cdle/surcharge/payment/calculator/",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -336,7 +392,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Calculate",
       "audience": "Businesses and Organizations",
-      "tags": ["workers compensation", "surcharge", "employer"],
+      "tags": [
+        "workers compensation",
+        "surcharge",
+        "employer"
+      ],
       "icon": "💼",
       "featured": false
     },
@@ -364,7 +424,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["health data", "environmental data", "statistics"],
+      "tags": [
+        "health data",
+        "environmental data",
+        "statistics"
+      ],
       "icon": "📊",
       "featured": false
     },
@@ -392,7 +456,12 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Manage",
       "audience": "Businesses and Organizations",
-      "tags": ["gaming", "gambling", "casino", "license"],
+      "tags": [
+        "gaming",
+        "gambling",
+        "casino",
+        "license"
+      ],
       "icon": "🎰",
       "featured": false
     },
@@ -406,7 +475,7 @@
         "en": "Check the status of your Colorado state income tax refund online using the Department of Revenue's refund status tool.",
         "es": "Verifique el estado de su reembolso de impuestos sobre la renta del estado de Colorado en línea usando la herramienta de estado de reembolso del Departamento de Ingresos."
       },
-      "url": "https://tax.colorado.gov/refund-status",
+      "url": "https://tax.colorado.gov/refund",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -420,7 +489,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["tax refund", "income tax", "refund status"],
+      "tags": [
+        "tax refund",
+        "income tax",
+        "refund status"
+      ],
       "icon": "💵",
       "featured": true
     },
@@ -434,7 +507,7 @@
         "en": "Access Colorado's child support services including establishing paternity, locating parents, establishing and enforcing support orders, and making payments.",
         "es": "Acceda a los servicios de manutención de menores de Colorado, incluyendo establecimiento de paternidad, localización de padres, establecimiento y cumplimiento de órdenes de manutención, y realización de pagos."
       },
-      "url": "https://childsupport.state.co.us",
+      "url": "https://childsupport.state.co.us/",
       "department": {
         "en": "Department of Human Services",
         "es": "Departamento de Servicios Humanos"
@@ -448,7 +521,11 @@
       "lifeEvent": "Raising a Family",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["child support", "paternity", "custody"],
+      "tags": [
+        "child support",
+        "paternity",
+        "custody"
+      ],
       "icon": "👨‍👩‍👧",
       "featured": false
     },
@@ -462,7 +539,7 @@
         "en": "Search Colorado's database of unsolved homicides and missing persons cases, and submit tips to help investigators.",
         "es": "Busque en la base de datos de Colorado de homicidios sin resolver y casos de personas desaparecidas, y envíe pistas para ayudar a los investigadores."
       },
-      "url": "https://www.colorado.gov/coldcase",
+      "url": "https://apps.colorado.gov/apps/coldcase/index.html",
       "department": {
         "en": "Department of Public Safety",
         "es": "Departamento de Seguridad Pública"
@@ -476,7 +553,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["cold case", "missing persons", "unsolved crimes"],
+      "tags": [
+        "cold case",
+        "missing persons",
+        "unsolved crimes"
+      ],
       "icon": "🔍",
       "featured": false
     },
@@ -490,7 +571,7 @@
         "en": "Search the Colorado Sex Offender Registry to find registered sex offenders in your area and sign up for notifications.",
         "es": "Busque en el Registro de Delincuentes Sexuales de Colorado para encontrar delincuentes sexuales registrados en su área y regístrese para recibir notificaciones."
       },
-      "url": "https://www.colorado.gov/apps/cdps/sor/",
+      "url": "https://apps.colorado.gov/apps/dps/sor/",
       "department": {
         "en": "Department of Public Safety",
         "es": "Departamento de Seguridad Pública"
@@ -504,7 +585,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["sex offender", "registry", "public safety"],
+      "tags": [
+        "sex offender",
+        "registry",
+        "public safety"
+      ],
       "icon": "👮",
       "featured": false
     },
@@ -532,7 +617,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Manage",
       "audience": "Professionals and Licensees",
-      "tags": ["professional license", "certification", "DPO"],
+      "tags": [
+        "professional license",
+        "certification",
+        "DPO"
+      ],
       "icon": "📜",
       "featured": false
     },
@@ -560,7 +649,12 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["courts", "legal help", "self-help", "forms"],
+      "tags": [
+        "courts",
+        "legal help",
+        "self-help",
+        "forms"
+      ],
       "icon": "⚖️",
       "featured": false
     },
@@ -574,7 +668,7 @@
         "en": "Access free legal help for low-income Coloradans including assistance with housing, family law, public benefits, and consumer issues.",
         "es": "Acceda a ayuda legal gratuita para residentes de Colorado de bajos ingresos, incluyendo asistencia con vivienda, derecho familiar, beneficios públicos y asuntos del consumidor."
       },
-      "url": "https://www.coloradolegalservices.org",
+      "url": "https://www.coloradolegalservices.org/",
       "department": {
         "en": "Colorado Legal Services",
         "es": "Servicios Legales de Colorado"
@@ -588,7 +682,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["legal aid", "free legal help", "low income"],
+      "tags": [
+        "legal aid",
+        "free legal help",
+        "low income"
+      ],
       "icon": "⚖️",
       "featured": false
     },
@@ -616,7 +714,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Register",
       "audience": "Individuals and Families",
-      "tags": ["no call list", "telemarketing", "consumer protection"],
+      "tags": [
+        "no call list",
+        "telemarketing",
+        "consumer protection"
+      ],
       "icon": "📵",
       "featured": false
     },
@@ -644,7 +746,12 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["nutrition", "food assistance", "SNAP", "WIC"],
+      "tags": [
+        "nutrition",
+        "food assistance",
+        "SNAP",
+        "WIC"
+      ],
       "icon": "🍎",
       "featured": false
     },
@@ -672,7 +779,13 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["PEAK", "benefits", "food assistance", "medicaid", "SNAP"],
+      "tags": [
+        "PEAK",
+        "benefits",
+        "food assistance",
+        "medicaid",
+        "SNAP"
+      ],
       "icon": "🏥",
       "featured": true
     },
@@ -700,7 +813,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["quit smoking", "tobacco", "cessation"],
+      "tags": [
+        "quit smoking",
+        "tobacco",
+        "cessation"
+      ],
       "icon": "🚭",
       "featured": false
     },
@@ -714,7 +831,7 @@
         "en": "Search for quality-rated child care providers in Colorado and learn about the state's quality rating and improvement system.",
         "es": "Busque proveedores de cuidado infantil con calificación de calidad en Colorado y aprenda sobre el sistema estatal de calificación y mejora de calidad."
       },
-      "url": "https://www.coloradoshines.com",
+      "url": "https://www.coloradoshines.com/",
       "department": {
         "en": "Department of Human Services",
         "es": "Departamento de Servicios Humanos"
@@ -728,7 +845,11 @@
       "lifeEvent": "Starting a Family",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["child care", "daycare", "preschool"],
+      "tags": [
+        "child care",
+        "daycare",
+        "preschool"
+      ],
       "icon": "👶",
       "featured": false
     },
@@ -742,7 +863,7 @@
         "en": "Find volunteer opportunities across Colorado, including AmeriCorps programs, community service projects, and nonprofit organizations.",
         "es": "Encuentre oportunidades de voluntariado en todo Colorado, incluyendo programas de AmeriCorps, proyectos de servicio comunitario y organizaciones sin fines de lucro."
       },
-      "url": "https://servecolorado.colorado.gov",
+      "url": "https://servecolorado.colorado.gov/",
       "department": {
         "en": "Lieutenant Governor's Office",
         "es": "Oficina del Vicegobernador"
@@ -756,7 +877,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["volunteer", "community service", "AmeriCorps"],
+      "tags": [
+        "volunteer",
+        "community service",
+        "AmeriCorps"
+      ],
       "icon": "🤝",
       "featured": false
     },
@@ -770,7 +895,7 @@
         "en": "Shop for and enroll in health insurance plans through Colorado's official health insurance marketplace, and check eligibility for financial assistance.",
         "es": "Compre e inscríbase en planes de seguro de salud a través del mercado oficial de seguros de salud de Colorado, y verifique la elegibilidad para asistencia financiera."
       },
-      "url": "https://connectforhealthco.com",
+      "url": "https://connectforhealthco.com/",
       "department": {
         "en": "Connect for Health Colorado",
         "es": "Connect for Health Colorado"
@@ -784,7 +909,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["health insurance", "marketplace", "ACA", "Obamacare"],
+      "tags": [
+        "health insurance",
+        "marketplace",
+        "ACA",
+        "Obamacare"
+      ],
       "icon": "🏥",
       "featured": true
     },
@@ -812,7 +942,12 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["jobs", "employment", "career", "resume"],
+      "tags": [
+        "jobs",
+        "employment",
+        "career",
+        "resume"
+      ],
       "icon": "💼",
       "featured": true
     },
@@ -840,7 +975,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Learn",
       "audience": "Businesses and Organizations",
-      "tags": ["noxious weeds", "agriculture", "land management"],
+      "tags": [
+        "noxious weeds",
+        "agriculture",
+        "land management"
+      ],
       "icon": "🌿",
       "featured": false
     },
@@ -868,7 +1007,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["corrections", "prison", "statistics"],
+      "tags": [
+        "corrections",
+        "prison",
+        "statistics"
+      ],
       "icon": "📊",
       "featured": false
     },
@@ -896,7 +1039,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["crime", "statistics", "safety"],
+      "tags": [
+        "crime",
+        "statistics",
+        "safety"
+      ],
       "icon": "📈",
       "featured": false
     },
@@ -924,7 +1071,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Government and Employees",
-      "tags": ["local government", "grants", "community development"],
+      "tags": [
+        "local government",
+        "grants",
+        "community development"
+      ],
       "icon": "🏛️",
       "featured": false
     },
@@ -952,7 +1103,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["DMV", "driver license", "vehicle registration"],
+      "tags": [
+        "DMV",
+        "driver license",
+        "vehicle registration"
+      ],
       "icon": "🚗",
       "featured": true
     },
@@ -966,7 +1121,7 @@
         "en": "Access information about Colorado's emergency medical services system, including EMS provider certification and training requirements.",
         "es": "Acceda a información sobre el sistema de servicios médicos de emergencia de Colorado, incluyendo certificación de proveedores de EMS y requisitos de capacitación."
       },
-      "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+      "url": "https://cdphe.colorado.gov/ems",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -980,7 +1135,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Professionals and Licensees",
-      "tags": ["EMS", "emergency", "paramedic", "EMT"],
+      "tags": [
+        "EMS",
+        "emergency",
+        "paramedic",
+        "EMT"
+      ],
       "icon": "🚑",
       "featured": false
     },
@@ -994,7 +1154,7 @@
         "en": "Register a new business entity in Colorado, file periodic reports, and manage your business registration with the Secretary of State.",
         "es": "Registre una nueva entidad comercial en Colorado, presente informes periódicos y administre su registro comercial con el Secretario de Estado."
       },
-      "url": "https://www.sos.state.co.us/biz/",
+      "url": "https://www.sos.state.co.us/biz/Welcome.do",
       "department": {
         "en": "Secretary of State",
         "es": "Secretario de Estado"
@@ -1008,7 +1168,11 @@
       "lifeEvent": "Starting a Business",
       "taskType": "Register",
       "audience": "Businesses and Organizations",
-      "tags": ["business registration", "LLC", "corporation"],
+      "tags": [
+        "business registration",
+        "LLC",
+        "corporation"
+      ],
       "icon": "🏢",
       "featured": true
     },
@@ -1022,7 +1186,7 @@
         "en": "Access forms and applications for solid waste facility permits, recycling programs, and waste management compliance in Colorado.",
         "es": "Acceda a formularios y solicitudes para permisos de instalaciones de residuos sólidos, programas de reciclaje y cumplimiento de gestión de residuos en Colorado."
       },
-      "url": "https://cdphe.colorado.gov/solid-waste-forms",
+      "url": "https://cdphe.colorado.gov/hm/swforms",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -1036,7 +1200,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Apply",
       "audience": "Businesses and Organizations",
-      "tags": ["solid waste", "recycling", "permits"],
+      "tags": [
+        "solid waste",
+        "recycling",
+        "permits"
+      ],
       "icon": "♻️",
       "featured": false
     },
@@ -1064,7 +1232,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Outdoor Enthusiasts",
-      "tags": ["fishing", "atlas", "outdoors"],
+      "tags": [
+        "fishing",
+        "atlas",
+        "outdoors"
+      ],
       "icon": "🎣",
       "featured": false
     },
@@ -1092,7 +1264,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Outdoor Enthusiasts",
-      "tags": ["hunting", "atlas", "outdoors"],
+      "tags": [
+        "hunting",
+        "atlas",
+        "outdoors"
+      ],
       "icon": "🦌",
       "featured": false
     },
@@ -1120,7 +1296,11 @@
       "lifeEvent": "Military Service",
       "taskType": "Find",
       "audience": "Veterans",
-      "tags": ["veterans", "employment", "military"],
+      "tags": [
+        "veterans",
+        "employment",
+        "military"
+      ],
       "icon": "🎖️",
       "featured": false
     },
@@ -1148,7 +1328,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Report",
       "audience": "Individuals and Families",
-      "tags": ["consumer complaint", "fraud", "scam"],
+      "tags": [
+        "consumer complaint",
+        "fraud",
+        "scam"
+      ],
       "icon": "📝",
       "featured": false
     },
@@ -1176,7 +1360,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Request",
       "audience": "Individuals and Families",
-      "tags": ["crash report", "accident", "insurance"],
+      "tags": [
+        "crash report",
+        "accident",
+        "insurance"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -1190,7 +1378,7 @@
         "en": "File your Colorado state income tax return online through the Department of Revenue's free e-filing system.",
         "es": "Presente su declaración de impuestos sobre la renta del estado de Colorado en línea a través del sistema gratuito de presentación electrónica del Departamento de Ingresos."
       },
-      "url": "https://tax.colorado.gov/file-online",
+      "url": "https://tax.colorado.gov/training/file-individual-income-tax-online",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -1204,7 +1392,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "File",
       "audience": "Individuals and Families",
-      "tags": ["taxes", "income tax", "e-file"],
+      "tags": [
+        "taxes",
+        "income tax",
+        "e-file"
+      ],
       "icon": "💵",
       "featured": true
     },
@@ -1232,7 +1424,11 @@
       "lifeEvent": "Raising a Family",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["car seat", "child safety", "vehicle safety"],
+      "tags": [
+        "car seat",
+        "child safety",
+        "vehicle safety"
+      ],
       "icon": "👶",
       "featured": false
     },
@@ -1260,7 +1456,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["DMV", "office locations", "wait times"],
+      "tags": [
+        "DMV",
+        "office locations",
+        "wait times"
+      ],
       "icon": "📍",
       "featured": false
     },
@@ -1288,7 +1488,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["driver education", "driving school", "new driver"],
+      "tags": [
+        "driver education",
+        "driving school",
+        "new driver"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -1316,7 +1520,12 @@
       "lifeEvent": "Starting a Family",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["WIC", "nutrition", "food assistance", "pregnancy"],
+      "tags": [
+        "WIC",
+        "nutrition",
+        "food assistance",
+        "pregnancy"
+      ],
       "icon": "🍼",
       "featured": false
     },
@@ -1330,7 +1539,7 @@
         "en": "Access free breast and cervical cancer screenings for eligible Colorado women through the Women's Wellness Connection program.",
         "es": "Acceda a exámenes gratuitos de cáncer de mama y cervical para mujeres elegibles de Colorado a través del programa de Conexión de Bienestar de la Mujer."
       },
-      "url": "https://cdphe.colorado.gov/womens-wellness-connection",
+      "url": "https://cdphe.colorado.gov/wwc",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -1344,7 +1553,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["cancer screening", "women's health", "free healthcare"],
+      "tags": [
+        "cancer screening",
+        "women's health",
+        "free healthcare"
+      ],
       "icon": "🎀",
       "featured": false
     },
@@ -1358,7 +1571,7 @@
         "en": "Find your local workforce center for job search assistance, career counseling, training programs, and employment services.",
         "es": "Encuentre su centro de fuerza laboral local para asistencia en búsqueda de empleo, orientación profesional, programas de capacitación y servicios de empleo."
       },
-      "url": "https://cdle.colorado.gov/wfc",
+      "url": "https://cdle.colorado.gov/jobs-training/workforce-centers",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -1372,7 +1585,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["workforce", "job search", "career counseling"],
+      "tags": [
+        "workforce",
+        "job search",
+        "career counseling"
+      ],
       "icon": "💼",
       "featured": false
     },
@@ -1400,7 +1617,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["water rights", "irrigation", "water law"],
+      "tags": [
+        "water rights",
+        "irrigation",
+        "water law"
+      ],
       "icon": "💧",
       "featured": false
     },
@@ -1428,7 +1649,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["inmate", "prison", "corrections"],
+      "tags": [
+        "inmate",
+        "prison",
+        "corrections"
+      ],
       "icon": "🛡️",
       "featured": false
     },
@@ -1456,7 +1681,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["health facilities", "hospitals", "nursing homes"],
+      "tags": [
+        "health facilities",
+        "hospitals",
+        "nursing homes"
+      ],
       "icon": "🩺",
       "featured": false
     },
@@ -1484,7 +1713,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["health facilities", "hospitals", "clinics"],
+      "tags": [
+        "health facilities",
+        "hospitals",
+        "clinics"
+      ],
       "icon": "🩺",
       "featured": false
     },
@@ -1498,7 +1731,7 @@
         "en": "Find upcoming job fairs and career events throughout Colorado, including virtual and in-person opportunities.",
         "es": "Encuentre próximas ferias de empleo y eventos de carrera en todo Colorado, incluyendo oportunidades virtuales y presenciales."
       },
-      "url": "https://cdle.colorado.gov/jobs-training/job-fairs-and-hiring-events",
+      "url": "https://cdle.colorado.gov/jobs-training/find-a-job/job-fairs/events",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -1512,7 +1745,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["job fair", "career events", "employment"],
+      "tags": [
+        "job fair",
+        "career events",
+        "employment"
+      ],
       "icon": "👔",
       "featured": false
     },
@@ -1526,7 +1763,7 @@
         "en": "Search for information about contaminated sites in Colorado, including cleanup status and environmental assessments.",
         "es": "Busque información sobre sitios contaminados en Colorado, incluyendo el estado de limpieza y evaluaciones ambientales."
       },
-      "url": "https://cdphe.colorado.gov/contaminated-sites",
+      "url": "https://cdphe.colorado.gov/hm/if-site-contaminated",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -1540,7 +1777,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["contaminated sites", "environmental", "cleanup"],
+      "tags": [
+        "contaminated sites",
+        "environmental",
+        "cleanup"
+      ],
       "icon": "🌍",
       "featured": false
     },
@@ -1568,7 +1809,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Education and Students",
-      "tags": ["transcripts", "occupational school", "records"],
+      "tags": [
+        "transcripts",
+        "occupational school",
+        "records"
+      ],
       "icon": "📚",
       "featured": false
     },
@@ -1582,7 +1827,7 @@
         "en": "Access information about vaccinations, including locations, schedules, and requirements for Colorado residents.",
         "es": "Acceda a información sobre vacunas, incluyendo ubicaciones, horarios y requisitos para residentes de Colorado."
       },
-      "url": "https://covid19.colorado.gov/vaccine",
+      "url": "https://cdphe.colorado.gov/covid-19",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -1596,7 +1841,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["vaccine", "vaccination", "COVID-19"],
+      "tags": [
+        "vaccine",
+        "vaccination",
+        "COVID-19"
+      ],
       "icon": "🏥",
       "featured": false
     },
@@ -1610,7 +1859,7 @@
         "en": "View key performance metrics and data about Colorado state government operations and initiatives.",
         "es": "Vea métricas clave de rendimiento y datos sobre las operaciones e iniciativas del gobierno estatal de Colorado."
       },
-      "url": "https://dashboard.colorado.gov",
+      "url": "https://dashboard.colorado.gov/",
       "department": {
         "en": "Office of the Governor",
         "es": "Oficina del Gobernador"
@@ -1624,7 +1873,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Government and Employees",
-      "tags": ["government", "dashboard", "transparency"],
+      "tags": [
+        "government",
+        "dashboard",
+        "transparency"
+      ],
       "icon": "🏛️",
       "featured": false
     },
@@ -1652,7 +1905,11 @@
       "lifeEvent": "Starting a Family",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["medicaid", "newborn", "add baby"],
+      "tags": [
+        "medicaid",
+        "newborn",
+        "add baby"
+      ],
       "icon": "🩺",
       "featured": true
     },
@@ -1666,7 +1923,7 @@
         "en": "Connect with HIV care services, including medical treatment, support services, and insurance assistance.",
         "es": "Conéctese con servicios de atención del VIH, incluyendo tratamiento médico, servicios de apoyo y asistencia con seguros."
       },
-      "url": "https://cdphe.colorado.gov/hiv-care",
+      "url": "https://cdphe.colorado.gov/sti-hiv-vh/living-with-hiv",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -1680,7 +1937,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["HIV", "AIDS", "healthcare"],
+      "tags": [
+        "HIV",
+        "AIDS",
+        "healthcare"
+      ],
       "icon": "🩺",
       "featured": false
     },
@@ -1694,7 +1955,7 @@
         "en": "Access requirements and regulations for importing animals into Colorado, including permits, health certificates, and testing requirements.",
         "es": "Acceda a requisitos y regulaciones para importar animales a Colorado, incluyendo permisos, certificados de salud y requisitos de pruebas."
       },
-      "url": "https://ag.colorado.gov/animals/import-requirements",
+      "url": "https://ag.colorado.gov/animal-health/colorado-import-requirements",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -1708,7 +1969,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Learn",
       "audience": "Businesses and Organizations",
-      "tags": ["animal import", "livestock", "agriculture"],
+      "tags": [
+        "animal import",
+        "livestock",
+        "agriculture"
+      ],
       "icon": "🌾",
       "featured": false
     },
@@ -1722,7 +1987,7 @@
         "en": "Access information about Colorado's industrial hemp program, including regulations, licensing, and cultivation requirements.",
         "es": "Acceda a información sobre el programa de cáñamo industrial de Colorado, incluyendo regulaciones, licencias y requisitos de cultivo."
       },
-      "url": "https://ag.colorado.gov/hemp",
+      "url": "https://ag.colorado.gov/plants/hemp",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -1736,7 +2001,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Learn",
       "audience": "Businesses and Organizations",
-      "tags": ["hemp", "agriculture", "licensing"],
+      "tags": [
+        "hemp",
+        "agriculture",
+        "licensing"
+      ],
       "icon": "🌾",
       "featured": false
     },
@@ -1750,7 +2019,7 @@
         "en": "Access information about operating and maintaining compliance for pet-animal care facilities in Colorado.",
         "es": "Acceda a información sobre la operación y el mantenimiento del cumplimiento para instalaciones de cuidado de animales de compañía en Colorado."
       },
-      "url": "https://ag.colorado.gov/pacfa",
+      "url": "https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -1764,7 +2033,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Learn",
       "audience": "Businesses and Organizations",
-      "tags": ["pet care", "animal facility", "licensing"],
+      "tags": [
+        "pet care",
+        "animal facility",
+        "licensing"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -1778,7 +2051,7 @@
         "en": "Learn about the Women, Infants, and Children (WIC) program, including eligibility requirements and available benefits.",
         "es": "Aprenda sobre el programa de Mujeres, Infantes y Niños (WIC), incluyendo requisitos de elegibilidad y beneficios disponibles."
       },
-      "url": "https://www.coloradowic.gov/",
+      "url": "https://www.coloradowic.gov/homepage",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -1792,7 +2065,11 @@
       "lifeEvent": "Starting a Family",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["WIC", "nutrition", "food assistance"],
+      "tags": [
+        "WIC",
+        "nutrition",
+        "food assistance"
+      ],
       "icon": "🍎",
       "featured": false
     },
@@ -1806,7 +2083,7 @@
         "en": "Apply for licenses and certifications for commercial measurement devices used in trade or commerce.",
         "es": "Solicite licencias y certificaciones para dispositivos de medición comercial utilizados en el comercio."
       },
-      "url": "https://ag.colorado.gov/measurementstandards",
+      "url": "https://ag.colorado.gov/ics/measurement-standards",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -1820,7 +2097,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Apply",
       "audience": "Businesses and Organizations",
-      "tags": ["measurement", "standards", "licensing"],
+      "tags": [
+        "measurement",
+        "standards",
+        "licensing"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -1848,7 +2129,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["medicaid", "CHP+", "doctors", "providers"],
+      "tags": [
+        "medicaid",
+        "CHP+",
+        "doctors",
+        "providers"
+      ],
       "icon": "🩺",
       "featured": true
     },
@@ -1862,7 +2148,7 @@
         "en": "Reserve campsites at Colorado state parks and recreation areas, including options for RV, tent, and cabin camping.",
         "es": "Reserve sitios para acampar en parques estatales y áreas de recreación de Colorado, incluyendo opciones para RV, tiendas de campaña y cabañas."
       },
-      "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+      "url": "https://cpw.state.co.us/state-parks",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -1876,7 +2162,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Start",
       "audience": "Visitors and Tourists",
-      "tags": ["camping", "state parks", "reservations"],
+      "tags": [
+        "camping",
+        "state parks",
+        "reservations"
+      ],
       "icon": "⛺",
       "featured": false
     },
@@ -1890,7 +2180,7 @@
         "en": "Submit requests for records related to current or former inmates in Colorado's correctional system.",
         "es": "Envíe solicitudes de registros relacionados con reclusos actuales o anteriores en el sistema correccional de Colorado."
       },
-      "url": "https://cdoc.colorado.gov/about/contact-us/request-records",
+      "url": "https://cdoc.colorado.gov/general-records-requests",
       "department": {
         "en": "Department of Corrections",
         "es": "Departamento de Correcciones"
@@ -1904,7 +2194,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["corrections", "records", "inmates"],
+      "tags": [
+        "corrections",
+        "records",
+        "inmates"
+      ],
       "icon": "🛡️",
       "featured": false
     },
@@ -1918,7 +2212,7 @@
         "en": "Request public records related to hazardous materials incidents, storage, and transportation in Colorado.",
         "es": "Solicite registros públicos relacionados con incidentes, almacenamiento y transporte de materiales peligrosos en Colorado."
       },
-      "url": "https://cdphe.colorado.gov/records-requests",
+      "url": "https://cdphe.colorado.gov/hm/records-review",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -1932,7 +2226,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["hazardous materials", "records", "environmental"],
+      "tags": [
+        "hazardous materials",
+        "records",
+        "environmental"
+      ],
       "icon": "🌍",
       "featured": false
     },
@@ -1960,7 +2258,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Manage",
       "audience": "Businesses and Organizations",
-      "tags": ["livestock", "brands", "cattle"],
+      "tags": [
+        "livestock",
+        "brands",
+        "cattle"
+      ],
       "icon": "🌾",
       "featured": false
     },
@@ -1974,7 +2276,7 @@
         "en": "Access and manage your Colorado tax accounts, including filing returns, making payments, and viewing account history.",
         "es": "Acceda y administre sus cuentas de impuestos de Colorado, incluyendo presentar declaraciones, hacer pagos y ver el historial de la cuenta."
       },
-      "url": "https://tax.colorado.gov/manage-my-account",
+      "url": "https://tax.colorado.gov/training/account-access-management",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -1988,7 +2290,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["tax account", "taxes", "payments"],
+      "tags": [
+        "tax account",
+        "taxes",
+        "payments"
+      ],
       "icon": "💵",
       "featured": false
     },
@@ -2002,7 +2308,7 @@
         "en": "Maintain your Colorado real estate license, including renewals, updates to personal information, and continuing education requirements.",
         "es": "Mantenga su licencia de bienes raíces de Colorado, incluyendo renovaciones, actualizaciones de información personal y requisitos de educación continua."
       },
-      "url": "https://dora.colorado.gov/dre",
+      "url": "https://dre.colorado.gov/",
       "department": {
         "en": "Department of Regulatory Agencies",
         "es": "Departamento de Agencias Reguladoras"
@@ -2016,7 +2322,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Renew",
       "audience": "Businesses and Organizations",
-      "tags": ["real estate", "license", "renewal"],
+      "tags": [
+        "real estate",
+        "license",
+        "renewal"
+      ],
       "icon": "📜",
       "featured": false
     },
@@ -2030,7 +2340,7 @@
         "en": "Maintain your Colorado insurance producer license, including renewals, continuing education requirements, and updates to personal information.",
         "es": "Mantenga su licencia de productor de seguros de Colorado, incluyendo renovaciones, requisitos de educación continua y actualizaciones de información personal."
       },
-      "url": "https://dora.colorado.gov/insurance-producer",
+      "url": "https://doi.colorado.gov/insurance-industry/for-producers/agents",
       "department": {
         "en": "Department of Regulatory Agencies",
         "es": "Departamento de Agencias Reguladoras"
@@ -2044,7 +2354,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Renew",
       "audience": "Businesses and Organizations",
-      "tags": ["insurance", "producer", "license"],
+      "tags": [
+        "insurance",
+        "producer",
+        "license"
+      ],
       "icon": "📋",
       "featured": false
     },
@@ -2072,7 +2386,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Start",
       "audience": "Businesses and Organizations",
-      "tags": ["business", "startup", "registration"],
+      "tags": [
+        "business",
+        "startup",
+        "registration"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -2100,7 +2418,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Manage",
       "audience": "Businesses and Organizations",
-      "tags": ["unemployment", "employer", "UI"],
+      "tags": [
+        "unemployment",
+        "employer",
+        "UI"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -2128,7 +2450,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["unemployment", "benefits", "UI"],
+      "tags": [
+        "unemployment",
+        "benefits",
+        "UI"
+      ],
       "icon": "📊",
       "featured": false
     },
@@ -2142,7 +2468,7 @@
         "en": "Report arrests or criminal charges to the Colorado Division of Gaming as required for licensed gaming employees.",
         "es": "Reporte arrestos o cargos criminales a la División de Juegos de Colorado según lo requerido para empleados de juegos con licencia."
       },
-      "url": "https://sbg.colorado.gov/arrest-notification",
+      "url": "https://sbg.colorado.gov/arrest-notification-form",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -2156,7 +2482,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Report",
       "audience": "Businesses and Organizations",
-      "tags": ["gaming", "arrest", "notification"],
+      "tags": [
+        "gaming",
+        "arrest",
+        "notification"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -2170,7 +2500,7 @@
         "en": "Pay or dispute parking tickets issued within the City and County of Denver.",
         "es": "Pague o dispute multas de estacionamiento emitidas dentro de la Ciudad y Condado de Denver."
       },
-      "url": "https://www.denvergov.org/",
+      "url": "https://www.denvergov.org/Home",
       "department": {
         "en": "City and County of Denver",
         "es": "Ciudad y Condado de Denver"
@@ -2184,7 +2514,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Pay",
       "audience": "Individuals and Families",
-      "tags": ["parking", "ticket", "Denver"],
+      "tags": [
+        "parking",
+        "ticket",
+        "Denver"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -2198,7 +2532,7 @@
         "en": "Make payments on debts owed to Colorado state agencies, including fines, fees, and other obligations.",
         "es": "Realice pagos de deudas con agencias estatales de Colorado, incluyendo multas, tarifas y otras obligaciones."
       },
-      "url": "https://ops.colorado.gov/payment",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
       "department": {
         "en": "Division of Oil and Public Safety",
         "es": "División de Petróleo y Seguridad Pública"
@@ -2212,7 +2546,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Pay",
       "audience": "Individuals and Families",
-      "tags": ["debt", "payment", "state"],
+      "tags": [
+        "debt",
+        "payment",
+        "state"
+      ],
       "icon": "💰",
       "featured": false
     },
@@ -2226,7 +2564,7 @@
         "en": "Submit payments for various Colorado state taxes, including income tax, sales tax, and business taxes.",
         "es": "Envíe pagos de varios impuestos estatales de Colorado, incluyendo impuesto sobre la renta, impuesto sobre ventas e impuestos comerciales."
       },
-      "url": "https://tax.colorado.gov/pay-online",
+      "url": "https://tax.colorado.gov/pay",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -2240,7 +2578,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Pay",
       "audience": "Individuals and Families",
-      "tags": ["taxes", "payment", "online"],
+      "tags": [
+        "taxes",
+        "payment",
+        "online"
+      ],
       "icon": "💵",
       "featured": true
     },
@@ -2268,7 +2610,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Pay",
       "audience": "Businesses and Organizations",
-      "tags": ["boiler", "inspection", "payment"],
+      "tags": [
+        "boiler",
+        "inspection",
+        "payment"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -2296,7 +2642,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Pay",
       "audience": "Businesses and Organizations",
-      "tags": ["petroleum", "tank", "payment"],
+      "tags": [
+        "petroleum",
+        "tank",
+        "payment"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -2324,7 +2674,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Apply",
       "audience": "Visitors and Tourists",
-      "tags": ["OHV", "permit", "off-highway"],
+      "tags": [
+        "OHV",
+        "permit",
+        "off-highway"
+      ],
       "icon": "🏞️",
       "featured": false
     },
@@ -2338,7 +2692,7 @@
         "en": "Buy Colorado fishing licenses, including annual, short-term, and combination licenses for residents and non-residents.",
         "es": "Compre licencias de pesca de Colorado, incluyendo licencias anuales, a corto plazo y combinadas para residentes y no residentes."
       },
-      "url": "https://www.cpwshop.com/",
+      "url": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -2352,7 +2706,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Apply",
       "audience": "Visitors and Tourists",
-      "tags": ["fishing", "license", "outdoors"],
+      "tags": [
+        "fishing",
+        "license",
+        "outdoors"
+      ],
       "icon": "🎣",
       "featured": true
     },
@@ -2380,7 +2738,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Apply",
       "audience": "Visitors and Tourists",
-      "tags": ["hunting", "license", "outdoors"],
+      "tags": [
+        "hunting",
+        "license",
+        "outdoors"
+      ],
       "icon": "🎣",
       "featured": true
     },
@@ -2408,7 +2770,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Make",
       "audience": "Individuals and Families",
-      "tags": ["gift certificate", "parks", "outdoors"],
+      "tags": [
+        "gift certificate",
+        "parks",
+        "outdoors"
+      ],
       "icon": "🏞️",
       "featured": false
     },
@@ -2436,7 +2802,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["parks pass", "annual", "outdoors"],
+      "tags": [
+        "parks pass",
+        "annual",
+        "outdoors"
+      ],
       "icon": "🏞️",
       "featured": false
     },
@@ -2464,7 +2834,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Start",
       "audience": "Businesses and Organizations",
-      "tags": ["EFT", "electronic transfer", "payments"],
+      "tags": [
+        "EFT",
+        "electronic transfer",
+        "payments"
+      ],
       "icon": "💰",
       "featured": false
     },
@@ -2492,7 +2866,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Learn",
       "audience": "Businesses and Organizations",
-      "tags": ["hazardous waste", "training", "compliance"],
+      "tags": [
+        "hazardous waste",
+        "training",
+        "compliance"
+      ],
       "icon": "🌍",
       "featured": false
     },
@@ -2506,7 +2884,7 @@
         "en": "Sign up for notifications about road conditions, closures, and construction from the Colorado Department of Transportation.",
         "es": "Regístrese para recibir notificaciones sobre condiciones de carreteras, cierres y construcción del Departamento de Transporte de Colorado."
       },
-      "url": "https://www.cotrip.org/",
+      "url": "https://www.cotrip.org/home",
       "department": {
         "en": "Department of Transportation",
         "es": "Departamento de Transporte"
@@ -2520,7 +2898,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["road conditions", "alerts", "CDOT"],
+      "tags": [
+        "road conditions",
+        "alerts",
+        "CDOT"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -2548,7 +2930,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["voter registration", "elections", "voting"],
+      "tags": [
+        "voter registration",
+        "elections",
+        "voting"
+      ],
       "icon": "🗳️",
       "featured": true
     },
@@ -2576,7 +2962,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Renew",
       "audience": "Businesses and Organizations",
-      "tags": ["agricultural", "license", "renewal"],
+      "tags": [
+        "agricultural",
+        "license",
+        "renewal"
+      ],
       "icon": "📜",
       "featured": false
     },
@@ -2590,7 +2980,7 @@
         "en": "Complete annual boat registration renewals for vessels registered in Colorado.",
         "es": "Complete renovaciones anuales de registro de embarcaciones para naves registradas en Colorado."
       },
-      "url": "https://cpw.state.co.us/buyapply/Pages/BoatingRegistrations.aspx?ID=81",
+      "url": "https://cpw.state.co.us/register-boat?ID=81",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -2604,7 +2994,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Renew",
       "audience": "Individuals and Families",
-      "tags": ["boat", "registration", "renewal"],
+      "tags": [
+        "boat",
+        "registration",
+        "renewal"
+      ],
       "icon": "⛵",
       "featured": false
     },
@@ -2632,7 +3026,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Renew",
       "audience": "Individuals and Families",
-      "tags": ["driver license", "renewal", "ID"],
+      "tags": [
+        "driver license",
+        "renewal",
+        "ID"
+      ],
       "icon": "🚗",
       "featured": true
     },
@@ -2660,7 +3058,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Renew",
       "audience": "Individuals and Families",
-      "tags": ["OHV", "registration", "renewal"],
+      "tags": [
+        "OHV",
+        "registration",
+        "renewal"
+      ],
       "icon": "🏞️",
       "featured": false
     },
@@ -2688,7 +3090,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Renew",
       "audience": "Individuals and Families",
-      "tags": ["snowmobile", "registration", "renewal"],
+      "tags": [
+        "snowmobile",
+        "registration",
+        "renewal"
+      ],
       "icon": "🏞️",
       "featured": false
     },
@@ -2716,7 +3122,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["agriculture", "livestock", "statistics"],
+      "tags": [
+        "agriculture",
+        "livestock",
+        "statistics"
+      ],
       "icon": "🌾",
       "featured": false
     },
@@ -2744,7 +3154,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["oil", "gas", "facilities"],
+      "tags": [
+        "oil",
+        "gas",
+        "facilities"
+      ],
       "icon": "🌍",
       "featured": false
     },
@@ -2772,7 +3186,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["business records", "incorporation", "registration"],
+      "tags": [
+        "business records",
+        "incorporation",
+        "registration"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -2800,7 +3218,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["oil", "gas", "drilling permits"],
+      "tags": [
+        "oil",
+        "gas",
+        "drilling permits"
+      ],
       "icon": "🌍",
       "featured": false
     },
@@ -2828,7 +3250,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["veterans", "service officers", "benefits"],
+      "tags": [
+        "veterans",
+        "service officers",
+        "benefits"
+      ],
       "icon": "🎖️",
       "featured": false
     },
@@ -2842,7 +3268,7 @@
         "en": "Search and access official state government publications, documents, and reports through the digital repository and library catalog system.",
         "es": "Busque y acceda a publicaciones oficiales del gobierno estatal, documentos e informes a través del repositorio digital y sistema de catálogo de biblioteca."
       },
-      "url": "https://www.colorado.gov/pacific/archives",
+      "url": "https://archives.colorado.gov/",
       "department": {
         "en": "Department of Education",
         "es": "Departamento de Educación"
@@ -2856,7 +3282,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Government and Employees",
-      "tags": ["publications", "library", "archives"],
+      "tags": [
+        "publications",
+        "library",
+        "archives"
+      ],
       "icon": "🏛️",
       "featured": false
     },
@@ -2884,7 +3314,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["water", "diversions", "data"],
+      "tags": [
+        "water",
+        "diversions",
+        "data"
+      ],
       "icon": "💧",
       "featured": false
     },
@@ -2912,7 +3346,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["water rights", "ownership", "court decrees"],
+      "tags": [
+        "water rights",
+        "ownership",
+        "court decrees"
+      ],
       "icon": "💧",
       "featured": false
     },
@@ -2940,7 +3378,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["reentry", "rehabilitation", "employment"],
+      "tags": [
+        "reentry",
+        "rehabilitation",
+        "employment"
+      ],
       "icon": "🛡️",
       "featured": false
     },
@@ -2968,7 +3410,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Education and Students",
-      "tags": ["newsletter", "education", "updates"],
+      "tags": [
+        "newsletter",
+        "education",
+        "updates"
+      ],
       "icon": "📚",
       "featured": false
     },
@@ -2996,7 +3442,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Education and Students",
-      "tags": ["school safety", "newsletter", "security"],
+      "tags": [
+        "school safety",
+        "newsletter",
+        "security"
+      ],
       "icon": "🎓",
       "featured": false
     },
@@ -3024,7 +3474,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Government and Employees",
-      "tags": ["demography", "population", "statistics"],
+      "tags": [
+        "demography",
+        "population",
+        "statistics"
+      ],
       "icon": "🏛️",
       "featured": false
     },
@@ -3052,7 +3506,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["jobs", "government", "employment"],
+      "tags": [
+        "jobs",
+        "government",
+        "employment"
+      ],
       "icon": "👔",
       "featured": false
     },
@@ -3080,7 +3538,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["tax news", "updates", "newsletter"],
+      "tags": [
+        "tax news",
+        "updates",
+        "newsletter"
+      ],
       "icon": "💵",
       "featured": false
     },
@@ -3108,7 +3570,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Report",
       "audience": "Education and Students",
-      "tags": ["Safe2Tell", "school safety", "reporting"],
+      "tags": [
+        "Safe2Tell",
+        "school safety",
+        "reporting"
+      ],
       "icon": "🎓",
       "featured": false
     },
@@ -3136,7 +3602,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["tobacco", "quit smoking", "prevention"],
+      "tags": [
+        "tobacco",
+        "quit smoking",
+        "prevention"
+      ],
       "icon": "🏥",
       "featured": false
     },
@@ -3150,7 +3620,7 @@
         "en": "Access detailed information about state government spending, contracts, and financial transactions through an interactive transparency portal.",
         "es": "Acceda a información detallada sobre el gasto del gobierno estatal, contratos y transacciones financieras a través de un portal interactivo de transparencia."
       },
-      "url": "https://www.colorado.gov/apps/oit/transparency/",
+      "url": "https://apps.colorado.gov/apps/oit/transparency/",
       "department": {
         "en": "Department of Personnel & Administration",
         "es": "Departamento de Personal y Administración"
@@ -3164,7 +3634,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["transparency", "spending", "government"],
+      "tags": [
+        "transparency",
+        "spending",
+        "government"
+      ],
       "icon": "🏛️",
       "featured": false
     },
@@ -3192,7 +3666,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Renew",
       "audience": "Individuals and Families",
-      "tags": ["vehicle registration", "renewal", "DMV"],
+      "tags": [
+        "vehicle registration",
+        "renewal",
+        "DMV"
+      ],
       "icon": "📋",
       "featured": false
     },
@@ -3206,7 +3684,7 @@
         "en": "Check the status and validity of professional licenses and business registrations issued by Colorado state agencies.",
         "es": "Verifique el estado y validez de licencias profesionales y registros comerciales emitidos por agencias estatales de Colorado."
       },
-      "url": "https://apps.colorado.gov/dora/licensing/",
+      "url": "https://apps2.colorado.gov/dora/licensing/",
       "department": {
         "en": "Department of Regulatory Agencies",
         "es": "Departamento de Agencias Reguladoras"
@@ -3220,7 +3698,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["license verification", "professional", "business"],
+      "tags": [
+        "license verification",
+        "professional",
+        "business"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -3248,7 +3730,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["EMS", "certification", "verification"],
+      "tags": [
+        "EMS",
+        "certification",
+        "verification"
+      ],
       "icon": "💼",
       "featured": false
     },
@@ -3276,7 +3762,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["trucking", "commercial", "regulations"],
+      "tags": [
+        "trucking",
+        "commercial",
+        "regulations"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -3304,7 +3794,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Visitors and Tourists",
-      "tags": ["parks", "activities", "accessibility"],
+      "tags": [
+        "parks",
+        "activities",
+        "accessibility"
+      ],
       "icon": "🏞️",
       "featured": false
     },
@@ -3332,7 +3826,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["road conditions", "weather", "travel"],
+      "tags": [
+        "road conditions",
+        "weather",
+        "travel"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -3360,7 +3858,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["road work", "construction", "projects"],
+      "tags": [
+        "road work",
+        "construction",
+        "projects"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -3388,7 +3890,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["traffic speed", "highways", "travel"],
+      "tags": [
+        "traffic speed",
+        "highways",
+        "travel"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -3402,7 +3908,7 @@
         "en": "Explore Colorado's state wildlife areas searchable by location, available activities, and Game Management Unit designations.",
         "es": "Explore las áreas de vida silvestre estatales de Colorado buscables por ubicación, actividades disponibles y designaciones de Unidad de Manejo de Caza."
       },
-      "url": "https://cpw.state.co.us/hunting/walk-access-program",
+      "url": "https://cpw.state.co.us/activities/hunting/where-hunt/walk-access-program",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -3416,7 +3922,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Visitors and Tourists",
-      "tags": ["wildlife areas", "hunting", "fishing"],
+      "tags": [
+        "wildlife areas",
+        "hunting",
+        "fishing"
+      ],
       "icon": "🎣",
       "featured": false
     },
@@ -3444,7 +3954,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["travel alerts", "advisories", "highways"],
+      "tags": [
+        "travel alerts",
+        "advisories",
+        "highways"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -3472,7 +3986,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["tax spending", "transparency", "budget"],
+      "tags": [
+        "tax spending",
+        "transparency",
+        "budget"
+      ],
       "icon": "💵",
       "featured": false
     },
@@ -3500,7 +4018,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Calculate",
       "audience": "Individuals and Families",
-      "tags": ["workers compensation", "benefits", "calculator"],
+      "tags": [
+        "workers compensation",
+        "benefits",
+        "calculator"
+      ],
       "icon": "💼",
       "featured": false
     },
@@ -3528,7 +4050,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Calculate",
       "audience": "Businesses and Organizations",
-      "tags": ["transportation", "calculator", "costs"],
+      "tags": [
+        "transportation",
+        "calculator",
+        "costs"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -3556,7 +4082,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Report",
       "audience": "Individuals and Families",
-      "tags": ["suspicious activity", "report", "safety"],
+      "tags": [
+        "suspicious activity",
+        "report",
+        "safety"
+      ],
       "icon": "👮",
       "featured": false
     },
@@ -3584,7 +4114,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["vehicle records", "powersports", "DMV"],
+      "tags": [
+        "vehicle records",
+        "powersports",
+        "DMV"
+      ],
       "icon": "📋",
       "featured": false
     },
@@ -3612,7 +4146,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["CORA", "public records", "transparency"],
+      "tags": [
+        "CORA",
+        "public records",
+        "transparency"
+      ],
       "icon": "🏛️",
       "featured": false
     },
@@ -3640,7 +4178,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Pay",
       "audience": "Individuals and Families",
-      "tags": ["Revenue Online", "taxes", "filing"],
+      "tags": [
+        "Revenue Online",
+        "taxes",
+        "filing"
+      ],
       "icon": "💵",
       "featured": false
     },
@@ -3668,7 +4210,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Education and Students",
-      "tags": ["SchoolView", "school data", "performance"],
+      "tags": [
+        "SchoolView",
+        "school data",
+        "performance"
+      ],
       "icon": "📚",
       "featured": false
     },
@@ -3696,7 +4242,11 @@
       "lifeEvent": "Military Service",
       "taskType": "Request",
       "audience": "Individuals and Families",
-      "tags": ["military retirement", "Governor", "letter"],
+      "tags": [
+        "military retirement",
+        "Governor",
+        "letter"
+      ],
       "icon": "🎖️",
       "featured": false
     },
@@ -3724,7 +4274,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Report",
       "audience": "Education and Students",
-      "tags": ["Safe2Tell", "anonymous tips", "school safety"],
+      "tags": [
+        "Safe2Tell",
+        "anonymous tips",
+        "school safety"
+      ],
       "icon": "🎓",
       "featured": false
     },
@@ -3738,7 +4292,7 @@
         "en": "Apply to receive biological control insects for managing noxious weeds and invasive plants in Colorado.",
         "es": "Solicite recibir insectos de control biológico para el manejo de malezas nocivas y plantas invasoras en Colorado."
       },
-      "url": "https://ag.colorado.gov/conservation/biocontrol",
+      "url": "https://ag.colorado.gov/conservation/palisade-insectary",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -3752,7 +4306,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Request",
       "audience": "Businesses and Organizations",
-      "tags": ["biocontrol", "weeds", "invasive plants"],
+      "tags": [
+        "biocontrol",
+        "weeds",
+        "invasive plants"
+      ],
       "icon": "🌾",
       "featured": false
     },
@@ -3780,7 +4338,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Report",
       "audience": "Individuals and Families",
-      "tags": ["fraud", "employer", "labor violations"],
+      "tags": [
+        "fraud",
+        "employer",
+        "labor violations"
+      ],
       "icon": "💼",
       "featured": false
     },
@@ -3808,7 +4370,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Education and Students",
-      "tags": ["K-12", "education", "schools"],
+      "tags": [
+        "K-12",
+        "education",
+        "schools"
+      ],
       "icon": "📚",
       "featured": false
     },
@@ -3836,7 +4402,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Government and Employees",
-      "tags": ["rules", "public safety", "regulations"],
+      "tags": [
+        "rules",
+        "public safety",
+        "regulations"
+      ],
       "icon": "👮",
       "featured": false
     },
@@ -3850,7 +4420,7 @@
         "en": "Check results from limited license draws for hunting and accumulate preference points for future license applications.",
         "es": "Verifique los resultados de sorteos de licencias limitadas para caza y acumule puntos de preferencia para futuras solicitudes de licencia."
       },
-      "url": "https://cpw.state.co.us/hunting/big-game/secondary-draw",
+      "url": "https://cpw.state.co.us/activities/hunting/big-game/secondary-draw",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -3864,7 +4434,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Visitors and Tourists",
-      "tags": ["hunting", "license draw", "preference points"],
+      "tags": [
+        "hunting",
+        "license draw",
+        "preference points"
+      ],
       "icon": "🎣",
       "featured": false
     },
@@ -3878,7 +4452,7 @@
         "en": "Access resources and guidelines for commercial pesticide application, including licensing requirements, safety protocols, and best practices.",
         "es": "Acceda a recursos y directrices para la aplicación comercial de pesticidas, incluyendo requisitos de licencia, protocolos de seguridad y mejores prácticas."
       },
-      "url": "https://ag.colorado.gov/pesticides",
+      "url": "https://ag.colorado.gov/plants/pesticides",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -3892,7 +4466,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Find",
       "audience": "Businesses and Organizations",
-      "tags": ["pesticides", "commercial", "licensing"],
+      "tags": [
+        "pesticides",
+        "commercial",
+        "licensing"
+      ],
       "icon": "🌾",
       "featured": false
     },
@@ -3920,7 +4498,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Schedule",
       "audience": "Individuals and Families",
-      "tags": ["DMV", "appointment", "scheduling"],
+      "tags": [
+        "DMV",
+        "appointment",
+        "scheduling"
+      ],
       "icon": "🚗",
       "featured": false
     },
@@ -3948,7 +4530,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["energy savings", "utilities", "navigator"],
+      "tags": [
+        "energy savings",
+        "utilities",
+        "navigator"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -3976,7 +4562,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["veterans", "employment", "DMVA"],
+      "tags": [
+        "veterans",
+        "employment",
+        "DMVA"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4004,7 +4594,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["veterans", "employment", "CDLE"],
+      "tags": [
+        "veterans",
+        "employment",
+        "CDLE"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4032,7 +4626,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["mental health", "substance use", "988"],
+      "tags": [
+        "mental health",
+        "substance use",
+        "988"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4060,7 +4658,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["youth therapy", "mental health", "free"],
+      "tags": [
+        "youth therapy",
+        "mental health",
+        "free"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4088,7 +4690,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["mental health", "substance use", "alcohol"],
+      "tags": [
+        "mental health",
+        "substance use",
+        "alcohol"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4116,7 +4722,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["substance use", "pregnant", "parenting"],
+      "tags": [
+        "substance use",
+        "pregnant",
+        "parenting"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4144,7 +4754,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["Governor", "dashboard", "metrics"],
+      "tags": [
+        "Governor",
+        "dashboard",
+        "metrics"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4172,7 +4786,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["behavioral health", "workforce", "funding"],
+      "tags": [
+        "behavioral health",
+        "workforce",
+        "funding"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -4200,7 +4818,11 @@
       "lifeEvent": "Other",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["myColorado", "app", "digital ID"],
+      "tags": [
+        "myColorado",
+        "app",
+        "digital ID"
+      ],
       "icon": "🌐",
       "featured": true
     },
@@ -4228,7 +4850,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["mycolorado", "digital ID", "driver license"],
+      "tags": [
+        "mycolorado",
+        "digital ID",
+        "driver license"
+      ],
       "icon": "📱",
       "featured": true
     },
@@ -4256,7 +4882,12 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Renew",
       "audience": "Individuals and Families",
-      "tags": ["DMV", "online", "anywhere", "renewal"],
+      "tags": [
+        "DMV",
+        "online",
+        "anywhere",
+        "renewal"
+      ],
       "icon": "🚗",
       "featured": true
     },
@@ -4284,7 +4915,11 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Renew",
       "audience": "Individuals and Families",
-      "tags": ["kiosk", "vehicle registration", "express"],
+      "tags": [
+        "kiosk",
+        "vehicle registration",
+        "express"
+      ],
       "icon": "🏪",
       "featured": false
     },
@@ -4312,7 +4947,12 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["app", "benefits", "mobile", "SNAP"],
+      "tags": [
+        "app",
+        "benefits",
+        "mobile",
+        "SNAP"
+      ],
       "icon": "📲",
       "featured": false
     },
@@ -4340,7 +4980,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["permit test", "online", "driver license"],
+      "tags": [
+        "permit test",
+        "online",
+        "driver license"
+      ],
       "icon": "📝",
       "featured": false
     },
@@ -4368,7 +5012,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["license lookup", "professional", "DORA"],
+      "tags": [
+        "license lookup",
+        "professional",
+        "DORA"
+      ],
       "icon": "🔍",
       "featured": false
     },
@@ -4396,7 +5044,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["licensing", "DPO", "professional"],
+      "tags": [
+        "licensing",
+        "DPO",
+        "professional"
+      ],
       "icon": "📜",
       "featured": false
     },
@@ -4424,7 +5076,11 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["new resident", "checklist", "Colorado"],
+      "tags": [
+        "new resident",
+        "checklist",
+        "Colorado"
+      ],
       "icon": "📋",
       "featured": false
     },
@@ -4452,7 +5108,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["food assistance", "SNAP", "hunger free"],
+      "tags": [
+        "food assistance",
+        "SNAP",
+        "hunger free"
+      ],
       "icon": "🍎",
       "featured": false
     },
@@ -4480,7 +5140,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Use",
       "audience": "Businesses and Organizations",
-      "tags": ["digital ID", "verifier", "QR code"],
+      "tags": [
+        "digital ID",
+        "verifier",
+        "QR code"
+      ],
       "icon": "✅",
       "featured": false
     },
@@ -4508,7 +5172,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["meth lab cleanup", "instructor", "certification"],
+      "tags": [
+        "meth lab cleanup",
+        "instructor",
+        "certification"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4536,7 +5204,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["gaming", "address change", "name change"],
+      "tags": [
+        "gaming",
+        "address change",
+        "name change"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4550,7 +5222,7 @@
         "en": "Use this online search tool to find information about convicted sex offenders registered in the state of Colorado.",
         "es": "Use esta herramienta de búsqueda en línea para encontrar información sobre delincuentes sexuales condenados registrados en el estado de Colorado."
       },
-      "url": "https://www.colorado.gov/apps/cdps/sor/search-agreement.jsf",
+      "url": "https://apps.colorado.gov/apps/dps/sor/search-agreement.jsf",
       "department": {
         "en": "Department of Public Safety",
         "es": "Departamento de Seguridad Pública"
@@ -4564,7 +5236,10 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["sex offender registry", "public safety"],
+      "tags": [
+        "sex offender registry",
+        "public safety"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4578,7 +5253,7 @@
         "en": "Access the Division of Professions and Occupations portal to apply for, renew, reinstate or verify professional and business licenses.",
         "es": "Acceda al portal de la División de Profesiones y Ocupaciones para solicitar, renovar, reinstalar o verificar licencias profesionales y comerciales."
       },
-      "url": "https://apps.colorado.gov/dora/licensing/Default.aspx",
+      "url": "https://apps2.colorado.gov/dora/licensing/default.aspx",
       "department": {
         "en": "Department of Regulatory Agencies",
         "es": "Departamento de Agencias Reguladoras"
@@ -4592,7 +5267,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["professional license", "DPO", "licensing"],
+      "tags": [
+        "professional license",
+        "DPO",
+        "licensing"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4620,7 +5299,11 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Report",
       "audience": "Individuals and Families",
-      "tags": ["no-call list", "telemarketing", "fraud"],
+      "tags": [
+        "no-call list",
+        "telemarketing",
+        "fraud"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4648,7 +5331,11 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["pet care", "animal facility", "PACFA"],
+      "tags": [
+        "pet care",
+        "animal facility",
+        "PACFA"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4662,7 +5349,7 @@
         "en": "Purchase a permit for non-residents to operate off-highway vehicles (OHVs) on Colorado public lands.",
         "es": "Compre un permiso para que los no residentes operen vehículos todoterreno (OHV) en tierras públicas de Colorado."
       },
-      "url": "https://cpw.state.co.us/buyapply/Pages/RegistrationsOHV.aspx",
+      "url": "https://cpw.state.co.us/register-off-highway-vehicle",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -4676,7 +5363,10 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Purchase",
       "audience": "Individuals and Families",
-      "tags": ["OHV permit", "off highway vehicle"],
+      "tags": [
+        "OHV permit",
+        "off highway vehicle"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4704,7 +5394,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Register",
       "audience": "Individuals and Families",
-      "tags": ["hazardous waste", "workshop", "training"],
+      "tags": [
+        "hazardous waste",
+        "workshop",
+        "training"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4732,7 +5426,10 @@
       "lifeEvent": "Education and Career",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["publications library", "state documents"],
+      "tags": [
+        "publications library",
+        "state documents"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4760,7 +5457,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Request",
       "audience": "Individuals and Families",
-      "tags": ["CORA", "public records", "open records"],
+      "tags": [
+        "CORA",
+        "public records",
+        "open records"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4788,7 +5489,11 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["rulemaking", "public safety", "CDPS"],
+      "tags": [
+        "rulemaking",
+        "public safety",
+        "CDPS"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4816,7 +5521,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["digital license", "fishing", "hunting"],
+      "tags": [
+        "digital license",
+        "fishing",
+        "hunting"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4844,7 +5553,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Purchase",
       "audience": "Individuals and Families",
-      "tags": ["wild pass", "state parks", "annual pass"],
+      "tags": [
+        "wild pass",
+        "state parks",
+        "annual pass"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4872,7 +5585,10 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["secure transportation", "behavioral health"],
+      "tags": [
+        "secure transportation",
+        "behavioral health"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4900,7 +5616,10 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["cannabis business", "funding programs"],
+      "tags": [
+        "cannabis business",
+        "funding programs"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4928,7 +5647,10 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Request",
       "audience": "Individuals and Families",
-      "tags": ["driving record", "driver history"],
+      "tags": [
+        "driving record",
+        "driver history"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4956,7 +5678,10 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["driver monitoring", "license status"],
+      "tags": [
+        "driver monitoring",
+        "license status"
+      ],
       "icon": null,
       "featured": false
     },
@@ -4984,7 +5709,10 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Pay",
       "audience": "Individuals and Families",
-      "tags": ["gambling debt", "intercept payment"],
+      "tags": [
+        "gambling debt",
+        "intercept payment"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5012,7 +5740,10 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["vehicle verification", "title search"],
+      "tags": [
+        "vehicle verification",
+        "title search"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5040,7 +5771,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["TANF", "cash assistance", "family support"],
+      "tags": [
+        "TANF",
+        "cash assistance",
+        "family support"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5068,7 +5803,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["energy assistance", "heating costs", "LEAP"],
+      "tags": [
+        "energy assistance",
+        "heating costs",
+        "LEAP"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5096,7 +5835,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["employment training", "SNAP", "job skills"],
+      "tags": [
+        "employment training",
+        "SNAP",
+        "job skills"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5124,7 +5867,10 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["transitional employment", "job training"],
+      "tags": [
+        "transitional employment",
+        "job training"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5152,7 +5898,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["senior employment", "training", "SCSEP"],
+      "tags": [
+        "senior employment",
+        "training",
+        "SCSEP"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5180,7 +5930,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["career pathways", "job training", "free training"],
+      "tags": [
+        "career pathways",
+        "job training",
+        "free training"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5208,7 +5962,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["subsidized employment", "apprenticeship", "CW STEP"],
+      "tags": [
+        "subsidized employment",
+        "apprenticeship",
+        "CW STEP"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5236,7 +5994,10 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["SNAP", "healthy choice waiver"],
+      "tags": [
+        "SNAP",
+        "healthy choice waiver"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5264,7 +6025,10 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["SNAP produce bonus", "fruit and vegetable"],
+      "tags": [
+        "SNAP produce bonus",
+        "fruit and vegetable"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5292,7 +6056,11 @@
       "lifeEvent": "Education and Career",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["SNAP-Ed", "nutrition education", "obesity prevention"],
+      "tags": [
+        "SNAP-Ed",
+        "nutrition education",
+        "obesity prevention"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5320,7 +6088,10 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["SNAP outreach", "food assistance"],
+      "tags": [
+        "SNAP outreach",
+        "food assistance"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5348,7 +6119,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["ABAWD", "work requirement", "SNAP"],
+      "tags": [
+        "ABAWD",
+        "work requirement",
+        "SNAP"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5376,7 +6151,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["Summer EBT", "child nutrition", "food assistance"],
+      "tags": [
+        "Summer EBT",
+        "child nutrition",
+        "food assistance"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5404,7 +6183,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["CSFP", "Everyday Eats", "senior food program"],
+      "tags": [
+        "CSFP",
+        "Everyday Eats",
+        "senior food program"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5432,7 +6215,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["TEFAP", "emergency food", "USDA foods"],
+      "tags": [
+        "TEFAP",
+        "emergency food",
+        "USDA foods"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5460,7 +6247,10 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["disaster feeding", "commodity alerts"],
+      "tags": [
+        "disaster feeding",
+        "commodity alerts"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5488,7 +6278,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["LFPA", "local food", "underserved communities"],
+      "tags": [
+        "LFPA",
+        "local food",
+        "underserved communities"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5516,7 +6310,12 @@
       "lifeEvent": "Raising a Family",
       "taskType": "Learn",
       "audience": "Individuals and Families",
-      "tags": ["school lunch", "child nutrition", "CACFP", "SFSP"],
+      "tags": [
+        "school lunch",
+        "child nutrition",
+        "CACFP",
+        "SFSP"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5544,7 +6343,11 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["Energy EBT", "energy costs", "SNAP"],
+      "tags": [
+        "Energy EBT",
+        "energy costs",
+        "SNAP"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5572,7 +6375,11 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["EBT discounts", "museum admission", "cultural centers"],
+      "tags": [
+        "EBT discounts",
+        "museum admission",
+        "cultural centers"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5600,7 +6407,11 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["ADRC", "aging services", "disability resources"],
+      "tags": [
+        "ADRC",
+        "aging services",
+        "disability resources"
+      ],
       "icon": null,
       "featured": false
     },
@@ -5628,7 +6439,13 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Purchase",
       "audience": "Individuals and Families",
-      "tags": ["hunting", "fishing", "license", "parks", "wildlife"],
+      "tags": [
+        "hunting",
+        "fishing",
+        "license",
+        "parks",
+        "wildlife"
+      ],
       "icon": "🎣",
       "featured": true
     },
@@ -5656,7 +6473,13 @@
       "lifeEvent": "Travel and Recreation",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["road conditions", "travel", "highway", "closures", "weather"],
+      "tags": [
+        "road conditions",
+        "travel",
+        "highway",
+        "closures",
+        "weather"
+      ],
       "icon": "🛣️",
       "featured": true
     },
@@ -5684,7 +6507,13 @@
       "lifeEvent": "Housing and Relocation",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["digital ID", "mobile", "app", "driver license", "myColorado"],
+      "tags": [
+        "digital ID",
+        "mobile",
+        "app",
+        "driver license",
+        "myColorado"
+      ],
       "icon": "📱",
       "featured": true
     },
@@ -5712,7 +6541,12 @@
       "lifeEvent": "Starting/Raising a Family",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["preschool", "early childhood", "education", "free"],
+      "tags": [
+        "preschool",
+        "early childhood",
+        "education",
+        "free"
+      ],
       "icon": "🎨",
       "featured": true
     },
@@ -5740,7 +6574,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["mental health", "crisis", "988", "suicide prevention"],
+      "tags": [
+        "mental health",
+        "crisis",
+        "988",
+        "suicide prevention"
+      ],
       "icon": "💚",
       "featured": true
     },
@@ -5768,7 +6607,12 @@
       "lifeEvent": "Education and Career",
       "taskType": "Get Assistance",
       "audience": "Education and Students",
-      "tags": ["youth", "mental health", "therapy", "free"],
+      "tags": [
+        "youth",
+        "mental health",
+        "therapy",
+        "free"
+      ],
       "icon": "🌟",
       "featured": false
     },
@@ -5796,7 +6640,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["mental health", "substance use", "addiction", "treatment"],
+      "tags": [
+        "mental health",
+        "substance use",
+        "addiction",
+        "treatment"
+      ],
       "icon": "🧭",
       "featured": false
     },
@@ -5824,7 +6673,12 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["performance", "metrics", "data", "transparency"],
+      "tags": [
+        "performance",
+        "metrics",
+        "data",
+        "transparency"
+      ],
       "icon": "📊",
       "featured": false
     },
@@ -5852,7 +6706,12 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["food", "hunger", "SNAP", "food banks"],
+      "tags": [
+        "food",
+        "hunger",
+        "SNAP",
+        "food banks"
+      ],
       "icon": "🍎",
       "featured": false
     },
@@ -5880,7 +6739,12 @@
       "lifeEvent": "Starting a Business",
       "taskType": "Learn",
       "audience": "Businesses and Organizations",
-      "tags": ["cannabis", "marijuana", "business", "licensing"],
+      "tags": [
+        "cannabis",
+        "marijuana",
+        "business",
+        "licensing"
+      ],
       "icon": "🌿",
       "featured": false
     },
@@ -5908,7 +6772,12 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["EBT", "Quest card", "SNAP", "benefits"],
+      "tags": [
+        "EBT",
+        "Quest card",
+        "SNAP",
+        "benefits"
+      ],
       "icon": "💳",
       "featured": false
     },
@@ -5936,7 +6805,12 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Use",
       "audience": "Individuals and Families",
-      "tags": ["SNAP", "double up", "farmers market", "produce"],
+      "tags": [
+        "SNAP",
+        "double up",
+        "farmers market",
+        "produce"
+      ],
       "icon": "🥕",
       "featured": false
     },
@@ -5964,7 +6838,13 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["digital", "online services", "government", "portal", "SIPA"],
+      "tags": [
+        "digital",
+        "online services",
+        "government",
+        "portal",
+        "SIPA"
+      ],
       "icon": "🌐",
       "featured": false
     },
@@ -5992,7 +6872,13 @@
       "lifeEvent": "Civic and Community",
       "taskType": "Report",
       "audience": "Individuals and Families",
-      "tags": ["animal", "cruelty", "neglect", "complaint", "pets"],
+      "tags": [
+        "animal",
+        "cruelty",
+        "neglect",
+        "complaint",
+        "pets"
+      ],
       "icon": "🐾",
       "featured": false
     },
@@ -6020,7 +6906,12 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "File",
       "audience": "Individuals and Families",
-      "tags": ["workers compensation", "injury", "workplace", "claim"],
+      "tags": [
+        "workers compensation",
+        "injury",
+        "workplace",
+        "claim"
+      ],
       "icon": "⚕️",
       "featured": false
     },
@@ -6048,7 +6939,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["medical marijuana", "cannabis", "MMJ", "registry"],
+      "tags": [
+        "medical marijuana",
+        "cannabis",
+        "MMJ",
+        "registry"
+      ],
       "icon": "🏥",
       "featured": false
     },
@@ -6076,7 +6972,13 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["vaccine", "immunization", "COVID", "flu", "clinic"],
+      "tags": [
+        "vaccine",
+        "immunization",
+        "COVID",
+        "flu",
+        "clinic"
+      ],
       "icon": "💉",
       "featured": false
     },
@@ -6104,7 +7006,12 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["public health", "county", "local", "health department"],
+      "tags": [
+        "public health",
+        "county",
+        "local",
+        "health department"
+      ],
       "icon": "🏛️",
       "featured": false
     },
@@ -6132,7 +7039,12 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "File",
       "audience": "Individuals and Families",
-      "tags": ["complaint", "consumer protection", "professional", "license"],
+      "tags": [
+        "complaint",
+        "consumer protection",
+        "professional",
+        "license"
+      ],
       "icon": "📝",
       "featured": false
     },
@@ -6160,7 +7072,13 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["benefits", "assistance", "SNAP", "TANF", "Medicaid"],
+      "tags": [
+        "benefits",
+        "assistance",
+        "SNAP",
+        "TANF",
+        "Medicaid"
+      ],
       "icon": "🤝",
       "featured": true
     },
@@ -6188,7 +7106,12 @@
       "lifeEvent": "Education and Career",
       "taskType": "Get Assistance",
       "audience": "Individuals and Families",
-      "tags": ["employment", "job training", "workforce", "career"],
+      "tags": [
+        "employment",
+        "job training",
+        "workforce",
+        "career"
+      ],
       "icon": "💼",
       "featured": false
     },
@@ -6216,7 +7139,13 @@
       "lifeEvent": "Education and Career",
       "taskType": "Apply",
       "audience": "Individuals and Families",
-      "tags": ["senior", "employment", "SCSEP", "job training", "older adults"],
+      "tags": [
+        "senior",
+        "employment",
+        "SCSEP",
+        "job training",
+        "older adults"
+      ],
       "icon": "👴",
       "featured": false
     },
@@ -6244,7 +7173,13 @@
       "lifeEvent": "Living with Financial Hardship",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["food", "distribution", "TEFAP", "CSFP", "hunger"],
+      "tags": [
+        "food",
+        "distribution",
+        "TEFAP",
+        "CSFP",
+        "hunger"
+      ],
       "icon": "🍎",
       "featured": false
     },
@@ -6272,7 +7207,13 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "File",
       "audience": "Individuals and Families",
-      "tags": ["unemployment", "insurance", "benefits", "claim", "jobless"],
+      "tags": [
+        "unemployment",
+        "insurance",
+        "benefits",
+        "claim",
+        "jobless"
+      ],
       "icon": "📋",
       "featured": true
     },
@@ -6300,7 +7241,13 @@
       "lifeEvent": "Healthcare and Wellness",
       "taskType": "Find",
       "audience": "Individuals and Families",
-      "tags": ["health facility", "nursing home", "hospital", "compare", "quality"],
+      "tags": [
+        "health facility",
+        "nursing home",
+        "hospital",
+        "compare",
+        "quality"
+      ],
       "icon": "🏥",
       "featured": false
     },
@@ -6328,7 +7275,12 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "Request",
       "audience": "Individuals and Families",
-      "tags": ["unemployment", "appeal", "hearing", "decision"],
+      "tags": [
+        "unemployment",
+        "appeal",
+        "hearing",
+        "decision"
+      ],
       "icon": "⚖️",
       "featured": false
     },
@@ -6356,7 +7308,12 @@
       "lifeEvent": "Financial and Taxes",
       "taskType": "Manage",
       "audience": "Individuals and Families",
-      "tags": ["unemployment", "identity", "ID.me", "verification"],
+      "tags": [
+        "unemployment",
+        "identity",
+        "ID.me",
+        "verification"
+      ],
       "icon": "🔐",
       "featured": false
     },
@@ -6384,7 +7341,12 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Register",
       "audience": "Businesses and Organizations",
-      "tags": ["employer", "unemployment", "registration", "business"],
+      "tags": [
+        "employer",
+        "unemployment",
+        "registration",
+        "business"
+      ],
       "icon": "🏢",
       "featured": false
     },
@@ -6412,7 +7374,12 @@
       "lifeEvent": "Business and Economy",
       "taskType": "Apply",
       "audience": "Businesses and Organizations",
-      "tags": ["work-share", "layoff", "alternative", "employer"],
+      "tags": [
+        "work-share",
+        "layoff",
+        "alternative",
+        "employer"
+      ],
       "icon": "🤝",
       "featured": false
     },
@@ -6440,7 +7407,12 @@
       "lifeEvent": "Legal and Justice",
       "taskType": "File",
       "audience": "Individuals and Families",
-      "tags": ["complaint", "health facility", "nursing home", "hospital"],
+      "tags": [
+        "complaint",
+        "health facility",
+        "nursing home",
+        "hospital"
+      ],
       "icon": "📞",
       "featured": false
     }
