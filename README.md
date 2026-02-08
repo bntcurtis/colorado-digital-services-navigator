@@ -38,7 +38,7 @@ Accessing government services shouldn't be hard. Unfortunately, many state gover
 
 ### Architecture
 
-The entire application is a single HTML file with embedded CSS and JavaScript. The service catalog is embedded as a JSON object. This design choice means:
+The entire application is a single HTML file with embedded CSS and JavaScript. The service catalog is embedded as a JSON object and synced from `service-catalog-v8.json`. This design choice means:
 
 - No server infrastructure required
 - Works offline once loaded
@@ -113,16 +113,31 @@ Services are organized across multiple dimensions:
 | `colorado-service-navigator-v7.html` | Versioned copy of the main application |
 | `service-catalog-v8.json` | Bilingual service catalog data (English + Spanish) |
 | `service-schema-v3.json` | JSON Schema for validating the bilingual catalog |
+| `scripts/catalog-agent.js` | Automated catalog agent (repairs links, discovers services, generates metadata) |
 | `scripts/check-links.js` | Automated link health checker |
 | `scripts/discover-services.js` | Sitemap crawler for discovering new services |
+| `scripts/sync-catalog.js` | Syncs the embedded catalog in `index.html` from `service-catalog-v8.json` |
+| `reports/` | Auto-generated catalog change reports (created by GitHub Actions) |
 | `README.md` | This file |
 
 ### GitHub Actions
 
 | Workflow | Schedule | Description |
 |----------|----------|-------------|
-| `link-audit.yml` | Weekly (Mondays) | Checks all service URLs for broken links, soft 404s, and suspicious redirects. Creates/updates a GitHub Issue with findings. |
-| `discover-services.yml` | Monthly (1st) | Crawls Colorado government sitemaps to find potential new services not yet in the catalog. |
+| `catalog-agent.yml` | Weekly + Monthly | Repairs links, discovers new services, generates bilingual metadata, and opens a PR with a review report. |
+| `link-audit.yml` | Manual only | Legacy link checker (issue-based). |
+| `discover-services.yml` | Manual only | Legacy sitemap discovery (issue-based). |
+
+### Catalog Agent setup
+
+The Catalog Agent requires a separate Gemini proxy Worker and a shared token.
+
+1. Create a Cloudflare Worker for catalog metadata generation.
+2. Add Worker secrets: `GEMINI_API_KEY` and `CATALOG_AGENT_TOKEN`.
+3. Add GitHub Actions secrets/variables:
+
+- Secret: `CATALOG_AGENT_TOKEN`
+- Variable: `CATALOG_WORKER_URL` (e.g. `https://navigator-catalog-proxy.bntcurtis.workers.dev/`)
 
 ---
 
@@ -147,8 +162,8 @@ Service information was compiled from:
 
 The service catalog is maintained through a combination of automated checks and community feedback:
 
-- **Automated link auditing** — A GitHub Action runs weekly to detect broken links, soft 404s (pages that return 200 but say "not found"), and suspicious redirects. Issues are automatically created for review.
-- **Service discovery** — A monthly sitemap crawler searches Colorado government websites for potential new services not yet in the catalog.
+- **Catalog Agent (PR-based)** — A GitHub Action runs weekly/monthly to repair links, discover new services, and generate bilingual metadata. It opens a PR with a human-readable report in `reports/` for review before merging.
+- **Legacy workflows (manual)** — The prior issue-based link audit and discovery workflows remain available for manual runs.
 - **Community feedback** — Users can [report broken links or suggest new services](https://github.com/bntcurtis/colorado-digital-services-navigator/issues/new?template=feedback.yml) directly from the app footer.
 
 ---
