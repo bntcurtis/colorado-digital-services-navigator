@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Colorado Service Catalog Schema v2.0",
+  "description": "Enhanced schema for Colorado state government digital services with multi-dimensional taxonomy",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "#/definitions/CatalogMetadata"
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Service"
+      }
+    }
+  },
+  "required": ["metadata", "services"],
+  "definitions": {
+    "CatalogMetadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Semantic version of the catalog"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of last catalog update"
+        },
+        "totalServices": {
+          "type": "integer",
+          "description": "Total number of services in catalog"
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the catalog data"
+        }
+      },
+      "required": ["version", "lastUpdated", "totalServices"]
+    },
+    "Service": {
+      "type": "object",
+      "required": ["id", "name", "description", "url", "department", "category"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Service name",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of the service",
+          "minLength": 10,
+          "maxLength": 500
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct URL to access the service"
+        },
+        "department": {
+          "type": "string",
+          "description": "Responsible state agency"
+        },
+        "departmentUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the agency's website"
+        },
+        "category": {
+          "type": "string",
+          "description": "Primary service category",
+          "enum": [
+            "Business and Economy",
+            "Education and Learning",
+            "Elections and Government",
+            "Environment and Natural Resources",
+            "Family and Social Services",
+            "Health and Wellbeing",
+            "Jobs and Employment",
+            "Public Safety and Justice",
+            "Recreation and Outdoors",
+            "Taxes and Finance",
+            "Transportation and Vehicles"
+          ]
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "Service subcategory within the main category"
+        },
+        "lifeEvent": {
+          "type": "string",
+          "description": "Related life event category",
+          "enum": [
+            "Civic and Community",
+            "Education and Career",
+            "Financial and Taxes",
+            "Healthcare and Wellness",
+            "Housing and Relocation",
+            "Legal and Justice",
+            "Living with Financial Hardship",
+            "Military Service",
+            "Raising a Family",
+            "Starting a Family",
+            "Travel and Recreation"
+          ]
+        },
+        "lifeEventDetail": {
+          "type": "string",
+          "description": "Specific life event within category"
+        },
+        "taskType": {
+          "type": "string",
+          "description": "Primary task type for navigation",
+          "enum": [
+            "Apply",
+            "Calculate",
+            "File",
+            "Find",
+            "Get Assistance",
+            "Learn",
+            "Make",
+            "Manage",
+            "Pay",
+            "Renew",
+            "Report",
+            "Request",
+            "Schedule",
+            "Start"
+          ]
+        },
+        "taskDetail": {
+          "type": "string",
+          "description": "Specific task detail"
+        },
+        "audience": {
+          "type": "string",
+          "description": "Target audience category",
+          "enum": [
+            "Businesses and Organizations",
+            "Education and Students",
+            "Government and Employees",
+            "Individuals and Families",
+            "Visitors and Tourists"
+          ]
+        },
+        "audienceDetail": {
+          "type": "string",
+          "description": "Specific audience segment"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Keywords for search"
+        },
+        "icon": {
+          "type": "string",
+          "description": "Emoji icon for the service"
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether this is a featured/popular service"
+        }
+      }
+    }
+  }
+}
