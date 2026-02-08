@@ -139,6 +139,18 @@ The Catalog Agent requires a separate Gemini proxy Worker and a shared token.
 - Secret: `CATALOG_AGENT_TOKEN`
 - Variable: `CATALOG_WORKER_URL` (e.g. `https://navigator-catalog-proxy.bntcurtis.workers.dev/`)
 
+### Run the Catalog Agent manually
+
+1. Open the GitHub repo.
+2. Click the **Actions** tab.
+3. Select **Catalog Agent** in the left sidebar.
+4. Click **Run workflow**.
+5. Choose the mode:
+   - `weekly` for link repairs only
+   - `monthly` for link repairs + discovery
+6. Optionally set the limit for new services to evaluate.
+7. Click **Run workflow** to start the job.
+
 ---
 
 ## Methodology
