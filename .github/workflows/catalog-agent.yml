@@ -1,0 +1,83 @@
+name: Catalog Agent
+
+on:
+  schedule:
+    # Weekly link repair (Mondays at 9am UTC)
+    - cron: '0 9 * * 1'
+    # Monthly discovery (1st of month at 10am UTC)
+    - cron: '0 10 1 * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'weekly or monthly'
+        required: false
+        default: 'weekly'
+      limit:
+        description: 'Max new services to evaluate'
+        required: false
+        default: '30'
+
+jobs:
+  update-catalog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      CATALOG_WORKER_URL: ${{ vars.CATALOG_WORKER_URL }}
+      CATALOG_AGENT_TOKEN: ${{ secrets.CATALOG_AGENT_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Determine mode
+        id: config
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "${{ github.event.schedule }}" = "0 10 1 * *" ]; then
+              echo "mode=monthly" >> $GITHUB_OUTPUT
+            else
+              echo "mode=weekly" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run catalog agent
+        run: |
+          LIMIT="${{ inputs.limit }}"
+          if [ -z "$LIMIT" ]; then
+            LIMIT=30
+          fi
+          node scripts/catalog-agent.js --mode "${{ steps.config.outputs.mode }}" --limit "$LIMIT"
+
+      - name: Sync embedded catalog
+        run: |
+          node scripts/sync-catalog.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'Update service catalog (automated)'
+          branch: codex/catalog-agent-${{ github.run_id }}
+          title: 'Catalog update (automated)'
+          body: |
+            Automated catalog updates from the Catalog Agent.
+
+            Please review the report in `reports/` for change details and confidence levels.
+          delete-branch: true

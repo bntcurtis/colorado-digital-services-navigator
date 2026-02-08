@@ -1,10 +1,7 @@
 name: Weekly Link Audit
 
 on:
-  schedule:
-    # Run every Monday at 9am UTC (2am MST)
-    - cron: '0 9 * * 1'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch: # Manual trigger only
 
 jobs:
   check-links:
