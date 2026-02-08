@@ -1,0 +1,435 @@
+# Catalog Agent Report
+Generated: 2026-02-08
+Mode: weekly
+
+## Summary
+- Services before: 230
+- Services after: 230
+- New services: 0
+- Link repairs: 51
+- Unresolved issues: 41
+
+## High Confidence Changes
+### Link Repairs
+- ID 7: Apply for Work Opportunity Tax Credit
+  - Old URL: https://cdle.colorado.gov/wotc
+  - New URL: https://cdle.colorado.gov/work-opportunity-tax-credit
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 8: Apply for Meth Lab Cleanup Certifications
+  - Old URL: https://cdphe.colorado.gov/methamphetamine-laboratory-cleanup
+  - New URL: https://cdphe.colorado.gov/hm/methlabcleanup
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 9: Apply for Health Facility Licenses
+  - Old URL: https://cdphe.colorado.gov/health-facilities-licensure
+  - New URL: https://cdphe.colorado.gov/health-facilities/health-facilities-licensing-fees-certification-and-registration
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 12: Calculate Workers' Compensation Surcharge
+  - Old URL: https://cdle.colorado.gov/wc-surcharge
+  - New URL: https://apps.colorado.gov/apps/cdle/surcharge/payment/calculator/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 15: Check Tax Refund Status
+  - Old URL: https://tax.colorado.gov/refund-status
+  - New URL: https://tax.colorado.gov/refund
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 16: Child Support Services
+  - Old URL: https://childsupport.state.co.us
+  - New URL: https://childsupport.state.co.us/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 17: Cold Case Database
+  - Old URL: https://www.colorado.gov/coldcase
+  - New URL: https://apps.colorado.gov/apps/coldcase/index.html
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 18: Sex Offender Registry
+  - Old URL: https://www.colorado.gov/apps/cdps/sor/
+  - New URL: https://apps.colorado.gov/apps/dps/sor/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 21: Colorado Legal Services
+  - Old URL: https://www.coloradolegalservices.org
+  - New URL: https://www.coloradolegalservices.org/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 26: Colorado Shines - Child Care Search
+  - Old URL: https://www.coloradoshines.com
+  - New URL: https://www.coloradoshines.com/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 27: ServeColorado - Volunteer Opportunities
+  - Old URL: https://servecolorado.colorado.gov
+  - New URL: https://servecolorado.colorado.gov/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 28: Connect for Health Colorado
+  - Old URL: https://connectforhealthco.com
+  - New URL: https://connectforhealthco.com/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 35: Emergency Medical Services
+  - Old URL: https://cdphe.colorado.gov/emergency-care/emergency-medical-services
+  - New URL: https://cdphe.colorado.gov/ems
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 36: Business Entity Registration
+  - Old URL: https://www.sos.state.co.us/biz/
+  - New URL: https://www.sos.state.co.us/biz/Welcome.do
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 37: Solid Waste and Recycling Forms
+  - Old URL: https://cdphe.colorado.gov/solid-waste-forms
+  - New URL: https://cdphe.colorado.gov/hm/swforms
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 43: File Taxes Online
+  - Old URL: https://tax.colorado.gov/file-online
+  - New URL: https://tax.colorado.gov/training/file-individual-income-tax-online
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 48: Women's Wellness Connection
+  - Old URL: https://cdphe.colorado.gov/womens-wellness-connection
+  - New URL: https://cdphe.colorado.gov/wwc
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 49: Workforce Centers
+  - Old URL: https://cdle.colorado.gov/wfc
+  - New URL: https://cdle.colorado.gov/jobs-training/workforce-centers
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 54: Find job fairs / events
+  - Old URL: https://cdle.colorado.gov/jobs-training/job-fairs-and-hiring-events
+  - New URL: https://cdle.colorado.gov/jobs-training/find-a-job/job-fairs/events
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 55: Find out if a site is contaminated
+  - Old URL: https://cdphe.colorado.gov/contaminated-sites
+  - New URL: https://cdphe.colorado.gov/hm/if-site-contaminated
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 57: Get Vaccinated
+  - Old URL: https://covid19.colorado.gov/vaccine
+  - New URL: https://cdphe.colorado.gov/covid-19
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 58: Governor's Dashboard
+  - Old URL: https://dashboard.colorado.gov
+  - New URL: https://dashboard.colorado.gov/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 60: HIV Linkage to Care
+  - Old URL: https://cdphe.colorado.gov/hiv-care
+  - New URL: https://cdphe.colorado.gov/sti-hiv-vh/living-with-hiv
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 61: Learn about animal importing
+  - Old URL: https://ag.colorado.gov/animals/import-requirements
+  - New URL: https://ag.colorado.gov/animal-health/colorado-import-requirements
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 62: Learn about industrial hemp (not marijuana)
+  - Old URL: https://ag.colorado.gov/hemp
+  - New URL: https://ag.colorado.gov/plants/hemp
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 63: Learn about pet-animal care facility operation and oversight
+  - Old URL: https://ag.colorado.gov/pacfa
+  - New URL: https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 64: Learn About WIC
+  - Old URL: https://www.coloradowic.gov/
+  - New URL: https://www.coloradowic.gov/homepage
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 65: License a measurement standards device
+  - Old URL: https://ag.colorado.gov/measurementstandards
+  - New URL: https://ag.colorado.gov/ics/measurement-standards
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 67: Make a camping reservation
+  - Old URL: https://cpw.state.co.us/placestogo/parks/Pages/default.aspx
+  - New URL: https://cpw.state.co.us/state-parks
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 68: Make a Department of Corrections request for records
+  - Old URL: https://cdoc.colorado.gov/about/contact-us/request-records
+  - New URL: https://cdoc.colorado.gov/general-records-requests
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 69: Make a hazardous materials public records request
+  - Old URL: https://cdphe.colorado.gov/records-requests
+  - New URL: https://cdphe.colorado.gov/hm/records-review
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 71: Manage my tax account
+  - Old URL: https://tax.colorado.gov/manage-my-account
+  - New URL: https://tax.colorado.gov/training/account-access-management
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 72: Manage or renew your real estate license
+  - Old URL: https://dora.colorado.gov/dre
+  - New URL: https://dre.colorado.gov/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 73: Manage your insurance producer license
+  - Old URL: https://dora.colorado.gov/insurance-producer
+  - New URL: https://doi.colorado.gov/insurance-industry/for-producers/agents
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 77: Notify gaming officials of an arrest
+  - Old URL: https://sbg.colorado.gov/arrest-notification
+  - New URL: https://sbg.colorado.gov/arrest-notification-form
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 78: Pay a City of Denver parking ticket
+  - Old URL: https://www.denvergov.org/
+  - New URL: https://www.denvergov.org/Home
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 79: Pay a debt owed to the State of Colorado
+  - Old URL: https://ops.colorado.gov/payment
+  - New URL: https://ops.colorado.gov/Conveyance/PaymentsFees
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 80: Pay taxes online
+  - Old URL: https://tax.colorado.gov/pay-online
+  - New URL: https://tax.colorado.gov/pay
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 84: Purchase a fishing license online
+  - Old URL: https://www.cpwshop.com/
+  - New URL: https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 90: Register for real time alerts from CDOT
+  - Old URL: https://www.cotrip.org/
+  - New URL: https://www.cotrip.org/home
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 93: Renew your boat registration online
+  - Old URL: https://cpw.state.co.us/buyapply/Pages/BoatingRegistrations.aspx?ID=81
+  - New URL: https://cpw.state.co.us/register-boat?ID=81
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 102: Search the Colorado State Publications Library catalog
+  - Old URL: https://www.colorado.gov/pacific/archives
+  - New URL: https://archives.colorado.gov/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 113: Transparency Online Project
+  - Old URL: https://www.colorado.gov/apps/oit/transparency/
+  - New URL: https://apps.colorado.gov/apps/oit/transparency/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 115: Verify a Colorado Professional or Business License
+  - Old URL: https://apps.colorado.gov/dora/licensing/
+  - New URL: https://apps2.colorado.gov/dora/licensing/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 122: View state wildlife areas by county, hunting, fishing, recreation, and GMU
+  - Old URL: https://cpw.state.co.us/hunting/walk-access-program
+  - New URL: https://cpw.state.co.us/activities/hunting/where-hunt/walk-access-program
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 134: Request a biocontrol bug
+  - Old URL: https://ag.colorado.gov/conservation/biocontrol
+  - New URL: https://ag.colorado.gov/conservation/palisade-insectary
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 138: Review limited license draw results and preference point status
+  - Old URL: https://cpw.state.co.us/hunting/big-game/secondary-draw
+  - New URL: https://cpw.state.co.us/activities/hunting/big-game/secondary-draw
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 139: Review resources for commercial pesticide applicators
+  - Old URL: https://ag.colorado.gov/pesticides
+  - New URL: https://ag.colorado.gov/plants/pesticides
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 163: Search for convicted sex offenders
+  - Old URL: https://www.colorado.gov/apps/cdps/sor/search-agreement.jsf
+  - New URL: https://apps.colorado.gov/apps/dps/sor/search-agreement.jsf
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 164: DPO Online Services Portal
+  - Old URL: https://apps.colorado.gov/dora/licensing/Default.aspx
+  - New URL: https://apps2.colorado.gov/dora/licensing/default.aspx
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 167: Purchase a Colorado non-resident OHV permit
+  - Old URL: https://cpw.state.co.us/buyapply/Pages/RegistrationsOHV.aspx
+  - New URL: https://cpw.state.co.us/register-off-highway-vehicle
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+
+## Unresolved Issues (Needs Review)
+- ID 1: Access College in Colorado planning resources
+  - URL: https://cdhe.colorado.gov/students
+  - Issue: broken
+  - Details: HTTP 403
+- ID 23: Colorado Nutrition Programs
+  - URL: https://cdhs.colorado.gov/benefits-assistance/food-assistance
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 24: Colorado PEAK - Apply for Benefits
+  - URL: https://coloradopeak.secure.force.com
+  - Issue: broken
+  - Details: HTTP 404
+- ID 38: Fishing Atlas
+  - URL: https://cpw.state.co.us/fishing/pages/fishingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 39: Hunting Atlas
+  - URL: https://cpw.state.co.us/hunting/pages/huntingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 40: Veterans Services
+  - URL: https://cdle.colorado.gov/veterans-services
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 142
+- ID 53: Find health facilities by type and by city or county
+  - URL: https://cdphe.colorado.gov/find-and-compare-facilities
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 225
+- ID 56: Get copies of occupational school student transcripts
+  - URL: https://cdhe.colorado.gov/students/preparing-for-college
+  - Issue: broken
+  - Details: HTTP 403
+- ID 81: Pay your boiler inspection invoice online
+  - URL: https://ops.colorado.gov/payment
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 82: Pay your petroleum tank invoice online
+  - URL: https://ops.colorado.gov/payment
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 85: Purchase a hunting license online
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 86: Purchase Colorado State Parks gift certificates
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 88: Register for electronic funds transfer
+  - URL: https://tax.colorado.gov/eft
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 100: Search for oil and gas drilling permits
+  - URL: https://ecmc.state.co.us/permits/
+  - Issue: soft_404
+  - Details: Content contains: "Oops"
+- ID 106: Sign up for The Scoop e-newsletter
+  - URL: https://www.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 111: Subscribe to Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 118: View parks by activities, facilities, accessibility and conditions
+  - URL: https://cpw.state.co.us/placestogo/parks/Pages/default.aspx
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 67
+- ID 119: View road conditions throughout the state
+  - URL: https://www.cotrip.org/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 90
+- ID 130: Revenue Online
+  - URL: https://www.colorado.gov/revenueonline/_/
+  - Issue: broken
+  - Details: HTTP 404
+- ID 131: SchoolView
+  - URL: https://www.cde.state.co.us/schoolview
+  - Issue: error
+  - Details: fetch failed
+- ID 133: Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 136: Request information about K-12 education in Colorado
+  - URL: https://www.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 150: The myColorado App
+  - URL: https://mycolorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 151: myColorado Digital ID
+  - URL: https://mycolorado.gov/colorado-digital-id
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 160: Colorado Digital ID Verifier
+  - URL: https://mycolorado.gov/colorado-digital-id/verify
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 161: Apply to be a methamphetamine labs cleanup instructor
+  - URL: https://cdphe.colorado.gov/methlabcleanup
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 8
+- ID 166: Learn about pet-animal care facility operation
+  - URL: https://ag.colorado.gov/ics/pacfa
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 63
+- ID 169: Search the Colorado State Publications Library
+  - URL: https://hermes.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 172: CPW Digital Licenses
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 174: Secure Transportation Service Licensing
+  - URL: https://cdphe.colorado.gov/emergency-care/emergency-medical-services
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 35
+- ID 175: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: broken
+  - Details: HTTP 403
+- ID 180: Colorado Works (TANF)
+  - URL: https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 183
+- ID 191: ABAWD Work Requirement
+  - URL: https://cdhs.colorado.gov/snap/abawd
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 193: Everyday Eats (Commodity Supplemental Food Program)
+  - URL: https://cdhs.colorado.gov/food-assistance
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 200: Aging and Disability Resources for Colorado (ADRC)
+  - URL: https://cdhs.colorado.gov/our-services/older-adult-services/state-unit-on-aging/aging-and-disability-resources-for-colorado
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 201: CPW Shop - Purchase Licenses Online
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 202: COtrip - Real-Time Road Conditions
+  - URL: https://www.cotrip.org/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 90
+- ID 203: Colorado Digital ID via myColorado App
+  - URL: https://mycolorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 210: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: broken
+  - Details: HTTP 403
+- ID 223: Food Distribution Household Programs
+  - URL: https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/food-distribution-household-programs
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 227: Verify your identity for unemployment with ID.me
+  - URL: https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme
+  - Issue: soft_404
+  - Details: Content contains: "404"
+

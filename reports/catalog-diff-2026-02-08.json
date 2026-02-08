@@ -1,0 +1,711 @@
+{
+  "generated": "2026-02-08",
+  "mode": "weekly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 51,
+    "unresolved": 41
+  },
+  "linkRepairs": [
+    {
+      "id": 7,
+      "name": "Apply for Work Opportunity Tax Credit",
+      "oldUrl": "https://cdle.colorado.gov/wotc",
+      "newUrl": "https://cdle.colorado.gov/work-opportunity-tax-credit",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 8,
+      "name": "Apply for Meth Lab Cleanup Certifications",
+      "oldUrl": "https://cdphe.colorado.gov/methamphetamine-laboratory-cleanup",
+      "newUrl": "https://cdphe.colorado.gov/hm/methlabcleanup",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 9,
+      "name": "Apply for Health Facility Licenses",
+      "oldUrl": "https://cdphe.colorado.gov/health-facilities-licensure",
+      "newUrl": "https://cdphe.colorado.gov/health-facilities/health-facilities-licensing-fees-certification-and-registration",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 12,
+      "name": "Calculate Workers' Compensation Surcharge",
+      "oldUrl": "https://cdle.colorado.gov/wc-surcharge",
+      "newUrl": "https://apps.colorado.gov/apps/cdle/surcharge/payment/calculator/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 15,
+      "name": "Check Tax Refund Status",
+      "oldUrl": "https://tax.colorado.gov/refund-status",
+      "newUrl": "https://tax.colorado.gov/refund",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 16,
+      "name": "Child Support Services",
+      "oldUrl": "https://childsupport.state.co.us",
+      "newUrl": "https://childsupport.state.co.us/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 17,
+      "name": "Cold Case Database",
+      "oldUrl": "https://www.colorado.gov/coldcase",
+      "newUrl": "https://apps.colorado.gov/apps/coldcase/index.html",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 18,
+      "name": "Sex Offender Registry",
+      "oldUrl": "https://www.colorado.gov/apps/cdps/sor/",
+      "newUrl": "https://apps.colorado.gov/apps/dps/sor/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 21,
+      "name": "Colorado Legal Services",
+      "oldUrl": "https://www.coloradolegalservices.org",
+      "newUrl": "https://www.coloradolegalservices.org/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 26,
+      "name": "Colorado Shines - Child Care Search",
+      "oldUrl": "https://www.coloradoshines.com",
+      "newUrl": "https://www.coloradoshines.com/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 27,
+      "name": "ServeColorado - Volunteer Opportunities",
+      "oldUrl": "https://servecolorado.colorado.gov",
+      "newUrl": "https://servecolorado.colorado.gov/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 28,
+      "name": "Connect for Health Colorado",
+      "oldUrl": "https://connectforhealthco.com",
+      "newUrl": "https://connectforhealthco.com/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 35,
+      "name": "Emergency Medical Services",
+      "oldUrl": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+      "newUrl": "https://cdphe.colorado.gov/ems",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 36,
+      "name": "Business Entity Registration",
+      "oldUrl": "https://www.sos.state.co.us/biz/",
+      "newUrl": "https://www.sos.state.co.us/biz/Welcome.do",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 37,
+      "name": "Solid Waste and Recycling Forms",
+      "oldUrl": "https://cdphe.colorado.gov/solid-waste-forms",
+      "newUrl": "https://cdphe.colorado.gov/hm/swforms",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 43,
+      "name": "File Taxes Online",
+      "oldUrl": "https://tax.colorado.gov/file-online",
+      "newUrl": "https://tax.colorado.gov/training/file-individual-income-tax-online",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 48,
+      "name": "Women's Wellness Connection",
+      "oldUrl": "https://cdphe.colorado.gov/womens-wellness-connection",
+      "newUrl": "https://cdphe.colorado.gov/wwc",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 49,
+      "name": "Workforce Centers",
+      "oldUrl": "https://cdle.colorado.gov/wfc",
+      "newUrl": "https://cdle.colorado.gov/jobs-training/workforce-centers",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 54,
+      "name": "Find job fairs / events",
+      "oldUrl": "https://cdle.colorado.gov/jobs-training/job-fairs-and-hiring-events",
+      "newUrl": "https://cdle.colorado.gov/jobs-training/find-a-job/job-fairs/events",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 55,
+      "name": "Find out if a site is contaminated",
+      "oldUrl": "https://cdphe.colorado.gov/contaminated-sites",
+      "newUrl": "https://cdphe.colorado.gov/hm/if-site-contaminated",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 57,
+      "name": "Get Vaccinated",
+      "oldUrl": "https://covid19.colorado.gov/vaccine",
+      "newUrl": "https://cdphe.colorado.gov/covid-19",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 58,
+      "name": "Governor's Dashboard",
+      "oldUrl": "https://dashboard.colorado.gov",
+      "newUrl": "https://dashboard.colorado.gov/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 60,
+      "name": "HIV Linkage to Care",
+      "oldUrl": "https://cdphe.colorado.gov/hiv-care",
+      "newUrl": "https://cdphe.colorado.gov/sti-hiv-vh/living-with-hiv",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 61,
+      "name": "Learn about animal importing",
+      "oldUrl": "https://ag.colorado.gov/animals/import-requirements",
+      "newUrl": "https://ag.colorado.gov/animal-health/colorado-import-requirements",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 62,
+      "name": "Learn about industrial hemp (not marijuana)",
+      "oldUrl": "https://ag.colorado.gov/hemp",
+      "newUrl": "https://ag.colorado.gov/plants/hemp",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 63,
+      "name": "Learn about pet-animal care facility operation and oversight",
+      "oldUrl": "https://ag.colorado.gov/pacfa",
+      "newUrl": "https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 64,
+      "name": "Learn About WIC",
+      "oldUrl": "https://www.coloradowic.gov/",
+      "newUrl": "https://www.coloradowic.gov/homepage",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 65,
+      "name": "License a measurement standards device",
+      "oldUrl": "https://ag.colorado.gov/measurementstandards",
+      "newUrl": "https://ag.colorado.gov/ics/measurement-standards",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 67,
+      "name": "Make a camping reservation",
+      "oldUrl": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+      "newUrl": "https://cpw.state.co.us/state-parks",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 68,
+      "name": "Make a Department of Corrections request for records",
+      "oldUrl": "https://cdoc.colorado.gov/about/contact-us/request-records",
+      "newUrl": "https://cdoc.colorado.gov/general-records-requests",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 69,
+      "name": "Make a hazardous materials public records request",
+      "oldUrl": "https://cdphe.colorado.gov/records-requests",
+      "newUrl": "https://cdphe.colorado.gov/hm/records-review",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 71,
+      "name": "Manage my tax account",
+      "oldUrl": "https://tax.colorado.gov/manage-my-account",
+      "newUrl": "https://tax.colorado.gov/training/account-access-management",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 72,
+      "name": "Manage or renew your real estate license",
+      "oldUrl": "https://dora.colorado.gov/dre",
+      "newUrl": "https://dre.colorado.gov/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 73,
+      "name": "Manage your insurance producer license",
+      "oldUrl": "https://dora.colorado.gov/insurance-producer",
+      "newUrl": "https://doi.colorado.gov/insurance-industry/for-producers/agents",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 77,
+      "name": "Notify gaming officials of an arrest",
+      "oldUrl": "https://sbg.colorado.gov/arrest-notification",
+      "newUrl": "https://sbg.colorado.gov/arrest-notification-form",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 78,
+      "name": "Pay a City of Denver parking ticket",
+      "oldUrl": "https://www.denvergov.org/",
+      "newUrl": "https://www.denvergov.org/Home",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 79,
+      "name": "Pay a debt owed to the State of Colorado",
+      "oldUrl": "https://ops.colorado.gov/payment",
+      "newUrl": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 80,
+      "name": "Pay taxes online",
+      "oldUrl": "https://tax.colorado.gov/pay-online",
+      "newUrl": "https://tax.colorado.gov/pay",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 84,
+      "name": "Purchase a fishing license online",
+      "oldUrl": "https://www.cpwshop.com/",
+      "newUrl": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 90,
+      "name": "Register for real time alerts from CDOT",
+      "oldUrl": "https://www.cotrip.org/",
+      "newUrl": "https://www.cotrip.org/home",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 93,
+      "name": "Renew your boat registration online",
+      "oldUrl": "https://cpw.state.co.us/buyapply/Pages/BoatingRegistrations.aspx?ID=81",
+      "newUrl": "https://cpw.state.co.us/register-boat?ID=81",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 102,
+      "name": "Search the Colorado State Publications Library catalog",
+      "oldUrl": "https://www.colorado.gov/pacific/archives",
+      "newUrl": "https://archives.colorado.gov/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 113,
+      "name": "Transparency Online Project",
+      "oldUrl": "https://www.colorado.gov/apps/oit/transparency/",
+      "newUrl": "https://apps.colorado.gov/apps/oit/transparency/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 115,
+      "name": "Verify a Colorado Professional or Business License",
+      "oldUrl": "https://apps.colorado.gov/dora/licensing/",
+      "newUrl": "https://apps2.colorado.gov/dora/licensing/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 122,
+      "name": "View state wildlife areas by county, hunting, fishing, recreation, and GMU",
+      "oldUrl": "https://cpw.state.co.us/hunting/walk-access-program",
+      "newUrl": "https://cpw.state.co.us/activities/hunting/where-hunt/walk-access-program",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 134,
+      "name": "Request a biocontrol bug",
+      "oldUrl": "https://ag.colorado.gov/conservation/biocontrol",
+      "newUrl": "https://ag.colorado.gov/conservation/palisade-insectary",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 138,
+      "name": "Review limited license draw results and preference point status",
+      "oldUrl": "https://cpw.state.co.us/hunting/big-game/secondary-draw",
+      "newUrl": "https://cpw.state.co.us/activities/hunting/big-game/secondary-draw",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 139,
+      "name": "Review resources for commercial pesticide applicators",
+      "oldUrl": "https://ag.colorado.gov/pesticides",
+      "newUrl": "https://ag.colorado.gov/plants/pesticides",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 163,
+      "name": "Search for convicted sex offenders",
+      "oldUrl": "https://www.colorado.gov/apps/cdps/sor/search-agreement.jsf",
+      "newUrl": "https://apps.colorado.gov/apps/dps/sor/search-agreement.jsf",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 164,
+      "name": "DPO Online Services Portal",
+      "oldUrl": "https://apps.colorado.gov/dora/licensing/Default.aspx",
+      "newUrl": "https://apps2.colorado.gov/dora/licensing/default.aspx",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 167,
+      "name": "Purchase a Colorado non-resident OHV permit",
+      "oldUrl": "https://cpw.state.co.us/buyapply/Pages/RegistrationsOHV.aspx",
+      "newUrl": "https://cpw.state.co.us/register-off-highway-vehicle",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    }
+  ],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 1,
+      "name": "Access College in Colorado planning resources",
+      "url": "https://cdhe.colorado.gov/students",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 23,
+      "name": "Colorado Nutrition Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 40,
+      "name": "Veterans Services",
+      "url": "https://cdle.colorado.gov/veterans-services",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 142"
+    },
+    {
+      "id": 53,
+      "name": "Find health facilities by type and by city or county",
+      "url": "https://cdphe.colorado.gov/find-and-compare-facilities",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 225"
+    },
+    {
+      "id": 56,
+      "name": "Get copies of occupational school student transcripts",
+      "url": "https://cdhe.colorado.gov/students/preparing-for-college",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 81,
+      "name": "Pay your boiler inspection invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 82,
+      "name": "Pay your petroleum tank invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 85,
+      "name": "Purchase a hunting license online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 86,
+      "name": "Purchase Colorado State Parks gift certificates",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 88,
+      "name": "Register for electronic funds transfer",
+      "url": "https://tax.colorado.gov/eft",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 100,
+      "name": "Search for oil and gas drilling permits",
+      "url": "https://ecmc.state.co.us/permits/",
+      "status": "soft_404",
+      "reason": "Content contains: \"Oops\""
+    },
+    {
+      "id": 106,
+      "name": "Sign up for The Scoop e-newsletter",
+      "url": "https://www.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 111,
+      "name": "Subscribe to Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 118,
+      "name": "View parks by activities, facilities, accessibility and conditions",
+      "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 67"
+    },
+    {
+      "id": 119,
+      "name": "View road conditions throughout the state",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 136,
+      "name": "Request information about K-12 education in Colorado",
+      "url": "https://www.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 150,
+      "name": "The myColorado App",
+      "url": "https://mycolorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 151,
+      "name": "myColorado Digital ID",
+      "url": "https://mycolorado.gov/colorado-digital-id",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 160,
+      "name": "Colorado Digital ID Verifier",
+      "url": "https://mycolorado.gov/colorado-digital-id/verify",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 161,
+      "name": "Apply to be a methamphetamine labs cleanup instructor",
+      "url": "https://cdphe.colorado.gov/methlabcleanup",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 8"
+    },
+    {
+      "id": 166,
+      "name": "Learn about pet-animal care facility operation",
+      "url": "https://ag.colorado.gov/ics/pacfa",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 63"
+    },
+    {
+      "id": 169,
+      "name": "Search the Colorado State Publications Library",
+      "url": "https://hermes.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 172,
+      "name": "CPW Digital Licenses",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 174,
+      "name": "Secure Transportation Service Licensing",
+      "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 35"
+    },
+    {
+      "id": 175,
+      "name": "Colorado Cannabis Business Office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 180,
+      "name": "Colorado Works (TANF)",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 183"
+    },
+    {
+      "id": 191,
+      "name": "ABAWD Work Requirement",
+      "url": "https://cdhs.colorado.gov/snap/abawd",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 193,
+      "name": "Everyday Eats (Commodity Supplemental Food Program)",
+      "url": "https://cdhs.colorado.gov/food-assistance",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 200,
+      "name": "Aging and Disability Resources for Colorado (ADRC)",
+      "url": "https://cdhs.colorado.gov/our-services/older-adult-services/state-unit-on-aging/aging-and-disability-resources-for-colorado",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 201,
+      "name": "CPW Shop - Purchase Licenses Online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 202,
+      "name": "COtrip - Real-Time Road Conditions",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 203,
+      "name": "Colorado Digital ID via myColorado App",
+      "url": "https://mycolorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 210,
+      "name": "Colorado Cannabis Business Office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 223,
+      "name": "Food Distribution Household Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/food-distribution-household-programs",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 227,
+      "name": "Verify your identity for unemployment with ID.me",
+      "url": "https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    }
+  ]
+}
