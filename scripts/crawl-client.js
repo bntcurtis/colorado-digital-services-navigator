@@ -291,6 +291,11 @@ async function main() {
   if (args.queue) {
     const results = await runQueue(args.queue, args.outputDir, args.verbose);
     console.log(JSON.stringify(results, null, 2));
+    const allFailed = results.length > 0 && results.every(r => r.status === 'error');
+    if (allFailed) {
+      console.error(`All ${results.length} crawl jobs failed.`);
+      process.exit(1);
+    }
   } else if (args.url) {
     const result = await runCrawlJob(args.seedId, args.url, args.profile, args.outputDir, args.verbose);
     console.log(JSON.stringify({ status: 'success', result }, null, 2));
@@ -303,9 +308,4 @@ async function main() {
 }
 
 // Export for use by other scripts
-module.exports = { submitCrawl, waitForCompletion, fetchAllResults, runCrawlJob, runQueue, buildCrawlPayload };
-
-main().catch(err => {
-  console.error('Crawl client failed:', err.message);
-  process.exit(1);
-});
+module.expo
