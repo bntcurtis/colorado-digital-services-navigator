@@ -1,0 +1,4 @@
+{
+  "_comment": "Per-domain overrides for crawl behavior. Fields here override profile defaults.",
+  "domains": {}
+}

@@ -1,0 +1,82 @@
+{
+  "hub-discovery": {
+    "source": "links",
+    "render": false,
+    "depth": 2,
+    "limit": 100,
+    "includeExternalLinks": true,
+    "includeSubdomains": false,
+    "includePatterns": [
+      "https://*.colorado.gov/**",
+      "https://*.state.co.us/**",
+      "https://*.co.us/**"
+    ],
+    "excludePatterns": [
+      "**/news/**",
+      "**/press/**",
+      "**/blog/**",
+      "**/*.pdf",
+      "**/*.jpg",
+      "**/*.png",
+      "**/search/**",
+      "**/privacy/**",
+      "**/terms/**",
+      "**/accessibility/**"
+    ],
+    "scrapeOptions": {
+      "formats": ["markdown"]
+    }
+  },
+  "domain-freshness": {
+    "source": "all",
+    "render": false,
+    "depth": 3,
+    "limit": 100,
+    "includeExternalLinks": false,
+    "includeSubdomains": false,
+    "excludePatterns": [
+      "**/news/**",
+      "**/press/**",
+      "**/blog/**",
+      "**/*.pdf",
+      "**/*.doc*",
+      "**/*.xls*",
+      "**/privacy/**",
+      "**/terms/**",
+      "**/accessibility/**"
+    ],
+    "scrapeOptions": {
+      "formats": ["markdown"]
+    }
+  },
+  "rendered-retry": {
+    "source": "links",
+    "render": true,
+    "depth": 2,
+    "limit": 25,
+    "includeExternalLinks": false,
+    "includeSubdomains": false,
+    "scrapeOptions": {
+      "formats": ["markdown"]
+    }
+  },
+  "recovery": {
+    "source": "all",
+    "render": false,
+    "depth": 2,
+    "limit": 50,
+    "includeExternalLinks": false,
+    "includeSubdomains": false,
+    "excludePatterns": [
+      "**/news/**",
+      "**/press/**",
+      "**/blog/**",
+      "**/*.pdf",
+      "**/*.doc*",
+      "**/*.xls*"
+    ],
+    "scrapeOptions": {
+      "formats": ["markdown"]
+    }
+  }
+}

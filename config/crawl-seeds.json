@@ -1,0 +1,98 @@
+[
+  {
+    "id": "hub-services",
+    "url": "https://co.colorado.gov/services",
+    "class": "hub",
+    "profile": "hub-discovery",
+    "priority": 100,
+    "frequencyDays": 1
+  },
+  {
+    "id": "hub-service-search",
+    "url": "https://co.colorado.gov/service-search",
+    "class": "hub",
+    "profile": "hub-discovery",
+    "priority": 95,
+    "frequencyDays": 1
+  },
+  {
+    "id": "domain-colorado-gov",
+    "url": "https://www.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 80,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-cdhs",
+    "url": "https://cdhs.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 75,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-cdphe",
+    "url": "https://cdphe.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 75,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-cdle",
+    "url": "https://cdle.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 75,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-dmv",
+    "url": "https://dmv.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 70,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-tax",
+    "url": "https://tax.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 70,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-ag",
+    "url": "https://ag.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 65,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-dora",
+    "url": "https://dora.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 65,
+    "frequencyDays": 7
+  },
+  {
+    "id": "domain-oit",
+    "url": "https://oit.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 60,
+    "frequencyDays": 14
+  },
+  {
+    "id": "domain-hcpf",
+    "url": "https://hcpf.colorado.gov",
+    "class": "domain",
+    "profile": "domain-freshness",
+    "priority": 70,
+    "frequencyDays": 7
+  }
+]
