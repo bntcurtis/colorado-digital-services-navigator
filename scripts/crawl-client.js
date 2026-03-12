@@ -67,6 +67,8 @@ function buildCrawlPayload(url, profile, domainPolicy) {
     throw new Error(`Unknown crawl profile: ${profile}. Available: ${Object.keys(profiles).join(', ')}`);
   }
 
+  // Build payload from profile — profiles already have the correct
+  // nested structure (options.includeExternalLinks, etc.)
   const payload = { url, ...profileConfig };
 
   // Apply domain-level overrides
@@ -76,9 +78,11 @@ function buildCrawlPayload(url, profile, domainPolicy) {
     if (policy) {
       if (policy.source) payload.source = policy.source;
       if (policy.render !== undefined) payload.render = policy.render;
-      if (policy.includeSubdomains !== undefined) payload.includeSubdomains = policy.includeSubdomains;
       if (policy.maxDepth) payload.depth = policy.maxDepth;
       if (policy.maxPages) payload.limit = policy.maxPages;
+      // Domain-level options overrides go into the options object
+      if (!payload.options) payload.options = {};
+      if (policy.includeSubdomains !== undefined) payload.options.includeSubdomains = policy.includeSubdomains;
     }
   } catch {
     // URL parse failure — proceed with profile defaults
@@ -109,7 +113,8 @@ async function submitCrawl(url, profile) {
     throw new Error(`Crawl submit failed: ${JSON.stringify(data.errors || data)}`);
   }
 
-  return data.result; // job ID string
+  // POST response: { success: true, result: "<job-id-string>" }
+  return data.result;
 }
 
 async function pollCrawlStatus(jobId) {
@@ -131,6 +136,7 @@ async function pollCrawlStatus(jobId) {
     throw new Error(`Crawl status failed: ${JSON.stringify(data.errors || data)}`);
   }
 
+  // GET response: { success: true, result: { id, status, total, finished, browserSecondsUsed, records, cursor } }
   return data.result;
 }
 
@@ -158,14 +164,12 @@ async function waitForCompletion(jobId, verbose) {
 async function fetchAllResults(jobId) {
   const accountId = getAccountId();
   const allRecords = [];
-  let cursor = 0;
-  let hasMore = true;
+  let cursor = null;
 
-  while (hasMore) {
-    const params = new URLSearchParams({
-      limit: String(RESULTS_PAGE_SIZE),
-      cursor: String(cursor),
-    });
+  while (true) {
+    const params = new URLSearchParams({ limit: String(RESULTS_PAGE_SIZE) });
+    if (cursor) params.set('cursor', String(cursor));
+
     const endpoint = `${crawlEndpoint(accountId, jobId)}?${params}`;
 
     const response = await fetch(endpoint, {
@@ -187,10 +191,11 @@ async function fetchAllResults(jobId) {
     const records = result.records || [];
     allRecords.push(...records);
 
-    if (records.length < RESULTS_PAGE_SIZE) {
-      hasMore = false;
+    // Use the cursor returned by the API for the next page
+    if (result.cursor && records.length > 0) {
+      cursor = result.cursor;
     } else {
-      cursor += records.length;
+      break;
     }
   }
 
