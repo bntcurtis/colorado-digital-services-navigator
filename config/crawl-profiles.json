@@ -4,27 +4,27 @@
     "render": false,
     "depth": 2,
     "limit": 100,
-    "includeExternalLinks": true,
-    "includeSubdomains": false,
-    "includePatterns": [
-      "https://*.colorado.gov/**",
-      "https://*.state.co.us/**",
-      "https://*.co.us/**"
-    ],
-    "excludePatterns": [
-      "**/news/**",
-      "**/press/**",
-      "**/blog/**",
-      "**/*.pdf",
-      "**/*.jpg",
-      "**/*.png",
-      "**/search/**",
-      "**/privacy/**",
-      "**/terms/**",
-      "**/accessibility/**"
-    ],
-    "scrapeOptions": {
-      "formats": ["markdown"]
+    "formats": ["markdown"],
+    "options": {
+      "includeExternalLinks": true,
+      "includeSubdomains": false,
+      "includePatterns": [
+        "https://*.colorado.gov/**",
+        "https://*.state.co.us/**",
+        "https://*.co.us/**"
+      ],
+      "excludePatterns": [
+        "**/news/**",
+        "**/press/**",
+        "**/blog/**",
+        "**/*.pdf",
+        "**/*.jpg",
+        "**/*.png",
+        "**/search/**",
+        "**/privacy/**",
+        "**/terms/**",
+        "**/accessibility/**"
+      ]
     }
   },
   "domain-freshness": {
@@ -32,21 +32,21 @@
     "render": false,
     "depth": 3,
     "limit": 100,
-    "includeExternalLinks": false,
-    "includeSubdomains": false,
-    "excludePatterns": [
-      "**/news/**",
-      "**/press/**",
-      "**/blog/**",
-      "**/*.pdf",
-      "**/*.doc*",
-      "**/*.xls*",
-      "**/privacy/**",
-      "**/terms/**",
-      "**/accessibility/**"
-    ],
-    "scrapeOptions": {
-      "formats": ["markdown"]
+    "formats": ["markdown"],
+    "options": {
+      "includeExternalLinks": false,
+      "includeSubdomains": false,
+      "excludePatterns": [
+        "**/news/**",
+        "**/press/**",
+        "**/blog/**",
+        "**/*.pdf",
+        "**/*.doc*",
+        "**/*.xls*",
+        "**/privacy/**",
+        "**/terms/**",
+        "**/accessibility/**"
+      ]
     }
   },
   "rendered-retry": {
@@ -54,10 +54,10 @@
     "render": true,
     "depth": 2,
     "limit": 25,
-    "includeExternalLinks": false,
-    "includeSubdomains": false,
-    "scrapeOptions": {
-      "formats": ["markdown"]
+    "formats": ["markdown"],
+    "options": {
+      "includeExternalLinks": false,
+      "includeSubdomains": false
     }
   },
   "recovery": {
@@ -65,18 +65,18 @@
     "render": false,
     "depth": 2,
     "limit": 50,
-    "includeExternalLinks": false,
-    "includeSubdomains": false,
-    "excludePatterns": [
-      "**/news/**",
-      "**/press/**",
-      "**/blog/**",
-      "**/*.pdf",
-      "**/*.doc*",
-      "**/*.xls*"
-    ],
-    "scrapeOptions": {
-      "formats": ["markdown"]
+    "formats": ["markdown"],
+    "options": {
+      "includeExternalLinks": false,
+      "includeSubdomains": false,
+      "excludePatterns": [
+        "**/news/**",
+        "**/press/**",
+        "**/blog/**",
+        "**/*.pdf",
+        "**/*.doc*",
+        "**/*.xls*"
+      ]
     }
   }
 }
