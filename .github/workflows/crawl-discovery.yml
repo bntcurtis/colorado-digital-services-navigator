@@ -1,0 +1,80 @@
+name: Crawl Discovery
+
+on:
+  schedule:
+    # Daily at 6am UTC (midnight Mountain Time)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: 'Max crawl jobs (free tier: 5/day)'
+        required: false
+        default: '5'
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    env:
+      CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download previous crawl results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: crawl-results-*
+          path: crawl-results
+          merge-multiple: true
+        continue-on-error: true
+
+      - name: Build crawl queue
+        run: |
+          BUDGET="${{ inputs.budget }}"
+          if [ -z "$BUDGET" ]; then
+            BUDGET=5
+          fi
+          node scripts/build-crawl-queue.js \
+            --history-dir crawl-results \
+            --output crawl-queue.json \
+            --budget "$BUDGET" \
+            --verbose
+
+      - name: Show queue
+        run: cat crawl-queue.json
+
+      - name: Run crawl jobs
+        run: |
+          node scripts/crawl-client.js \
+            --queue crawl-queue.json \
+            --output-dir crawl-results \
+            --verbose
+
+      - name: Normalize results
+        run: |
+          node scripts/normalize-crawl-results.js \
+            --input-dir crawl-results \
+            --output-dir crawl-normalized \
+            --verbose
+
+      - name: Upload raw results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawl-results-${{ github.run_id }}
+          path: crawl-results/
+          retention-days: 45
+
+      - name: Upload normalized results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawl-normalized-${{ github.run_id }}
+          path: crawl-normalized/
+          retention-days: 45
