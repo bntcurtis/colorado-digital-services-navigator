@@ -233,8 +233,9 @@ function main() {
 
   if (args.inputDir) {
     if (!fs.existsSync(args.inputDir)) {
-      console.error(`Input directory not found: ${args.inputDir}`);
-      process.exit(1);
+      console.error(`Input directory not found: ${args.inputDir} (no crawl results to normalize)`);
+      console.log(JSON.stringify({ summaries: [] }, null, 2));
+      process.exit(0);
     }
 
     const files = fs.readdirSync(args.inputDir)
