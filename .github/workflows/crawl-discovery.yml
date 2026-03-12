@@ -11,6 +11,9 @@ on:
         required: false
         default: '5'
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   crawl:
     runs-on: ubuntu-latest
@@ -24,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Download previous crawl results
         uses: actions/download-artifact@v4
