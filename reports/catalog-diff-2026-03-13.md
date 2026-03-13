@@ -1,0 +1,687 @@
+# Catalog Agent Report
+Generated: 2026-03-13
+Mode: weekly
+
+## Summary
+- Services before: 230
+- Services after: 230
+- New services: 0
+- Link repairs: 2
+- Crawl recovery suggestions: 0
+- Unresolved issues: 165
+
+## High Confidence Changes
+### Link Repairs
+- ID 84: Purchase a fishing license online
+  - Old URL: https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d
+  - New URL: https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1773427883~ce_true~rt_safetynet~h_1d4e4c0fadcc3296eb21f2de9ec10eb567ad0deb0f082532adb19d70b3e1c170
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 106: Sign up for The Scoop e-newsletter
+  - Old URL: https://www.cde.state.co.us/
+  - New URL: https://ed.cde.state.co.us/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+
+## Unresolved Issues (Needs Review)
+- ID 1: Access College in Colorado planning resources
+  - URL: https://cdhe.colorado.gov/students
+  - Issue: broken
+  - Details: HTTP 403
+- ID 2: Apply for a Colorado driver license or ID card
+  - URL: https://dmv.colorado.gov/new-to-colorado
+  - Issue: broken
+  - Details: HTTP 403
+- ID 3: Add emergency contact information to your driver record
+  - URL: https://dmv.colorado.gov/mydmv
+  - Issue: broken
+  - Details: HTTP 403
+- ID 7: Apply for Work Opportunity Tax Credit
+  - URL: https://cdle.colorado.gov/work-opportunity-tax-credit
+  - Issue: broken
+  - Details: HTTP 403
+- ID 8: Apply for Meth Lab Cleanup Certifications
+  - URL: https://cdphe.colorado.gov/hm/methlabcleanup
+  - Issue: broken
+  - Details: HTTP 403
+- ID 9: Apply for Health Facility Licenses
+  - URL: https://cdphe.colorado.gov/health-facilities/health-facilities-licensing-fees-certification-and-registration
+  - Issue: broken
+  - Details: HTTP 403
+- ID 10: BidCOLORADO - State Procurement Portal
+  - URL: https://osc.colorado.gov/spco/solicitations
+  - Issue: broken
+  - Details: HTTP 403
+- ID 11: Order Vital Records
+  - URL: https://cdphe.colorado.gov/vitalrecords
+  - Issue: broken
+  - Details: HTTP 403
+- ID 13: Access Colorado Health and Environmental Data
+  - URL: https://cdphe.colorado.gov/center-for-health-and-environmental-data
+  - Issue: broken
+  - Details: HTTP 403
+- ID 14: Colorado Limited Gaming - Licensee Resources
+  - URL: https://sbg.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 15: Check Tax Refund Status
+  - URL: https://tax.colorado.gov/refund
+  - Issue: broken
+  - Details: HTTP 403
+- ID 19: DPO Professional License Portal
+  - URL: https://dpo.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 23: Colorado Nutrition Programs
+  - URL: https://cdhs.colorado.gov/benefits-assistance/food-assistance
+  - Issue: broken
+  - Details: HTTP 403
+- ID 24: Colorado PEAK - Apply for Benefits
+  - URL: https://coloradopeak.secure.force.com
+  - Issue: broken
+  - Details: HTTP 404
+- ID 27: ServeColorado - Volunteer Opportunities
+  - URL: https://servecolorado.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 29: Connecting Colorado - Job Search
+  - URL: https://cdle.colorado.gov/jobs-training/connecting-colorado
+  - Issue: broken
+  - Details: HTTP 403
+- ID 30: Noxious Weed Management
+  - URL: https://ag.colorado.gov/conservation/noxious-weeds
+  - Issue: broken
+  - Details: HTTP 403
+- ID 31: Corrections Statistics and Reports
+  - URL: https://cdoc.colorado.gov/about/data-and-reports
+  - Issue: broken
+  - Details: HTTP 403
+- ID 33: Local Government Resources
+  - URL: https://cdola.colorado.gov/local-government
+  - Issue: broken
+  - Details: HTTP 403
+- ID 34: myDMV - Online DMV Services
+  - URL: https://dmv.colorado.gov/mydmv
+  - Issue: broken
+  - Details: HTTP 403
+- ID 35: Emergency Medical Services
+  - URL: https://cdphe.colorado.gov/ems
+  - Issue: broken
+  - Details: HTTP 403
+- ID 37: Solid Waste and Recycling Forms
+  - URL: https://cdphe.colorado.gov/hm/swforms
+  - Issue: broken
+  - Details: HTTP 403
+- ID 38: Fishing Atlas
+  - URL: https://cpw.state.co.us/fishing/pages/fishingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 39: Hunting Atlas
+  - URL: https://cpw.state.co.us/hunting/pages/huntingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 40: Veterans Services
+  - URL: https://cdle.colorado.gov/veterans-services
+  - Issue: broken
+  - Details: HTTP 403
+- ID 42: Crash Report Database
+  - URL: https://dmv.colorado.gov/crash-records
+  - Issue: broken
+  - Details: HTTP 403
+- ID 43: File Taxes Online
+  - URL: https://tax.colorado.gov/training/file-individual-income-tax-online
+  - Issue: broken
+  - Details: HTTP 403
+- ID 45: DMV Office Locations
+  - URL: https://dmv.colorado.gov/locations
+  - Issue: broken
+  - Details: HTTP 403
+- ID 46: Driver Education Classes
+  - URL: https://dmv.colorado.gov/drivereducation
+  - Issue: broken
+  - Details: HTTP 403
+- ID 48: Women's Wellness Connection
+  - URL: https://cdphe.colorado.gov/wwc
+  - Issue: broken
+  - Details: HTTP 403
+- ID 49: Workforce Centers
+  - URL: https://cdle.colorado.gov/jobs-training/workforce-centers
+  - Issue: broken
+  - Details: HTTP 403
+- ID 52: Find and Compare Health Facilities
+  - URL: https://cdphe.colorado.gov/health-facilities
+  - Issue: broken
+  - Details: HTTP 403
+- ID 53: Find health facilities by type and by city or county
+  - URL: https://cdphe.colorado.gov/find-and-compare-facilities
+  - Issue: broken
+  - Details: HTTP 403
+- ID 54: Find job fairs / events
+  - URL: https://cdle.colorado.gov/jobs-training/find-a-job/job-fairs/events
+  - Issue: broken
+  - Details: HTTP 403
+- ID 55: Find out if a site is contaminated
+  - URL: https://cdphe.colorado.gov/hm/if-site-contaminated
+  - Issue: broken
+  - Details: HTTP 403
+- ID 56: Get copies of occupational school student transcripts
+  - URL: https://cdhe.colorado.gov/students/preparing-for-college
+  - Issue: broken
+  - Details: HTTP 403
+- ID 57: Get Vaccinated
+  - URL: https://cdphe.colorado.gov/covid-19
+  - Issue: broken
+  - Details: HTTP 403
+- ID 58: Governor's Dashboard
+  - URL: https://dashboard.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 59: Health First Colorado Add-A-Baby Emergent Request Form
+  - URL: https://hcpf.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 60: HIV Linkage to Care
+  - URL: https://cdphe.colorado.gov/sti-hiv-vh/living-with-hiv
+  - Issue: broken
+  - Details: HTTP 403
+- ID 61: Learn about animal importing
+  - URL: https://ag.colorado.gov/animal-health/colorado-import-requirements
+  - Issue: broken
+  - Details: HTTP 403
+- ID 62: Learn about industrial hemp (not marijuana)
+  - URL: https://ag.colorado.gov/plants/hemp
+  - Issue: broken
+  - Details: HTTP 403
+- ID 63: Learn about pet-animal care facility operation and oversight
+  - URL: https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act
+  - Issue: broken
+  - Details: HTTP 403
+- ID 65: License a measurement standards device
+  - URL: https://ag.colorado.gov/ics/measurement-standards
+  - Issue: broken
+  - Details: HTTP 403
+- ID 68: Make a Department of Corrections request for records
+  - URL: https://cdoc.colorado.gov/general-records-requests
+  - Issue: broken
+  - Details: HTTP 403
+- ID 69: Make a hazardous materials public records request
+  - URL: https://cdphe.colorado.gov/hm/records-review
+  - Issue: broken
+  - Details: HTTP 403
+- ID 70: Manage livestock brands
+  - URL: https://ag.colorado.gov/brands/livestock-brands
+  - Issue: broken
+  - Details: HTTP 403
+- ID 71: Manage my tax account
+  - URL: https://tax.colorado.gov/training/account-access-management
+  - Issue: broken
+  - Details: HTTP 403
+- ID 72: Manage or renew your real estate license
+  - URL: https://dre.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 73: Manage your insurance producer license
+  - URL: https://doi.colorado.gov/insurance-industry/for-producers/agents
+  - Issue: broken
+  - Details: HTTP 403
+- ID 75: MyUI Employer
+  - URL: https://cdle.colorado.gov/employers/myui-employer-plus
+  - Issue: broken
+  - Details: HTTP 403
+- ID 76: MyUI+
+  - URL: https://cdle.colorado.gov/myui-plus
+  - Issue: broken
+  - Details: HTTP 403
+- ID 77: Notify gaming officials of an arrest
+  - URL: https://sbg.colorado.gov/arrest-notification-form
+  - Issue: broken
+  - Details: HTTP 403
+- ID 79: Pay a debt owed to the State of Colorado
+  - URL: https://ops.colorado.gov/Conveyance/PaymentsFees
+  - Issue: broken
+  - Details: HTTP 403
+- ID 80: Pay taxes online
+  - URL: https://tax.colorado.gov/pay
+  - Issue: broken
+  - Details: HTTP 403
+- ID 81: Pay your boiler inspection invoice online
+  - URL: https://ops.colorado.gov/payment
+  - Issue: broken
+  - Details: HTTP 403
+- ID 82: Pay your petroleum tank invoice online
+  - URL: https://ops.colorado.gov/payment
+  - Issue: broken
+  - Details: HTTP 403
+- ID 85: Purchase a hunting license online
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 86: Purchase Colorado State Parks gift certificates
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 88: Register for electronic funds transfer
+  - URL: https://tax.colorado.gov/eft
+  - Issue: broken
+  - Details: HTTP 403
+- ID 89: Register for hazardous waste workshops and training
+  - URL: https://cdphe.colorado.gov/hm/colorado-haz-waste-reg-training
+  - Issue: broken
+  - Details: HTTP 403
+- ID 92: Renew an ag-related license with AgLicense
+  - URL: https://ag.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 94: Renew your driver license, permit, or ID online
+  - URL: https://dmv.colorado.gov/renew-your-colorado-driver-license-permit-or-id-card
+  - Issue: broken
+  - Details: HTTP 403
+- ID 97: Search agriculture & livestock statistics
+  - URL: https://ag.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 101: Search for Veterans Service Officers by county
+  - URL: https://dmva.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 102: Search the Colorado State Publications Library catalog
+  - URL: https://archives.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 103: Search water diversions data
+  - URL: https://dwr.colorado.gov/services/water-administration/water-rights
+  - Issue: broken
+  - Details: HTTP 403
+- ID 104: Search water rights data
+  - URL: https://dwr.colorado.gov/services/water-administration/water-rights
+  - Issue: broken
+  - Details: HTTP 403
+- ID 105: Second Chance
+  - URL: https://cdphe.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 107: Sign up to receive School Safety Newsletter e-mails
+  - URL: https://co.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 110: Subscribe to receive tax news
+  - URL: https://tax.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 111: Subscribe to Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 114: Vehicle Registration Renewal
+  - URL: https://dmv.colorado.gov/registration
+  - Issue: broken
+  - Details: HTTP 403
+- ID 116: Verify an EMS provider's certification
+  - URL: https://cdphe.colorado.gov/emergency-care/emergency-medical-services/ems-providers/ems-provider-certification
+  - Issue: broken
+  - Details: HTTP 403
+- ID 118: View parks by activities, facilities, accessibility and conditions
+  - URL: https://cpw.state.co.us/placestogo/parks/Pages/default.aspx
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 67
+- ID 119: View road conditions throughout the state
+  - URL: https://www.cotrip.org/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 90
+- ID 124: View where your tax dollars go with Colorado Tax Tracks
+  - URL: https://tax.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 125: Workers' Compensation Benefits Calculator
+  - URL: https://cdle.colorado.gov/unemployment/ui-claimant-guide/eligibility-for-ui-benefits
+  - Issue: broken
+  - Details: HTTP 403
+- ID 127: Report suspicious activity
+  - URL: https://www.colorado.gov/report-suspicious-activity
+  - Issue: broken
+  - Details: HTTP 403
+- ID 128: Request motor vehicle/powersports records
+  - URL: https://dmv.colorado.gov/motor-vehicle-record
+  - Issue: broken
+  - Details: HTTP 403
+- ID 129: Request public records through the Colorado Open Records Act
+  - URL: https://oit.colorado.gov/cora-colorado-open-records-requests
+  - Issue: broken
+  - Details: HTTP 403
+- ID 130: Revenue Online
+  - URL: https://www.colorado.gov/revenueonline/_/
+  - Issue: broken
+  - Details: HTTP 404
+- ID 131: SchoolView
+  - URL: https://www.cde.state.co.us/schoolview
+  - Issue: broken
+  - Details: HTTP 404
+- ID 132: Request a military retirement letter from the Governor
+  - URL: https://dmva.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 133: Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 134: Request a biocontrol bug
+  - URL: https://ag.colorado.gov/conservation/palisade-insectary
+  - Issue: broken
+  - Details: HTTP 403
+- ID 135: Report employer fraud
+  - URL: https://cdle.colorado.gov/unemployment/report-fraud
+  - Issue: broken
+  - Details: HTTP 403
+- ID 136: Request information about K-12 education in Colorado
+  - URL: https://www.cde.state.co.us/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 106
+- ID 137: Review Colorado Department of Public Safety rules in development
+  - URL: https://publicsafety.colorado.gov/cdps-rules-colorado-code-of-regulations
+  - Issue: broken
+  - Details: HTTP 403
+- ID 139: Review resources for commercial pesticide applicators
+  - URL: https://ag.colorado.gov/plants/pesticides
+  - Issue: broken
+  - Details: HTTP 403
+- ID 140: Schedule a DMV appointment
+  - URL: https://dmv.colorado.gov/AppointmentScheduling
+  - Issue: broken
+  - Details: HTTP 403
+- ID 141: Colorado Energy Savings Navigator
+  - URL: https://puc.colorado.gov/energy-savings
+  - Issue: broken
+  - Details: HTTP 403
+- ID 142: Explore veterans employment resources
+  - URL: https://cdle.colorado.gov/jobs-training/veterans
+  - Issue: broken
+  - Details: HTTP 403
+- ID 143: Explore veterans employment resources (CDLE)
+  - URL: https://cdle.colorado.gov/jobs-training/veterans
+  - Issue: broken
+  - Details: HTTP 403
+- ID 148: Governor's Dashboard
+  - URL: https://dashboard.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 149: Learn about behavioral healthcare access, funding, and workforce
+  - URL: https://bha.colorado.gov/data-and-reports/performance-hub
+  - Issue: broken
+  - Details: HTTP 403
+- ID 150: The myColorado App
+  - URL: https://mycolorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 151: myColorado Digital ID
+  - URL: https://mycolorado.gov/colorado-digital-id
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 152: DMV Anywhere Online Services
+  - URL: https://dmv.colorado.gov/anywhere
+  - Issue: broken
+  - Details: HTTP 403
+- ID 153: MV Express Kiosk Vehicle Registration
+  - URL: https://dmv.colorado.gov/online-or-in-office
+  - Issue: broken
+  - Details: HTTP 403
+- ID 154: MyCOBenefits Mobile App
+  - URL: https://co.colorado.gov/colorado-peak
+  - Issue: broken
+  - Details: HTTP 403
+- ID 155: Online Instruction Permit Test
+  - URL: https://dmv.colorado.gov/drivers/standard-license-and-ID-cards
+  - Issue: broken
+  - Details: HTTP 403
+- ID 156: DORA Professional License Lookup
+  - URL: https://dora.colorado.gov/check-a-license
+  - Issue: broken
+  - Details: HTTP 403
+- ID 157: DPO Online Licensing System
+  - URL: https://dpo.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 158: New to Colorado Checklist
+  - URL: https://dmv.colorado.gov/new-to-colorado
+  - Issue: broken
+  - Details: HTTP 403
+- ID 160: Colorado Digital ID Verifier
+  - URL: https://mycolorado.gov/colorado-digital-id/verify
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 161: Apply to be a methamphetamine labs cleanup instructor
+  - URL: https://cdphe.colorado.gov/methlabcleanup
+  - Issue: broken
+  - Details: HTTP 403
+- ID 162: Change your address/name notification for Gaming
+  - URL: https://sbg.colorado.gov/address/name-change-notification
+  - Issue: broken
+  - Details: HTTP 403
+- ID 166: Learn about pet-animal care facility operation
+  - URL: https://ag.colorado.gov/ics/pacfa
+  - Issue: broken
+  - Details: HTTP 403
+- ID 168: Register for hazardous waste workshops
+  - URL: https://cdphe.colorado.gov/hm/hazwaste
+  - Issue: broken
+  - Details: HTTP 403
+- ID 169: Search the Colorado State Publications Library
+  - URL: https://hermes.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 170: Request public records through CORA
+  - URL: https://oit.colorado.gov/cora-colorado-open-records-requests
+  - Issue: broken
+  - Details: HTTP 403
+- ID 171: Review CDPS rules in development
+  - URL: https://publicsafety.colorado.gov/cdps-rules-and-regulations-0
+  - Issue: broken
+  - Details: HTTP 403
+- ID 172: CPW Digital Licenses
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 174: Secure Transportation Service Licensing
+  - URL: https://cdphe.colorado.gov/emergency-care/emergency-medical-services
+  - Issue: broken
+  - Details: HTTP 403
+- ID 175: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: broken
+  - Details: HTTP 403
+- ID 176: Driving Records
+  - URL: https://dmv.colorado.gov/motor-vehicle-record
+  - Issue: broken
+  - Details: HTTP 403
+- ID 177: Driver Monitoring
+  - URL: https://dmv.colorado.gov/driver-records-suspensions-reinstatements
+  - Issue: broken
+  - Details: HTTP 403
+- ID 178: Gambling Intercept Payment
+  - URL: https://sbg.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 179: Motor Vehicle Verification System
+  - URL: https://dmv.colorado.gov/state-dmv-services
+  - Issue: broken
+  - Details: HTTP 403
+- ID 180: Colorado Works (TANF)
+  - URL: https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf
+  - Issue: broken
+  - Details: HTTP 403
+- ID 181: Low-income Energy Assistance Program (LEAP)
+  - URL: https://cdhs.colorado.gov/leap
+  - Issue: broken
+  - Details: HTTP 403
+- ID 182: Colorado Employment First
+  - URL: https://cdhs.colorado.gov/colorado-employment-first
+  - Issue: broken
+  - Details: HTTP 403
+- ID 183: ReHire Colorado
+  - URL: https://cdhs.colorado.gov/colorado-works
+  - Issue: broken
+  - Details: HTTP 403
+- ID 184: Senior Community Service Employment Program (SCSEP)
+  - URL: https://cdhs.colorado.gov/i-want-to
+  - Issue: broken
+  - Details: HTTP 403
+- ID 185: Training to Career Pathways
+  - URL: https://cdhs.colorado.gov/colorado-employment-first
+  - Issue: broken
+  - Details: HTTP 403
+- ID 186: CW STEP (Colorado Works Subsidized Training & Employment Program)
+  - URL: https://cdhs.colorado.gov/colorado-works
+  - Issue: broken
+  - Details: HTTP 403
+- ID 187: Colorado Healthy Choice Waiver
+  - URL: https://cdhs.colorado.gov/snap
+  - Issue: broken
+  - Details: HTTP 403
+- ID 188: Colorado SNAP Produce Bonus
+  - URL: https://cdhs.colorado.gov/snap
+  - Issue: broken
+  - Details: HTTP 403
+- ID 189: SNAP-Ed (Nutrition Education & Obesity Prevention)
+  - URL: https://cdhs.colorado.gov/snap
+  - Issue: broken
+  - Details: HTTP 403
+- ID 190: SNAP Outreach Program
+  - URL: https://cdhs.colorado.gov/snap
+  - Issue: broken
+  - Details: HTTP 403
+- ID 191: ABAWD Work Requirement
+  - URL: https://cdhs.colorado.gov/snap/abawd
+  - Issue: broken
+  - Details: HTTP 403
+- ID 192: Summer EBT Program
+  - URL: https://cdhs.colorado.gov/summer-ebt
+  - Issue: broken
+  - Details: HTTP 403
+- ID 193: Everyday Eats (Commodity Supplemental Food Program)
+  - URL: https://cdhs.colorado.gov/food-assistance
+  - Issue: broken
+  - Details: HTTP 403
+- ID 194: The Emergency Food Assistance Program (TEFAP)
+  - URL: https://cdhs.colorado.gov/TEFAP
+  - Issue: broken
+  - Details: HTTP 403
+- ID 195: Disaster Feeding & Commodity Alert System
+  - URL: https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/disaster-feeding-and-commodity
+  - Issue: broken
+  - Details: HTTP 403
+- ID 196: Local Food Purchase Assistance Program
+  - URL: https://cdhs.colorado.gov/local-food-purchase-assistance
+  - Issue: broken
+  - Details: HTTP 403
+- ID 197: Child Nutrition and Schools Programs
+  - URL: https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/child-nutrition-and-schools
+  - Issue: broken
+  - Details: HTTP 403
+- ID 198: Energy EBT Program
+  - URL: https://cdhs.colorado.gov/energy-ebt
+  - Issue: broken
+  - Details: HTTP 403
+- ID 199: Discount Admission for Colorado EBT Card Holders
+  - URL: https://cdhs.colorado.gov/ebt-discounts
+  - Issue: broken
+  - Details: HTTP 403
+- ID 200: Aging and Disability Resources for Colorado (ADRC)
+  - URL: https://cdhs.colorado.gov/our-services/older-adult-services/state-unit-on-aging/aging-and-disability-resources-for-colorado
+  - Issue: broken
+  - Details: HTTP 403
+- ID 201: CPW Shop - Purchase Licenses Online
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 202: COtrip - Real-Time Road Conditions
+  - URL: https://www.cotrip.org/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 90
+- ID 203: Colorado Digital ID via myColorado App
+  - URL: https://mycolorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 208: Colorado State Government Performance Dashboard
+  - URL: https://dashboard.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 210: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: broken
+  - Details: HTTP 403
+- ID 211: Colorado EBT Card Services
+  - URL: https://cdhs.colorado.gov/colorado-ebt
+  - Issue: broken
+  - Details: HTTP 403
+- ID 213: Colorado SIPA - Digital Government Services Directory
+  - URL: https://sipa.colorado.gov/digital-government-services
+  - Issue: broken
+  - Details: HTTP 403
+- ID 214: File an animal mistreatment or neglect complaint
+  - URL: https://ag.colorado.gov/animal-welfare/bureau-of-animal-protection/file-an-animal-mistreatment-or-neglect-complaint
+  - Issue: broken
+  - Details: HTTP 403
+- ID 215: File a workers' compensation claim
+  - URL: https://cdle.colorado.gov/dwc/injured-workers/file-a-workers-compensation-claim
+  - Issue: broken
+  - Details: HTTP 403
+- ID 216: Apply for a Colorado medical marijuana card
+  - URL: https://cdphe.colorado.gov/apply-colorado-medical-marijuana-card
+  - Issue: broken
+  - Details: HTTP 403
+- ID 217: Find a vaccine clinic
+  - URL: https://cdphe.colorado.gov/find-a-vaccine-clinic
+  - Issue: broken
+  - Details: HTTP 403
+- ID 218: Find your local public health agency
+  - URL: https://cdphe.colorado.gov/public-information/find-your-local-public-health-agency
+  - Issue: broken
+  - Details: HTTP 403
+- ID 219: File a complaint with DORA
+  - URL: https://dora.colorado.gov/file-complaint
+  - Issue: broken
+  - Details: HTTP 403
+- ID 220: Apply for benefits assistance
+  - URL: https://cdhs.colorado.gov/benefits-assistance
+  - Issue: broken
+  - Details: HTTP 403
+- ID 221: Employment assistance programs
+  - URL: https://cdhs.colorado.gov/benefits-assistance/employment-assistance
+  - Issue: broken
+  - Details: HTTP 403
+- ID 222: Senior Community Service Employment Program
+  - URL: https://cdhs.colorado.gov/benefits-assistance/employment-assistance/senior-community-service-employment-program
+  - Issue: broken
+  - Details: HTTP 403
+- ID 223: Food Distribution Household Programs
+  - URL: https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/food-distribution-household-programs
+  - Issue: broken
+  - Details: HTTP 403
+- ID 224: File an unemployment insurance claim
+  - URL: https://cdle.colorado.gov/unemployment/file-a-claim
+  - Issue: broken
+  - Details: HTTP 403
+- ID 225: Find and compare health facilities
+  - URL: https://cdphe.colorado.gov/health-facilities/find-and-compare-facilities
+  - Issue: broken
+  - Details: HTTP 403
+- ID 226: Request a new unemployment hearing
+  - URL: https://cdle.colorado.gov/unemployment/appeals/request-a-new-hearing
+  - Issue: broken
+  - Details: HTTP 403
+- ID 227: Verify your identity for unemployment with ID.me
+  - URL: https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme
+  - Issue: broken
+  - Details: HTTP 403
+- ID 228: Register a new unemployment insurance employer account
+  - URL: https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/registering-a-new-ui-employer-account
+  - Issue: broken
+  - Details: HTTP 403
+- ID 229: Apply for the Work-Share Program
+  - URL: https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/applying-for-the-work-share-program
+  - Issue: broken
+  - Details: HTTP 403
+- ID 230: File a health facilities complaint
+  - URL: https://cdphe.colorado.gov/health-facilities/file-a-complaint/health-facilities-complaint-contacts
+  - Issue: broken
+  - Details: HTTP 403
+
