@@ -52,12 +52,26 @@ jobs:
       - name: Show queue
         run: cat crawl-queue.json
 
+      - name: Verify files before crawl
+        run: |
+          echo "=== Pre-flight check ==="
+          echo "Node version: $(node --version)"
+          echo "Queue file exists: $(test -f crawl-queue.json && echo YES || echo NO)"
+          echo "Queue file size: $(wc -c < crawl-queue.json) bytes"
+          echo "crawl-client.js exists: $(test -f scripts/crawl-client.js && echo YES || echo NO)"
+          echo "crawl-profiles.json exists: $(test -f config/crawl-profiles.json && echo YES || echo NO)"
+          echo "crawl-seeds.json exists: $(test -f config/crawl-seeds.json && echo YES || echo NO)"
+          echo "crawl-client.js first line: $(head -1 scripts/crawl-client.js)"
+          echo "=== End pre-flight ==="
+
       - name: Run crawl jobs
         run: |
+          echo "Starting crawl-client.js..."
           node scripts/crawl-client.js \
             --queue crawl-queue.json \
             --output-dir crawl-results \
             --verbose
+          echo "crawl-client.js exited with code $?"
 
       - name: Normalize results
         run: |
