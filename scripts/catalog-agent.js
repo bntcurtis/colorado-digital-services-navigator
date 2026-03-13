@@ -3,13 +3,14 @@
  * Catalog Agent
  *
  * - Checks links in the current catalog and repairs safe redirects
- * - Optionally discovers new services via sitemaps
+ * - Optionally discovers new services via recent crawl artifacts and sitemaps
  * - Generates bilingual metadata via a separate Gemini worker
  * - Writes a review report for human approval
  */
 
 const fs = require('fs');
 const path = require('path');
+const { buildCrawlDiscoveryCandidates } = require('./aggregate-crawl-results');
 const {
   buildRecoveryIndex,
   loadNormalizedCrawlResults,
@@ -109,6 +110,8 @@ function parseArgs(argv) {
   const args = {
     mode: 'weekly',
     limit: 30,
+    crawlDiscovery: false,
+    crawlDiscoveryLookbackDays: 30,
     crawlRecovery: false,
     crawlResultsDir: null,
     crawlLookbackDays: 7,
@@ -128,6 +131,13 @@ function parseArgs(argv) {
       i++;
     } else if (arg.startsWith('--limit=')) {
       args.limit = parseInt(arg.split('=')[1], 10) || args.limit;
+    } else if (arg === '--crawl-discovery') {
+      args.crawlDiscovery = true;
+    } else if (arg === '--crawl-discovery-lookback-days') {
+      args.crawlDiscoveryLookbackDays = parseInt(argv[i + 1], 10) || args.crawlDiscoveryLookbackDays;
+      i++;
+    } else if (arg.startsWith('--crawl-discovery-lookback-days=')) {
+      args.crawlDiscoveryLookbackDays = parseInt(arg.split('=')[1], 10) || args.crawlDiscoveryLookbackDays;
     } else if (arg === '--crawl-recovery') {
       args.crawlRecovery = true;
     } else if (arg === '--crawl-results-dir') {
@@ -588,6 +598,30 @@ function serializeRecoveryCandidate(candidate) {
   };
 }
 
+function mergeDiscoveryCandidate(candidateMap, candidate) {
+  const normalized = normalizeUrl(candidate.url);
+  const existing = candidateMap.get(normalized);
+  const candidateContent = candidate.content || '';
+
+  if (!existing) {
+    candidateMap.set(normalized, {
+      ...candidate,
+      sources: [candidate.source],
+    });
+    return;
+  }
+
+  const sources = new Set([...(existing.sources || []), candidate.source]);
+  existing.sources = [...sources];
+  existing.source = existing.sources.join('+');
+  existing.discoveryScore = Math.max(existing.discoveryScore || 0, candidate.discoveryScore || 0);
+  if (!existing.title && candidate.title) existing.title = candidate.title;
+  if (!existing.description && candidate.description) existing.description = candidate.description;
+  if (candidateContent && (!existing.content || existing.content.length < candidateContent.length)) {
+    existing.content = candidateContent;
+  }
+}
+
 function bumpVersion(version, type) {
   const parts = String(version).split('.').map(Number);
   const major = parts[0] || 0;
@@ -861,6 +895,9 @@ function generateReport(changes, stats, mode) {
         lines.push(`  - URL: ${item.url}`);
         lines.push(`  - Department: ${item.department}`);
         lines.push(`  - Category: ${item.category}`);
+        if (item.source) {
+          lines.push(`  - Source: ${item.source}`);
+        }
         lines.push(`  - Confidence: ${item.confidence.toFixed(2)}`);
       }
       lines.push('');
@@ -938,6 +975,7 @@ async function main() {
   const sitemapIndex = new Map();
   const sitemapCache = new Map();
   let crawlRecoveryIndex = null;
+  let crawlDiscoveryCandidates = [];
 
   if (args.crawlRecovery) {
     if (args.crawlResultsDir && fs.existsSync(args.crawlResultsDir)) {
@@ -952,6 +990,21 @@ async function main() {
       }
     } else if (args.verbose) {
       console.error(`Crawl recovery requested but results directory not found: ${args.crawlResultsDir || '(missing)'}`);
+    }
+  }
+
+  if (args.mode === 'monthly' && args.crawlDiscovery) {
+    if (args.crawlResultsDir && fs.existsSync(args.crawlResultsDir)) {
+      crawlDiscoveryCandidates = buildCrawlDiscoveryCandidates(args.crawlResultsDir, {
+        lookbackDays: args.crawlDiscoveryLookbackDays,
+        limit: args.limit,
+        existingUrls,
+      });
+      if (args.verbose) {
+        console.error(`Loaded ${crawlDiscoveryCandidates.length} crawl discovery candidates from ${args.crawlResultsDir}`);
+      }
+    } else if (args.verbose) {
+      console.error(`Crawl discovery requested but results directory not found: ${args.crawlResultsDir || '(missing)'}`);
     }
   }
 
@@ -1107,8 +1160,29 @@ async function main() {
       potential.push(url);
     }
 
-    const candidates = await mapWithConcurrency(potential.slice(0, args.limit), CONFIG.discoveryConcurrency, fetchPageInfo);
-    const validCandidates = candidates.filter(Boolean);
+    const candidateMap = new Map();
+
+    for (const candidate of crawlDiscoveryCandidates) {
+      mergeDiscoveryCandidate(candidateMap, candidate);
+    }
+
+    const sitemapCandidates = await mapWithConcurrency(potential.slice(0, args.limit), CONFIG.discoveryConcurrency, async (url) => {
+      const info = await fetchPageInfo(url);
+      if (!info) return null;
+      return {
+        ...info,
+        source: 'sitemap',
+        discoveryScore: 0.6,
+      };
+    });
+
+    for (const candidate of sitemapCandidates.filter(Boolean)) {
+      mergeDiscoveryCandidate(candidateMap, candidate);
+    }
+
+    const validCandidates = [...candidateMap.values()]
+      .sort((a, b) => (b.discoveryScore || 0) - (a.discoveryScore || 0))
+      .slice(0, args.limit);
 
     const workerUrl = process.env.CATALOG_WORKER_URL;
     const workerToken = process.env.CATALOG_AGENT_TOKEN;
@@ -1182,6 +1256,7 @@ async function main() {
         url: service.url,
         department: service.department.en,
         category: service.category.en,
+        source: candidate.source,
         confidence,
       });
     }
