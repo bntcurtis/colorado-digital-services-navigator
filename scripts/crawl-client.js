@@ -17,6 +17,9 @@
 const fs = require('fs');
 const path = require('path');
 
+const SCRIPT_VERSION = '1.2.0';  // bump when deploying changes
+console.error(`crawl-client: loaded (v${SCRIPT_VERSION}, node ${process.version})`);
+
 const BASE_URL = 'https://api.cloudflare.com/client/v4/accounts';
 const POLL_INTERVAL_MS = 10000;
 const MAX_POLL_ATTEMPTS = 180; // 30 minutes at 10s intervals
@@ -287,9 +290,12 @@ function parseArgs(argv) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  console.error(`crawl-client: starting (queue=${args.queue}, url=${args.url}, verbose=${args.verbose})`);
 
   if (args.queue) {
+    console.error(`crawl-client: loading queue from ${args.queue}`);
     const results = await runQueue(args.queue, args.outputDir, args.verbose);
+    console.error(`crawl-client: queue complete, ${results.length} results`);
     console.log(JSON.stringify(results, null, 2));
     const allFailed = results.length > 0 && results.every(r => r.status === 'error');
     if (allFailed) {
@@ -308,4 +314,14 @@ async function main() {
 }
 
 // Export for use by other scripts
-module.expo
+module.exports = { submitCrawl, waitForCompletion, fetchAllResults, runCrawlJob, runQueue, buildCrawlPayload };
+
+main()
+  .then(() => {
+    console.error('crawl-client: main() completed normally');
+  })
+  .catch(err => {
+    console.error('crawl-client: FATAL:', err.message);
+    console.error(err.stack);
+    process.exit(1);
+  });
