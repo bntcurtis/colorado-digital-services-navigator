@@ -1,0 +1,304 @@
+{
+  "generated": "2026-02-09",
+  "mode": "weekly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 1,
+    "unresolved": 40
+  },
+  "linkRepairs": [
+    {
+      "id": 84,
+      "name": "Purchase a fishing license online",
+      "oldUrl": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d",
+      "newUrl": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770631911~ce_true~rt_safetynet~h_41c7a94e80e3c6276d1fc9abd43059a905b4b9a178761957370719507cdbda67",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    }
+  ],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 1,
+      "name": "Access College in Colorado planning resources",
+      "url": "https://cdhe.colorado.gov/students",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 23,
+      "name": "Colorado Nutrition Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 40,
+      "name": "Veterans Services",
+      "url": "https://cdle.colorado.gov/veterans-services",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 142"
+    },
+    {
+      "id": 53,
+      "name": "Find health facilities by type and by city or county",
+      "url": "https://cdphe.colorado.gov/find-and-compare-facilities",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 225"
+    },
+    {
+      "id": 56,
+      "name": "Get copies of occupational school student transcripts",
+      "url": "https://cdhe.colorado.gov/students/preparing-for-college",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 81,
+      "name": "Pay your boiler inspection invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 82,
+      "name": "Pay your petroleum tank invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 85,
+      "name": "Purchase a hunting license online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 86,
+      "name": "Purchase Colorado State Parks gift certificates",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 88,
+      "name": "Register for electronic funds transfer",
+      "url": "https://tax.colorado.gov/eft",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 106,
+      "name": "Sign up for The Scoop e-newsletter",
+      "url": "https://www.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 111,
+      "name": "Subscribe to Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 118,
+      "name": "View parks by activities, facilities, accessibility and conditions",
+      "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 67"
+    },
+    {
+      "id": 119,
+      "name": "View road conditions throughout the state",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 136,
+      "name": "Request information about K-12 education in Colorado",
+      "url": "https://www.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 150,
+      "name": "The myColorado App",
+      "url": "https://mycolorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 151,
+      "name": "myColorado Digital ID",
+      "url": "https://mycolorado.gov/colorado-digital-id",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 160,
+      "name": "Colorado Digital ID Verifier",
+      "url": "https://mycolorado.gov/colorado-digital-id/verify",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 161,
+      "name": "Apply to be a methamphetamine labs cleanup instructor",
+      "url": "https://cdphe.colorado.gov/methlabcleanup",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 8"
+    },
+    {
+      "id": 166,
+      "name": "Learn about pet-animal care facility operation",
+      "url": "https://ag.colorado.gov/ics/pacfa",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 63"
+    },
+    {
+      "id": 169,
+      "name": "Search the Colorado State Publications Library",
+      "url": "https://hermes.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 172,
+      "name": "CPW Digital Licenses",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 174,
+      "name": "Secure Transportation Service Licensing",
+      "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 35"
+    },
+    {
+      "id": 175,
+      "name": "Colorado Cannabis Business Office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 180,
+      "name": "Colorado Works (TANF)",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 183"
+    },
+    {
+      "id": 191,
+      "name": "ABAWD Work Requirement",
+      "url": "https://cdhs.colorado.gov/snap/abawd",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 193,
+      "name": "Everyday Eats (Commodity Supplemental Food Program)",
+      "url": "https://cdhs.colorado.gov/food-assistance",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 200,
+      "name": "Aging and Disability Resources for Colorado (ADRC)",
+      "url": "https://cdhs.colorado.gov/our-services/older-adult-services/state-unit-on-aging/aging-and-disability-resources-for-colorado",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 201,
+      "name": "CPW Shop - Purchase Licenses Online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 202,
+      "name": "COtrip - Real-Time Road Conditions",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 203,
+      "name": "Colorado Digital ID via myColorado App",
+      "url": "https://mycolorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 210,
+      "name": "Colorado Cannabis Business Office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 223,
+      "name": "Food Distribution Household Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/food-distribution-household-programs",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 227,
+      "name": "Verify your identity for unemployment with ID.me",
+      "url": "https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    }
+  ]
+}
