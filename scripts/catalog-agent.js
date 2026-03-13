@@ -10,6 +10,11 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+  buildRecoveryIndex,
+  loadNormalizedCrawlResults,
+  recoverServiceFromCrawl,
+} = require('./recover-links-from-crawl');
 
 const CONFIG = {
   catalogPath: path.join(__dirname, '..', 'service-catalog-v8.json'),
@@ -104,6 +109,9 @@ function parseArgs(argv) {
   const args = {
     mode: 'weekly',
     limit: 30,
+    crawlRecovery: false,
+    crawlResultsDir: null,
+    crawlLookbackDays: 7,
     dryRun: false,
     verbose: false,
   };
@@ -120,6 +128,18 @@ function parseArgs(argv) {
       i++;
     } else if (arg.startsWith('--limit=')) {
       args.limit = parseInt(arg.split('=')[1], 10) || args.limit;
+    } else if (arg === '--crawl-recovery') {
+      args.crawlRecovery = true;
+    } else if (arg === '--crawl-results-dir') {
+      args.crawlResultsDir = argv[i + 1] || args.crawlResultsDir;
+      i++;
+    } else if (arg.startsWith('--crawl-results-dir=')) {
+      args.crawlResultsDir = arg.split('=')[1];
+    } else if (arg === '--crawl-lookback-days') {
+      args.crawlLookbackDays = parseInt(argv[i + 1], 10) || args.crawlLookbackDays;
+      i++;
+    } else if (arg.startsWith('--crawl-lookback-days=')) {
+      args.crawlLookbackDays = parseInt(arg.split('=')[1], 10) || args.crawlLookbackDays;
     } else if (arg === '--dry-run') {
       args.dryRun = true;
     } else if (arg === '--verbose') {
@@ -545,6 +565,29 @@ function confidenceLabel(score) {
   return 'Low';
 }
 
+function formatRecoveryReason(candidate) {
+  return `Crawl recovery (score ${candidate.score.toFixed(2)}, path ${candidate.pathScore.toFixed(2)}, title ${candidate.titleScore.toFixed(2)}, content ${candidate.contentScore.toFixed(2)})`;
+}
+
+function serializeRecoveryCandidate(candidate) {
+  return {
+    url: candidate.url,
+    title: candidate.title,
+    score: candidate.score,
+    confidence: candidate.confidence,
+    pathScore: candidate.pathScore,
+    titleScore: candidate.titleScore,
+    contentScore: candidate.contentScore,
+    hostScore: candidate.hostScore,
+    signalScore: candidate.signalScore,
+    seedId: candidate.seedId,
+    profile: candidate.profile,
+    crawledAt: candidate.crawledAt,
+    contentLength: candidate.contentLength,
+    servicePatternMatch: candidate.servicePatternMatch,
+  };
+}
+
 function bumpVersion(version, type) {
   const parts = String(version).split('.').map(Number);
   const major = parts[0] || 0;
@@ -774,6 +817,7 @@ function generateReport(changes, stats, mode) {
   lines.push(`- Services after: ${stats.afterCount}`);
   lines.push(`- New services: ${changes.newServices.length}`);
   lines.push(`- Link repairs: ${changes.linkRepairs.length}`);
+  lines.push(`- Crawl recovery suggestions: ${changes.crawlRecoverySuggestions.length}`);
   lines.push(`- Unresolved issues: ${changes.unresolved.length}`);
   lines.push('');
 
@@ -823,6 +867,30 @@ function generateReport(changes, stats, mode) {
     }
   }
 
+  if (changes.crawlRecoverySuggestions.length) {
+    lines.push('## Crawl Recovery Suggestions');
+    for (const item of changes.crawlRecoverySuggestions) {
+      lines.push(`- ID ${item.id}: ${item.name}`);
+      lines.push(`  - URL: ${item.url}`);
+      lines.push(`  - Issue: ${item.status}`);
+      if (item.reason) {
+        lines.push(`  - Details: ${item.reason}`);
+      }
+      if (item.blockedByServiceId) {
+        lines.push(`  - Blocked: Candidate URL already used by service ID ${item.blockedByServiceId}`);
+      }
+      for (const candidate of item.candidates || []) {
+        lines.push(`  - Candidate: ${candidate.url}`);
+        if (candidate.title) {
+          lines.push(`    - Title: ${candidate.title}`);
+        }
+        lines.push(`    - Score: ${candidate.score.toFixed(2)} (${confidenceLabel(candidate.score)})`);
+        lines.push(`    - Breakdown: path ${candidate.pathScore.toFixed(2)}, title ${candidate.titleScore.toFixed(2)}, content ${candidate.contentScore.toFixed(2)}`);
+      }
+    }
+    lines.push('');
+  }
+
   if (changes.unresolved.length) {
     lines.push('## Unresolved Issues (Needs Review)');
     for (const item of changes.unresolved) {
@@ -852,6 +920,7 @@ async function main() {
 
   const existingUrls = new Set();
   const urlToServiceId = new Map();
+  const servicesById = new Map();
   for (const service of catalog.services) {
     const normalized = normalizeUrl(service.url);
     existingUrls.add(normalized);
@@ -859,6 +928,7 @@ async function main() {
       urlToServiceId.set(normalized, service.id);
     }
     if (service.departmentUrl) existingUrls.add(normalizeUrl(service.departmentUrl));
+    servicesById.set(service.id, service);
   }
 
   const categories = getKnownCategories(catalog.services);
@@ -867,6 +937,23 @@ async function main() {
 
   const sitemapIndex = new Map();
   const sitemapCache = new Map();
+  let crawlRecoveryIndex = null;
+
+  if (args.crawlRecovery) {
+    if (args.crawlResultsDir && fs.existsSync(args.crawlResultsDir)) {
+      const crawlRecords = loadNormalizedCrawlResults(args.crawlResultsDir, {
+        lookbackDays: args.crawlLookbackDays,
+      });
+      if (crawlRecords.length) {
+        crawlRecoveryIndex = buildRecoveryIndex(crawlRecords);
+      }
+      if (args.verbose) {
+        console.error(`Loaded ${crawlRecords.length} crawl recovery records from ${args.crawlResultsDir}`);
+      }
+    } else if (args.verbose) {
+      console.error(`Crawl recovery requested but results directory not found: ${args.crawlResultsDir || '(missing)'}`);
+    }
+  }
 
   if (args.mode === 'monthly') {
     for (const root of CONFIG.sitemapRoots) {
@@ -889,6 +976,7 @@ async function main() {
 
   const changes = {
     linkRepairs: [],
+    crawlRecoverySuggestions: [],
     newServices: [],
     unresolved: [],
   };
@@ -941,6 +1029,65 @@ async function main() {
         reason: result.issue?.reason || result.reason,
       });
     }
+  }
+
+  if (args.crawlRecovery && crawlRecoveryIndex && crawlRecoveryIndex.records.length) {
+    const remainingUnresolved = [];
+
+    for (const item of changes.unresolved) {
+      const service = servicesById.get(item.id);
+      if (!service) {
+        remainingUnresolved.push(item);
+        continue;
+      }
+
+      const recovery = recoverServiceFromCrawl(service, crawlRecoveryIndex, {
+        existingUrls,
+      });
+
+      if (!recovery.bestCandidate) {
+        remainingUnresolved.push(item);
+        continue;
+      }
+
+      const candidates = recovery.suggestions.map(serializeRecoveryCandidate);
+      const best = candidates[0];
+      const normalizedNew = normalizeUrl(best.url);
+      const existingId = urlToServiceId.get(normalizedNew);
+
+      if (recovery.autoApply && (!existingId || existingId === service.id)) {
+        const oldUrl = service.url;
+        service.url = best.url;
+        existingUrls.add(normalizedNew);
+        urlToServiceId.delete(normalizeUrl(oldUrl));
+        urlToServiceId.set(normalizedNew, service.id);
+
+        changes.linkRepairs.push({
+          id: service.id,
+          name: service.name?.en || 'Unknown',
+          oldUrl,
+          newUrl: best.url,
+          reason: formatRecoveryReason(best),
+          confidence: best.score,
+          source: 'crawl_recovery',
+          recovery: best,
+        });
+        continue;
+      }
+
+      if (recovery.suggestOnly) {
+        changes.crawlRecoverySuggestions.push({
+          ...item,
+          kind: 'crawl-recovery-candidate',
+          blockedByServiceId: existingId && existingId !== service.id ? existingId : null,
+          candidates,
+        });
+      }
+
+      remainingUnresolved.push(item);
+    }
+
+    changes.unresolved = remainingUnresolved;
   }
 
   if (args.mode === 'monthly') {
@@ -1044,7 +1191,7 @@ async function main() {
   const afterCount = catalog.services.length;
 
   const hasCatalogChanges = changes.linkRepairs.length || changes.newServices.length;
-  const hasReportChanges = hasCatalogChanges || changes.unresolved.length;
+  const hasReportChanges = hasCatalogChanges || changes.unresolved.length || changes.crawlRecoverySuggestions.length;
 
   if (hasCatalogChanges) {
     const bumpType = changes.newServices.length ? 'minor' : 'patch';
@@ -1073,9 +1220,11 @@ async function main() {
         afterCount,
         newServices: changes.newServices.length,
         linkRepairs: changes.linkRepairs.length,
+        crawlRecoverySuggestions: changes.crawlRecoverySuggestions.length,
         unresolved: changes.unresolved.length,
       },
       linkRepairs: changes.linkRepairs,
+      crawlRecoverySuggestions: changes.crawlRecoverySuggestions,
       newServices: changes.newServices,
       unresolved: changes.unresolved,
     };
