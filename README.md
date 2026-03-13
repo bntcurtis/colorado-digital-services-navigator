@@ -23,7 +23,7 @@ Accessing government services shouldn't be hard. Unfortunately, many state gover
 
 ### Key features
 
-- **Bilingual support** — Full English and Spanish translations for all 213 services, with easy language switching
+- **Bilingual support** — Full English and Spanish translations for all 230 services, with easy language switching
 - **AI-powered chatbot** — Natural language service finder that helps users describe what they need in their own words
 - **Multi-dimensional navigation** — Browse services by task ("I need to renew..."), life event ("I'm having a baby..."), audience ("For veterans..."), or category
 - **Fast search** — Full-text search across service names, descriptions, and tags
@@ -44,6 +44,8 @@ The entire application is a single HTML file with embedded CSS and JavaScript. T
 - Works offline once loaded
 - Easy to deploy anywhere (Cloudflare Pages, GitHub Pages, Google Sites, etc.)
 - Fast load times (single HTTP request)
+
+Catalog maintenance is automated separately from the static frontend. Scheduled GitHub Actions handle link repair, crawl-assisted recovery, monthly discovery, and pull request generation. A daily Cloudflare Browser Rendering crawl workflow gathers normalized artifacts that the weekly Catalog Agent can use to recover broken URLs.
 
 ### Service catalog structure
 
@@ -109,14 +111,20 @@ Services are organized across multiple dimensions:
 
 | File | Description |
 |------|-------------|
-| `index.html` | The main application (213 bilingual services) |
-| `colorado-service-navigator-v7.html` | Versioned copy of the main application |
+| `index.html` | The main application (230 bilingual services) |
+| `colorado-service-navigator-v8.html` | Versioned copy of the main application |
 | `service-catalog-v8.json` | Bilingual service catalog data (English + Spanish) |
 | `service-schema-v3.json` | JSON Schema for validating the bilingual catalog |
-| `scripts/catalog-agent.js` | Automated catalog agent (repairs links, discovers services, generates metadata) |
+| `scripts/catalog-agent.js` | Weekly/monthly catalog agent (repairs links, uses crawl-assisted recovery, performs monthly sitemap discovery, generates metadata) |
+| `scripts/build-crawl-queue.js` | Selects the daily Cloudflare crawl queue within the free-tier budget |
+| `scripts/crawl-client.js` | Submits, polls, and downloads Cloudflare Browser Rendering `/crawl` jobs |
+| `scripts/normalize-crawl-results.js` | Converts raw crawl output into a stable normalized schema |
+| `scripts/recover-links-from-crawl.js` | Scores normalized crawl results as recovery candidates for broken catalog URLs |
 | `scripts/check-links.js` | Automated link health checker |
-| `scripts/discover-services.js` | Sitemap crawler for discovering new services |
+| `scripts/discover-services.js` | Legacy sitemap crawler for manual discovery runs |
 | `scripts/sync-catalog.js` | Syncs the embedded catalog in `index.html` from `service-catalog-v8.json` |
+| `config/` | Crawl seeds, crawl profiles, and per-domain crawl policy overrides |
+| `docs/` | Crawl design notes and implementation handoff documents |
 | `reports/` | Auto-generated catalog change reports (created by GitHub Actions) |
 | `README.md` | This file |
 
@@ -124,9 +132,28 @@ Services are organized across multiple dimensions:
 
 | Workflow | Schedule | Description |
 |----------|----------|-------------|
-| `catalog-agent.yml` | Weekly + Monthly | Repairs links, discovers new services, generates bilingual metadata, and opens a PR with a review report. |
+| `crawl-discovery.yml` | Daily | Runs a rotating Cloudflare Browser Rendering crawl queue, normalizes raw crawl output, and uploads raw/normalized artifacts used for later recovery and analysis. |
+| `catalog-agent.yml` | Weekly + Monthly | Weekly: repairs links and uses recent normalized crawl artifacts to recover broken URLs. Monthly: performs the same repair flow plus sitemap-based discovery and metadata generation, then opens a PR with a review report. |
 | `link-audit.yml` | Manual only | Legacy link checker (issue-based). |
-| `discover-services.yml` | Manual only | Legacy sitemap discovery (issue-based). |
+| `discover-services.yml` | Manual only | Legacy sitemap discovery report (issue-based). |
+
+### Crawl Discovery setup
+
+The daily crawl workflow uses Cloudflare Browser Rendering's `/crawl` endpoint.
+
+1. Add GitHub Actions configuration:
+
+- Variable: `CF_ACCOUNT_ID`
+- Secret: `CF_API_TOKEN`
+
+2. Ensure the Cloudflare API token has **Account > Browser Rendering > Edit** permission.
+3. Review or tune the crawl configuration files:
+
+- `config/crawl-seeds.json`
+- `config/crawl-profiles.json`
+- `config/crawl-domain-policy.json`
+
+4. Review `docs/cloudflare-crawl-plan.md` for the overall architecture and rollout notes.
 
 ### Catalog Agent setup
 
@@ -139,7 +166,20 @@ The Catalog Agent requires a separate Gemini proxy Worker and a shared token.
 - Secret: `CATALOG_AGENT_TOKEN`
 - Variable: `CATALOG_WORKER_URL` (e.g. `https://navigator-catalog-proxy.bntcurtis.workers.dev/`)
 
-### Run the Catalog Agent manually
+The weekly Catalog Agent workflow will automatically enable crawl-assisted recovery when recent normalized crawl artifacts are available from `crawl-discovery.yml`.
+
+### Run the workflows manually
+
+#### Crawl Discovery
+
+1. Open the GitHub repo.
+2. Click the **Actions** tab.
+3. Select **Crawl Discovery** in the left sidebar.
+4. Click **Run workflow**.
+5. Optionally set the crawl budget (default: `5`, matching the free-tier daily job budget).
+6. Click **Run workflow** to start the job.
+
+#### Catalog Agent
 
 1. Open the GitHub repo.
 2. Click the **Actions** tab.
@@ -147,7 +187,7 @@ The Catalog Agent requires a separate Gemini proxy Worker and a shared token.
 4. Click **Run workflow**.
 5. Choose the mode:
    - `weekly` for link repairs only
-   - `monthly` for link repairs + discovery
+   - `monthly` for link repairs + sitemap discovery + metadata generation
 6. Optionally set the limit for new services to evaluate.
 7. Click **Run workflow** to start the job.
 
@@ -168,13 +208,14 @@ Service information was compiled from:
 - **URLs may change** — Government websites frequently reorganize. Some links may become outdated.
 - **Completeness** — This catalog focuses on digital services (online applications, portals, databases). In-person-only services are generally not included.
 - **Accuracy** — While care was taken to describe services correctly, always verify details on official government websites before taking action.
-- **Currency** — The catalog reflects services available as of January 2026. URLs were validated and updated on January 28, 2026.
+- **Currency** — The catalog snapshot in `service-catalog-v8.json` was last updated on February 8, 2026. Ongoing scheduled automation continues to check links, collect crawl artifacts, and propose changes via pull request.
 
 ### Catalog maintenance
 
 The service catalog is maintained through a combination of automated checks and community feedback:
 
-- **Catalog Agent (PR-based)** — A GitHub Action runs weekly/monthly to repair links, discover new services, and generate bilingual metadata. It opens a PR with a human-readable report in `reports/` for review before merging.
+- **Crawl Discovery (artifact-based)** — A daily GitHub Action runs a Cloudflare Browser Rendering crawl against rotating hub and agency seeds, normalizes the results, and uploads raw/normalized artifacts for reuse.
+- **Catalog Agent (PR-based)** — A weekly/monthly GitHub Action repairs links, uses recent crawl artifacts to recover broken URLs, performs monthly sitemap-based discovery, and generates bilingual metadata. It opens a PR with a human-readable report in `reports/` for review before merging.
 - **Legacy workflows (manual)** — The prior issue-based link audit and discovery workflows remain available for manual runs.
 - **Community feedback** — Users can [report broken links or suggest new services](https://github.com/bntcurtis/colorado-digital-services-navigator/issues/new?template=feedback.yml) directly from the app footer.
 
@@ -184,14 +225,14 @@ The service catalog is maintained through a combination of automated checks and 
 
 No build process required. Simply:
 
-1. Download `index.html` (or `colorado-service-navigator-v7.html`)
+1. Download `index.html` (or `colorado-service-navigator-v8.html`)
 2. Open it in a web browser
 
 Or clone the repository:
 
 ```bash
-git clone https://github.com/bntcurtis/colorado-digital-services.git
-cd colorado-digital-services
+git clone https://github.com/bntcurtis/colorado-digital-services-navigator.git
+cd colorado-digital-services-navigator
 open index.html
 ```
 
