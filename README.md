@@ -124,7 +124,6 @@ Services are organized across multiple dimensions:
 | `scripts/discover-services.js` | Legacy sitemap crawler for manual discovery runs |
 | `scripts/sync-catalog.js` | Syncs the embedded catalog in `index.html` from `service-catalog-v8.json` |
 | `config/` | Crawl seeds, crawl profiles, and per-domain crawl policy overrides |
-| `docs/` | Crawl design notes and implementation handoff documents |
 | `reports/` | Auto-generated catalog change reports (created by GitHub Actions) |
 | `README.md` | This file |
 
