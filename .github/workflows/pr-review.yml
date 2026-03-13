@@ -1,0 +1,240 @@
+name: Automated PR Review
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+concurrency:
+  group: pr-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review-and-merge:
+    if: github.event.pull_request.head.repo.full_name == github.repository && startsWith(github.event.pull_request.head.ref, 'codex/catalog-agent-')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Evaluate PR policy
+        id: policy
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const core = require('@actions/core');
+
+            const pr = context.payload.pull_request;
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              per_page: 100,
+            });
+
+            const allowedPattern = /^(service-catalog-v8\.json|index\.html|reports\/catalog-diff-\d{4}-\d{2}-\d{2}\.(md|json))$/;
+            const invalidFiles = files
+              .map(file => file.filename)
+              .filter(filename => !allowedPattern.test(filename));
+
+            const reportFiles = files
+              .map(file => file.filename)
+              .filter(filename => /^reports\/catalog-diff-\d{4}-\d{2}-\d{2}\.json$/.test(filename))
+              .sort();
+
+            let reportPath = null;
+            let report = null;
+            if (reportFiles.length) {
+              reportPath = reportFiles[reportFiles.length - 1];
+              const content = await github.rest.repos.getContent({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                path: reportPath,
+                ref: pr.head.sha,
+              });
+
+              if (!Array.isArray(content.data) && content.data.type === 'file') {
+                const decoded = Buffer.from(content.data.content, 'base64').toString('utf8');
+                report = JSON.parse(decoded);
+              }
+            }
+
+            const summary = report?.summary || {};
+            const mode = report?.mode || 'unknown';
+            const eligible = Boolean(
+              !pr.draft &&
+              report &&
+              mode === 'weekly' &&
+              invalidFiles.length === 0 &&
+              (summary.newServices || 0) === 0 &&
+              (summary.crawlRecoverySuggestions || 0) === 0 &&
+              (summary.unresolved || 0) === 0 &&
+              (summary.linkRepairs || 0) > 0
+            );
+
+            const reasonParts = [];
+            if (!report) reasonParts.push('no catalog report JSON found');
+            if (mode !== 'weekly') reasonParts.push(`mode=${mode}`);
+            if (invalidFiles.length) reasonParts.push(`unexpected files: ${invalidFiles.join(', ')}`);
+            if ((summary.newServices || 0) > 0) reasonParts.push(`${summary.newServices} new services`);
+            if ((summary.crawlRecoverySuggestions || 0) > 0) reasonParts.push(`${summary.crawlRecoverySuggestions} crawl recovery suggestions`);
+            if ((summary.unresolved || 0) > 0) reasonParts.push(`${summary.unresolved} unresolved issues`);
+            if ((summary.linkRepairs || 0) === 0) reasonParts.push('no link repairs');
+
+            const reason = eligible
+              ? `eligible weekly repair PR with ${summary.linkRepairs} link repairs`
+              : (reasonParts.join('; ') || 'not eligible');
+
+            core.setOutput('eligible', eligible ? 'true' : 'false');
+            core.setOutput('reason', reason);
+            core.setOutput('mode', mode);
+            core.setOutput('report_path', reportPath || '');
+
+            await core.summary
+              .addHeading('Automated PR Review')
+              .addRaw(`PR #${pr.number}: ${reason}`)
+              .write();
+
+      - uses: actions/checkout@v4
+        if: steps.policy.outputs.eligible == 'true'
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Setup Node.js
+        if: steps.policy.outputs.eligible == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify catalog sync
+        if: steps.policy.outputs.eligible == 'true'
+        run: |
+          node scripts/sync-catalog.js
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Catalog sync drift detected after running scripts/sync-catalog.js"
+            git status --porcelain
+            exit 1
+          fi
+
+      - name: Re-check repaired URLs
+        if: steps.policy.outputs.eligible == 'true'
+        uses: actions/github-script@v7
+        env:
+          REPORT_PATH: ${{ steps.policy.outputs.report_path }}
+        with:
+          script: |
+            const fs = require('fs');
+
+            function getBaseDomain(hostname) {
+              const parts = String(hostname || '').split('.');
+              if (parts.length >= 3) {
+                const lastThree = parts.slice(-3).join('.');
+                if (lastThree.match(/\.(state\.co\.us|co\.us)$/)) {
+                  return parts.slice(-4).join('.');
+                }
+              }
+              return parts.slice(-2).join('.');
+            }
+
+            async function verifyUrl(url) {
+              let response = await fetch(url, {
+                method: 'HEAD',
+                redirect: 'follow',
+                headers: { 'User-Agent': 'Catalog-Agent-PR-Review/1.0' },
+              });
+
+              if (response.status === 405 || response.status === 403) {
+                response = await fetch(url, {
+                  method: 'GET',
+                  redirect: 'follow',
+                  headers: { 'User-Agent': 'Catalog-Agent-PR-Review/1.0' },
+                });
+              }
+
+              if (!response.ok) {
+                throw new Error(`${url} returned HTTP ${response.status}`);
+              }
+
+              const finalUrl = response.url || url;
+              const originalBase = getBaseDomain(new URL(url).hostname);
+              const finalBase = getBaseDomain(new URL(finalUrl).hostname);
+              if (originalBase !== finalBase) {
+                throw new Error(`${url} redirected across domain boundary to ${finalUrl}`);
+              }
+            }
+
+            const report = JSON.parse(fs.readFileSync(process.env.REPORT_PATH, 'utf8'));
+            for (const repair of report.linkRepairs || []) {
+              await verifyUrl(repair.newUrl);
+            }
+
+      - name: Approve weekly repair PR
+        if: steps.policy.outputs.eligible == 'true' && secrets.PR_REVIEW_TOKEN != ''
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PR_REVIEW_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+
+            await github.rest.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              event: 'APPROVE',
+              body: 'Automated weekly repair policy passed. Approving this PR with the dedicated review token.',
+            });
+
+      - name: Enable auto-merge or merge weekly repair PR
+        if: steps.policy.outputs.eligible == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PR_REVIEW_TOKEN || github.token }}
+          script: |
+            const core = require('@actions/core');
+            const pr = context.payload.pull_request;
+
+            try {
+              const query = `
+                query($owner: String!, $repo: String!, $number: Int!) {
+                  repository(owner: $owner, name: $repo) {
+                    pullRequest(number: $number) {
+                      id
+                    }
+                  }
+                }
+              `;
+
+              const response = await github.graphql(query, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                number: pr.number,
+              });
+
+              await github.graphql(
+                `
+                  mutation($pullRequestId: ID!) {
+                    enablePullRequestAutoMerge(input: { pullRequestId: $pullRequestId, mergeMethod: SQUASH }) {
+                      pullRequest {
+                        number
+                      }
+                    }
+                  }
+                `,
+                {
+                  pullRequestId: response.repository.pullRequest.id,
+                }
+              );
+            } catch (error) {
+              core.warning(`Auto-merge could not be enabled (${error.message}); attempting direct merge.`);
+              await github.rest.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                merge_method: 'squash',
+              });
+            }
