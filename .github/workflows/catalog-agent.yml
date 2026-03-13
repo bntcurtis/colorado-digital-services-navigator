@@ -21,6 +21,7 @@ jobs:
   update-catalog:
     runs-on: ubuntu-latest
     permissions:
+      actions: read
       contents: write
       pull-requests: write
     env:
@@ -34,6 +35,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Download recent crawl results
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: crawl-discovery.yml
+          name: crawl-normalized-.*
+          name_is_regexp: true
+          path: crawl-data
+          if_no_artifact_found: warn
+          search_artifacts: true
+        continue-on-error: true
 
       - name: Determine mode
         id: config
@@ -54,7 +67,11 @@ jobs:
           if [ -z "$LIMIT" ]; then
             LIMIT=30
           fi
-          node scripts/catalog-agent.js --mode "${{ steps.config.outputs.mode }}" --limit "$LIMIT"
+          CRAWL_FLAGS=""
+          if [ -d "crawl-data" ] && [ "$(find crawl-data -type f -name 'crawl-normalized-*.json' ! -name '*-summary.json' | head -1)" ]; then
+            CRAWL_FLAGS="--crawl-recovery --crawl-results-dir crawl-data --crawl-lookback-days 7"
+          fi
+          node scripts/catalog-agent.js --mode "${{ steps.config.outputs.mode }}" --limit "$LIMIT" $CRAWL_FLAGS --verbose
 
       - name: Sync embedded catalog
         run: |
