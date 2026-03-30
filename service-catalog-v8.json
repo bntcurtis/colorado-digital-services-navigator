@@ -1,6 +1,6 @@
 {
-  "version": "8.1.1",
-  "lastUpdated": "2026-02-08",
+  "version": "8.1.2",
+  "lastUpdated": "2026-03-30",
   "serviceCount": 230,
   "languages": [
     "en",
@@ -2692,7 +2692,7 @@
         "en": "Buy Colorado fishing licenses, including annual, short-term, and combination licenses for residents and non-residents.",
         "es": "Compre licencias de pesca de Colorado, incluyendo licencias anuales, a corto plazo y combinadas para residentes y no residentes."
       },
-      "url": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d",
+      "url": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1774866330~ce_true~rt_safetynet~h_52f34643b9b13edbce530ab8bfd82e95f55b02482c6f9b2940a75851ebdcc3e2",
       "department": {
         "en": "Colorado Parks and Wildlife",
         "es": "Parques y Vida Silvestre de Colorado"
@@ -3396,7 +3396,7 @@
         "en": "Subscribe to receive regular updates about Colorado education news, policy changes, and resources for educators and administrators.",
         "es": "Suscríbase para recibir actualizaciones regulares sobre noticias de educación de Colorado, cambios de políticas y recursos para educadores y administradores."
       },
-      "url": "https://www.cde.state.co.us/",
+      "url": "https://ed.cde.state.co.us/",
       "department": {
         "en": "Department of Education",
         "es": "Departamento de Educación"
