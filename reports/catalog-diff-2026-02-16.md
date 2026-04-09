@@ -1,0 +1,170 @@
+# Catalog Agent Report
+Generated: 2026-02-16
+Mode: weekly
+
+## Summary
+- Services before: 230
+- Services after: 230
+- New services: 0
+- Link repairs: 2
+- Unresolved issues: 36
+
+## High Confidence Changes
+### Link Repairs
+- ID 84: Purchase a fishing license online
+  - Old URL: https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d
+  - New URL: https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1771236277~ce_true~rt_safetynet~h_e71779da03db6bb9bb1800dc74611be5e3b5ab62b5e8d4ec3974beeeddff560c
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 88: Register for electronic funds transfer
+  - Old URL: https://tax.colorado.gov/eft
+  - New URL: https://tax.colorado.gov/electronic-funds-transfer
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+
+## Unresolved Issues (Needs Review)
+- ID 1: Access College in Colorado planning resources
+  - URL: https://cdhe.colorado.gov/students
+  - Issue: broken
+  - Details: HTTP 403
+- ID 23: Colorado Nutrition Programs
+  - URL: https://cdhs.colorado.gov/benefits-assistance/food-assistance
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 193
+- ID 24: Colorado PEAK - Apply for Benefits
+  - URL: https://coloradopeak.secure.force.com
+  - Issue: broken
+  - Details: HTTP 404
+- ID 38: Fishing Atlas
+  - URL: https://cpw.state.co.us/fishing/pages/fishingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 39: Hunting Atlas
+  - URL: https://cpw.state.co.us/hunting/pages/huntingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 40: Veterans Services
+  - URL: https://cdle.colorado.gov/veterans-services
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 142
+- ID 53: Find health facilities by type and by city or county
+  - URL: https://cdphe.colorado.gov/find-and-compare-facilities
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 225
+- ID 56: Get copies of occupational school student transcripts
+  - URL: https://cdhe.colorado.gov/students/preparing-for-college
+  - Issue: broken
+  - Details: HTTP 403
+- ID 81: Pay your boiler inspection invoice online
+  - URL: https://ops.colorado.gov/payment
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 82: Pay your petroleum tank invoice online
+  - URL: https://ops.colorado.gov/payment
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 85: Purchase a hunting license online
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 86: Purchase Colorado State Parks gift certificates
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 106: Sign up for The Scoop e-newsletter
+  - URL: https://www.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 111: Subscribe to Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 118: View parks by activities, facilities, accessibility and conditions
+  - URL: https://cpw.state.co.us/placestogo/parks/Pages/default.aspx
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 67
+- ID 119: View road conditions throughout the state
+  - URL: https://www.cotrip.org/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 90
+- ID 130: Revenue Online
+  - URL: https://www.colorado.gov/revenueonline/_/
+  - Issue: broken
+  - Details: HTTP 404
+- ID 131: SchoolView
+  - URL: https://www.cde.state.co.us/schoolview
+  - Issue: error
+  - Details: fetch failed
+- ID 133: Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 135: Report employer fraud
+  - URL: https://cdle.colorado.gov/unemployment/report-fraud
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 136: Request information about K-12 education in Colorado
+  - URL: https://www.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 150: The myColorado App
+  - URL: https://mycolorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 151: myColorado Digital ID
+  - URL: https://mycolorado.gov/colorado-digital-id
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 152: DMV Anywhere Online Services
+  - URL: https://dmv.colorado.gov/anywhere
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 3
+- ID 160: Colorado Digital ID Verifier
+  - URL: https://mycolorado.gov/colorado-digital-id/verify
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 161: Apply to be a methamphetamine labs cleanup instructor
+  - URL: https://cdphe.colorado.gov/methlabcleanup
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 8
+- ID 166: Learn about pet-animal care facility operation
+  - URL: https://ag.colorado.gov/ics/pacfa
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 63
+- ID 169: Search the Colorado State Publications Library
+  - URL: https://hermes.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 172: CPW Digital Licenses
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 174: Secure Transportation Service Licensing
+  - URL: https://cdphe.colorado.gov/emergency-care/emergency-medical-services
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 35
+- ID 175: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: broken
+  - Details: HTTP 403
+- ID 180: Colorado Works (TANF)
+  - URL: https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 183
+- ID 201: CPW Shop - Purchase Licenses Online
+  - URL: https://www.cpwshop.com/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 84
+- ID 202: COtrip - Real-Time Road Conditions
+  - URL: https://www.cotrip.org/
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 90
+- ID 203: Colorado Digital ID via myColorado App
+  - URL: https://mycolorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 210: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: broken
+  - Details: HTTP 403
+
