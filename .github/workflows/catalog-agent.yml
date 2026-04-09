@@ -21,7 +21,6 @@ jobs:
   update-catalog:
     runs-on: ubuntu-latest
     permissions:
-      actions: read
       contents: write
       pull-requests: write
     env:
@@ -35,18 +34,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Download recent crawl results
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: crawl-discovery.yml
-          name: crawl-normalized-.*
-          name_is_regexp: true
-          path: crawl-data
-          if_no_artifact_found: warn
-          search_artifacts: true
-        continue-on-error: true
 
       - name: Determine mode
         id: config
@@ -67,14 +54,7 @@ jobs:
           if [ -z "$LIMIT" ]; then
             LIMIT=30
           fi
-          CRAWL_FLAGS=""
-          if [ -d "crawl-data" ] && [ "$(find crawl-data -type f -name 'crawl-normalized-*.json' ! -name '*-summary.json' | head -1)" ]; then
-            CRAWL_FLAGS="--crawl-recovery --crawl-results-dir crawl-data --crawl-lookback-days 7"
-            if [ "${{ steps.config.outputs.mode }}" = "monthly" ]; then
-              CRAWL_FLAGS="$CRAWL_FLAGS --crawl-discovery --crawl-discovery-lookback-days 30"
-            fi
-          fi
-          node scripts/catalog-agent.js --mode "${{ steps.config.outputs.mode }}" --limit "$LIMIT" $CRAWL_FLAGS --verbose
+          node scripts/catalog-agent.js --mode "${{ steps.config.outputs.mode }}" --limit "$LIMIT" --verbose
 
       - name: Sync embedded catalog
         run: |
@@ -102,7 +82,7 @@ jobs:
             Mode: `${{ steps.config.outputs.mode }}`
 
             Weekly repair PRs may be auto-merged by `pr-review.yml` if they contain only verified low-risk link repairs.
-            Monthly discovery PRs may include sitemap-derived and crawl-derived additions and require manual review.
+            Monthly discovery PRs may include sitemap-derived additions and require manual review.
 
             Please review the report in `reports/` for change details and confidence levels.
           delete-branch: true
