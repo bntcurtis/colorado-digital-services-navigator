@@ -1,0 +1,1210 @@
+{
+  "generated": "2026-03-30",
+  "mode": "weekly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 2,
+    "crawlRecoverySuggestions": 0,
+    "unresolved": 168
+  },
+  "linkRepairs": [
+    {
+      "id": 84,
+      "name": "Purchase a fishing license online",
+      "oldUrl": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1770521619~ce_true~rt_safetynet~h_bc8578705d37298a2f2eb4774d8001ffeed42546d73f263f1cb70c6d0a40cb1d",
+      "newUrl": "https://www.cpwshop.com/home.page?queueittoken=e_snasoco01~ts_1774866330~ce_true~rt_safetynet~h_52f34643b9b13edbce530ab8bfd82e95f55b02482c6f9b2940a75851ebdcc3e2",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 106,
+      "name": "Sign up for The Scoop e-newsletter",
+      "oldUrl": "https://www.cde.state.co.us/",
+      "newUrl": "https://ed.cde.state.co.us/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    }
+  ],
+  "crawlRecoverySuggestions": [],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 1,
+      "name": "Access College in Colorado planning resources",
+      "url": "https://cdhe.colorado.gov/students",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 2,
+      "name": "Apply for a Colorado driver license or ID card",
+      "url": "https://dmv.colorado.gov/new-to-colorado",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 3,
+      "name": "Add emergency contact information to your driver record",
+      "url": "https://dmv.colorado.gov/mydmv",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 7,
+      "name": "Apply for Work Opportunity Tax Credit",
+      "url": "https://cdle.colorado.gov/work-opportunity-tax-credit",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 8,
+      "name": "Apply for Meth Lab Cleanup Certifications",
+      "url": "https://cdphe.colorado.gov/hm/methlabcleanup",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 9,
+      "name": "Apply for Health Facility Licenses",
+      "url": "https://cdphe.colorado.gov/health-facilities/health-facilities-licensing-fees-certification-and-registration",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 10,
+      "name": "BidCOLORADO - State Procurement Portal",
+      "url": "https://osc.colorado.gov/spco/solicitations",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 11,
+      "name": "Order Vital Records",
+      "url": "https://cdphe.colorado.gov/vitalrecords",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 13,
+      "name": "Access Colorado Health and Environmental Data",
+      "url": "https://cdphe.colorado.gov/center-for-health-and-environmental-data",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 14,
+      "name": "Colorado Limited Gaming - Licensee Resources",
+      "url": "https://sbg.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 15,
+      "name": "Check Tax Refund Status",
+      "url": "https://tax.colorado.gov/refund",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 19,
+      "name": "DPO Professional License Portal",
+      "url": "https://dpo.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 23,
+      "name": "Colorado Nutrition Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 27,
+      "name": "ServeColorado - Volunteer Opportunities",
+      "url": "https://servecolorado.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 29,
+      "name": "Connecting Colorado - Job Search",
+      "url": "https://cdle.colorado.gov/jobs-training/connecting-colorado",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 30,
+      "name": "Noxious Weed Management",
+      "url": "https://ag.colorado.gov/conservation/noxious-weeds",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 31,
+      "name": "Corrections Statistics and Reports",
+      "url": "https://cdoc.colorado.gov/about/data-and-reports",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 33,
+      "name": "Local Government Resources",
+      "url": "https://cdola.colorado.gov/local-government",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 34,
+      "name": "myDMV - Online DMV Services",
+      "url": "https://dmv.colorado.gov/mydmv",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 35,
+      "name": "Emergency Medical Services",
+      "url": "https://cdphe.colorado.gov/ems",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 37,
+      "name": "Solid Waste and Recycling Forms",
+      "url": "https://cdphe.colorado.gov/hm/swforms",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 40,
+      "name": "Veterans Services",
+      "url": "https://cdle.colorado.gov/veterans-services",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 42,
+      "name": "Crash Report Database",
+      "url": "https://dmv.colorado.gov/crash-records",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 43,
+      "name": "File Taxes Online",
+      "url": "https://tax.colorado.gov/training/file-individual-income-tax-online",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 45,
+      "name": "DMV Office Locations",
+      "url": "https://dmv.colorado.gov/locations",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 46,
+      "name": "Driver Education Classes",
+      "url": "https://dmv.colorado.gov/drivereducation",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 48,
+      "name": "Women's Wellness Connection",
+      "url": "https://cdphe.colorado.gov/wwc",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 49,
+      "name": "Workforce Centers",
+      "url": "https://cdle.colorado.gov/jobs-training/workforce-centers",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 52,
+      "name": "Find and Compare Health Facilities",
+      "url": "https://cdphe.colorado.gov/health-facilities",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 53,
+      "name": "Find health facilities by type and by city or county",
+      "url": "https://cdphe.colorado.gov/find-and-compare-facilities",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 54,
+      "name": "Find job fairs / events",
+      "url": "https://cdle.colorado.gov/jobs-training/find-a-job/job-fairs/events",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 55,
+      "name": "Find out if a site is contaminated",
+      "url": "https://cdphe.colorado.gov/hm/if-site-contaminated",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 56,
+      "name": "Get copies of occupational school student transcripts",
+      "url": "https://cdhe.colorado.gov/students/preparing-for-college",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 57,
+      "name": "Get Vaccinated",
+      "url": "https://cdphe.colorado.gov/covid-19",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 58,
+      "name": "Governor's Dashboard",
+      "url": "https://dashboard.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 59,
+      "name": "Health First Colorado Add-A-Baby Emergent Request Form",
+      "url": "https://hcpf.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 60,
+      "name": "HIV Linkage to Care",
+      "url": "https://cdphe.colorado.gov/sti-hiv-vh/living-with-hiv",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 61,
+      "name": "Learn about animal importing",
+      "url": "https://ag.colorado.gov/animal-health/colorado-import-requirements",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 62,
+      "name": "Learn about industrial hemp (not marijuana)",
+      "url": "https://ag.colorado.gov/plants/hemp",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 63,
+      "name": "Learn about pet-animal care facility operation and oversight",
+      "url": "https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 65,
+      "name": "License a measurement standards device",
+      "url": "https://ag.colorado.gov/ics/measurement-standards",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 68,
+      "name": "Make a Department of Corrections request for records",
+      "url": "https://cdoc.colorado.gov/general-records-requests",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 69,
+      "name": "Make a hazardous materials public records request",
+      "url": "https://cdphe.colorado.gov/hm/records-review",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 70,
+      "name": "Manage livestock brands",
+      "url": "https://ag.colorado.gov/brands/livestock-brands",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 71,
+      "name": "Manage my tax account",
+      "url": "https://tax.colorado.gov/training/account-access-management",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 72,
+      "name": "Manage or renew your real estate license",
+      "url": "https://dre.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 73,
+      "name": "Manage your insurance producer license",
+      "url": "https://doi.colorado.gov/insurance-industry/for-producers/agents",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 75,
+      "name": "MyUI Employer",
+      "url": "https://cdle.colorado.gov/employers/myui-employer-plus",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 76,
+      "name": "MyUI+",
+      "url": "https://cdle.colorado.gov/myui-plus",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 77,
+      "name": "Notify gaming officials of an arrest",
+      "url": "https://sbg.colorado.gov/arrest-notification-form",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 79,
+      "name": "Pay a debt owed to the State of Colorado",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 80,
+      "name": "Pay taxes online",
+      "url": "https://tax.colorado.gov/pay",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 81,
+      "name": "Pay your boiler inspection invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 82,
+      "name": "Pay your petroleum tank invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 85,
+      "name": "Purchase a hunting license online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 86,
+      "name": "Purchase Colorado State Parks gift certificates",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 88,
+      "name": "Register for electronic funds transfer",
+      "url": "https://tax.colorado.gov/eft",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 89,
+      "name": "Register for hazardous waste workshops and training",
+      "url": "https://cdphe.colorado.gov/hm/colorado-haz-waste-reg-training",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 92,
+      "name": "Renew an ag-related license with AgLicense",
+      "url": "https://ag.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 94,
+      "name": "Renew your driver license, permit, or ID online",
+      "url": "https://dmv.colorado.gov/renew-your-colorado-driver-license-permit-or-id-card",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 97,
+      "name": "Search agriculture & livestock statistics",
+      "url": "https://ag.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 101,
+      "name": "Search for Veterans Service Officers by county",
+      "url": "https://dmva.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 102,
+      "name": "Search the Colorado State Publications Library catalog",
+      "url": "https://archives.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 103,
+      "name": "Search water diversions data",
+      "url": "https://dwr.colorado.gov/services/water-administration/water-rights",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 104,
+      "name": "Search water rights data",
+      "url": "https://dwr.colorado.gov/services/water-administration/water-rights",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 105,
+      "name": "Second Chance",
+      "url": "https://cdphe.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 107,
+      "name": "Sign up to receive School Safety Newsletter e-mails",
+      "url": "https://co.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 110,
+      "name": "Subscribe to receive tax news",
+      "url": "https://tax.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 111,
+      "name": "Subscribe to Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 114,
+      "name": "Vehicle Registration Renewal",
+      "url": "https://dmv.colorado.gov/registration",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 116,
+      "name": "Verify an EMS provider's certification",
+      "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services/ems-providers/ems-provider-certification",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 117,
+      "name": "View information for truckers",
+      "url": "https://www.codot.gov/topcontent/trafficfooter",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 118,
+      "name": "View parks by activities, facilities, accessibility and conditions",
+      "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 67"
+    },
+    {
+      "id": 119,
+      "name": "View road conditions throughout the state",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 124,
+      "name": "View where your tax dollars go with Colorado Tax Tracks",
+      "url": "https://tax.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 125,
+      "name": "Workers' Compensation Benefits Calculator",
+      "url": "https://cdle.colorado.gov/unemployment/ui-claimant-guide/eligibility-for-ui-benefits",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 127,
+      "name": "Report suspicious activity",
+      "url": "https://www.colorado.gov/report-suspicious-activity",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 128,
+      "name": "Request motor vehicle/powersports records",
+      "url": "https://dmv.colorado.gov/motor-vehicle-record",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 129,
+      "name": "Request public records through the Colorado Open Records Act",
+      "url": "https://oit.colorado.gov/cora-colorado-open-records-requests",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 132,
+      "name": "Request a military retirement letter from the Governor",
+      "url": "https://dmva.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 134,
+      "name": "Request a biocontrol bug",
+      "url": "https://ag.colorado.gov/conservation/palisade-insectary",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 135,
+      "name": "Report employer fraud",
+      "url": "https://cdle.colorado.gov/unemployment/report-fraud",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 136,
+      "name": "Request information about K-12 education in Colorado",
+      "url": "https://www.cde.state.co.us/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 106"
+    },
+    {
+      "id": 137,
+      "name": "Review Colorado Department of Public Safety rules in development",
+      "url": "https://publicsafety.colorado.gov/cdps-rules-colorado-code-of-regulations",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 139,
+      "name": "Review resources for commercial pesticide applicators",
+      "url": "https://ag.colorado.gov/plants/pesticides",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 140,
+      "name": "Schedule a DMV appointment",
+      "url": "https://dmv.colorado.gov/AppointmentScheduling",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 141,
+      "name": "Colorado Energy Savings Navigator",
+      "url": "https://puc.colorado.gov/energy-savings",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 142,
+      "name": "Explore veterans employment resources",
+      "url": "https://cdle.colorado.gov/jobs-training/veterans",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 143,
+      "name": "Explore veterans employment resources (CDLE)",
+      "url": "https://cdle.colorado.gov/jobs-training/veterans",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 144,
+      "name": "Get free help for mental health or substance use right now",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "timeout",
+      "reason": "Request timed out after 15000ms"
+    },
+    {
+      "id": 148,
+      "name": "Governor's Dashboard",
+      "url": "https://dashboard.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 149,
+      "name": "Learn about behavioral healthcare access, funding, and workforce",
+      "url": "https://bha.colorado.gov/data-and-reports/performance-hub",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 150,
+      "name": "The myColorado App",
+      "url": "https://mycolorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 151,
+      "name": "myColorado Digital ID",
+      "url": "https://mycolorado.gov/colorado-digital-id",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 152,
+      "name": "DMV Anywhere Online Services",
+      "url": "https://dmv.colorado.gov/anywhere",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 153,
+      "name": "MV Express Kiosk Vehicle Registration",
+      "url": "https://dmv.colorado.gov/online-or-in-office",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 154,
+      "name": "MyCOBenefits Mobile App",
+      "url": "https://co.colorado.gov/colorado-peak",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 155,
+      "name": "Online Instruction Permit Test",
+      "url": "https://dmv.colorado.gov/drivers/standard-license-and-ID-cards",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 156,
+      "name": "DORA Professional License Lookup",
+      "url": "https://dora.colorado.gov/check-a-license",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 157,
+      "name": "DPO Online Licensing System",
+      "url": "https://dpo.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 158,
+      "name": "New to Colorado Checklist",
+      "url": "https://dmv.colorado.gov/new-to-colorado",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 160,
+      "name": "Colorado Digital ID Verifier",
+      "url": "https://mycolorado.gov/colorado-digital-id/verify",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 161,
+      "name": "Apply to be a methamphetamine labs cleanup instructor",
+      "url": "https://cdphe.colorado.gov/methlabcleanup",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 162,
+      "name": "Change your address/name notification for Gaming",
+      "url": "https://sbg.colorado.gov/address/name-change-notification",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 166,
+      "name": "Learn about pet-animal care facility operation",
+      "url": "https://ag.colorado.gov/ics/pacfa",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 168,
+      "name": "Register for hazardous waste workshops",
+      "url": "https://cdphe.colorado.gov/hm/hazwaste",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 169,
+      "name": "Search the Colorado State Publications Library",
+      "url": "https://hermes.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 170,
+      "name": "Request public records through CORA",
+      "url": "https://oit.colorado.gov/cora-colorado-open-records-requests",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 171,
+      "name": "Review CDPS rules in development",
+      "url": "https://publicsafety.colorado.gov/cdps-rules-and-regulations-0",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 172,
+      "name": "CPW Digital Licenses",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 174,
+      "name": "Secure Transportation Service Licensing",
+      "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 175,
+      "name": "Colorado Cannabis Business Office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 176,
+      "name": "Driving Records",
+      "url": "https://dmv.colorado.gov/motor-vehicle-record",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 177,
+      "name": "Driver Monitoring",
+      "url": "https://dmv.colorado.gov/driver-records-suspensions-reinstatements",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 178,
+      "name": "Gambling Intercept Payment",
+      "url": "https://sbg.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 179,
+      "name": "Motor Vehicle Verification System",
+      "url": "https://dmv.colorado.gov/state-dmv-services",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 180,
+      "name": "Colorado Works (TANF)",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 181,
+      "name": "Low-income Energy Assistance Program (LEAP)",
+      "url": "https://cdhs.colorado.gov/leap",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 182,
+      "name": "Colorado Employment First",
+      "url": "https://cdhs.colorado.gov/colorado-employment-first",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 183,
+      "name": "ReHire Colorado",
+      "url": "https://cdhs.colorado.gov/colorado-works",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 184,
+      "name": "Senior Community Service Employment Program (SCSEP)",
+      "url": "https://cdhs.colorado.gov/i-want-to",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 185,
+      "name": "Training to Career Pathways",
+      "url": "https://cdhs.colorado.gov/colorado-employment-first",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 186,
+      "name": "CW STEP (Colorado Works Subsidized Training & Employment Program)",
+      "url": "https://cdhs.colorado.gov/colorado-works",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 187,
+      "name": "Colorado Healthy Choice Waiver",
+      "url": "https://cdhs.colorado.gov/snap",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 188,
+      "name": "Colorado SNAP Produce Bonus",
+      "url": "https://cdhs.colorado.gov/snap",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 189,
+      "name": "SNAP-Ed (Nutrition Education & Obesity Prevention)",
+      "url": "https://cdhs.colorado.gov/snap",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 190,
+      "name": "SNAP Outreach Program",
+      "url": "https://cdhs.colorado.gov/snap",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 191,
+      "name": "ABAWD Work Requirement",
+      "url": "https://cdhs.colorado.gov/snap/abawd",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 192,
+      "name": "Summer EBT Program",
+      "url": "https://cdhs.colorado.gov/summer-ebt",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 193,
+      "name": "Everyday Eats (Commodity Supplemental Food Program)",
+      "url": "https://cdhs.colorado.gov/food-assistance",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 194,
+      "name": "The Emergency Food Assistance Program (TEFAP)",
+      "url": "https://cdhs.colorado.gov/TEFAP",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 195,
+      "name": "Disaster Feeding & Commodity Alert System",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/disaster-feeding-and-commodity",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 196,
+      "name": "Local Food Purchase Assistance Program",
+      "url": "https://cdhs.colorado.gov/local-food-purchase-assistance",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 197,
+      "name": "Child Nutrition and Schools Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/child-nutrition-and-schools",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 198,
+      "name": "Energy EBT Program",
+      "url": "https://cdhs.colorado.gov/energy-ebt",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 199,
+      "name": "Discount Admission for Colorado EBT Card Holders",
+      "url": "https://cdhs.colorado.gov/ebt-discounts",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 200,
+      "name": "Aging and Disability Resources for Colorado (ADRC)",
+      "url": "https://cdhs.colorado.gov/our-services/older-adult-services/state-unit-on-aging/aging-and-disability-resources-for-colorado",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 201,
+      "name": "CPW Shop - Purchase Licenses Online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 202,
+      "name": "COtrip - Real-Time Road Conditions",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 203,
+      "name": "Colorado Digital ID via myColorado App",
+      "url": "https://mycolorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 205,
+      "name": "Colorado Crisis Services - 988 Lifeline",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "timeout",
+      "reason": "Request timed out after 15000ms"
+    },
+    {
+      "id": 208,
+      "name": "Colorado State Government Performance Dashboard",
+      "url": "https://dashboard.colorado.gov/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 210,
+      "name": "Colorado Cannabis Business Office",
+      "url": "https://oedit.colorado.gov/cannabis-business-office",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 211,
+      "name": "Colorado EBT Card Services",
+      "url": "https://cdhs.colorado.gov/colorado-ebt",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 213,
+      "name": "Colorado SIPA - Digital Government Services Directory",
+      "url": "https://sipa.colorado.gov/digital-government-services",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 214,
+      "name": "File an animal mistreatment or neglect complaint",
+      "url": "https://ag.colorado.gov/animal-welfare/bureau-of-animal-protection/file-an-animal-mistreatment-or-neglect-complaint",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 215,
+      "name": "File a workers' compensation claim",
+      "url": "https://cdle.colorado.gov/dwc/injured-workers/file-a-workers-compensation-claim",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 216,
+      "name": "Apply for a Colorado medical marijuana card",
+      "url": "https://cdphe.colorado.gov/apply-colorado-medical-marijuana-card",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 217,
+      "name": "Find a vaccine clinic",
+      "url": "https://cdphe.colorado.gov/find-a-vaccine-clinic",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 218,
+      "name": "Find your local public health agency",
+      "url": "https://cdphe.colorado.gov/public-information/find-your-local-public-health-agency",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 219,
+      "name": "File a complaint with DORA",
+      "url": "https://dora.colorado.gov/file-complaint",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 220,
+      "name": "Apply for benefits assistance",
+      "url": "https://cdhs.colorado.gov/benefits-assistance",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 221,
+      "name": "Employment assistance programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/employment-assistance",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 222,
+      "name": "Senior Community Service Employment Program",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/employment-assistance/senior-community-service-employment-program",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 223,
+      "name": "Food Distribution Household Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance/food-distribution-programs/food-distribution-household-programs",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 224,
+      "name": "File an unemployment insurance claim",
+      "url": "https://cdle.colorado.gov/unemployment/file-a-claim",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 225,
+      "name": "Find and compare health facilities",
+      "url": "https://cdphe.colorado.gov/health-facilities/find-and-compare-facilities",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 226,
+      "name": "Request a new unemployment hearing",
+      "url": "https://cdle.colorado.gov/unemployment/appeals/request-a-new-hearing",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 227,
+      "name": "Verify your identity for unemployment with ID.me",
+      "url": "https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 228,
+      "name": "Register a new unemployment insurance employer account",
+      "url": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/registering-a-new-ui-employer-account",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 229,
+      "name": "Apply for the Work-Share Program",
+      "url": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/applying-for-the-work-share-program",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 230,
+      "name": "File a health facilities complaint",
+      "url": "https://cdphe.colorado.gov/health-facilities/file-a-complaint/health-facilities-complaint-contacts",
+      "status": "broken",
+      "reason": "HTTP 403"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "seedId": "hub-services",
+    "jobId": "ca9d157e-b307-47a8-9379-08a6501097b9",
+    "profile": "hub-discovery",
+    "crawledAt": "2026-03-13T13:26:34.436Z",
+    "url": "https://co.colorado.gov/services",
+    "jobStatus": "completed",
+    "totalRecords": 125,
+    "statusCounts": {
+      "completed": 96,
+      "skipped": 25,
+      "errored": 3,
+      "disallowed": 1
+    },
+    "servicePatternMatches": 4,
+    "coloradoGovPages": 103,
+    "browserSecondsUsed": 0
+  }
+]
