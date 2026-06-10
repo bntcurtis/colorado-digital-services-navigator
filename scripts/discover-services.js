@@ -17,7 +17,7 @@ const CONFIG = {
   catalogPath: path.join(__dirname, '..', 'service-catalog-v8.json'),
   timeout: 30000,
   concurrency: 3,
-  userAgent: 'Colorado-Service-Navigator-Discovery/1.0 (https://github.com/bntcurtis)',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
 
   // Root sitemaps to check (these often contain sitemap indexes)
   sitemapRoots: [

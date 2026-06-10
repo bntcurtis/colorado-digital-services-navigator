@@ -19,7 +19,7 @@ const CONFIG = {
   catalogPath: path.join(__dirname, '..', 'service-catalog-v8.json'),
   timeout: 15000,
   concurrency: 5, // Be nice to government servers
-  userAgent: 'Colorado-Service-Navigator-LinkChecker/1.0 (https://github.com/bntcurtis)',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
 
   // Phrases that indicate a soft 404 (page exists but content is gone)
   soft404Patterns: [

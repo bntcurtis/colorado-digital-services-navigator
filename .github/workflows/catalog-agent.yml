@@ -28,12 +28,12 @@ jobs:
       CATALOG_AGENT_TOKEN: ${{ secrets.CATALOG_AGENT_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Determine mode
         id: config
@@ -69,9 +69,103 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create Pull Request
+      # Auto-merge policy is evaluated here, in the same run that creates the
+      # PR, because pull requests created with the default GITHUB_TOKEN never
+      # trigger pull_request workflows — a separate reviewer workflow can't see
+      # these PRs at all.
+      - name: Evaluate auto-merge policy
+        id: policy
         if: steps.changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: actions/github-script@v8
+        env:
+          MODE: ${{ steps.config.outputs.mode }}
+        with:
+          script: |
+            const fs = require('fs');
+            const { execSync } = require('child_process');
+
+            const mode = process.env.MODE;
+            const reasons = [];
+
+            const allowedPattern = /^(service-catalog-v8\.json|index\.html|reports\/catalog-diff-\d{4}-\d{2}-\d{2}\.(md|json))$/;
+            const changedFiles = execSync('git status --porcelain')
+              .toString()
+              .trim()
+              .split('\n')
+              .filter(Boolean)
+              .map(line => line.slice(3).trim());
+            const unexpected = changedFiles.filter(file => !allowedPattern.test(file));
+            if (unexpected.length) reasons.push(`unexpected files changed: ${unexpected.join(', ')}`);
+
+            if (mode !== 'weekly') reasons.push(`mode=${mode} always requires manual review`);
+
+            const reportFiles = fs
+              .readdirSync('reports')
+              .filter(file => /^catalog-diff-\d{4}-\d{2}-\d{2}\.json$/.test(file))
+              .sort();
+            const report = reportFiles.length
+              ? JSON.parse(fs.readFileSync(`reports/${reportFiles[reportFiles.length - 1]}`, 'utf8'))
+              : null;
+            if (!report) reasons.push('no catalog report JSON found');
+
+            const summary = (report && report.summary) || {};
+            if ((summary.newServices || 0) > 0) reasons.push(`${summary.newServices} new services need review`);
+            if ((summary.linkRepairs || 0) === 0) reasons.push('no link repairs to merge');
+
+            // Unresolved issues are report-only (the catalog entries are left
+            // untouched), so they do not block merging the safe repairs.
+
+            function getBaseDomain(hostname) {
+              const parts = String(hostname || '').split('.');
+              if (parts.length >= 3 && parts.slice(-3).join('.').match(/\.(state\.co\.us|co\.us)$/)) {
+                return parts.slice(-4).join('.');
+              }
+              return parts.slice(-2).join('.');
+            }
+
+            const browserUA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+            for (const repair of (report && report.linkRepairs) || []) {
+              try {
+                let response = await fetch(repair.newUrl, {
+                  method: 'HEAD',
+                  redirect: 'follow',
+                  headers: { 'User-Agent': browserUA },
+                });
+                if (response.status === 405 || response.status === 403) {
+                  response = await fetch(repair.newUrl, {
+                    method: 'GET',
+                    redirect: 'follow',
+                    headers: { 'User-Agent': browserUA },
+                  });
+                }
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const finalUrl = response.url || repair.newUrl;
+                if (getBaseDomain(new URL(finalUrl).hostname) !== getBaseDomain(new URL(repair.newUrl).hostname)) {
+                  throw new Error(`redirects across domains to ${finalUrl}`);
+                }
+              } catch (error) {
+                reasons.push(`repair for service ${repair.id} failed re-verification: ${repair.newUrl} (${error.message})`);
+              }
+            }
+
+            const eligible = reasons.length === 0;
+            const reason = eligible
+              ? `All ${summary.linkRepairs} link repairs re-verified; no new services; weekly mode.`
+              : reasons.join('; ');
+
+            core.setOutput('eligible', String(eligible));
+            core.setOutput('reason', reason);
+            core.info(`Auto-merge eligible: ${eligible} — ${reason}`);
+
+            await core.summary
+              .addHeading('Auto-merge policy')
+              .addRaw(`Eligible: ${eligible} — ${reason}`)
+              .write();
+
+      - name: Create Pull Request
+        id: cpr
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: 'Update service catalog (${{ steps.config.outputs.mode }})'
           branch: codex/catalog-agent-${{ github.run_id }}
@@ -81,8 +175,37 @@ jobs:
 
             Mode: `${{ steps.config.outputs.mode }}`
 
-            Weekly repair PRs may be auto-merged by `pr-review.yml` if they contain only verified low-risk link repairs.
-            Monthly discovery PRs may include sitemap-derived additions and require manual review.
+            Auto-merge decision: **${{ steps.policy.outputs.eligible == 'true' && 'eligible' || 'needs manual review' }}**
+            Reason: ${{ steps.policy.outputs.reason }}
 
-            Please review the report in `reports/` for change details and confidence levels.
+            Weekly PRs containing only re-verified low-risk link repairs are merged automatically by this workflow.
+            Monthly discovery PRs and anything flagged above require manual review.
+
+            See the report in `reports/` for change details and confidence levels.
           delete-branch: true
+
+      - name: Auto-merge verified weekly repairs
+        if: steps.changes.outputs.changed == 'true' && steps.policy.outputs.eligible == 'true' && steps.cpr.outputs.pull-request-number != ''
+        uses: actions/github-script@v8
+        env:
+          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
+        with:
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER);
+            try {
+              await github.rest.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber,
+                merge_method: 'squash',
+              });
+              core.info(`Merged PR #${prNumber}`);
+            } catch (error) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: `Auto-merge failed (${error.message}). Please merge manually.`,
+              });
+              core.setFailed(`Auto-merge of PR #${prNumber} failed: ${error.message}`);
+            }
