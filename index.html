@@ -364,6 +364,8 @@
     .filter-option input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--co-blue); }
     .filter-option label { font-size: 0.8125rem; color: var(--gray-700); cursor: pointer; flex: 1; }
     .filter-count { font-size: 0.6875rem; color: var(--gray-400); background: var(--gray-100); padding: 2px 6px; border-radius: 1rem; }
+    .filter-show-toggle { background: none; border: none; color: var(--co-blue); font-size: 0.8125rem; font-weight: 600; cursor: pointer; padding: 0.375rem 0; text-decoration: underline; }
+    .filter-show-toggle:hover { color: var(--co-blue-light); }
 
     .services-section { min-width: 0; }
 
@@ -1231,6 +1233,8 @@
         categoryFilter: 'Category',
         departmentFilter: 'Department',
         filter: 'Filter',
+        showAll: 'Show all',
+        showFewer: 'Show fewer',
 
         // Results
         showingServices: 'Showing',
@@ -1377,6 +1381,8 @@
         categoryFilter: 'Categoría',
         departmentFilter: 'Departamento',
         filter: 'Filtrar',
+        showAll: 'Mostrar todos',
+        showFewer: 'Mostrar menos',
 
         // Results
         showingServices: 'Mostrando',
@@ -2192,7 +2198,7 @@
       "en": "Find information about food assistance and nutrition programs available in Colorado, including SNAP, WIC, and school meal programs.",
       "es": "Encuentre información sobre programas de asistencia alimentaria y nutrición disponibles en Colorado, incluyendo SNAP, WIC y programas de comidas escolares."
     },
-    "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance",
+    "url": "https://cdhs.colorado.gov/food-assistance",
     "department": {
       "en": "Department of Human Services",
       "es": "Departamento de Servicios Humanos"
@@ -2742,7 +2748,7 @@
       "en": "Access employment resources, job training, and career services specifically designed for military veterans in Colorado.",
       "es": "Acceda a recursos de empleo, capacitación laboral y servicios de carrera diseñados específicamente para veteranos militares en Colorado."
     },
-    "url": "https://cdle.colorado.gov/veterans-services",
+    "url": "https://cdle.colorado.gov/jobs-training/veterans",
     "department": {
       "en": "Department of Labor and Employment",
       "es": "Departamento de Trabajo y Empleo"
@@ -3159,7 +3165,7 @@
       "en": "Search for specific types of healthcare facilities in your area, including hospitals, clinics, and long-term care facilities.",
       "es": "Busque tipos específicos de instalaciones de atención médica en su área, incluyendo hospitales, clínicas e instalaciones de cuidado a largo plazo."
     },
-    "url": "https://cdphe.colorado.gov/find-and-compare-facilities",
+    "url": "https://cdphe.colorado.gov/health-facilities/find-and-compare-facilities",
     "department": {
       "en": "Department of Public Health & Environment",
       "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -4056,7 +4062,7 @@
       "en": "Pay fees associated with boiler inspections conducted by the Division of Oil and Public Safety.",
       "es": "Pague tarifas asociadas con inspecciones de calderas realizadas por la División de Petróleo y Seguridad Pública."
     },
-    "url": "https://ops.colorado.gov/payment",
+    "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
     "department": {
       "en": "Department of Labor and Employment",
       "es": "Departamento de Trabajo y Empleo"
@@ -4088,7 +4094,7 @@
       "en": "Pay fees related to petroleum storage tank permits and inspections in Colorado.",
       "es": "Pague tarifas relacionadas con permisos e inspecciones de tanques de almacenamiento de petróleo en Colorado."
     },
-    "url": "https://ops.colorado.gov/payment",
+    "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
     "department": {
       "en": "Department of Labor and Employment",
       "es": "Departamento de Trabajo y Empleo"
@@ -4184,7 +4190,7 @@
       "en": "Buy Colorado hunting licenses, including big game, small game, and combination licenses for residents and non-residents.",
       "es": "Compre licencias de caza de Colorado, incluyendo licencias de caza mayor, caza menor y combinadas para residentes y no residentes."
     },
-    "url": "https://www.cpwshop.com/",
+    "url": "https://www.cpwshop.com/home.page",
     "department": {
       "en": "Colorado Parks and Wildlife",
       "es": "Parques y Vida Silvestre de Colorado"
@@ -4216,7 +4222,7 @@
       "en": "Buy gift certificates that can be used for park passes, camping reservations, and other state park amenities.",
       "es": "Compre certificados de regalo que se pueden usar para pases de parques, reservaciones de campamentos y otras comodidades de parques estatales."
     },
-    "url": "https://www.cpwshop.com/",
+    "url": "https://www.cpwshop.com/home.page",
     "department": {
       "en": "Colorado Parks and Wildlife",
       "es": "Parques y Vida Silvestre de Colorado"
@@ -5240,7 +5246,7 @@
       "en": "Search and explore Colorado state parks based on available activities, amenities, accessibility features, and current conditions.",
       "es": "Busque y explore los parques estatales de Colorado basándose en actividades disponibles, comodidades, características de accesibilidad y condiciones actuales."
     },
-    "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+    "url": "https://cpw.state.co.us/state-parks",
     "department": {
       "en": "Colorado Parks and Wildlife",
       "es": "Parques y Vida Silvestre de Colorado"
@@ -5272,7 +5278,7 @@
       "en": "Access real-time information about road conditions across Colorado, including weather impacts, construction, and travel alerts.",
       "es": "Acceda a información en tiempo real sobre condiciones de carreteras en todo Colorado, incluyendo impactos climáticos, construcción y alertas de viaje."
     },
-    "url": "https://www.cotrip.org/",
+    "url": "https://www.cotrip.org/home",
     "department": {
       "en": "Department of Transportation",
       "es": "Departamento de Transporte"
@@ -5816,7 +5822,7 @@
       "en": "Access comprehensive information about Colorado's K-12 education system, including academic standards, school choice options, and student support services.",
       "es": "Acceda a información completa sobre el sistema educativo K-12 de Colorado, incluyendo estándares académicos, opciones de elección escolar y servicios de apoyo estudiantil."
     },
-    "url": "https://www.cde.state.co.us/",
+    "url": "https://ed.cde.state.co.us/",
     "department": {
       "en": "Department of Education",
       "es": "Departamento de Educación"
@@ -6618,7 +6624,7 @@
       "en": "Submit an online application to become a certified instructor or training provider for meth lab cleanup in Colorado.",
       "es": "Envíe una solicitud en línea para convertirse en un instructor certificado o proveedor de capacitación para limpieza de laboratorios de metanfetaminas en Colorado."
     },
-    "url": "https://cdphe.colorado.gov/methlabcleanup",
+    "url": "https://cdphe.colorado.gov/hm/methlabcleanup",
     "department": {
       "en": "Department of Public Health & Environment",
       "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -6777,7 +6783,7 @@
       "en": "Find information and resources on operating a licensed pet animal care facility in Colorado, including regulations and oversight.",
       "es": "Encuentre información y recursos sobre la operación de una instalación de cuidado de animales de compañía con licencia en Colorado, incluyendo regulaciones y supervisión."
     },
-    "url": "https://ag.colorado.gov/ics/pacfa",
+    "url": "https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act",
     "department": {
       "en": "Department of Agriculture",
       "es": "Departamento de Agricultura"
@@ -6903,7 +6909,7 @@
       "en": "Submit a request for Colorado public records under the Colorado Open Records Act (CORA).",
       "es": "Envíe una solicitud de registros públicos de Colorado bajo la Ley de Registros Abiertos de Colorado (CORA)."
     },
-    "url": "https://oit.colorado.gov/cora-colorado-open-records-requests",
+    "url": "https://oit.colorado.gov/about-us/news/cora-colorado-open-records-requests",
     "department": {
       "en": "Office of Information Technology",
       "es": "Oficina de Tecnología de la Información"
@@ -6967,7 +6973,7 @@
       "en": "Access and manage your Colorado Parks and Wildlife digital hunting and fishing licenses via the CPW app or online portal.",
       "es": "Acceda y administre sus licencias digitales de caza y pesca de Parques y Vida Silvestre de Colorado a través de la aplicación CPW o el portal en línea."
     },
-    "url": "https://www.cpwshop.com/",
+    "url": "https://www.cpwshop.com/home.page",
     "department": {
       "en": "Colorado Parks and Wildlife",
       "es": "Parques y Vida Silvestre de Colorado"
@@ -7031,7 +7037,7 @@
       "en": "Apply for or renew a secure transportation service license, required for behavioral health secure transport providers.",
       "es": "Solicite o renueve una licencia de servicio de transporte seguro, requerida para proveedores de transporte seguro de salud conductual."
     },
-    "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+    "url": "https://cdphe.colorado.gov/ems",
     "department": {
       "en": "Department of Public Health & Environment",
       "es": "Departamento de Salud Pública y Medio Ambiente"
@@ -7217,7 +7223,7 @@
       "en": "Apply for Colorado Works, the state's Temporary Assistance for Needy Families (TANF) program that provides monthly cash assistance and employment support to families with children.",
       "es": "Solicite Colorado Works, el programa de Asistencia Temporal para Familias Necesitadas (TANF) del estado que proporciona asistencia en efectivo mensual y apoyo laboral a familias con hijos."
     },
-    "url": "https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf",
+    "url": "https://cdhs.colorado.gov/colorado-works",
     "department": {
       "en": "Department of Human Services",
       "es": "Departamento de Servicios Humanos"
@@ -7885,7 +7891,7 @@
       "en": "Buy Colorado hunting, fishing, and outdoor recreation licenses through the official Colorado Parks and Wildlife online store.",
       "es": "Compre licencias de caza, pesca y recreación al aire libre de Colorado a través de la tienda oficial en línea de Parques y Vida Silvestre de Colorado."
     },
-    "url": "https://www.cpwshop.com/",
+    "url": "https://www.cpwshop.com/home.page",
     "department": {
       "en": "Colorado Parks and Wildlife",
       "es": "Parques y Vida Silvestre de Colorado"
@@ -7919,7 +7925,7 @@
       "en": "Check live road conditions, closures, travel alerts, and weather impacts across Colorado highways before you travel.",
       "es": "Consulte las condiciones de carreteras en vivo, cierres, alertas de viaje e impactos climáticos en las autopistas de Colorado antes de viajar."
     },
-    "url": "https://www.cotrip.org/",
+    "url": "https://www.cotrip.org/home",
     "department": {
       "en": "Department of Transportation",
       "es": "Departamento de Transporte"
@@ -9144,41 +9150,48 @@
       });
     }
 
+    const FILTER_VISIBLE_LIMIT = 12;
+
     function getFilterOptions(field) {
       const counts = {};
       serviceCatalog.forEach(s => {
         const value = s[field];
         if (value) counts[value] = (counts[value] || 0) + 1;
       });
-      return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 12);
+      return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    }
+
+    function renderFilterGroup(titleKey, options, filterType, idPrefix) {
+      const optionsHtml = options.map(([value, count], i) => `
+        <div class="filter-option"${i >= FILTER_VISIBLE_LIMIT ? ' hidden' : ''}>
+          <input type="checkbox" id="${idPrefix}-${slugify(value)}" value="${escapeHtml(value)}" data-filter="${filterType}">
+          <label for="${idPrefix}-${slugify(value)}">${escapeHtml(value)}</label>
+          <span class="filter-count">${count}</span>
+        </div>
+      `).join('');
+
+      const toggleHtml = options.length > FILTER_VISIBLE_LIMIT ? `
+        <button type="button" class="filter-show-toggle" data-expanded="false" aria-expanded="false">
+          ${t('showAll')} (${options.length})
+        </button>
+      ` : '';
+
+      return `
+        <div class="filter-group">
+          <h3>${t(titleKey)}</h3>
+          ${optionsHtml}
+          ${toggleHtml}
+        </div>
+      `;
     }
 
     function renderFilters() {
       const categories = getFilterOptions('category');
       const departments = getFilterOptions('department');
 
-      filterGroups.innerHTML = `
-        <div class="filter-group">
-          <h3>${t('categoryFilter')}</h3>
-          ${categories.map(([cat, count]) => `
-            <div class="filter-option">
-              <input type="checkbox" id="cat-${slugify(cat)}" value="${cat}" data-filter="category">
-              <label for="cat-${slugify(cat)}">${cat}</label>
-              <span class="filter-count">${count}</span>
-            </div>
-          `).join('')}
-        </div>
-        <div class="filter-group">
-          <h3>${t('departmentFilter')}</h3>
-          ${departments.map(([dept, count]) => `
-            <div class="filter-option">
-              <input type="checkbox" id="dept-${slugify(dept)}" value="${dept}" data-filter="department">
-              <label for="dept-${slugify(dept)}">${dept}</label>
-              <span class="filter-count">${count}</span>
-            </div>
-          `).join('')}
-        </div>
-      `;
+      filterGroups.innerHTML =
+        renderFilterGroup('categoryFilter', categories, 'category', 'cat') +
+        renderFilterGroup('departmentFilter', departments, 'department', 'dept');
     }
 
     // Structured pills currently rendered, keyed by pill id, so the click
@@ -9464,11 +9477,27 @@
           const filterType = e.target.dataset.filter;
           const value = e.target.value;
           const set = filterType === 'category' ? state.selectedCategories : state.selectedDepartments;
-          
+
           if (e.target.checked) set.add(value);
           else set.delete(value);
           renderServices();
         }
+      });
+
+      // Expand/collapse filter groups that have more options than the
+      // default visible limit.
+      filterGroups.addEventListener('click', e => {
+        const toggle = e.target.closest('.filter-show-toggle');
+        if (!toggle) return;
+        const expanded = toggle.dataset.expanded === 'true';
+        const group = toggle.closest('.filter-group');
+        group.querySelectorAll('.filter-option').forEach((opt, i) => {
+          if (i >= FILTER_VISIBLE_LIMIT) opt.hidden = expanded;
+        });
+        toggle.dataset.expanded = String(!expanded);
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        const total = group.querySelectorAll('.filter-option').length;
+        toggle.textContent = expanded ? `${t('showAll')} (${total})` : t('showFewer');
       });
 
       document.getElementById('clearFilters').addEventListener('click', clearAll);
@@ -10134,17 +10163,12 @@
 
       let isLoading = false;
 
-      // Build a condensed catalog for the API (only essential fields)
-      function buildCatalogContext() {
-        return serviceCatalog.map(s => ({
-          name: s.name,
-          description: s.description,
-          url: s.url,
-          department: s.department,
-          category: s.category,
-          taskType: s.taskType
-        }));
-      }
+      // Conversation history sent with each message so the assistant
+      // remembers earlier turns. Raw text only (never rendered HTML).
+      // The worker fetches the service catalog itself, so the client no
+      // longer ships it with every message.
+      let chatHistory = [];
+      const MAX_HISTORY_TURNS = 10;
 
       // Open/close chat window
       function openChat() {
@@ -10242,7 +10266,7 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               message: userMessage,
-              catalog: JSON.stringify(buildCatalogContext()),
+              history: chatHistory.slice(-MAX_HISTORY_TURNS),
               lang: currentLang
             })
           });
@@ -10254,6 +10278,9 @@
             addMessage(t('chatError'), 'error');
           } else {
             addMessage(data.reply, 'assistant');
+            chatHistory.push({ role: 'user', text: userMessage });
+            chatHistory.push({ role: 'assistant', text: data.reply });
+            chatHistory = chatHistory.slice(-MAX_HISTORY_TURNS);
           }
         } catch (error) {
           hideTyping();
