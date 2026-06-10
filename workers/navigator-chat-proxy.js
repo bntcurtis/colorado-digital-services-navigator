@@ -12,13 +12,24 @@
  *
  * Deploy: Cloudflare dashboard → Workers & Pages → navigator-chat-proxy →
  * Edit code → replace contents with this file → Deploy.
- * Required secret (already set): GEMINI_API_KEY
+ *
+ * Environment:
+ *   - GEMINI_API_KEY (secret, required)
+ *   - GEMINI_MODEL (optional) — overrides the model id without a redeploy.
+ *     Defaults to gemini-3.5-flash.
+ *   - GEMINI_THINKING_LEVEL (optional) — minimal | low | medium | high.
+ *     Defaults to "low": this is a simple service-lookup task, so we keep
+ *     thinking cheap and fast. Gemini 3.5 enables thinking at "medium" by
+ *     default, which would add latency and token cost for no real benefit
+ *     here. Raise it only if answer quality needs it.
  */
 
 const CATALOG_URL = 'https://colorado-gov.org/service-catalog-v8.json';
 const CATALOG_TTL_SECONDS = 3600;
 const MAX_HISTORY_TURNS = 10;
 const MAX_TURN_CHARS = 1500;
+const DEFAULT_MODEL = 'gemini-3.5-flash';
+const DEFAULT_THINKING_LEVEL = 'low';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -124,17 +135,25 @@ ${catalogSummary}`,
         { role: 'user', parts: [{ text: String(message || '').slice(0, MAX_TURN_CHARS) }] },
       ];
 
+      const model = env.GEMINI_MODEL || DEFAULT_MODEL;
+      const thinkingLevel = env.GEMINI_THINKING_LEVEL || DEFAULT_THINKING_LEVEL;
+
+      // Gemini 3.5 migration notes:
+      // - temperature / top_p / top_k are no longer recommended on 3.x
+      //   thinking models; the strict system prompt handles grounding.
+      // - thinkingConfig.thinkingLevel replaces the old thinking_budget.
+      // - thinking tokens count toward maxOutputTokens, so we leave headroom
+      //   above the short answer we actually want.
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${env.GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents,
             generationConfig: {
-              temperature: 0.2,
-              maxOutputTokens: 2048,
-              stopSequences: [],
+              maxOutputTokens: 4096,
+              thinkingConfig: { thinkingLevel },
             },
           }),
         }
