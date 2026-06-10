@@ -32,6 +32,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colorado Digital Services | State Government Navigator</title>
   <meta name="description" content="Access 200+ state government digital services, from renewing your license to applying for benefits.">
+  <link rel="canonical" href="https://colorado-gov.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Colorado Digital Services Navigator">
+  <meta property="og:description" content="Find 200+ Colorado state government digital services — renew a license, apply for benefits, register a business, and more. Available in English and Spanish.">
+  <meta property="og:url" content="https://colorado-gov.org/">
+  <meta property="og:site_name" content="Colorado Digital Services Navigator">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Colorado Digital Services Navigator">
+  <meta name="twitter:description" content="Find 200+ Colorado state government digital services in English and Spanish.">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFQ7PPNRHV"></script>
@@ -1172,6 +1181,12 @@
         movingToColorado: 'Moving to Colorado',
         voting: 'Voting',
         outdoorRecreation: 'Outdoor recreation',
+        educationCareer: 'Education & career',
+        legalJustice: 'Legal & justice',
+        moneyTaxes: 'Money & taxes',
+        gettingAssistance: 'Getting assistance',
+        familyChildren: 'Family & children',
+        votingCommunity: 'Voting & community',
 
         // Audience labels
         resident: 'Resident',
@@ -1182,6 +1197,12 @@
         teacher: 'Teacher',
         jobSeeker: 'Job seeker',
         newToColorado: 'New to Colorado',
+        individualsFamilies: 'Individuals & families',
+        studentsEducation: 'Students & education',
+        professionalsLicensees: 'Professionals & licensees',
+        governmentEmployees: 'Government & employees',
+        outdoorEnthusiasts: 'Outdoor enthusiasts',
+        visitorsTourists: 'Visitors & tourists',
 
         // Category labels
         health: 'Health',
@@ -1306,6 +1327,12 @@
         movingToColorado: 'Mudándose a Colorado',
         voting: 'Votando',
         outdoorRecreation: 'Recreación al aire libre',
+        educationCareer: 'Educación y carrera',
+        legalJustice: 'Legal y justicia',
+        moneyTaxes: 'Dinero e impuestos',
+        gettingAssistance: 'Obtener asistencia',
+        familyChildren: 'Familia y niños',
+        votingCommunity: 'Votación y comunidad',
 
         // Audience labels
         resident: 'Residente',
@@ -1316,6 +1343,12 @@
         teacher: 'Maestro(a)',
         jobSeeker: 'Buscador de empleo',
         newToColorado: 'Nuevo en Colorado',
+        individualsFamilies: 'Individuos y familias',
+        studentsEducation: 'Estudiantes y educación',
+        professionalsLicensees: 'Profesionales y licencias',
+        governmentEmployees: 'Gobierno y empleados',
+        outdoorEnthusiasts: 'Entusiastas del aire libre',
+        visitorsTourists: 'Visitantes y turistas',
 
         // Category labels
         health: 'Salud',
@@ -1403,6 +1436,17 @@
     function t(key) {
       return TRANSLATIONS[currentLang][key] || TRANSLATIONS.en[key] || key;
     }
+
+    // localStorage throws in some privacy modes (e.g. Safari with all
+    // cookies blocked); storage is a nice-to-have, never a hard dependency.
+    const safeStorage = {
+      get(key) {
+        try { return localStorage.getItem(key); } catch { return null; }
+      },
+      set(key, value) {
+        try { localStorage.setItem(key, value); } catch { /* ignore */ }
+      }
+    };
 
     // ═══════════════════════════════════════════════════════════════════════
     // ANALYTICS - Event tracking helper
@@ -3211,7 +3255,7 @@
       "en": "Request copies of transcripts from closed occupational schools in Colorado.",
       "es": "Solicite copias de expedientes académicos de escuelas ocupacionales cerradas en Colorado."
     },
-    "url": "https://cdhe.colorado.gov/students/preparing-for-college",
+    "url": "https://cdhe.colorado.gov/preparing-for-college",
     "department": {
       "en": "Department of Higher Education",
       "es": "Departamento de Educación Superior"
@@ -4236,7 +4280,7 @@
       "en": "Set up electronic funds transfer for tax payments and other financial transactions with Colorado state agencies.",
       "es": "Configure transferencia electrónica de fondos para pagos de impuestos y otras transacciones financieras con agencias estatales de Colorado."
     },
-    "url": "https://tax.colorado.gov/eft",
+    "url": "https://tax.colorado.gov/electronic-funds-transfer",
     "department": {
       "en": "Department of Revenue",
       "es": "Departamento de Ingresos"
@@ -4812,7 +4856,7 @@
       "en": "Subscribe to receive regular updates about Colorado education news, policy changes, and resources for educators and administrators.",
       "es": "Suscríbase para recibir actualizaciones regulares sobre noticias de educación de Colorado, cambios de políticas y recursos para educadores y administradores."
     },
-    "url": "https://www.cde.state.co.us/",
+    "url": "https://ed.cde.state.co.us/",
     "department": {
       "en": "Department of Education",
       "es": "Departamento de Educación"
@@ -5548,7 +5592,7 @@
       "en": "Submit requests for public records from Colorado state agencies under the Colorado Open Records Act (CORA).",
       "es": "Envíe solicitudes de registros públicos de agencias estatales de Colorado bajo la Ley de Registros Abiertos de Colorado (CORA)."
     },
-    "url": "https://oit.colorado.gov/cora-colorado-open-records-requests",
+    "url": "https://oit.colorado.gov/about-us/news/cora-colorado-open-records-requests",
     "department": {
       "en": "Office of Information Technology",
       "es": "Oficina de Tecnología de la Información"
@@ -6284,7 +6328,7 @@
       "en": "Complete DMV transactions online including driver license renewal, address changes, and instruction permit tests from anywhere with internet access.",
       "es": "Complete transacciones del DMV en línea incluyendo renovación de licencia de conducir, cambios de dirección y exámenes de permiso de instrucción desde cualquier lugar con acceso a internet."
     },
-    "url": "https://dmv.colorado.gov/anywhere",
+    "url": "https://dmv.colorado.gov/mydmv-online-services-help-center",
     "department": {
       "en": "Department of Revenue",
       "es": "Departamento de Ingresos"
@@ -8842,66 +8886,76 @@
         name: service.name[currentLang] || service.name.en,
         description: service.description[currentLang] || service.description.en,
         department: service.department[currentLang] || service.department.en,
-        category: service.category[currentLang] || service.category.en
+        category: service.category[currentLang] || service.category.en,
+        // English category kept for language-independent pill matching
+        categoryEn: service.category.en
       }));
     }
 
     // Dynamic reference to current catalog (will be updated on language change)
     let serviceCatalog = getServiceCatalog();
 
-    // Navigation config - uses translation function for labels
+    // Navigation config - uses translation function for labels.
+    //
+    // Each pill carries a `match` spec that filters on a structured catalog
+    // field (taskType / lifeEvent / audience / category) by substring terms.
+    // An optional `q` adds a free-text fallback union for thinly-tagged
+    // groups so the pill still surfaces relevant services found only in
+    // names/descriptions. (The pills previously did free-text-only matching,
+    // which left several of them returning 0-2 results.)
     function getNavConfig() {
       return {
         task: {
           title: t('iNeedTo'),
           items: [
-            { label: t('apply'), icon: '📝', filter: 'Apply' },
-            { label: t('renew'), icon: '🔄', filter: 'Renew' },
-            { label: t('pay'), icon: '💳', filter: 'Pay' },
-            { label: t('find'), icon: '🔍', filter: 'Find' },
-            { label: t('report'), icon: '📢', filter: 'Report' },
-            { label: t('file'), icon: '📁', filter: 'File' },
-            { label: t('learn'), icon: '📚', filter: 'Learn' },
-            { label: t('manage'), icon: '⚙️', filter: 'Manage' },
+            { id: 'task-apply', label: t('apply'), icon: '📝', match: { field: 'taskType', terms: ['apply'] } },
+            { id: 'task-renew', label: t('renew'), icon: '🔄', match: { field: 'taskType', terms: ['renew'] } },
+            { id: 'task-pay', label: t('pay'), icon: '💳', match: { field: 'taskType', terms: ['pay'] } },
+            { id: 'task-find', label: t('find'), icon: '🔍', match: { field: 'taskType', terms: ['find'] } },
+            { id: 'task-report', label: t('report'), icon: '📢', match: { field: 'taskType', terms: ['report'] } },
+            { id: 'task-file', label: t('file'), icon: '📁', match: { field: 'taskType', terms: ['file'] } },
+            { id: 'task-learn', label: t('learn'), icon: '📚', match: { field: 'taskType', terms: ['learn'] } },
+            { id: 'task-manage', label: t('manage'), icon: '⚙️', match: { field: 'taskType', terms: ['manage'] } },
           ]
         },
         'life-event': {
           title: t('lifeEvent'),
           items: [
-            { label: t('startingAJob'), icon: '💼', filter: 'Job' },
-            { label: t('gettingHealthcare'), icon: '🏥', filter: 'Healthcare' },
-            { label: t('goingToCollege'), icon: '🎓', filter: 'Higher Education' },
-            { label: t('startingABusiness'), icon: '🏢', filter: 'Starting a Business' },
-            { label: t('havingABaby'), icon: '👶', filter: 'Having a Baby' },
-            { label: t('movingToColorado'), icon: '🏠', filter: 'Moving' },
-            { label: t('voting'), icon: '🗳️', filter: 'Voting' },
-            { label: t('outdoorRecreation'), icon: '🏕️', filter: 'Recreation' },
+            { id: 'life-education', label: t('educationCareer'), icon: '🎓', match: { field: 'lifeEvent', terms: ['education and career'] } },
+            { id: 'life-health', label: t('gettingHealthcare'), icon: '🏥', match: { field: 'lifeEvent', terms: ['healthcare and wellness'] } },
+            { id: 'life-family', label: t('familyChildren'), icon: '👶', match: { field: 'lifeEvent', terms: ['starting a family', 'raising a family'] } },
+            { id: 'life-assistance', label: t('gettingAssistance'), icon: '🤝', match: { field: 'lifeEvent', terms: ['living with financial hardship'] } },
+            { id: 'life-moving', label: t('movingToColorado'), icon: '🏠', match: { field: 'lifeEvent', terms: ['housing and relocation'] } },
+            { id: 'life-money', label: t('moneyTaxes'), icon: '💰', match: { field: 'lifeEvent', terms: ['financial and taxes'] } },
+            { id: 'life-legal', label: t('legalJustice'), icon: '⚖️', match: { field: 'lifeEvent', terms: ['legal and justice'] } },
+            { id: 'life-civic', label: t('votingCommunity'), icon: '🗳️', match: { field: 'lifeEvent', terms: ['civic and community'] } },
+            { id: 'life-outdoors', label: t('outdoorRecreation'), icon: '🏕️', match: { field: 'lifeEvent', terms: ['travel and recreation'] } },
           ]
         },
         audience: {
           title: t('iAmA'),
           items: [
-            { label: t('resident'), icon: '🏠', filter: 'Adults' },
-            { label: t('businessOwner'), icon: '🏢', filter: 'Business' },
-            { label: t('student'), icon: '📚', filter: 'Students' },
-            { label: t('parent'), icon: '👨‍👩‍👧', filter: 'Parents' },
-            { label: t('veteran'), icon: '🎖️', filter: 'Veterans' },
-            { label: t('teacher'), icon: '👩‍🏫', filter: 'Teachers' },
-            { label: t('jobSeeker'), icon: '👔', filter: 'Employment' },
-            { label: t('newToColorado'), icon: '✨', filter: 'New' },
+            { id: 'aud-individuals', label: t('individualsFamilies'), icon: '🏠', match: { field: 'audience', terms: ['individuals and families'] } },
+            { id: 'aud-business', label: t('businessOwner'), icon: '🏢', match: { field: 'audience', terms: ['businesses and organizations'] } },
+            { id: 'aud-students', label: t('studentsEducation'), icon: '📚', match: { field: 'audience', terms: ['education and students'], q: 'student' } },
+            { id: 'aud-professionals', label: t('professionalsLicensees'), icon: '📋', match: { field: 'audience', terms: ['professionals and licensees'], q: 'professional' } },
+            { id: 'aud-veterans', label: t('veteran'), icon: '🎖️', match: { field: 'audience', terms: ['veterans'], q: 'veteran' } },
+            { id: 'aud-government', label: t('governmentEmployees'), icon: '🏛️', match: { field: 'audience', terms: ['government and employees'] } },
+            { id: 'aud-outdoors', label: t('outdoorEnthusiasts'), icon: '🏔️', match: { field: 'audience', terms: ['outdoor enthusiasts'], q: 'outdoor' } },
+            { id: 'aud-visitors', label: t('visitorsTourists'), icon: '🧳', match: { field: 'audience', terms: ['visitors and tourists'] } },
           ]
         },
         category: {
           title: t('category'),
           items: [
-            { label: t('health'), icon: '🏥', filter: 'Health' },
-            { label: t('transportation'), icon: '🚗', filter: 'Transportation' },
-            { label: t('jobs'), icon: '💼', filter: 'Jobs' },
-            { label: t('education'), icon: '🎓', filter: 'Education' },
-            { label: t('business'), icon: '🏢', filter: 'Business' },
-            { label: t('taxes'), icon: '💰', filter: 'Taxes' },
-            { label: t('publicSafety'), icon: '🛡️', filter: 'Safety' },
-            { label: t('recreation'), icon: '🏕️', filter: 'Recreation' },
+            { id: 'cat-health', label: t('health'), icon: '🏥', match: { field: 'categoryEn', terms: ['health'] } },
+            { id: 'cat-transport', label: t('transportation'), icon: '🚗', match: { field: 'categoryEn', terms: ['transportation'] } },
+            { id: 'cat-jobs', label: t('jobs'), icon: '💼', match: { field: 'categoryEn', terms: ['jobs'] } },
+            { id: 'cat-education', label: t('education'), icon: '🎓', match: { field: 'categoryEn', terms: ['education'] } },
+            { id: 'cat-business', label: t('business'), icon: '🏢', match: { field: 'categoryEn', terms: ['business'] } },
+            { id: 'cat-taxes', label: t('taxes'), icon: '💰', match: { field: 'categoryEn', terms: ['taxes'] } },
+            { id: 'cat-safety', label: t('publicSafety'), icon: '🛡️', match: { field: 'categoryEn', terms: ['public safety'] } },
+            { id: 'cat-recreation', label: t('recreation'), icon: '🏕️', match: { field: 'categoryEn', terms: ['recreation'] } },
           ]
         }
       };
@@ -8937,7 +8991,7 @@
         currentLang = langParam;
       } else {
         // Check localStorage
-        const savedLang = localStorage.getItem('preferredLang');
+        const savedLang = safeStorage.get('preferredLang');
         if (savedLang && TRANSLATIONS[savedLang]) {
           currentLang = savedLang;
         }
@@ -9050,7 +9104,7 @@
           const newLang = btn.dataset.lang;
           if (newLang !== currentLang && TRANSLATIONS[newLang]) {
             currentLang = newLang;
-            localStorage.setItem('preferredLang', newLang);
+            safeStorage.set('preferredLang', newLang);
 
             // Update URL without reload
             const url = new URL(window.location);
@@ -9060,9 +9114,22 @@
             // Update catalog
             serviceCatalog = getServiceCatalog();
 
+            // Category/department checkbox values are localized strings, so
+            // selections made in the previous language can no longer match —
+            // drop them rather than filtering invisibly.
+            state.selectedCategories.clear();
+            state.selectedDepartments.clear();
+
             // Re-render everything
             applyTranslations();
             renderQuickActions(state.navMode);
+
+            // Refresh the active pill's label into the new language
+            if (state.quickFilter && typeof state.quickFilter === 'object') {
+              const item = currentPillItems.get(state.quickFilter.id);
+              if (item) state.quickFilter = { id: item.id, label: item.label, match: item.match };
+            }
+
             renderFilters();
             renderFeatured();
             renderServices();
@@ -9114,9 +9181,18 @@
       `;
     }
 
+    // Structured pills currently rendered, keyed by pill id, so the click
+    // handler can recover the full match spec from data-quick.
+    let currentPillItems = new Map();
+
+    function quickFilterKey(qf) {
+      return typeof qf === 'object' && qf !== null ? qf.id : qf;
+    }
+
     function renderQuickActions(mode) {
       const navConfig = getNavConfig();
       const config = navConfig[mode];
+      currentPillItems = new Map();
       if (!config) {
         quickActionsTitle.textContent = t('popularSearches');
         actionPills.innerHTML = `
@@ -9131,12 +9207,16 @@
         `;
       } else {
         quickActionsTitle.textContent = config.title;
-        actionPills.innerHTML = config.items.map(item => `
-          <button class="action-pill${state.quickFilter === item.filter ? ' active' : ''}"
-                  data-quick="${item.filter}">
-            <span class="icon">${item.icon}</span> ${item.label}
+        const activeKey = quickFilterKey(state.quickFilter);
+        actionPills.innerHTML = config.items.map(item => {
+          currentPillItems.set(item.id, item);
+          return `
+          <button class="action-pill${activeKey === item.id ? ' active' : ''}"
+                  data-quick="${item.id}">
+            <span class="icon">${item.icon}</span> ${escapeHtml(item.label)}
           </button>
-        `).join('');
+        `;
+        }).join('');
       }
     }
 
@@ -9153,16 +9233,16 @@
             <div class="service-icon">${service.icon || '📌'}</div>
             <div class="service-title-wrapper">
               <h3 class="service-title">${highlight(service.name)}</h3>
-              <p class="service-department">${service.department}</p>
+              <p class="service-department">${escapeHtml(service.department)}</p>
             </div>
           </div>
           <p class="service-description">${highlight(service.description)}</p>
           <div class="service-meta">
-            <span class="service-tag category">${service.category}</span>
-            ${service.taskType ? `<span class="service-tag task">${service.taskType}</span>` : ''}
+            <span class="service-tag category">${escapeHtml(service.category)}</span>
+            ${service.taskType ? `<span class="service-tag task">${escapeHtml(service.taskType)}</span>` : ''}
           </div>
           <div class="service-actions">
-            <a href="${service.url}" class="service-link" target="_blank" rel="noopener noreferrer">
+            <a href="${escapeHtml(service.url)}" class="service-link" target="_blank" rel="noopener noreferrer">
               ${t('accessService')}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -9173,32 +9253,45 @@
       `;
     }
 
+    // Free-text match across the human-readable fields. Used by the search
+    // box, the "popular searches" pills, and as the optional `q` fallback
+    // union for thinly-tagged structured pills.
+    function fuzzyMatch(s, query) {
+      const q = query.toLowerCase();
+      return (
+        s.name.toLowerCase().includes(q) ||
+        s.description.toLowerCase().includes(q) ||
+        s.category.toLowerCase().includes(q) ||
+        s.department.toLowerCase().includes(q) ||
+        (s.taskType && s.taskType.toLowerCase().includes(q)) ||
+        (s.lifeEvent && s.lifeEvent.toLowerCase().includes(q)) ||
+        (s.audience && s.audience.toLowerCase().includes(q)) ||
+        (s.tags && s.tags.some(t => t.includes(q)))
+      );
+    }
+
+    function matchesPill(s, match) {
+      const value = s[match.field];
+      if (value && match.terms.some(term => value.toLowerCase().includes(term))) {
+        return true;
+      }
+      return match.q ? fuzzyMatch(s, match.q) : false;
+    }
+
     function renderServices() {
       let filtered = [...serviceCatalog];
 
       if (state.searchQuery) {
-        const q = state.searchQuery.toLowerCase();
-        filtered = filtered.filter(s =>
-          s.name.toLowerCase().includes(q) ||
-          s.description.toLowerCase().includes(q) ||
-          s.category.toLowerCase().includes(q) ||
-          s.department.toLowerCase().includes(q) ||
-          (s.tags && s.tags.some(t => t.includes(q)))
-        );
+        filtered = filtered.filter(s => fuzzyMatch(s, state.searchQuery));
       }
 
       if (state.quickFilter) {
-        const qf = state.quickFilter.toLowerCase();
-        filtered = filtered.filter(s =>
-          (s.taskType && s.taskType.toLowerCase().includes(qf)) ||
-          (s.lifeEvent && s.lifeEvent.toLowerCase().includes(qf)) ||
-          (s.lifeEventDetail && s.lifeEventDetail.toLowerCase().includes(qf)) ||
-          (s.audienceDetail && s.audienceDetail.toLowerCase().includes(qf)) ||
-          s.category.toLowerCase().includes(qf) ||
-          s.name.toLowerCase().includes(qf) ||
-          s.description.toLowerCase().includes(qf) ||
-          (s.tags && s.tags.some(t => t.includes(qf)))
-        );
+        const qf = state.quickFilter;
+        if (typeof qf === 'object' && qf.match) {
+          filtered = filtered.filter(s => matchesPill(s, qf.match));
+        } else {
+          filtered = filtered.filter(s => fuzzyMatch(s, qf));
+        }
       }
 
       if (state.selectedCategories.size > 0) {
@@ -9248,16 +9341,26 @@
 
     function renderActiveFilters() {
       const filters = [];
-      if (state.quickFilter) filters.push({ type: 'quick', value: state.quickFilter });
+      if (state.quickFilter) {
+        filters.push({
+          type: 'quick',
+          value: quickFilterKey(state.quickFilter),
+          label: typeof state.quickFilter === 'object' ? state.quickFilter.label : state.quickFilter,
+        });
+      }
       state.selectedCategories.forEach(c => filters.push({ type: 'category', value: c }));
       state.selectedDepartments.forEach(d => filters.push({ type: 'department', value: d }));
 
-      activeFiltersEl.innerHTML = filters.map(f => `
+      activeFiltersEl.innerHTML = filters.map(f => {
+        const label = f.label || f.value;
+        const display = label.length > 25 ? label.substring(0, 25) + '...' : label;
+        return `
         <span class="active-filter">
-          ${f.value.length > 25 ? f.value.substring(0, 25) + '...' : f.value}
-          <button onclick="removeFilter('${f.type}', '${f.value.replace(/'/g, "\'")}')">&times;</button>
+          ${escapeHtml(display)}
+          <button data-remove-type="${escapeHtml(f.type)}" data-remove-value="${escapeHtml(f.value)}" aria-label="Remove filter ${escapeHtml(label)}">&times;</button>
         </span>
-      `).join('');
+      `;
+      }).join('');
     }
 
     function removeFilter(type, value) {
@@ -9295,13 +9398,22 @@
     }
 
     function highlight(text) {
-      if (!state.searchQuery) return text;
+      const safe = escapeHtml(text);
+      if (!state.searchQuery) return safe;
       const regex = new RegExp(`(${escapeRegex(state.searchQuery)})`, 'gi');
-      return text.replace(regex, '<mark>$1</mark>');
+      return safe.replace(regex, '<mark>$1</mark>');
     }
 
     function escapeRegex(str) { return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
     function slugify(text) { return text.toLowerCase().replace(/[^a-z0-9]+/g, '-'); }
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
 
     function setupEventListeners() {
       searchInput.addEventListener('input', e => {
@@ -9331,13 +9443,16 @@
       actionPills.addEventListener('click', e => {
         const pill = e.target.closest('.action-pill');
         if (pill) {
-          const filter = pill.dataset.quick;
+          const key = pill.dataset.quick;
+          const item = currentPillItems.get(key);
           document.querySelectorAll('.action-pill').forEach(p => p.classList.remove('active'));
-          
-          if (state.quickFilter === filter) {
+
+          if (quickFilterKey(state.quickFilter) === key) {
             state.quickFilter = null;
           } else {
-            state.quickFilter = filter;
+            state.quickFilter = item
+              ? { id: item.id, label: item.label, match: item.match }
+              : key;
             pill.classList.add('active');
           }
           renderServices();
@@ -9357,6 +9472,13 @@
       });
 
       document.getElementById('clearFilters').addEventListener('click', clearAll);
+
+      // Delegated handler for active-filter chip removal (values may contain
+      // any character, so inline onclick handlers are not safe here).
+      activeFiltersEl.addEventListener('click', e => {
+        const btn = e.target.closest('button[data-remove-type]');
+        if (btn) removeFilter(btn.dataset.removeType, btn.dataset.removeValue);
+      });
 
       sortSelect.addEventListener('change', e => {
         state.sortBy = e.target.value;
@@ -9432,10 +9554,11 @@
       });
 
       // Track featured service clicks
-      document.getElementById('featuredServices').addEventListener('click', e => {
+      document.getElementById('featuredGrid').addEventListener('click', e => {
         const link = e.target.closest('a[href]');
         if (link && link.href.startsWith('http')) {
-          const title = link.querySelector('.featured-title')?.textContent || 'Unknown';
+          const card = link.closest('.service-card');
+          const title = card?.querySelector('.service-title')?.textContent || 'Unknown';
           trackEvent('featured_click', {
             service_name: title,
             url: link.href
@@ -9458,10 +9581,10 @@
       });
 
       // Track navigation mode changes
-      document.querySelectorAll('.nav-tabs .tab').forEach(tab => {
+      document.querySelectorAll('.nav-tab').forEach(tab => {
         tab.addEventListener('click', () => {
           trackEvent('navigation_mode', {
-            mode: tab.dataset.mode
+            mode: tab.dataset.nav
           });
         });
       });
@@ -9478,10 +9601,10 @@
       });
 
       // Track filter usage
-      document.getElementById('filtersContainer').addEventListener('change', e => {
+      document.getElementById('filterGroups').addEventListener('change', e => {
         const checkbox = e.target.closest('input[type="checkbox"]');
         if (checkbox) {
-          const filterType = checkbox.closest('.filter-group')?.querySelector('.filter-group-title')?.textContent || 'Unknown';
+          const filterType = checkbox.closest('.filter-group')?.querySelector('h3')?.textContent || 'Unknown';
           trackEvent('filter_apply', {
             filter_type: filterType,
             filter_value: checkbox.nextElementSibling?.textContent?.trim() || checkbox.value,
@@ -9538,7 +9661,7 @@
       let game = {
         running: false,
         score: 0,
-        hiScore: parseInt(localStorage.getItem('peakNavHiScore') || '0'),
+        hiScore: parseInt(safeStorage.get('peakNavHiScore') || '0', 10),
         player: { x: 80, y: GROUND_Y - PLAYER_SIZE, vy: 0, onGround: true },
         obstacles: [],
         collectibles: [],
@@ -9909,7 +10032,7 @@
         game.running = false;
         if (game.score > game.hiScore) {
           game.hiScore = game.score;
-          localStorage.setItem('peakNavHiScore', game.hiScore);
+          safeStorage.set('peakNavHiScore', game.hiScore);
           hiScoreEl.textContent = 'Hi: ' + game.hiScore;
         }
         createParticles(game.player.x + 10, game.player.y + 10, '#ff6b6b', 15);
@@ -10048,8 +10171,12 @@
             .replace(/target="_blank" rel="noopener">/g, '')
             .replace(/<\/a>/g, '');
 
+          // Escape everything before converting our own markup: the reply is
+          // model-generated and must never be able to inject raw HTML.
+          text = escapeHtml(text);
+
           // Now convert markdown links [text](url) to HTML
-          text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+          text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
           // Convert bare URLs to links (only if not already inside an anchor tag)
           text = text.replace(/(^|[^"'>])(https?:\/\/[^\s<"']+)/g, (match, prefix, url) => {

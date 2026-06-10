@@ -45,7 +45,7 @@ The entire application is a single HTML file with embedded CSS and JavaScript. T
 - Easy to deploy anywhere (Cloudflare Pages, GitHub Pages, Google Sites, etc.)
 - Fast load times (single HTTP request)
 
-Catalog maintenance is automated separately from the static frontend. Scheduled GitHub Actions handle link repair, crawl-assisted recovery, monthly discovery, and pull request generation. A daily Cloudflare Browser Rendering crawl workflow gathers normalized artifacts that the weekly Catalog Agent can use to recover broken URLs.
+Catalog maintenance is automated separately from the static frontend. A scheduled GitHub Action checks every catalog link weekly (using a browser user agent, since Colorado sites block bot traffic), repairs safe redirects, and auto-merges its own PR when every change re-verifies as low-risk. A monthly run additionally discovers new services from the official colorado.gov service hub pages and agency sitemaps, generates bilingual metadata, and opens a PR for human review.
 
 ### Service catalog structure
 
@@ -99,11 +99,11 @@ Services are organized across multiple dimensions:
 - Taxes and Finance
 - Transportation and Vehicles
 
-**Task types:** Apply, Find, Learn, Pay, Register, Renew, Report, Start
+**Task types:** Apply, Calculate, File, Find, Get Assistance, Learn, Make, Manage, Pay, Purchase, Register, Renew, Report, Request, Schedule, Start, Use
 
-**Life events:** Education and Career, Financial and Taxes, Healthcare and Wellness, Housing and Relocation, Legal and Justice, Raising a Family, Retirement and Aging, Starting a Family
+**Life events:** Business and Economy, Civic and Community, Education and Career, Financial and Taxes, Healthcare and Wellness, Housing and Relocation, Legal and Justice, Living with Financial Hardship, Military Service, Raising a Family, Starting a Business, Starting a Family, Travel and Recreation
 
-**Audiences:** Businesses and Organizations, Education and Students, Government and Employees, Individuals and Families, Outdoor Enthusiasts and Travelers, Professionals and Licensees, Vulnerable Populations
+**Audiences:** Businesses and Organizations, Education and Students, Government and Employees, Individuals and Families, Outdoor Enthusiasts, Professionals and Licensees, Veterans, Visitors and Tourists
 
 ---
 
@@ -115,44 +115,22 @@ Services are organized across multiple dimensions:
 | `colorado-service-navigator-v8.html` | Versioned copy of the main application |
 | `service-catalog-v8.json` | Bilingual service catalog data (English + Spanish) |
 | `service-schema-v3.json` | JSON Schema for validating the bilingual catalog |
-| `scripts/catalog-agent.js` | Weekly/monthly catalog agent (repairs links, uses crawl-assisted recovery, performs monthly sitemap discovery, generates metadata) |
-| `scripts/build-crawl-queue.js` | Selects the daily Cloudflare crawl queue within the free-tier budget |
-| `scripts/crawl-client.js` | Submits, polls, and downloads Cloudflare Browser Rendering `/crawl` jobs |
-| `scripts/normalize-crawl-results.js` | Converts raw crawl output into a stable normalized schema |
-| `scripts/recover-links-from-crawl.js` | Scores normalized crawl results as recovery candidates for broken catalog URLs |
-| `scripts/check-links.js` | Automated link health checker |
-| `scripts/discover-services.js` | Legacy sitemap crawler for manual discovery runs |
+| `scripts/catalog-agent.js` | Weekly/monthly catalog agent (link checking and repair, hub + sitemap discovery, metadata generation) |
+| `scripts/aggregate-crawl-results.js` | Scores discovery candidates (used by the catalog agent) |
+| `scripts/recover-links-from-crawl.js` | Scores recovery candidates for broken catalog URLs (used by the catalog agent) |
 | `scripts/sync-catalog.js` | Syncs the embedded catalog in `index.html` from `service-catalog-v8.json` |
-| `config/` | Crawl seeds, crawl profiles, and per-domain crawl policy overrides |
 | `reports/` | Auto-generated catalog change reports (created by GitHub Actions) |
+| `archive/` | Retired code, including the Cloudflare crawl experiment and legacy manual checkers |
 | `README.md` | This file |
 
 ### GitHub Actions
 
 | Workflow | Schedule | Description |
 |----------|----------|-------------|
-| `crawl-discovery.yml` | Daily | Runs a rotating Cloudflare Browser Rendering crawl queue, normalizes raw crawl output, and uploads raw/normalized artifacts used for later recovery and analysis. |
-| `catalog-agent.yml` | Weekly + Monthly | Weekly: repairs links and uses recent normalized crawl artifacts to recover broken URLs. Monthly: performs the same repair flow plus sitemap-based discovery and metadata generation, then opens a PR with a review report. |
-| `link-audit.yml` | Manual only | Legacy link checker (issue-based). |
-| `discover-services.yml` | Manual only | Legacy sitemap discovery report (issue-based). |
+| `catalog-agent.yml` | Weekly (Mon) + Monthly (1st) | Weekly: checks all catalog links, repairs safe redirects, re-verifies every repair, and **auto-merges its own PR** when changes are exclusively low-risk link repairs. Monthly: same repair flow plus discovery of new services from the colorado.gov service hub pages and agency sitemaps, with bilingual metadata generation — these PRs wait for human review. |
+| `pages.yml` | On push to `main` | Deploys the site to GitHub Pages. |
 
-### Crawl Discovery setup
-
-The daily crawl workflow uses Cloudflare Browser Rendering's `/crawl` endpoint.
-
-1. Add GitHub Actions configuration:
-
-- Variable: `CF_ACCOUNT_ID`
-- Secret: `CF_API_TOKEN`
-
-2. Ensure the Cloudflare API token has **Account > Browser Rendering > Edit** permission.
-3. Review or tune the crawl configuration files:
-
-- `config/crawl-seeds.json`
-- `config/crawl-profiles.json`
-- `config/crawl-domain-policy.json`
-
-4. Review `docs/cloudflare-crawl-plan.md` for the overall architecture and rollout notes.
+In addition to the GitHub Actions, a scheduled Claude Code task runs on the 3rd of each month. It reviews the latest catalog report, checks open user-feedback issues, and searches the web for newly announced Colorado services, posting its findings as a GitHub issue labeled `monthly-review`.
 
 ### Catalog Agent setup
 
@@ -165,18 +143,7 @@ The Catalog Agent requires a separate Gemini proxy Worker and a shared token.
 - Secret: `CATALOG_AGENT_TOKEN`
 - Variable: `CATALOG_WORKER_URL` (e.g. `https://navigator-catalog-proxy.bntcurtis.workers.dev/`)
 
-The weekly Catalog Agent workflow will automatically enable crawl-assisted recovery when recent normalized crawl artifacts are available from `crawl-discovery.yml`.
-
-### Run the workflows manually
-
-#### Crawl Discovery
-
-1. Open the GitHub repo.
-2. Click the **Actions** tab.
-3. Select **Crawl Discovery** in the left sidebar.
-4. Click **Run workflow**.
-5. Optionally set the crawl budget (default: `5`, matching the free-tier daily job budget).
-6. Click **Run workflow** to start the job.
+### Run the workflow manually
 
 #### Catalog Agent
 
@@ -185,8 +152,8 @@ The weekly Catalog Agent workflow will automatically enable crawl-assisted recov
 3. Select **Catalog Agent** in the left sidebar.
 4. Click **Run workflow**.
 5. Choose the mode:
-   - `weekly` for link repairs only
-   - `monthly` for link repairs + sitemap discovery + metadata generation
+   - `weekly` for link repairs only (auto-merges if all repairs verify)
+   - `monthly` for link repairs + hub/sitemap discovery + metadata generation (requires review)
 6. Optionally set the limit for new services to evaluate.
 7. Click **Run workflow** to start the job.
 
@@ -207,15 +174,15 @@ Service information was compiled from:
 - **URLs may change** — Government websites frequently reorganize. Some links may become outdated.
 - **Completeness** — This catalog focuses on digital services (online applications, portals, databases). In-person-only services are generally not included.
 - **Accuracy** — While care was taken to describe services correctly, always verify details on official government websites before taking action.
-- **Currency** — The catalog snapshot in `service-catalog-v8.json` was last updated on February 8, 2026. Ongoing scheduled automation continues to check links, collect crawl artifacts, and propose changes via pull request.
+- **Currency** — The catalog is continuously maintained by scheduled automation that checks links weekly, discovers new services monthly, and proposes changes via pull request. See `service-catalog-v8.json`'s `lastUpdated` field for the most recent change.
 
 ### Catalog maintenance
 
-The service catalog is maintained through a combination of automated checks and community feedback:
+The service catalog is maintained through automation, with human review reserved for the riskiest changes:
 
-- **Crawl Discovery (artifact-based)** — A daily GitHub Action runs a Cloudflare Browser Rendering crawl against rotating hub and agency seeds, normalizes the results, and uploads raw/normalized artifacts for reuse.
-- **Catalog Agent (PR-based)** — A weekly/monthly GitHub Action repairs links, uses recent crawl artifacts to recover broken URLs, performs monthly sitemap-based discovery, and generates bilingual metadata. It opens a PR with a human-readable report in `reports/` for review before merging.
-- **Legacy workflows (manual)** — The prior issue-based link audit and discovery workflows remain available for manual runs.
+- **Weekly link repair (self-merging)** — A GitHub Action checks every catalog URL with a browser user agent, repairs safe same-domain redirects, re-verifies each repair, and merges its own PR when every change is a verified low-risk repair. Anything unusual stays open for review.
+- **Monthly discovery (human-reviewed)** — The same agent in monthly mode pulls candidate services from the official colorado.gov service hub pages and agency sitemaps, generates bilingual metadata via the worker, and opens a PR with a report in `reports/`. Adding services is the one step that always gets human eyes.
+- **Monthly AI review** — A scheduled Claude Code task cross-checks the catalog against the live web: newly announced services, discontinued programs, and open user feedback. Findings are posted as a `monthly-review` GitHub issue.
 - **Community feedback** — Users can [report broken links or suggest new services](https://github.com/bntcurtis/colorado-digital-services-navigator/issues/new?template=feedback.yml) directly from the app footer.
 
 ---
@@ -244,7 +211,7 @@ Contributions are welcome! Here are some ways to help:
 - **[Report broken links or suggest new services](https://github.com/bntcurtis/colorado-digital-services-navigator/issues/new?template=feedback.yml)** — Use the feedback form to let us know about problems or missing services
 - **Improve descriptions** — Help make service descriptions clearer and more helpful
 - **Accessibility feedback** — Report any accessibility issues you encounter
-- **Code contributions** — Improve the link checker, discovery scripts, or main application
+- **Code contributions** — Improve the catalog agent, discovery logic, or main application
 
 ---
 

@@ -1445,6 +1445,12 @@ async function main() {
   }
 }
 
+if (require.main !== module) {
+  // Imported as a module (e.g. for testing): expose helpers, don't run.
+  module.exports = { checkUrl, normalizeUrl, stripVolatileParams, similarityScore, looksLikeService };
+  return;
+}
+
 main().catch(err => {
   console.error('Catalog agent failed:', err.message);
   process.exit(1);

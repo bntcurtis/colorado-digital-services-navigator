@@ -1,0 +1,268 @@
+{
+  "generated": "2026-06-10",
+  "mode": "weekly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 5,
+    "crawlRecoverySuggestions": 0,
+    "unresolved": 30
+  },
+  "linkRepairs": [
+    {
+      "id": 56,
+      "name": "Get copies of occupational school student transcripts",
+      "oldUrl": "https://cdhe.colorado.gov/students/preparing-for-college",
+      "newUrl": "https://cdhe.colorado.gov/preparing-for-college",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 88,
+      "name": "Register for electronic funds transfer",
+      "oldUrl": "https://tax.colorado.gov/eft",
+      "newUrl": "https://tax.colorado.gov/electronic-funds-transfer",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 106,
+      "name": "Sign up for The Scoop e-newsletter",
+      "oldUrl": "https://www.cde.state.co.us/",
+      "newUrl": "https://ed.cde.state.co.us/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 129,
+      "name": "Request public records through the Colorado Open Records Act",
+      "oldUrl": "https://oit.colorado.gov/cora-colorado-open-records-requests",
+      "newUrl": "https://oit.colorado.gov/about-us/news/cora-colorado-open-records-requests",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    },
+    {
+      "id": 152,
+      "name": "DMV Anywhere Online Services",
+      "oldUrl": "https://dmv.colorado.gov/anywhere",
+      "newUrl": "https://dmv.colorado.gov/mydmv-online-services-help-center",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9
+    }
+  ],
+  "crawlRecoverySuggestions": [],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 23,
+      "name": "Colorado Nutrition Programs",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/food-assistance",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 193"
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 36,
+      "name": "Business Entity Registration",
+      "url": "https://www.sos.state.co.us/biz/Welcome.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 40,
+      "name": "Veterans Services",
+      "url": "https://cdle.colorado.gov/veterans-services",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 142"
+    },
+    {
+      "id": 53,
+      "name": "Find health facilities by type and by city or county",
+      "url": "https://cdphe.colorado.gov/find-and-compare-facilities",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 225"
+    },
+    {
+      "id": 81,
+      "name": "Pay your boiler inspection invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 82,
+      "name": "Pay your petroleum tank invoice online",
+      "url": "https://ops.colorado.gov/payment",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 85,
+      "name": "Purchase a hunting license online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 86,
+      "name": "Purchase Colorado State Parks gift certificates",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 99,
+      "name": "Search for business records",
+      "url": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 111,
+      "name": "Subscribe to Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 117,
+      "name": "View information for truckers",
+      "url": "https://www.codot.gov/topcontent/trafficfooter",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 118,
+      "name": "View parks by activities, facilities, accessibility and conditions",
+      "url": "https://cpw.state.co.us/placestogo/parks/Pages/default.aspx",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 67"
+    },
+    {
+      "id": 119,
+      "name": "View road conditions throughout the state",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 136,
+      "name": "Request information about K-12 education in Colorado",
+      "url": "https://www.cde.state.co.us/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 106"
+    },
+    {
+      "id": 144,
+      "name": "Get free help for mental health or substance use right now",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 161,
+      "name": "Apply to be a methamphetamine labs cleanup instructor",
+      "url": "https://cdphe.colorado.gov/methlabcleanup",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 8"
+    },
+    {
+      "id": 166,
+      "name": "Learn about pet-animal care facility operation",
+      "url": "https://ag.colorado.gov/ics/pacfa",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 63"
+    },
+    {
+      "id": 170,
+      "name": "Request public records through CORA",
+      "url": "https://oit.colorado.gov/cora-colorado-open-records-requests",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 129"
+    },
+    {
+      "id": 172,
+      "name": "CPW Digital Licenses",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 174,
+      "name": "Secure Transportation Service Licensing",
+      "url": "https://cdphe.colorado.gov/emergency-care/emergency-medical-services",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 35"
+    },
+    {
+      "id": 180,
+      "name": "Colorado Works (TANF)",
+      "url": "https://cdhs.colorado.gov/benefits-assistance/cash-assistance/colorado-works-tanf",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 183"
+    },
+    {
+      "id": 201,
+      "name": "CPW Shop - Purchase Licenses Online",
+      "url": "https://www.cpwshop.com/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 84"
+    },
+    {
+      "id": 202,
+      "name": "COtrip - Real-Time Road Conditions",
+      "url": "https://www.cotrip.org/",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 90"
+    },
+    {
+      "id": 205,
+      "name": "Colorado Crisis Services - 988 Lifeline",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    }
+  ]
+}
