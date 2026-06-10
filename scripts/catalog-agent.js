@@ -25,7 +25,9 @@ const CONFIG = {
   linkConcurrency: 5,
   discoveryConcurrency: 3,
   llmConcurrency: 2,
-  userAgent: 'Colorado-Service-Navigator-CatalogAgent/1.0 (https://github.com/bntcurtis)',
+  // Colorado sites sit behind CloudFront, which 403-blocks non-browser user
+  // agents (same finding as the Phase 1 crawl profiles), so identify as Chrome.
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
   maxSitemapUrls: 8000,
   sitemapRoots: [
     'https://www.colorado.gov/sitemap.xml',
@@ -234,6 +236,26 @@ async function fetchWithTimeout(url, options, timeoutMs) {
   }
 }
 
+// Query params that change on every visit (queue tokens, ad/analytics
+// trackers). Stored or compared URLs must not include them, otherwise the
+// weekly repair loop rewrites the same entry forever (e.g. Queue-It on
+// cpwshop.com appends a fresh queueittoken on each request).
+const VOLATILE_QUERY_PARAMS = [/^queueittoken$/i, /^utm_/i, /^gclid$/i, /^fbclid$/i, /^msclkid$/i];
+
+function stripVolatileParams(url) {
+  try {
+    const parsed = new URL(url);
+    for (const key of [...parsed.searchParams.keys()]) {
+      if (VOLATILE_QUERY_PARAMS.some((pattern) => pattern.test(key))) {
+        parsed.searchParams.delete(key);
+      }
+    }
+    return parsed.toString().replace(/\?$/, '');
+  } catch {
+    return url;
+  }
+}
+
 async function checkUrl(url) {
   const startTime = Date.now();
   try {
@@ -254,7 +276,7 @@ async function checkUrl(url) {
     }
 
     const elapsed = Date.now() - startTime;
-    const finalUrl = response.url || url;
+    const finalUrl = stripVolatileParams(response.url || url);
 
     if (!response.ok) {
       return {
