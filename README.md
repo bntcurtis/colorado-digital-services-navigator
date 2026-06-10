@@ -119,6 +119,7 @@ Services are organized across multiple dimensions:
 | `scripts/aggregate-crawl-results.js` | Scores discovery candidates (used by the catalog agent) |
 | `scripts/recover-links-from-crawl.js` | Scores recovery candidates for broken catalog URLs (used by the catalog agent) |
 | `scripts/sync-catalog.js` | Syncs the embedded catalog in `index.html` from `service-catalog-v8.json` |
+| `workers/navigator-chat-proxy.js` | Source for the Cloudflare Worker behind the chat assistant (deployed manually via the Cloudflare dashboard) |
 | `reports/` | Auto-generated catalog change reports (created by GitHub Actions) |
 | `archive/` | Retired code, including the Cloudflare crawl experiment and legacy manual checkers |
 | `README.md` | This file |
