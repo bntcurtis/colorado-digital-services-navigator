@@ -41,6 +41,14 @@ const CONFIG = {
     'https://oit.colorado.gov/sitemap.xml',
     'https://hcpf.colorado.gov/sitemap.xml',
   ],
+  // Hub pages curated by colorado.gov — better discovery seeds than sitemaps
+  // because they link directly to active service pages across all agencies.
+  hubUrls: [
+    'https://co.colorado.gov/services',
+    'https://co.colorado.gov/service-search',
+  ],
+  // Regex matching hostnames that belong to Colorado state government.
+  coloradoGovPattern: /\.(colorado\.gov|state\.co\.us|co\.us)$/,
   servicePatterns: [
     /\/apply/i,
     /\/register/i,
@@ -486,6 +494,90 @@ async function fetchPageInfo(url) {
   } catch {
     return null;
   }
+}
+
+// Returns all outbound colorado-government links found on a given page,
+// excluding the page's own hostname and bare homepages (path === "" or "/").
+// Volatile params are stripped; meaningful query strings are kept.
+async function fetchHubLinks(hubUrl) {
+  try {
+    const hubHost = new URL(hubUrl).hostname;
+    const response = await fetchWithTimeout(hubUrl, {
+      headers: {
+        'User-Agent': CONFIG.userAgent,
+        'Accept': 'text/html,application/xhtml+xml,*/*',
+      },
+    }, CONFIG.timeout);
+    if (!response.ok) return [];
+    const html = await response.text();
+
+    const seen = new Set();
+    const links = [];
+    const hrefRe = /href="(https?:\/\/[^"#\s]+)"/gi;
+    let m;
+    while ((m = hrefRe.exec(html)) !== null) {
+      try {
+        const raw = m[1];
+        const parsed = new URL(raw);
+        // Only colorado government domains, not the hub page's own host.
+        if (!CONFIG.coloradoGovPattern.test(parsed.hostname)) continue;
+        if (parsed.hostname === hubHost) continue;
+        // Skip bare agency homepages — their navigation is usually JS-rendered
+        // so crawling them 1 level deep produces few usable links.
+        if (parsed.pathname === '' || parsed.pathname === '/') continue;
+        const clean = stripVolatileParams(raw);
+        const key = normalizeUrl(clean);
+        if (!seen.has(key)) {
+          seen.add(key);
+          links.push(clean);
+        }
+      } catch { /* skip malformed URLs */ }
+    }
+    return links;
+  } catch {
+    return [];
+  }
+}
+
+// Hub-first discovery: fetch the official service hub pages, collect every
+// outbound service-domain link they contain, and return page-info candidates.
+//
+// Unlike the sitemap path, we do NOT require looksLikeService() here: a URL
+// present on the curated colorado.gov service hub is itself a quality signal.
+// We only exclude paths that are obviously non-services (news, privacy, etc.).
+async function discoverFromHubs(existingUrls, { limit = 80, verbose = false } = {}) {
+  const seen = new Set();
+  const candidates = [];
+
+  for (const hubUrl of CONFIG.hubUrls) {
+    const links = await fetchHubLinks(hubUrl);
+    if (verbose) console.error(`Hub ${hubUrl}: ${links.length} outbound service-domain links`);
+    for (const link of links) {
+      const key = normalizeUrl(link);
+      if (existingUrls.has(key)) continue;
+      if (seen.has(key)) continue;
+      // Exclude clear non-service paths even on the hub.
+      if (CONFIG.excludePatterns.some(p => p.test(link))) continue;
+      seen.add(key);
+      candidates.push(link);
+    }
+  }
+
+  if (verbose) console.error(`Hub discovery: ${candidates.length} new candidates; fetching page info`);
+
+  const results = await mapWithConcurrency(
+    candidates.slice(0, limit),
+    CONFIG.discoveryConcurrency,
+    async (url) => {
+      const info = await fetchPageInfo(url);
+      if (!info) return null;
+      // Hub-sourced URLs get a higher base score than sitemap-derived ones
+      // because the hub is a curated, human-maintained index.
+      return { ...info, source: 'hub', discoveryScore: 0.70 };
+    },
+  );
+
+  return results.filter(Boolean);
 }
 
 function parseSchemaEnums(schema) {
@@ -1186,6 +1278,20 @@ async function main() {
 
     for (const candidate of crawlDiscoveryCandidates) {
       mergeDiscoveryCandidate(candidateMap, candidate);
+    }
+
+    // Hub discovery: fetch the official service hub pages and extract links.
+    // This catches services on agencies with weak or absent sitemaps, and
+    // picks up newly launched services soon after they appear on the hub.
+    const hubCandidates = await discoverFromHubs(existingUrls, {
+      limit: args.limit,
+      verbose: args.verbose,
+    });
+    for (const candidate of hubCandidates) {
+      mergeDiscoveryCandidate(candidateMap, candidate);
+    }
+    if (args.verbose) {
+      console.error(`Hub discovery added ${hubCandidates.length} candidates to the pool`);
     }
 
     const sitemapCandidates = await mapWithConcurrency(potential.slice(0, args.limit), CONFIG.discoveryConcurrency, async (url) => {
