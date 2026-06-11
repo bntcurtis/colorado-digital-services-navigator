@@ -60,6 +60,12 @@ jobs:
         run: |
           node scripts/sync-catalog.js
 
+      # Block a malformed catalog (bad enum, duplicate id, count mismatch,
+      # missing translations) before it can reach a PR or auto-merge.
+      - name: Validate catalog
+        run: |
+          node scripts/validate-catalog.js
+
       - name: Check for changes
         id: changes
         run: |
@@ -111,6 +117,16 @@ jobs:
             const summary = (report && report.summary) || {};
             if ((summary.newServices || 0) > 0) reasons.push(`${summary.newServices} new services need review`);
             if ((summary.linkRepairs || 0) === 0) reasons.push('no link repairs to merge');
+
+            // Only deterministic repairs (same-domain redirect, https/www/
+            // trailing-slash) are auto-merge eligible. Heuristic matches
+            // (sitemap similarity, crawl recovery) must go to manual review,
+            // since they can resolve to a plausible but wrong same-domain page.
+            const heuristicRepairs = ((report && report.linkRepairs) || [])
+              .filter(r => r.autoMergeEligible !== true);
+            if (heuristicRepairs.length) {
+              reasons.push(`${heuristicRepairs.length} heuristic repair(s) need manual review: ${heuristicRepairs.map(r => `#${r.id} (${r.reason})`).join(', ')}`);
+            }
 
             // Unresolved issues are report-only (the catalog entries are left
             // untouched), so they do not block merging the safe repairs.

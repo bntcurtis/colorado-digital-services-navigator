@@ -119,6 +119,7 @@ Services are organized across multiple dimensions:
 | `scripts/aggregate-crawl-results.js` | Scores discovery candidates (used by the catalog agent) |
 | `scripts/recover-links-from-crawl.js` | Scores recovery candidates for broken catalog URLs (used by the catalog agent) |
 | `scripts/sync-catalog.js` | Syncs the embedded catalog in `index.html` from `service-catalog-v8.json` |
+| `scripts/validate-catalog.js` | Zero-dependency catalog validator (enum membership, unique ids, bilingual fields, count) — run in the workflow before any PR/auto-merge |
 | `workers/navigator-chat-proxy.js` | Source for the Cloudflare Worker behind the chat assistant (deployed manually via the Cloudflare dashboard) |
 | `reports/` | Auto-generated catalog change reports (created by GitHub Actions) |
 | `archive/` | Retired code, including the Cloudflare crawl experiment and legacy manual checkers |
@@ -143,6 +144,20 @@ The Catalog Agent requires a separate Gemini proxy Worker and a shared token.
 
 - Secret: `CATALOG_AGENT_TOKEN`
 - Variable: `CATALOG_WORKER_URL` (e.g. `https://navigator-catalog-proxy.bntcurtis.workers.dev/`)
+
+### Chat proxy Worker
+
+The chat assistant is served by a separate public Worker, `navigator-chat-proxy`
+(source in [`workers/navigator-chat-proxy.js`](workers/navigator-chat-proxy.js)).
+It needs the `GEMINI_API_KEY` secret. Optional env vars: `GEMINI_MODEL`,
+`GEMINI_THINKING_LEVEL`, and `ALLOWED_ORIGINS`.
+
+Because it is public and unauthenticated (the static site has to call it),
+the recommended abuse protection is a **Cloudflare Rate Limiting Rule** on the
+Worker's route — e.g. ~20 requests/minute per IP — added in the Cloudflare
+dashboard. The Worker also caps request body size and supports an optional
+origin allowlist, but those are defense-in-depth, not a replacement for the
+rate-limit rule.
 
 ### Run the workflow manually
 
