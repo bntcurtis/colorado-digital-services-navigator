@@ -16,12 +16,12 @@
  * Environment:
  *   - GEMINI_API_KEY (secret, required)
  *   - GEMINI_MODEL (optional) — overrides the model id without a redeploy.
- *     Defaults to gemini-3.5-flash.
+ *     Defaults to gemini-3-flash-preview (known-good).
  *   - GEMINI_THINKING_LEVEL (optional) — minimal | low | medium | high.
- *     Defaults to "low": this is a simple service-lookup task, so we keep
- *     thinking cheap and fast. Gemini 3.5 enables thinking at "medium" by
- *     default, which would add latency and token cost for no real benefit
- *     here. Raise it only if answer quality needs it.
+ *     UNSET by default, which keeps the request in the known-good shape. Set
+ *     it only together with a thinking-capable model (e.g. GEMINI_MODEL=
+ *     gemini-3.5-flash) AND verify replies still return — the 3.5 request
+ *     shape differs and must be confirmed against the live API key.
  *   - ALLOWED_ORIGINS (optional) — comma-separated origins (e.g.
  *     "https://colorado-gov.org"). When set, browser requests from other
  *     origins are rejected. Unset = allow all (default), so embeds keep
@@ -39,8 +39,10 @@ const CATALOG_URL = 'https://colorado-gov.org/service-catalog-v8.json';
 const CATALOG_TTL_SECONDS = 3600;
 const MAX_HISTORY_TURNS = 10;
 const MAX_TURN_CHARS = 1500;
-const DEFAULT_MODEL = 'gemini-3.5-flash';
-const DEFAULT_THINKING_LEVEL = 'low';
+// Known-good default. Gemini 3.5 + thinking is opt-in via env (see below):
+// it requires a different request shape and must be verified against the
+// live API key before relying on it.
+const DEFAULT_MODEL = 'gemini-3-flash-preview';
 const MAX_BODY_BYTES = 32 * 1024; // 32KB — generous for a message + 10 turns
 
 function originAllowed(request, env) {
@@ -61,27 +63,41 @@ const CORS_HEADERS = {
 };
 
 async function loadCatalogSummary(lang) {
-  const cache = caches.default;
-  const cacheKey = new Request(CATALOG_URL);
+  // Never let catalog loading crash the request. If anything fails (fetch,
+  // Cache API, JSON parse), degrade to an empty catalog: the assistant can
+  // still answer (less precisely) instead of returning an error to the user.
+  try {
+    const cache = caches.default;
+    const cacheKey = new Request(CATALOG_URL);
 
-  let response = await cache.match(cacheKey);
-  if (!response) {
-    response = await fetch(CATALOG_URL, {
-      headers: { 'User-Agent': 'navigator-chat-proxy/2.0' },
-    });
-    if (!response.ok) return '';
-    response = new Response(response.body, response);
-    response.headers.set('Cache-Control', `s-maxage=${CATALOG_TTL_SECONDS}`);
-    await cache.put(cacheKey, response.clone());
+    let response = await cache.match(cacheKey);
+    if (!response) {
+      response = await fetch(CATALOG_URL, {
+        headers: { 'User-Agent': 'navigator-chat-proxy/2.0' },
+      });
+      if (!response.ok) return '';
+      response = new Response(response.body, response);
+      response.headers.set('Cache-Control', `s-maxage=${CATALOG_TTL_SECONDS}`);
+      // cache.put can throw on some upstream header combinations; don't let
+      // that take down the request.
+      try {
+        await cache.put(cacheKey, response.clone());
+      } catch (e) {
+        // caching is best-effort
+      }
+    }
+
+    const catalog = await response.json();
+    return (catalog.services || [])
+      .map(s => {
+        const name = (s.name && (s.name[lang] || s.name.en)) || '';
+        return `${name} | ${s.url}`;
+      })
+      .join('\n');
+  } catch (e) {
+    console.error('loadCatalogSummary failed:', e.message);
+    return '';
   }
-
-  const catalog = await response.json();
-  return (catalog.services || [])
-    .map(s => {
-      const name = (s.name && (s.name[lang] || s.name.en)) || '';
-      return `${name} | ${s.url}`;
-    })
-    .join('\n');
 }
 
 function legacyCatalogSummary(catalog) {
@@ -191,32 +207,35 @@ ${catalogSummary}`,
       ];
 
       const model = env.GEMINI_MODEL || DEFAULT_MODEL;
-      const thinkingLevel = env.GEMINI_THINKING_LEVEL || DEFAULT_THINKING_LEVEL;
 
-      // Gemini 3.5 migration notes:
-      // - temperature / top_p / top_k are no longer recommended on 3.x
-      //   thinking models; the strict system prompt handles grounding.
-      // - thinkingConfig.thinkingLevel replaces the old thinking_budget.
-      // - thinking tokens count toward maxOutputTokens, so we leave headroom
-      //   above the short answer we actually want.
+      // Known-good request shape (what ran reliably on gemini-3-flash-preview).
+      // thinkingConfig is added ONLY when GEMINI_THINKING_LEVEL is set, so the
+      // default request stays exactly the shape Gemini already accepted. To try
+      // Gemini 3.5: set GEMINI_MODEL=gemini-3.5-flash and GEMINI_THINKING_LEVEL
+      // (minimal|low|medium|high), then confirm replies still come back.
+      const generationConfig = {
+        temperature: 0.2,
+        maxOutputTokens: 2048,
+      };
+      if (env.GEMINI_THINKING_LEVEL) {
+        generationConfig.thinkingConfig = { thinkingLevel: env.GEMINI_THINKING_LEVEL };
+      }
+
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents,
-            generationConfig: {
-              maxOutputTokens: 4096,
-              thinkingConfig: { thinkingLevel },
-            },
-          }),
+          body: JSON.stringify({ contents, generationConfig }),
         }
       );
 
       const data = await response.json();
 
       if (data.error) {
+        // Log upstream errors so they're visible in the Cloudflare dashboard
+        // (Workers → this worker → Logs) without exposing detail to callers.
+        console.error('Gemini error:', response.status, JSON.stringify(data.error));
         return new Response(JSON.stringify({ error: data.error.message }), {
           headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
         });
@@ -233,6 +252,7 @@ ${catalogSummary}`,
         headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
       });
     } catch (error) {
+      console.error('Worker error:', error.message);
       return new Response(JSON.stringify({ error: 'Service unavailable' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
