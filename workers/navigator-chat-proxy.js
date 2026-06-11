@@ -15,13 +15,18 @@
  *
  * Environment:
  *   - GEMINI_API_KEY (secret, required)
- *   - GEMINI_MODEL (optional) — overrides the model id without a redeploy.
+ *   - GEMINI_MODEL (optional) — primary model. Defaults to gemini-3.5-flash.
+ *   - GEMINI_FALLBACK_MODEL (optional) — used if the primary errors.
  *     Defaults to gemini-3-flash-preview (known-good).
- *   - GEMINI_THINKING_LEVEL (optional) — minimal | low | medium | high.
- *     UNSET by default, which keeps the request in the known-good shape. Set
- *     it only together with a thinking-capable model (e.g. GEMINI_MODEL=
- *     gemini-3.5-flash) AND verify replies still return — the 3.5 request
- *     shape differs and must be confirmed against the live API key.
+ *   - GEMINI_THINKING_LEVEL (optional) — minimal | low | medium | high for the
+ *     primary (thinking) model. Defaults to "low".
+ *
+ * Model strategy: the Worker tries the primary model, and if it errors (wrong
+ * id, param not accepted by this key, etc.) it automatically falls back to the
+ * known-good model and logs why. So the chat can't go down from a model
+ * misconfig. A GET request to the Worker URL lists the gemini models this key
+ * can use — handy for confirming the exact 3.5 id. Each chat response includes
+ * a "model" field naming which model actually served it.
  *   - ALLOWED_ORIGINS (optional) — comma-separated origins (e.g.
  *     "https://colorado-gov.org"). When set, browser requests from other
  *     origins are rejected. Unset = allow all (default), so embeds keep
@@ -39,10 +44,12 @@ const CATALOG_URL = 'https://colorado-gov.org/service-catalog-v8.json';
 const CATALOG_TTL_SECONDS = 3600;
 const MAX_HISTORY_TURNS = 10;
 const MAX_TURN_CHARS = 1500;
-// Known-good default. Gemini 3.5 + thinking is opt-in via env (see below):
-// it requires a different request shape and must be verified against the
-// live API key before relying on it.
-const DEFAULT_MODEL = 'gemini-3-flash-preview';
+// We TRY the primary model and fall back to the known-good model if it errors,
+// so the chat can never go down just because a model id/param isn't accepted
+// by this API key. Override either via env (GEMINI_MODEL / GEMINI_FALLBACK_MODEL).
+const PRIMARY_MODEL = 'gemini-3.5-flash';
+const FALLBACK_MODEL = 'gemini-3-flash-preview';
+const DEFAULT_THINKING_LEVEL = 'low';
 const MAX_BODY_BYTES = 32 * 1024; // 32KB — generous for a message + 10 turns
 
 function originAllowed(request, env) {
@@ -129,10 +136,61 @@ function historyToContents(history) {
     }));
 }
 
+// Gemini 3.5 (a thinking model) wants thinkingConfig and discourages
+// temperature; the older fallback uses the plain known-good config.
+function buildGenerationConfig(useThinking, env) {
+  if (useThinking) {
+    return {
+      maxOutputTokens: 4096, // headroom: thinking tokens count toward this
+      thinkingConfig: { thinkingLevel: env.GEMINI_THINKING_LEVEL || DEFAULT_THINKING_LEVEL },
+    };
+  }
+  return { temperature: 0.2, maxOutputTokens: 2048 };
+}
+
+async function callGemini(model, contents, generationConfig, env) {
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contents, generationConfig }),
+    }
+  );
+  const data = await response.json();
+  return { status: response.status, data, error: data.error || (!response.ok ? { message: `HTTP ${response.status}` } : null) };
+}
+
+// GET diagnostic: list the gemini models this API key can actually use, so the
+// correct model id can be confirmed without trial-and-error. Returns names
+// only — the API key is never exposed.
+async function listModels(env) {
+  try {
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${env.GEMINI_API_KEY}`);
+    const d = await r.json();
+    if (d.error) return { error: d.error.message };
+    const names = (d.models || [])
+      .map(m => (m.name || '').replace(/^models\//, ''))
+      .filter(n => n.includes('gemini'));
+    return { availableModels: names };
+  } catch (e) {
+    return { error: e.message };
+  }
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: CORS_HEADERS });
+    }
+
+    // Visit the worker URL in a browser to see which gemini models this key
+    // supports — used to confirm the correct 3.5 model id.
+    if (request.method === 'GET') {
+      const info = await listModels(env);
+      return new Response(JSON.stringify(info, null, 2), {
+        headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
+      });
     }
 
     if (request.method !== 'POST') {
@@ -206,37 +264,25 @@ ${catalogSummary}`,
         { role: 'user', parts: [{ text: String(message || '').slice(0, MAX_TURN_CHARS) }] },
       ];
 
-      const model = env.GEMINI_MODEL || DEFAULT_MODEL;
+      const primaryModel = env.GEMINI_MODEL || PRIMARY_MODEL;
+      const fallbackModel = env.GEMINI_FALLBACK_MODEL || FALLBACK_MODEL;
 
-      // Known-good request shape (what ran reliably on gemini-3-flash-preview).
-      // thinkingConfig is added ONLY when GEMINI_THINKING_LEVEL is set, so the
-      // default request stays exactly the shape Gemini already accepted. To try
-      // Gemini 3.5: set GEMINI_MODEL=gemini-3.5-flash and GEMINI_THINKING_LEVEL
-      // (minimal|low|medium|high), then confirm replies still come back.
-      const generationConfig = {
-        temperature: 0.2,
-        maxOutputTokens: 2048,
-      };
-      if (env.GEMINI_THINKING_LEVEL) {
-        generationConfig.thinkingConfig = { thinkingLevel: env.GEMINI_THINKING_LEVEL };
+      // Try the primary model (Gemini 3.5 + thinking). If it errors — wrong
+      // model id, param not accepted by this key, etc. — fall back to the
+      // known-good model so the chat never goes down, and log why so the
+      // primary can be fixed. No fallback call if both are the same model.
+      let result = await callGemini(primaryModel, contents, buildGenerationConfig(true, env), env);
+      let servedBy = primaryModel;
+
+      if (result.error && fallbackModel && fallbackModel !== primaryModel) {
+        console.error(`Primary model "${primaryModel}" failed (`, result.status, JSON.stringify(result.error), `); falling back to "${fallbackModel}"`);
+        result = await callGemini(fallbackModel, contents, buildGenerationConfig(false, env), env);
+        servedBy = fallbackModel;
       }
 
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents, generationConfig }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (data.error) {
-        // Log upstream errors so they're visible in the Cloudflare dashboard
-        // (Workers → this worker → Logs) without exposing detail to callers.
-        console.error('Gemini error:', response.status, JSON.stringify(data.error));
-        return new Response(JSON.stringify({ error: data.error.message }), {
+      if (result.error) {
+        console.error(`All models failed. Last: "${servedBy}"`, result.status, JSON.stringify(result.error));
+        return new Response(JSON.stringify({ error: result.error.message }), {
           headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
         });
       }
@@ -246,9 +292,9 @@ ${catalogSummary}`,
           ? 'No pude encontrar servicios relevantes. Intente usar la barra de búsqueda.'
           : "I couldn't find relevant services. Try the search bar above.";
 
-      const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || defaultReply;
+      const reply = result.data.candidates?.[0]?.content?.parts?.[0]?.text || defaultReply;
 
-      return new Response(JSON.stringify({ reply }), {
+      return new Response(JSON.stringify({ reply, model: servedBy }), {
         headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
       });
     } catch (error) {
