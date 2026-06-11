@@ -161,20 +161,37 @@ async function callGemini(model, contents, generationConfig, env) {
   return { status: response.status, data, error: data.error || (!response.ok ? { message: `HTTP ${response.status}` } : null) };
 }
 
-// GET diagnostic: list the gemini models this API key can actually use, so the
-// correct model id can be confirmed without trial-and-error. Returns names
-// only — the API key is never exposed.
+// GET diagnostic: confirm the primary model actually works (a live test call)
+// and list the gemini models this API key can use. Lets the exact 3.5 config
+// be verified by visiting the Worker URL — no trial-and-error chat deploys.
+// The API key is never exposed.
 async function listModels(env) {
   try {
     const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${env.GEMINI_API_KEY}`);
     const d = await r.json();
     if (d.error) return { error: d.error.message };
-    const names = (d.models || [])
+    return (d.models || [])
       .map(m => (m.name || '').replace(/^models\//, ''))
       .filter(n => n.includes('gemini'));
-    return { availableModels: names };
   } catch (e) {
     return { error: e.message };
+  }
+}
+
+async function testPrimaryModel(env) {
+  const model = env.GEMINI_MODEL || PRIMARY_MODEL;
+  try {
+    const result = await callGemini(
+      model,
+      [{ role: 'user', parts: [{ text: 'Reply with exactly: OK' }] }],
+      buildGenerationConfig(true, env),
+      env
+    );
+    if (result.error) return { model, ok: false, error: result.error.message };
+    const reply = result.data.candidates?.[0]?.content?.parts?.[0]?.text || '(no text returned)';
+    return { model, ok: true, reply: reply.trim() };
+  } catch (e) {
+    return { model, ok: false, error: e.message };
   }
 }
 
@@ -184,11 +201,14 @@ export default {
       return new Response(null, { headers: CORS_HEADERS });
     }
 
-    // Visit the worker URL in a browser to see which gemini models this key
-    // supports — used to confirm the correct 3.5 model id.
+    // Visit the worker URL in a browser to confirm the primary model works
+    // and see which gemini models this key supports.
     if (request.method === 'GET') {
-      const info = await listModels(env);
-      return new Response(JSON.stringify(info, null, 2), {
+      const [primaryTest, availableModels] = await Promise.all([
+        testPrimaryModel(env),
+        listModels(env),
+      ]);
+      return new Response(JSON.stringify({ primaryTest, availableModels }, null, 2), {
         headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
       });
     }
