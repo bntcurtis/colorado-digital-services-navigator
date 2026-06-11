@@ -22,6 +22,17 @@
  *     thinking cheap and fast. Gemini 3.5 enables thinking at "medium" by
  *     default, which would add latency and token cost for no real benefit
  *     here. Raise it only if answer quality needs it.
+ *   - ALLOWED_ORIGINS (optional) — comma-separated origins (e.g.
+ *     "https://colorado-gov.org"). When set, browser requests from other
+ *     origins are rejected. Unset = allow all (default), so embeds keep
+ *     working. This is a soft signal; non-browser clients send no Origin.
+ *
+ * Abuse protection: this Worker is intentionally public (no auth) so the
+ * static site can call it. The strongest, lowest-effort protection is a
+ * Cloudflare *Rate Limiting Rule* on the Worker route (dashboard →
+ * the worker → Settings → add a rate-limiting rule, e.g. 20 requests/min
+ * per IP). The guards below (body-size cap, optional origin allowlist) are
+ * defense-in-depth, not a substitute for that rule.
  */
 
 const CATALOG_URL = 'https://colorado-gov.org/service-catalog-v8.json';
@@ -30,6 +41,18 @@ const MAX_HISTORY_TURNS = 10;
 const MAX_TURN_CHARS = 1500;
 const DEFAULT_MODEL = 'gemini-3.5-flash';
 const DEFAULT_THINKING_LEVEL = 'low';
+const MAX_BODY_BYTES = 32 * 1024; // 32KB — generous for a message + 10 turns
+
+function originAllowed(request, env) {
+  const allowList = (env.ALLOWED_ORIGINS || '')
+    .split(',')
+    .map(o => o.trim())
+    .filter(Boolean);
+  if (!allowList.length) return true; // not configured: allow all
+  const origin = request.headers.get('Origin');
+  if (!origin) return true; // non-browser client sends no Origin; soft signal only
+  return allowList.includes(origin);
+}
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -62,13 +85,21 @@ async function loadCatalogSummary(lang) {
 }
 
 function legacyCatalogSummary(catalog) {
-  let services = [];
+  let parsed = catalog;
   try {
-    services = typeof catalog === 'string' ? JSON.parse(catalog) : catalog;
+    if (typeof catalog === 'string') parsed = JSON.parse(catalog);
   } catch (e) {
-    services = [];
+    parsed = null;
   }
-  return (services || []).map(s => `${s.name} | ${s.url}`).join('\n');
+  // Accept either a bare array (what the old client sent) or a full catalog
+  // object { services: [...] }, so a malformed-but-reasonable request still
+  // summarizes instead of throwing a 500.
+  const services = Array.isArray(parsed)
+    ? parsed
+    : Array.isArray(parsed?.services)
+      ? parsed.services
+      : [];
+  return services.map(s => `${s.name} | ${s.url}`).join('\n');
 }
 
 function historyToContents(history) {
@@ -92,8 +123,32 @@ export default {
       return new Response('Method not allowed', { status: 405 });
     }
 
+    if (!originAllowed(request, env)) {
+      return new Response(JSON.stringify({ error: 'Origin not allowed' }), {
+        status: 403,
+        headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
+      });
+    }
+
+    // Reject oversized bodies up front so a hostile caller can't force us to
+    // buffer or forward a huge payload to Gemini.
+    const declaredLength = Number(request.headers.get('Content-Length') || 0);
+    if (declaredLength > MAX_BODY_BYTES) {
+      return new Response(JSON.stringify({ error: 'Request too large' }), {
+        status: 413,
+        headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
+      });
+    }
+
     try {
-      const { message, history, catalog, lang = 'en' } = await request.json();
+      const raw = await request.text();
+      if (raw.length > MAX_BODY_BYTES) {
+        return new Response(JSON.stringify({ error: 'Request too large' }), {
+          status: 413,
+          headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
+        });
+      }
+      const { message, history, catalog, lang = 'en' } = JSON.parse(raw);
 
       const catalogSummary = catalog
         ? legacyCatalogSummary(catalog)

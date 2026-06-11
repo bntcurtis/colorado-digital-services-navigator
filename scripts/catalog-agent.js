@@ -798,6 +798,7 @@ async function attemptRepair(service, sitemapIndex, existingUrls, sitemapCache) 
       newUrl: result.finalUrl,
       reason: 'Safe redirect to same base domain',
       confidence: 0.9,
+      autoMergeEligible: true,
     };
   }
 
@@ -882,6 +883,9 @@ async function attemptRepair(service, sitemapIndex, existingUrls, sitemapCache) 
         newUrl: finalUrl,
         reason: candidate.reason,
         confidence: candidate.confidence,
+        // https/www/trailing-slash are deterministic transforms of the same
+        // address; safe to auto-merge once re-verified.
+        autoMergeEligible: true,
       };
     }
   }
@@ -941,6 +945,9 @@ async function attemptRepair(service, sitemapIndex, existingUrls, sitemapCache) 
           newUrl: finalUrl,
           reason: `Sitemap match (score ${candidate.score.toFixed(2)})`,
           confidence,
+          // Heuristic similarity guess — a plausible but possibly wrong page.
+          // Never auto-merge; always route to manual review.
+          autoMergeEligible: false,
         };
       }
     }
@@ -1055,6 +1062,28 @@ function generateReport(changes, stats, mode) {
     lines.push('');
   }
 
+  const ds = changes.discoveryStats;
+  if (ds) {
+    lines.push('## Discovery Pipeline');
+    lines.push(`- Candidates evaluated: ${ds.candidates}`);
+    lines.push(`- Added: ${ds.added}`);
+    lines.push(`- Metadata worker errors: ${ds.workerErrors}`);
+    lines.push(`- Empty/invalid worker responses: ${ds.emptyResponses}`);
+    lines.push(`- Rejected by schema sanitization: ${ds.rejected}`);
+    lines.push(`- Duplicates of existing services: ${ds.duplicates}`);
+    if (ds.workerErrors > 0 && ds.added === 0) {
+      lines.push('');
+      lines.push('> ⚠️ Discovery produced no additions and the metadata worker errored on every candidate. Check `CATALOG_WORKER_URL`, the token, and the worker/model status.');
+    }
+    if (ds.errorSamples && ds.errorSamples.length) {
+      lines.push('- Error samples:');
+      for (const sample of ds.errorSamples) {
+        lines.push(`  - ${sample}`);
+      }
+    }
+    lines.push('');
+  }
+
   return lines.join('\n');
 }
 
@@ -1146,6 +1175,7 @@ async function main() {
     crawlRecoverySuggestions: [],
     newServices: [],
     unresolved: [],
+    discoveryStats: null,
   };
 
   if (args.verbose) {
@@ -1186,6 +1216,7 @@ async function main() {
         newUrl: result.newUrl,
         reason: result.reason,
         confidence: result.confidence,
+        autoMergeEligible: result.autoMergeEligible === true,
       });
     } else if (result.status === 'unresolved') {
       changes.unresolved.push({
@@ -1238,6 +1269,8 @@ async function main() {
           confidence: best.score,
           source: 'crawl_recovery',
           recovery: best,
+          // Heuristic crawl-derived match — always manual review.
+          autoMergeEligible: false,
         });
         continue;
       }
@@ -1348,20 +1381,40 @@ async function main() {
       }
     });
 
+    changes.discoveryStats = {
+      candidates: validCandidates.length,
+      added: 0,
+      workerErrors: 0,
+      emptyResponses: 0,
+      rejected: 0,
+      duplicates: 0,
+      errorSamples: [],
+    };
+
     for (const entry of llmResults) {
       const { candidate, response, error } = entry;
-      if (error || !response || !response.service) {
+      if (error) {
+        changes.discoveryStats.workerErrors++;
+        if (changes.discoveryStats.errorSamples.length < 5) {
+          changes.discoveryStats.errorSamples.push(`${candidate.url}: ${error.message}`);
+        }
+        continue;
+      }
+      if (!response || !response.service) {
+        changes.discoveryStats.emptyResponses++;
         continue;
       }
 
       const known = { departmentsByName };
       const service = sanitizeService({ ...response.service, url: candidate.url }, enums, known);
       if (!service) {
+        changes.discoveryStats.rejected++;
         continue;
       }
 
       const normalized = normalizeUrl(service.url);
       if (existingUrls.has(normalized)) {
+        changes.discoveryStats.duplicates++;
         continue;
       }
 
@@ -1377,6 +1430,7 @@ async function main() {
       catalog.services.push(service);
       existingUrls.add(normalized);
       urlToServiceId.set(normalized, service.id);
+      changes.discoveryStats.added++;
 
       changes.newServices.push({
         id: service.id,
@@ -1394,7 +1448,13 @@ async function main() {
   const afterCount = catalog.services.length;
 
   const hasCatalogChanges = changes.linkRepairs.length || changes.newServices.length;
-  const hasReportChanges = hasCatalogChanges || changes.unresolved.length || changes.crawlRecoverySuggestions.length;
+  // A monthly run where the metadata worker failed for every candidate has no
+  // catalog changes but still needs to surface a report so the breakage is
+  // visible instead of looking like "nothing new this month".
+  const hadDiscoveryProblems = !!(changes.discoveryStats &&
+    (changes.discoveryStats.workerErrors > 0 || changes.discoveryStats.emptyResponses > 0));
+  const hasReportChanges = hasCatalogChanges || changes.unresolved.length ||
+    changes.crawlRecoverySuggestions.length || hadDiscoveryProblems;
 
   if (hasCatalogChanges) {
     const bumpType = changes.newServices.length ? 'minor' : 'patch';
@@ -1430,6 +1490,7 @@ async function main() {
       crawlRecoverySuggestions: changes.crawlRecoverySuggestions,
       newServices: changes.newServices,
       unresolved: changes.unresolved,
+      discoveryStats: changes.discoveryStats,
     };
 
     fs.writeFileSync(reportJsonPath, JSON.stringify(jsonReport, null, 2) + '\n');
