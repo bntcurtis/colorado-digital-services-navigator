@@ -1,0 +1,149 @@
+{
+  "generated": "2026-06-29",
+  "mode": "weekly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 2,
+    "crawlRecoverySuggestions": 0,
+    "unresolved": 16
+  },
+  "linkRepairs": [
+    {
+      "id": 111,
+      "name": "Subscribe to Safe2Tell",
+      "oldUrl": "https://safe2tell.org",
+      "newUrl": "https://safe2tell.org/",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 171,
+      "name": "Review CDPS rules in development",
+      "oldUrl": "https://publicsafety.colorado.gov/cdps-rules-and-regulations-0",
+      "newUrl": "https://publicsafety.colorado.gov/cdps-rules-and-regulations",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    }
+  ],
+  "crawlRecoverySuggestions": [],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 5,
+      "name": "Apply for Health First Colorado (Medicaid)",
+      "url": "https://www.healthfirstcolorado.com/apply-now/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 16,
+      "name": "Child Support Services",
+      "url": "https://childsupport.state.co.us/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 36,
+      "name": "Business Entity Registration",
+      "url": "https://www.sos.state.co.us/biz/Welcome.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 66,
+      "name": "Locate Medicaid and Child Health Plan Plus providers",
+      "url": "https://www.healthfirstcolorado.com/find-doctors/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 99,
+      "name": "Search for business records",
+      "url": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 117,
+      "name": "View information for truckers",
+      "url": "https://www.codot.gov/topcontent/trafficfooter",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 111"
+    },
+    {
+      "id": 144,
+      "name": "Get free help for mental health or substance use right now",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 159,
+      "name": "Hunger Free Colorado Hotline",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 205,
+      "name": "Colorado Crisis Services - 988 Lifeline",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 209,
+      "name": "Hunger Free Colorado - Food Assistance Help",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    }
+  ],
+  "discoveryStats": null
+}
