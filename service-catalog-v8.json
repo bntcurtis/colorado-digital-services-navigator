@@ -1,6 +1,6 @@
 {
-  "version": "8.1.4",
-  "lastUpdated": "2026-06-29",
+  "version": "8.1.5",
+  "lastUpdated": "2026-07-01",
   "serviceCount": 230,
   "languages": [
     "en",
@@ -1987,7 +1987,7 @@
         "en": "Access information about Colorado's industrial hemp program, including regulations, licensing, and cultivation requirements.",
         "es": "Acceda a información sobre el programa de cáñamo industrial de Colorado, incluyendo regulaciones, licencias y requisitos de cultivo."
       },
-      "url": "https://ag.colorado.gov/plants/hemp",
+      "url": "https://ag.colorado.gov/plants/hemp/inspection-and-testing-information",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"

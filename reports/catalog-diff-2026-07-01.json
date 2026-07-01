@@ -1,0 +1,196 @@
+{
+  "generated": "2026-07-01",
+  "mode": "monthly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 1,
+    "crawlRecoverySuggestions": 0,
+    "unresolved": 22
+  },
+  "linkRepairs": [
+    {
+      "id": 62,
+      "name": "Learn about industrial hemp (not marijuana)",
+      "oldUrl": "https://ag.colorado.gov/plants/hemp",
+      "newUrl": "https://ag.colorado.gov/plants/hemp/inspection-and-testing-information",
+      "reason": "Sitemap match (score 0.67)",
+      "confidence": 0.8166666666666667,
+      "autoMergeEligible": false
+    }
+  ],
+  "crawlRecoverySuggestions": [],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 5,
+      "name": "Apply for Health First Colorado (Medicaid)",
+      "url": "https://www.healthfirstcolorado.com/apply-now/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 16,
+      "name": "Child Support Services",
+      "url": "https://childsupport.state.co.us/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 36,
+      "name": "Business Entity Registration",
+      "url": "https://www.sos.state.co.us/biz/Welcome.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 66,
+      "name": "Locate Medicaid and Child Health Plan Plus providers",
+      "url": "https://www.healthfirstcolorado.com/find-doctors/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 79,
+      "name": "Pay a debt owed to the State of Colorado",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 81,
+      "name": "Pay your boiler inspection invoice online",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 82,
+      "name": "Pay your petroleum tank invoice online",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 92,
+      "name": "Renew an ag-related license with AgLicense",
+      "url": "https://ag.colorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 97,
+      "name": "Search agriculture & livestock statistics",
+      "url": "https://ag.colorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 99,
+      "name": "Search for business records",
+      "url": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 115,
+      "name": "Verify a Colorado Professional or Business License",
+      "url": "https://apps2.colorado.gov/dora/licensing/",
+      "status": "soft_404",
+      "reason": "Content contains: \"oOps\""
+    },
+    {
+      "id": 117,
+      "name": "View information for truckers",
+      "url": "https://www.codot.gov/topcontent/trafficfooter",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 111"
+    },
+    {
+      "id": 144,
+      "name": "Get free help for mental health or substance use right now",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 159,
+      "name": "Hunger Free Colorado Hotline",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 205,
+      "name": "Colorado Crisis Services - 988 Lifeline",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 209,
+      "name": "Hunger Free Colorado - Food Assistance Help",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    }
+  ],
+  "discoveryStats": {
+    "candidates": 30,
+    "added": 0,
+    "workerErrors": 30,
+    "emptyResponses": 0,
+    "rejected": 0,
+    "duplicates": 0,
+    "errorSamples": [
+      "https://mydmv.colorado.gov/_/: Worker error 502: {\"error\":\"Model returned invalid JSON\",\"raw\":\"{\\n  \\\"name\\\": {\\n    \\\"en\\\": \\\"CO myDMV\\\",\\n    \\\"es\\\": \\\"CO myDMV\\\"\\n  },\\n  \\\"description\\\": {\\n    \"}",
+      "https://www.colorado.gov/hcpf/how-to-apply: Worker error 502: {\"error\":\"Model returned invalid JSON\",\"raw\":\"{\\n  \\\"name\\\": {\\n    \\\"en\\\": \\\"Health Coverage Paper Applications and Forms\\\",\\n    \\\"es\\\": \\\"Formularios y Solicitudes en Papel para Cobertura de Salud\\\"\\n  },\\n  \\\"description\\\": {\\n    \\\"en\\\": \\\"Access and print paper applications for health coverage, disability status, and identity verification to submit by mail or in person.\\\",\\n    \\\"es\\\": \\\"Acceda e imprima solicitudes en papel para cobertura de salud, estado de discapacidad y verificación de identidad para enviar por correo o en persona.\\\"\\n  },\\n  \\\"url\\\": \\\"https://www.colorado.gov/hcpf/how-to-apply\\\",\\n  \\\"department\\\": {\\n    \\\"en\\\": \\\"Department of Health Care Policy and Financing\\\",\\n    \\\"es\\\": \\\"Departamento de Políticas de Salud y Financ\"}",
+      "https://cdphe.colorado.gov/methlabcleanup: Worker error 502: {\"error\":\"Model returned invalid JSON\",\"raw\":\"{\\n  \\\"name\\\": {\\n    \\\"en\\\": \\\"Methamphetamine-affected properties environmental cleanup\\\",\\n    \\\"es\\\": \\\"Limpieza ambiental de propiedades afectadas por metanfetaminas\"}",
+      "https://cdphe.colorado.gov/health-facilities-licensure-certification-and-registration: Worker error 502: {\"error\":\"Model returned invalid JSON\",\"raw\":\"{\\n  \\\"name\\\": {\\n    \\\"en\\\": \\\"Health Facilities Licensing, Certification, and Registration\\\",\\n    \\\"es\\\": \\\"Licencias, Certificación y Registro de Instalaciones\"}",
+      "https://osc.colorado.gov/spco/accesscolorado: Worker error 502: {\"error\":\"Model returned invalid JSON\",\"raw\":\"{\\n  \\\"name\\\": {\\n    \\\"en\\\": \\\"Doing Business with the State of Colorado\\\",\\n    \\\"es\\\": \\\"Hacer negocios con el estado de Colorado\\\"\\n  },\\n  \\\"description\\\": {\\n    \\\"en\\\": \\\"Resources and guidance for suppliers to research, register, and access procurement opportunities with Colorado state agencies.\\\",\\n    \\\"es\\\": \\\"Recursos y guías para ayudar a los proveedores a investigar, registrarse y acceder a oportunidades de contratación con las agencias estatales de Colorado.\\\"\\n  },\\n  \\\"url\\\": \\\"https://osc.colorado.gov/spco/accesscolorado\\\",\\n  \\\"department\\\": {\\n    \\\"en\\\": \\\"Office of the State Controller\\\",\\n    \\\"es\\\": \\\"\"}"
+    ]
+  }
+}
