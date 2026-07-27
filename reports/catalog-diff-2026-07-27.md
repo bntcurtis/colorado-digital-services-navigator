@@ -1,0 +1,118 @@
+# Catalog Agent Report
+Generated: 2026-07-27
+Mode: weekly
+
+## Summary
+- Services before: 230
+- Services after: 230
+- New services: 0
+- Link repairs: 5
+- Crawl recovery suggestions: 0
+- Unresolved issues: 19
+
+## High Confidence Changes
+### Link Repairs
+- ID 75: MyUI Employer
+  - Old URL: https://cdle.colorado.gov/employers/myui-employer-plus
+  - New URL: https://cdle.colorado.gov/ui/employers/account-management
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 76: MyUI+
+  - Old URL: https://cdle.colorado.gov/myui-plus
+  - New URL: https://cdle.colorado.gov/ui/claimants/myui
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 79: Pay a debt owed to the State of Colorado
+  - Old URL: https://ops.colorado.gov/Conveyance/PaymentsFees
+  - New URL: https://ops.colorado.gov/conveyances/online-payments-fees
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 135: Report employer fraud
+  - Old URL: https://cdle.colorado.gov/unemployment/report-fraud
+  - New URL: https://cdle.colorado.gov/ui/report-fraud
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+- ID 224: File an unemployment insurance claim
+  - Old URL: https://cdle.colorado.gov/unemployment/file-a-claim
+  - New URL: https://cdle.colorado.gov/ui/claimants/start-a-claim
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+
+## Unresolved Issues (Needs Review)
+- ID 5: Apply for Health First Colorado (Medicaid)
+  - URL: https://www.healthfirstcolorado.com/apply-now/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 16: Child Support Services
+  - URL: https://childsupport.state.co.us/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 24: Colorado PEAK - Apply for Benefits
+  - URL: https://coloradopeak.secure.force.com
+  - Issue: broken
+  - Details: HTTP 404
+- ID 36: Business Entity Registration
+  - URL: https://www.sos.state.co.us/biz/Welcome.do
+  - Issue: broken
+  - Details: HTTP 403
+- ID 38: Fishing Atlas
+  - URL: https://cpw.state.co.us/fishing/pages/fishingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 39: Hunting Atlas
+  - URL: https://cpw.state.co.us/hunting/pages/huntingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 61: Learn about animal importing
+  - URL: https://ag.colorado.gov/animal-health/colorado-import-requirements
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 66: Locate Medicaid and Child Health Plan Plus providers
+  - URL: https://www.healthfirstcolorado.com/find-doctors/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 78: Pay a City of Denver parking ticket
+  - URL: https://www.denvergov.org/Home
+  - Issue: error
+  - Details: fetch failed
+- ID 81: Pay your boiler inspection invoice online
+  - URL: https://ops.colorado.gov/Conveyance/PaymentsFees
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 82: Pay your petroleum tank invoice online
+  - URL: https://ops.colorado.gov/Conveyance/PaymentsFees
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 99: Search for business records
+  - URL: https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do
+  - Issue: broken
+  - Details: HTTP 403
+- ID 109: State of Colorado Job Opportunities
+  - URL: https://www.governmentjobs.com/careers/colorado
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 117: View information for truckers
+  - URL: https://www.codot.gov/topcontent/trafficfooter
+  - Issue: broken
+  - Details: HTTP 404
+- ID 130: Revenue Online
+  - URL: https://www.colorado.gov/revenueonline/_/
+  - Issue: broken
+  - Details: HTTP 404
+- ID 131: SchoolView
+  - URL: https://www.cde.state.co.us/schoolview
+  - Issue: broken
+  - Details: HTTP 404
+- ID 133: Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 111
+- ID 144: Get free help for mental health or substance use right now
+  - URL: https://coloradocrisisservices.org/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 205: Colorado Crisis Services - 988 Lifeline
+  - URL: https://coloradocrisisservices.org/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+
