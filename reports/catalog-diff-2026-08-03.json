@@ -1,0 +1,256 @@
+{
+  "generated": "2026-08-03",
+  "mode": "weekly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 10,
+    "crawlRecoverySuggestions": 0,
+    "unresolved": 21
+  },
+  "linkRepairs": [
+    {
+      "id": 75,
+      "name": "MyUI Employer",
+      "oldUrl": "https://cdle.colorado.gov/employers/myui-employer-plus",
+      "newUrl": "https://cdle.colorado.gov/ui/employers/account-management",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 76,
+      "name": "MyUI+",
+      "oldUrl": "https://cdle.colorado.gov/myui-plus",
+      "newUrl": "https://cdle.colorado.gov/ui/claimants/myui",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 79,
+      "name": "Pay a debt owed to the State of Colorado",
+      "oldUrl": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "newUrl": "https://ops.colorado.gov/conveyances/online-payments-fees",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 125,
+      "name": "Workers' Compensation Benefits Calculator",
+      "oldUrl": "https://cdle.colorado.gov/unemployment/ui-claimant-guide/eligibility-for-ui-benefits",
+      "newUrl": "https://cdle.colorado.gov/ui/claimants/claimant-guide/eligibility-for-benefits",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 135,
+      "name": "Report employer fraud",
+      "oldUrl": "https://cdle.colorado.gov/unemployment/report-fraud",
+      "newUrl": "https://cdle.colorado.gov/ui/report-fraud",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 224,
+      "name": "File an unemployment insurance claim",
+      "oldUrl": "https://cdle.colorado.gov/unemployment/file-a-claim",
+      "newUrl": "https://cdle.colorado.gov/ui/claimants/start-a-claim",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 226,
+      "name": "Request a new unemployment hearing",
+      "oldUrl": "https://cdle.colorado.gov/unemployment/appeals/request-a-new-hearing",
+      "newUrl": "https://cdle.colorado.gov/ui/appeals/request-a-new-hearing",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 227,
+      "name": "Verify your identity for unemployment with ID.me",
+      "oldUrl": "https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme",
+      "newUrl": "https://cdle.colorado.gov/ui/claimants/start-a-claim/idme",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 228,
+      "name": "Register a new unemployment insurance employer account",
+      "oldUrl": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/registering-a-new-ui-employer-account",
+      "newUrl": "https://cdle.colorado.gov/ui/employers/resources/myui-employer-user-guide/registering-a-new-ui-employer-account",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    },
+    {
+      "id": 229,
+      "name": "Apply for the Work-Share Program",
+      "oldUrl": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/applying-for-the-work-share-program",
+      "newUrl": "https://cdle.colorado.gov/ui/employers/resources/myui-employer-user-guide/work-share-plan-application",
+      "reason": "Safe redirect to same base domain",
+      "confidence": 0.9,
+      "autoMergeEligible": true
+    }
+  ],
+  "crawlRecoverySuggestions": [],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 5,
+      "name": "Apply for Health First Colorado (Medicaid)",
+      "url": "https://www.healthfirstcolorado.com/apply-now/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 16,
+      "name": "Child Support Services",
+      "url": "https://childsupport.state.co.us/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 36,
+      "name": "Business Entity Registration",
+      "url": "https://www.sos.state.co.us/biz/Welcome.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 66,
+      "name": "Locate Medicaid and Child Health Plan Plus providers",
+      "url": "https://www.healthfirstcolorado.com/find-doctors/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 81,
+      "name": "Pay your boiler inspection invoice online",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 82,
+      "name": "Pay your petroleum tank invoice online",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 92,
+      "name": "Renew an ag-related license with AgLicense",
+      "url": "https://ag.colorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 97,
+      "name": "Search agriculture & livestock statistics",
+      "url": "https://ag.colorado.gov/",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 99,
+      "name": "Search for business records",
+      "url": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 117,
+      "name": "View information for truckers",
+      "url": "https://www.codot.gov/topcontent/trafficfooter",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 111"
+    },
+    {
+      "id": 144,
+      "name": "Get free help for mental health or substance use right now",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 159,
+      "name": "Hunger Free Colorado Hotline",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 169,
+      "name": "Search the Colorado State Publications Library",
+      "url": "https://hermes.cde.state.co.us/",
+      "status": "broken",
+      "reason": "HTTP 500"
+    },
+    {
+      "id": 205,
+      "name": "Colorado Crisis Services - 988 Lifeline",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 209,
+      "name": "Hunger Free Colorado - Food Assistance Help",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    }
+  ],
+  "discoveryStats": null
+}
