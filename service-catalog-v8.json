@@ -1,6 +1,6 @@
 {
-  "version": "8.1.4",
-  "lastUpdated": "2026-06-29",
+  "version": "8.1.5",
+  "lastUpdated": "2026-08-03",
   "serviceCount": 230,
   "languages": [
     "en",
@@ -2404,7 +2404,7 @@
         "en": "Access unemployment insurance services for employers, including filing reports, making payments, and managing accounts.",
         "es": "Acceda a servicios de seguro de desempleo para empleadores, incluyendo presentación de informes, realización de pagos y administración de cuentas."
       },
-      "url": "https://cdle.colorado.gov/employers/myui-employer-plus",
+      "url": "https://cdle.colorado.gov/ui/employers/account-management",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -2436,7 +2436,7 @@
         "en": "Access unemployment insurance services for claimants, including filing claims, requesting payments, and managing benefits.",
         "es": "Acceda a servicios de seguro de desempleo para solicitantes, incluyendo presentación de reclamos, solicitud de pagos y administración de beneficios."
       },
-      "url": "https://cdle.colorado.gov/myui-plus",
+      "url": "https://cdle.colorado.gov/ui/claimants/myui",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -2532,7 +2532,7 @@
         "en": "Make payments on debts owed to Colorado state agencies, including fines, fees, and other obligations.",
         "es": "Realice pagos de deudas con agencias estatales de Colorado, incluyendo multas, tarifas y otras obligaciones."
       },
-      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "url": "https://ops.colorado.gov/conveyances/online-payments-fees",
       "department": {
         "en": "Division of Oil and Public Safety",
         "es": "División de Petróleo y Seguridad Pública"
@@ -4004,7 +4004,7 @@
         "en": "Calculate potential workers' compensation benefits based on wages and injury information for Colorado workers.",
         "es": "Calcule los posibles beneficios de compensación de trabajadores basados en salarios e información de lesiones para trabajadores de Colorado."
       },
-      "url": "https://cdle.colorado.gov/unemployment/ui-claimant-guide/eligibility-for-ui-benefits",
+      "url": "https://cdle.colorado.gov/ui/claimants/claimant-guide/eligibility-for-benefits",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -4324,7 +4324,7 @@
         "en": "Submit reports about suspected employer fraud, including unemployment insurance fraud, worker misclassification, and labor law violations.",
         "es": "Envíe reportes sobre sospecha de fraude del empleador, incluyendo fraude de seguro de desempleo, clasificación errónea de trabajadores y violaciones de leyes laborales."
       },
-      "url": "https://cdle.colorado.gov/unemployment/report-fraud",
+      "url": "https://cdle.colorado.gov/ui/report-fraud",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -7193,7 +7193,7 @@
         "en": "File a new unemployment insurance claim if you've lost your job through no fault of your own. Learn about eligibility and how to apply for benefits.",
         "es": "Presente un nuevo reclamo de seguro de desempleo si ha perdido su trabajo sin culpa propia. Conozca los requisitos de elegibilidad y cómo solicitar beneficios."
       },
-      "url": "https://cdle.colorado.gov/unemployment/file-a-claim",
+      "url": "https://cdle.colorado.gov/ui/claimants/start-a-claim",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -7261,7 +7261,7 @@
         "en": "Request a new hearing if you disagree with an unemployment insurance decision. Learn about the appeals process and your rights.",
         "es": "Solicite una nueva audiencia si no está de acuerdo con una decisión de seguro de desempleo. Conozca el proceso de apelación y sus derechos."
       },
-      "url": "https://cdle.colorado.gov/unemployment/appeals/request-a-new-hearing",
+      "url": "https://cdle.colorado.gov/ui/appeals/request-a-new-hearing",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -7294,7 +7294,7 @@
         "en": "Complete identity verification for your unemployment insurance claim using the ID.me service. Required to receive benefits.",
         "es": "Complete la verificación de identidad para su reclamo de seguro de desempleo usando el servicio ID.me. Requerido para recibir beneficios."
       },
-      "url": "https://cdle.colorado.gov/unemployment/file-a-claim/verify-your-identity-with-idme",
+      "url": "https://cdle.colorado.gov/ui/claimants/start-a-claim/idme",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -7327,7 +7327,7 @@
         "en": "Register your business as an employer for unemployment insurance purposes with the Colorado Department of Labor and Employment.",
         "es": "Registre su negocio como empleador para propósitos de seguro de desempleo con el Departamento de Trabajo y Empleo de Colorado."
       },
-      "url": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/registering-a-new-ui-employer-account",
+      "url": "https://cdle.colorado.gov/ui/employers/resources/myui-employer-user-guide/registering-a-new-ui-employer-account",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
@@ -7360,7 +7360,7 @@
         "en": "Apply for the Work-Share program as an alternative to layoffs. Allows employers to reduce employee hours while workers receive partial unemployment benefits.",
         "es": "Solicite el programa de Trabajo Compartido como alternativa a los despidos. Permite a los empleadores reducir las horas de los empleados mientras los trabajadores reciben beneficios parciales de desempleo."
       },
-      "url": "https://cdle.colorado.gov/employers/myui-employer/resources/user-guide/applying-for-the-work-share-program",
+      "url": "https://cdle.colorado.gov/ui/employers/resources/myui-employer-user-guide/work-share-plan-application",
       "department": {
         "en": "Department of Labor and Employment",
         "es": "Departamento de Trabajo y Empleo"
