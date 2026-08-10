@@ -1,6 +1,6 @@
 {
-  "version": "8.1.5",
-  "lastUpdated": "2026-08-03",
+  "version": "8.1.6",
+  "lastUpdated": "2026-08-10",
   "serviceCount": 230,
   "languages": [
     "en",
@@ -961,7 +961,7 @@
         "en": "Access resources for identifying and managing noxious weeds in Colorado, including the state noxious weed list and management guidelines.",
         "es": "Acceda a recursos para identificar y manejar malezas nocivas en Colorado, incluyendo la lista estatal de malezas nocivas y guías de manejo."
       },
-      "url": "https://ag.colorado.gov/conservation/noxious-weeds",
+      "url": "https://ag.colorado.gov/conservation/noxious-weeds/colorado-noxious-weed-list",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -1987,7 +1987,7 @@
         "en": "Access information about Colorado's industrial hemp program, including regulations, licensing, and cultivation requirements.",
         "es": "Acceda a información sobre el programa de cáñamo industrial de Colorado, incluyendo regulaciones, licencias y requisitos de cultivo."
       },
-      "url": "https://ag.colorado.gov/plants/hemp",
+      "url": "https://ag.colorado.gov/plants/hemp/inspection-and-testing-information",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -2083,7 +2083,7 @@
         "en": "Apply for licenses and certifications for commercial measurement devices used in trade or commerce.",
         "es": "Solicite licencias y certificaciones para dispositivos de medición comercial utilizados en el comercio."
       },
-      "url": "https://ag.colorado.gov/ics/measurement-standards",
+      "url": "https://ag.colorado.gov/ics/measurement-standards/certified-weighers",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -4452,7 +4452,7 @@
         "en": "Access resources and guidelines for commercial pesticide application, including licensing requirements, safety protocols, and best practices.",
         "es": "Acceda a recursos y directrices para la aplicación comercial de pesticidas, incluyendo requisitos de licencia, protocolos de seguridad y mejores prácticas."
       },
-      "url": "https://ag.colorado.gov/plants/pesticides",
+      "url": "https://ag.colorado.gov/plants/pesticides/pesticide-use-in-cannabis-production-information",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
@@ -6858,7 +6858,7 @@
         "en": "Report suspected animal cruelty, neglect, or mistreatment to the Colorado Bureau of Animal Protection for investigation.",
         "es": "Reporte sospechas de crueldad, negligencia o maltrato animal a la Oficina de Protección Animal de Colorado para investigación."
       },
-      "url": "https://ag.colorado.gov/animal-welfare/bureau-of-animal-protection/file-an-animal-mistreatment-or-neglect-complaint",
+      "url": "https://ag.colorado.gov/animal-welfare/bureau-of-animal-protection",
       "department": {
         "en": "Department of Agriculture",
         "es": "Departamento de Agricultura"
