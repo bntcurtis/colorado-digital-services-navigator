@@ -1,0 +1,165 @@
+{
+  "generated": "2026-08-24",
+  "mode": "weekly",
+  "summary": {
+    "beforeCount": 230,
+    "afterCount": 230,
+    "newServices": 0,
+    "linkRepairs": 0,
+    "crawlRecoverySuggestions": 0,
+    "unresolved": 21
+  },
+  "linkRepairs": [],
+  "crawlRecoverySuggestions": [],
+  "newServices": [],
+  "unresolved": [
+    {
+      "id": 5,
+      "name": "Apply for Health First Colorado (Medicaid)",
+      "url": "https://www.healthfirstcolorado.com/apply-now/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 15,
+      "name": "Check Tax Refund Status",
+      "url": "https://tax.colorado.gov/refund",
+      "status": "soft_404",
+      "reason": "Content contains: \"404\""
+    },
+    {
+      "id": 16,
+      "name": "Child Support Services",
+      "url": "https://childsupport.state.co.us/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 24,
+      "name": "Colorado PEAK - Apply for Benefits",
+      "url": "https://coloradopeak.secure.force.com",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 36,
+      "name": "Business Entity Registration",
+      "url": "https://www.sos.state.co.us/biz/Welcome.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 38,
+      "name": "Fishing Atlas",
+      "url": "https://cpw.state.co.us/fishing/pages/fishingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 39,
+      "name": "Hunting Atlas",
+      "url": "https://cpw.state.co.us/hunting/pages/huntingatlas.aspx",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 66,
+      "name": "Locate Medicaid and Child Health Plan Plus providers",
+      "url": "https://www.healthfirstcolorado.com/find-doctors/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 81,
+      "name": "Pay your boiler inspection invoice online",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 82,
+      "name": "Pay your petroleum tank invoice online",
+      "url": "https://ops.colorado.gov/Conveyance/PaymentsFees",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 79"
+    },
+    {
+      "id": 99,
+      "name": "Search for business records",
+      "url": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 100,
+      "name": "Search for oil and gas drilling permits",
+      "url": "https://ecmc.state.co.us/permits/",
+      "status": "soft_404",
+      "reason": "Content contains: \"uhoH\""
+    },
+    {
+      "id": 117,
+      "name": "View information for truckers",
+      "url": "https://www.codot.gov/topcontent/trafficfooter",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 130,
+      "name": "Revenue Online",
+      "url": "https://www.colorado.gov/revenueonline/_/",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 131,
+      "name": "SchoolView",
+      "url": "https://www.cde.state.co.us/schoolview",
+      "status": "broken",
+      "reason": "HTTP 404"
+    },
+    {
+      "id": 133,
+      "name": "Safe2Tell",
+      "url": "https://safe2tell.org",
+      "status": "conflict",
+      "reason": "Candidate URL already used by service ID 111"
+    },
+    {
+      "id": 144,
+      "name": "Get free help for mental health or substance use right now",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 159,
+      "name": "Hunger Free Colorado Hotline",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    },
+    {
+      "id": 169,
+      "name": "Search the Colorado State Publications Library",
+      "url": "https://hermes.cde.state.co.us/",
+      "status": "error",
+      "reason": "fetch failed"
+    },
+    {
+      "id": 205,
+      "name": "Colorado Crisis Services - 988 Lifeline",
+      "url": "https://coloradocrisisservices.org/",
+      "status": "redirect_suspicious",
+      "reason": "Redirected to different domain"
+    },
+    {
+      "id": 209,
+      "name": "Hunger Free Colorado - Food Assistance Help",
+      "url": "https://hungerfreecolorado.org/",
+      "status": "broken",
+      "reason": "HTTP 403"
+    }
+  ],
+  "discoveryStats": null
+}
