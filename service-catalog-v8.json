@@ -1,6 +1,6 @@
 {
-  "version": "8.1.5",
-  "lastUpdated": "2026-08-03",
+  "version": "8.1.6",
+  "lastUpdated": "2026-11-01",
   "serviceCount": 230,
   "languages": [
     "en",
@@ -1442,7 +1442,7 @@
         "en": "Find Colorado DMV office locations, hours, services offered, and wait times to plan your visit.",
         "es": "Encuentre ubicaciones de oficinas del DMV de Colorado, horarios, servicios ofrecidos y tiempos de espera para planificar su visita."
       },
-      "url": "https://dmv.colorado.gov/locations",
+      "url": "https://cdphe.colorado.gov/locations",
       "department": {
         "en": "Department of Revenue",
         "es": "Departamento de Ingresos"
@@ -2051,7 +2051,7 @@
         "en": "Learn about the Women, Infants, and Children (WIC) program, including eligibility requirements and available benefits.",
         "es": "Aprenda sobre el programa de Mujeres, Infantes y Niños (WIC), incluyendo requisitos de elegibilidad y beneficios disponibles."
       },
-      "url": "https://www.coloradowic.gov/homepage",
+      "url": "https://www.coloradowic.gov/",
       "department": {
         "en": "Department of Public Health & Environment",
         "es": "Departamento de Salud Pública y Medio Ambiente"
