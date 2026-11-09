@@ -1,0 +1,294 @@
+# Catalog Agent Report
+Generated: 2026-11-09
+Mode: weekly
+
+## Summary
+- Services before: 230
+- Services after: 230
+- New services: 0
+- Link repairs: 1
+- Crawl recovery suggestions: 0
+- Unresolved issues: 68
+
+## High Confidence Changes
+### Link Repairs
+- ID 64: Learn About WIC
+  - Old URL: https://www.coloradowic.gov/homepage
+  - New URL: https://www.coloradowic.gov/
+  - Reason: Safe redirect to same base domain
+  - Confidence: 0.90
+
+## Unresolved Issues (Needs Review)
+- ID 2: Apply for a Colorado driver license or ID card
+  - URL: https://dmv.colorado.gov/new-to-colorado
+  - Issue: broken
+  - Details: HTTP 403
+- ID 3: Add emergency contact information to your driver record
+  - URL: https://dmv.colorado.gov/mydmv
+  - Issue: broken
+  - Details: HTTP 403
+- ID 5: Apply for Health First Colorado (Medicaid)
+  - URL: https://www.healthfirstcolorado.com/apply-now/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 7: Apply for Work Opportunity Tax Credit
+  - URL: https://cdle.colorado.gov/work-opportunity-tax-credit
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 15: Check Tax Refund Status
+  - URL: https://tax.colorado.gov/refund
+  - Issue: broken
+  - Details: HTTP 403
+- ID 16: Child Support Services
+  - URL: https://childsupport.state.co.us/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 20: Colorado Courts Self-Help Center
+  - URL: https://www.coloradojudicial.gov/self-help-resources
+  - Issue: broken
+  - Details: HTTP 403
+- ID 24: Colorado PEAK - Apply for Benefits
+  - URL: https://coloradopeak.secure.force.com
+  - Issue: broken
+  - Details: HTTP 404
+- ID 29: Connecting Colorado - Job Search
+  - URL: https://cdle.colorado.gov/jobs-training/connecting-colorado
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 31: Corrections Statistics and Reports
+  - URL: https://cdoc.colorado.gov/about/data-and-reports
+  - Issue: broken
+  - Details: HTTP 503
+- ID 34: myDMV - Online DMV Services
+  - URL: https://dmv.colorado.gov/mydmv
+  - Issue: broken
+  - Details: HTTP 403
+- ID 36: Business Entity Registration
+  - URL: https://www.sos.state.co.us/biz/Welcome.do
+  - Issue: broken
+  - Details: HTTP 403
+- ID 38: Fishing Atlas
+  - URL: https://cpw.state.co.us/fishing/pages/fishingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 39: Hunting Atlas
+  - URL: https://cpw.state.co.us/hunting/pages/huntingatlas.aspx
+  - Issue: broken
+  - Details: HTTP 404
+- ID 42: Crash Report Database
+  - URL: https://dmv.colorado.gov/crash-records
+  - Issue: broken
+  - Details: HTTP 403
+- ID 43: File Taxes Online
+  - URL: https://tax.colorado.gov/training/file-individual-income-tax-online
+  - Issue: broken
+  - Details: HTTP 403
+- ID 45: DMV Office Locations
+  - URL: https://dmv.colorado.gov/locations
+  - Issue: broken
+  - Details: HTTP 403
+- ID 46: Driver Education Classes
+  - URL: https://dmv.colorado.gov/drivereducation
+  - Issue: broken
+  - Details: HTTP 403
+- ID 50: Water Rights Calls
+  - URL: https://dwr.state.co.us/Tools/AdministrativeCalls/Active/Search
+  - Issue: error
+  - Details: fetch failed
+- ID 61: Learn about animal importing
+  - URL: https://ag.colorado.gov/animal-health/colorado-import-requirements
+  - Issue: timeout
+  - Details: Request timed out after 15000ms
+- ID 62: Learn about industrial hemp (not marijuana)
+  - URL: https://ag.colorado.gov/plants/hemp
+  - Issue: broken
+  - Details: HTTP 503
+- ID 63: Learn about pet-animal care facility operation and oversight
+  - URL: https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act
+  - Issue: broken
+  - Details: HTTP 503
+- ID 65: License a measurement standards device
+  - URL: https://ag.colorado.gov/ics/measurement-standards
+  - Issue: broken
+  - Details: HTTP 503
+- ID 66: Locate Medicaid and Child Health Plan Plus providers
+  - URL: https://www.healthfirstcolorado.com/find-doctors/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 68: Make a Department of Corrections request for records
+  - URL: https://cdoc.colorado.gov/general-records-requests
+  - Issue: broken
+  - Details: HTTP 503
+- ID 70: Manage livestock brands
+  - URL: https://ag.colorado.gov/brands/livestock-brands
+  - Issue: broken
+  - Details: HTTP 503
+- ID 71: Manage my tax account
+  - URL: https://tax.colorado.gov/training/account-access-management
+  - Issue: broken
+  - Details: HTTP 403
+- ID 80: Pay taxes online
+  - URL: https://tax.colorado.gov/pay
+  - Issue: broken
+  - Details: HTTP 403
+- ID 81: Pay your boiler inspection invoice online
+  - URL: https://ops.colorado.gov/Conveyance/PaymentsFees
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 82: Pay your petroleum tank invoice online
+  - URL: https://ops.colorado.gov/Conveyance/PaymentsFees
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 79
+- ID 88: Register for electronic funds transfer
+  - URL: https://tax.colorado.gov/electronic-funds-transfer
+  - Issue: broken
+  - Details: HTTP 403
+- ID 92: Renew an ag-related license with AgLicense
+  - URL: https://ag.colorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 94: Renew your driver license, permit, or ID online
+  - URL: https://dmv.colorado.gov/renew-your-colorado-driver-license-permit-or-id-card
+  - Issue: broken
+  - Details: HTTP 403
+- ID 97: Search agriculture & livestock statistics
+  - URL: https://ag.colorado.gov/
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 98: Search for an oil and gas facility
+  - URL: https://ecmc.state.co.us/maps.html
+  - Issue: error
+  - Details: fetch failed
+- ID 99: Search for business records
+  - URL: https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do
+  - Issue: broken
+  - Details: HTTP 403
+- ID 100: Search for oil and gas drilling permits
+  - URL: https://ecmc.state.co.us/permits/
+  - Issue: error
+  - Details: fetch failed
+- ID 109: State of Colorado Job Opportunities
+  - URL: https://www.governmentjobs.com/careers/colorado
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 110: Subscribe to receive tax news
+  - URL: https://tax.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 114: Vehicle Registration Renewal
+  - URL: https://dmv.colorado.gov/registration
+  - Issue: broken
+  - Details: HTTP 403
+- ID 115: Verify a Colorado Professional or Business License
+  - URL: https://apps2.colorado.gov/dora/licensing/
+  - Issue: broken
+  - Details: HTTP 405
+- ID 117: View information for truckers
+  - URL: https://www.codot.gov/topcontent/trafficfooter
+  - Issue: broken
+  - Details: HTTP 404
+- ID 124: View where your tax dollars go with Colorado Tax Tracks
+  - URL: https://tax.colorado.gov/
+  - Issue: broken
+  - Details: HTTP 403
+- ID 128: Request motor vehicle/powersports records
+  - URL: https://dmv.colorado.gov/motor-vehicle-record
+  - Issue: broken
+  - Details: HTTP 403
+- ID 130: Revenue Online
+  - URL: https://www.colorado.gov/revenueonline/_/
+  - Issue: broken
+  - Details: HTTP 404
+- ID 131: SchoolView
+  - URL: https://www.cde.state.co.us/schoolview
+  - Issue: broken
+  - Details: HTTP 404
+- ID 133: Safe2Tell
+  - URL: https://safe2tell.org
+  - Issue: conflict
+  - Details: Candidate URL already used by service ID 111
+- ID 139: Review resources for commercial pesticide applicators
+  - URL: https://ag.colorado.gov/plants/pesticides
+  - Issue: broken
+  - Details: HTTP 503
+- ID 140: Schedule a DMV appointment
+  - URL: https://dmv.colorado.gov/AppointmentScheduling
+  - Issue: broken
+  - Details: HTTP 403
+- ID 144: Get free help for mental health or substance use right now
+  - URL: https://coloradocrisisservices.org/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 152: DMV Anywhere Online Services
+  - URL: https://dmv.colorado.gov/mydmv-online-services-help-center
+  - Issue: broken
+  - Details: HTTP 403
+- ID 153: MV Express Kiosk Vehicle Registration
+  - URL: https://dmv.colorado.gov/online-or-in-office
+  - Issue: broken
+  - Details: HTTP 403
+- ID 155: Online Instruction Permit Test
+  - URL: https://dmv.colorado.gov/drivers/standard-license-and-ID-cards
+  - Issue: broken
+  - Details: HTTP 403
+- ID 158: New to Colorado Checklist
+  - URL: https://dmv.colorado.gov/new-to-colorado
+  - Issue: broken
+  - Details: HTTP 403
+- ID 164: DPO Online Services Portal
+  - URL: https://apps2.colorado.gov/dora/licensing/default.aspx
+  - Issue: broken
+  - Details: HTTP 405
+- ID 166: Learn about pet-animal care facility operation
+  - URL: https://ag.colorado.gov/animal-welfare/pet-animal-care-and-facilities-act
+  - Issue: timeout
+  - Details: Request timed out after 15000ms
+- ID 169: Search the Colorado State Publications Library
+  - URL: https://hermes.cde.state.co.us/
+  - Issue: error
+  - Details: fetch failed
+- ID 175: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: broken
+  - Details: HTTP 503
+- ID 176: Driving Records
+  - URL: https://dmv.colorado.gov/motor-vehicle-record
+  - Issue: broken
+  - Details: HTTP 403
+- ID 177: Driver Monitoring
+  - URL: https://dmv.colorado.gov/driver-records-suspensions-reinstatements
+  - Issue: broken
+  - Details: HTTP 403
+- ID 179: Motor Vehicle Verification System
+  - URL: https://dmv.colorado.gov/state-dmv-services
+  - Issue: broken
+  - Details: HTTP 403
+- ID 205: Colorado Crisis Services - 988 Lifeline
+  - URL: https://coloradocrisisservices.org/
+  - Issue: redirect_suspicious
+  - Details: Redirected to different domain
+- ID 210: Colorado Cannabis Business Office
+  - URL: https://oedit.colorado.gov/cannabis-business-office
+  - Issue: timeout
+  - Details: Request timed out after 15000ms
+- ID 213: Colorado SIPA - Digital Government Services Directory
+  - URL: https://sipa.colorado.gov/digital-government-services
+  - Issue: broken
+  - Details: HTTP 503
+- ID 214: File an animal mistreatment or neglect complaint
+  - URL: https://ag.colorado.gov/animal-welfare/bureau-of-animal-protection/file-an-animal-mistreatment-or-neglect-complaint
+  - Issue: broken
+  - Details: HTTP 503
+- ID 220: Apply for benefits assistance
+  - URL: https://cdhs.colorado.gov/benefits-assistance
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 224: File an unemployment insurance claim
+  - URL: https://cdle.colorado.gov/ui/claimants/start-a-claim
+  - Issue: soft_404
+  - Details: Content contains: "404"
+- ID 227: Verify your identity for unemployment with ID.me
+  - URL: https://cdle.colorado.gov/ui/claimants/start-a-claim/idme
+  - Issue: soft_404
+  - Details: Content contains: "404"
+
